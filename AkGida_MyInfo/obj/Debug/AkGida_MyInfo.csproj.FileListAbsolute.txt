@@ -1,0 +1,240 @@
+c:\users\asus\documents\visual studio 2017\Projects\AkGida_MyInfo\AkGida_MyInfo\bin\ApplicationInsights.config
+c:\users\asus\documents\visual studio 2017\Projects\AkGida_MyInfo\AkGida_MyInfo\bin\roslyn\csc.exe
+c:\users\asus\documents\visual studio 2017\Projects\AkGida_MyInfo\AkGida_MyInfo\bin\roslyn\csc.exe.config
+c:\users\asus\documents\visual studio 2017\Projects\AkGida_MyInfo\AkGida_MyInfo\bin\roslyn\csc.rsp
+c:\users\asus\documents\visual studio 2017\Projects\AkGida_MyInfo\AkGida_MyInfo\bin\roslyn\csi.exe
+c:\users\asus\documents\visual studio 2017\Projects\AkGida_MyInfo\AkGida_MyInfo\bin\roslyn\csi.rsp
+c:\users\asus\documents\visual studio 2017\Projects\AkGida_MyInfo\AkGida_MyInfo\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+c:\users\asus\documents\visual studio 2017\Projects\AkGida_MyInfo\AkGida_MyInfo\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+c:\users\asus\documents\visual studio 2017\Projects\AkGida_MyInfo\AkGida_MyInfo\bin\roslyn\Microsoft.CodeAnalysis.CSharp.Scripting.dll
+c:\users\asus\documents\visual studio 2017\Projects\AkGida_MyInfo\AkGida_MyInfo\bin\roslyn\Microsoft.CodeAnalysis.dll
+c:\users\asus\documents\visual studio 2017\Projects\AkGida_MyInfo\AkGida_MyInfo\bin\roslyn\Microsoft.CodeAnalysis.Scripting.dll
+c:\users\asus\documents\visual studio 2017\Projects\AkGida_MyInfo\AkGida_MyInfo\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+c:\users\asus\documents\visual studio 2017\Projects\AkGida_MyInfo\AkGida_MyInfo\bin\roslyn\Microsoft.CSharp.Core.targets
+c:\users\asus\documents\visual studio 2017\Projects\AkGida_MyInfo\AkGida_MyInfo\bin\roslyn\Microsoft.DiaSymReader.Native.amd64.dll
+c:\users\asus\documents\visual studio 2017\Projects\AkGida_MyInfo\AkGida_MyInfo\bin\roslyn\Microsoft.DiaSymReader.Native.x86.dll
+c:\users\asus\documents\visual studio 2017\Projects\AkGida_MyInfo\AkGida_MyInfo\bin\roslyn\Microsoft.VisualBasic.Core.targets
+c:\users\asus\documents\visual studio 2017\Projects\AkGida_MyInfo\AkGida_MyInfo\bin\roslyn\System.AppContext.dll
+c:\users\asus\documents\visual studio 2017\Projects\AkGida_MyInfo\AkGida_MyInfo\bin\roslyn\System.Collections.Immutable.dll
+c:\users\asus\documents\visual studio 2017\Projects\AkGida_MyInfo\AkGida_MyInfo\bin\roslyn\System.Diagnostics.StackTrace.dll
+c:\users\asus\documents\visual studio 2017\Projects\AkGida_MyInfo\AkGida_MyInfo\bin\roslyn\System.IO.FileSystem.dll
+c:\users\asus\documents\visual studio 2017\Projects\AkGida_MyInfo\AkGida_MyInfo\bin\roslyn\System.IO.FileSystem.Primitives.dll
+c:\users\asus\documents\visual studio 2017\Projects\AkGida_MyInfo\AkGida_MyInfo\bin\roslyn\System.Reflection.Metadata.dll
+c:\users\asus\documents\visual studio 2017\Projects\AkGida_MyInfo\AkGida_MyInfo\bin\roslyn\vbc.exe
+c:\users\asus\documents\visual studio 2017\Projects\AkGida_MyInfo\AkGida_MyInfo\bin\roslyn\vbc.exe.config
+c:\users\asus\documents\visual studio 2017\Projects\AkGida_MyInfo\AkGida_MyInfo\bin\roslyn\vbc.rsp
+c:\users\asus\documents\visual studio 2017\Projects\AkGida_MyInfo\AkGida_MyInfo\bin\roslyn\VBCSCompiler.exe
+c:\users\asus\documents\visual studio 2017\Projects\AkGida_MyInfo\AkGida_MyInfo\bin\roslyn\VBCSCompiler.exe.config
+c:\users\asus\documents\visual studio 2017\Projects\AkGida_MyInfo\AkGida_MyInfo\bin\AkGida_MyInfo.dll.config
+c:\users\asus\documents\visual studio 2017\Projects\AkGida_MyInfo\AkGida_MyInfo\bin\AkGida_MyInfo.dll
+c:\users\asus\documents\visual studio 2017\Projects\AkGida_MyInfo\AkGida_MyInfo\bin\AkGida_MyInfo.pdb
+c:\users\asus\documents\visual studio 2017\Projects\AkGida_MyInfo\AkGida_MyInfo\bin\Antlr3.Runtime.dll
+c:\users\asus\documents\visual studio 2017\Projects\AkGida_MyInfo\AkGida_MyInfo\bin\Microsoft.AI.Agent.Intercept.dll
+c:\users\asus\documents\visual studio 2017\Projects\AkGida_MyInfo\AkGida_MyInfo\bin\Microsoft.AI.DependencyCollector.dll
+c:\users\asus\documents\visual studio 2017\Projects\AkGida_MyInfo\AkGida_MyInfo\bin\Microsoft.AI.PerfCounterCollector.dll
+c:\users\asus\documents\visual studio 2017\Projects\AkGida_MyInfo\AkGida_MyInfo\bin\Microsoft.AI.ServerTelemetryChannel.dll
+c:\users\asus\documents\visual studio 2017\Projects\AkGida_MyInfo\AkGida_MyInfo\bin\Microsoft.AI.Web.dll
+c:\users\asus\documents\visual studio 2017\Projects\AkGida_MyInfo\AkGida_MyInfo\bin\Microsoft.AI.WindowsServer.dll
+c:\users\asus\documents\visual studio 2017\Projects\AkGida_MyInfo\AkGida_MyInfo\bin\Microsoft.ApplicationInsights.dll
+c:\users\asus\documents\visual studio 2017\Projects\AkGida_MyInfo\AkGida_MyInfo\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+c:\users\asus\documents\visual studio 2017\Projects\AkGida_MyInfo\AkGida_MyInfo\bin\Microsoft.Web.Infrastructure.dll
+c:\users\asus\documents\visual studio 2017\Projects\AkGida_MyInfo\AkGida_MyInfo\bin\Newtonsoft.Json.dll
+c:\users\asus\documents\visual studio 2017\Projects\AkGida_MyInfo\AkGida_MyInfo\bin\System.Web.Helpers.dll
+c:\users\asus\documents\visual studio 2017\Projects\AkGida_MyInfo\AkGida_MyInfo\bin\System.Web.Mvc.dll
+c:\users\asus\documents\visual studio 2017\Projects\AkGida_MyInfo\AkGida_MyInfo\bin\System.Web.Optimization.dll
+c:\users\asus\documents\visual studio 2017\Projects\AkGida_MyInfo\AkGida_MyInfo\bin\System.Web.Razor.dll
+c:\users\asus\documents\visual studio 2017\Projects\AkGida_MyInfo\AkGida_MyInfo\bin\System.Web.WebPages.Deployment.dll
+c:\users\asus\documents\visual studio 2017\Projects\AkGida_MyInfo\AkGida_MyInfo\bin\System.Web.WebPages.dll
+c:\users\asus\documents\visual studio 2017\Projects\AkGida_MyInfo\AkGida_MyInfo\bin\System.Web.WebPages.Razor.dll
+c:\users\asus\documents\visual studio 2017\Projects\AkGida_MyInfo\AkGida_MyInfo\bin\WebGrease.dll
+c:\users\asus\documents\visual studio 2017\Projects\AkGida_MyInfo\AkGida_MyInfo\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+c:\users\asus\documents\visual studio 2017\Projects\AkGida_MyInfo\AkGida_MyInfo\bin\System.Web.Helpers.xml
+c:\users\asus\documents\visual studio 2017\Projects\AkGida_MyInfo\AkGida_MyInfo\bin\System.Web.Mvc.xml
+c:\users\asus\documents\visual studio 2017\Projects\AkGida_MyInfo\AkGida_MyInfo\bin\System.Web.Optimization.xml
+c:\users\asus\documents\visual studio 2017\Projects\AkGida_MyInfo\AkGida_MyInfo\bin\System.Web.Razor.xml
+c:\users\asus\documents\visual studio 2017\Projects\AkGida_MyInfo\AkGida_MyInfo\bin\System.Web.WebPages.xml
+c:\users\asus\documents\visual studio 2017\Projects\AkGida_MyInfo\AkGida_MyInfo\bin\System.Web.WebPages.Deployment.xml
+c:\users\asus\documents\visual studio 2017\Projects\AkGida_MyInfo\AkGida_MyInfo\bin\System.Web.WebPages.Razor.xml
+c:\users\asus\documents\visual studio 2017\Projects\AkGida_MyInfo\AkGida_MyInfo\bin\Antlr3.Runtime.pdb
+c:\users\asus\documents\visual studio 2017\Projects\AkGida_MyInfo\AkGida_MyInfo\bin\Newtonsoft.Json.xml
+c:\users\asus\documents\visual studio 2017\Projects\AkGida_MyInfo\AkGida_MyInfo\bin\Microsoft.ApplicationInsights.xml
+c:\users\asus\documents\visual studio 2017\Projects\AkGida_MyInfo\AkGida_MyInfo\bin\Microsoft.AI.DependencyCollector.xml
+c:\users\asus\documents\visual studio 2017\Projects\AkGida_MyInfo\AkGida_MyInfo\bin\Microsoft.AI.ServerTelemetryChannel.xml
+c:\users\asus\documents\visual studio 2017\Projects\AkGida_MyInfo\AkGida_MyInfo\bin\Microsoft.AI.WindowsServer.xml
+c:\users\asus\documents\visual studio 2017\Projects\AkGida_MyInfo\AkGida_MyInfo\bin\Microsoft.AI.Web.xml
+c:\users\asus\documents\visual studio 2017\Projects\AkGida_MyInfo\AkGida_MyInfo\bin\tr\System.Web.Helpers.resources.dll
+c:\users\asus\documents\visual studio 2017\Projects\AkGida_MyInfo\AkGida_MyInfo\bin\tr\System.Web.Mvc.resources.dll
+c:\users\asus\documents\visual studio 2017\Projects\AkGida_MyInfo\AkGida_MyInfo\bin\tr\System.Web.Optimization.resources.dll
+c:\users\asus\documents\visual studio 2017\Projects\AkGida_MyInfo\AkGida_MyInfo\bin\tr\System.Web.Razor.resources.dll
+c:\users\asus\documents\visual studio 2017\Projects\AkGida_MyInfo\AkGida_MyInfo\bin\tr\System.Web.WebPages.resources.dll
+c:\users\asus\documents\visual studio 2017\Projects\AkGida_MyInfo\AkGida_MyInfo\bin\tr\System.Web.WebPages.Deployment.resources.dll
+c:\users\asus\documents\visual studio 2017\Projects\AkGida_MyInfo\AkGida_MyInfo\bin\tr\System.Web.WebPages.Razor.resources.dll
+c:\users\asus\documents\visual studio 2017\Projects\AkGida_MyInfo\AkGida_MyInfo\obj\Debug\AkGida_MyInfo.csprojResolveAssemblyReference.cache
+c:\users\asus\documents\visual studio 2017\Projects\AkGida_MyInfo\AkGida_MyInfo\obj\Debug\AkGida_MyInfo.dll
+c:\users\asus\documents\visual studio 2017\Projects\AkGida_MyInfo\AkGida_MyInfo\obj\Debug\AkGida_MyInfo.pdb
+C:\Users\admelif\Desktop\codes\AkGida_MyInfo\AkGida_MyInfo\bin\ApplicationInsights.config
+C:\Users\admelif\Desktop\codes\AkGida_MyInfo\AkGida_MyInfo\bin\roslyn\csc.exe
+C:\Users\admelif\Desktop\codes\AkGida_MyInfo\AkGida_MyInfo\bin\roslyn\csc.exe.config
+C:\Users\admelif\Desktop\codes\AkGida_MyInfo\AkGida_MyInfo\bin\roslyn\csc.rsp
+C:\Users\admelif\Desktop\codes\AkGida_MyInfo\AkGida_MyInfo\bin\roslyn\csi.exe
+C:\Users\admelif\Desktop\codes\AkGida_MyInfo\AkGida_MyInfo\bin\roslyn\csi.rsp
+C:\Users\admelif\Desktop\codes\AkGida_MyInfo\AkGida_MyInfo\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+C:\Users\admelif\Desktop\codes\AkGida_MyInfo\AkGida_MyInfo\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+C:\Users\admelif\Desktop\codes\AkGida_MyInfo\AkGida_MyInfo\bin\roslyn\Microsoft.CodeAnalysis.CSharp.Scripting.dll
+C:\Users\admelif\Desktop\codes\AkGida_MyInfo\AkGida_MyInfo\bin\roslyn\Microsoft.CodeAnalysis.dll
+C:\Users\admelif\Desktop\codes\AkGida_MyInfo\AkGida_MyInfo\bin\roslyn\Microsoft.CodeAnalysis.Scripting.dll
+C:\Users\admelif\Desktop\codes\AkGida_MyInfo\AkGida_MyInfo\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+C:\Users\admelif\Desktop\codes\AkGida_MyInfo\AkGida_MyInfo\bin\roslyn\Microsoft.CSharp.Core.targets
+C:\Users\admelif\Desktop\codes\AkGida_MyInfo\AkGida_MyInfo\bin\roslyn\Microsoft.DiaSymReader.Native.amd64.dll
+C:\Users\admelif\Desktop\codes\AkGida_MyInfo\AkGida_MyInfo\bin\roslyn\Microsoft.DiaSymReader.Native.x86.dll
+C:\Users\admelif\Desktop\codes\AkGida_MyInfo\AkGida_MyInfo\bin\roslyn\Microsoft.VisualBasic.Core.targets
+C:\Users\admelif\Desktop\codes\AkGida_MyInfo\AkGida_MyInfo\bin\roslyn\System.AppContext.dll
+C:\Users\admelif\Desktop\codes\AkGida_MyInfo\AkGida_MyInfo\bin\roslyn\System.Collections.Immutable.dll
+C:\Users\admelif\Desktop\codes\AkGida_MyInfo\AkGida_MyInfo\bin\roslyn\System.Diagnostics.StackTrace.dll
+C:\Users\admelif\Desktop\codes\AkGida_MyInfo\AkGida_MyInfo\bin\roslyn\System.IO.FileSystem.dll
+C:\Users\admelif\Desktop\codes\AkGida_MyInfo\AkGida_MyInfo\bin\roslyn\System.IO.FileSystem.Primitives.dll
+C:\Users\admelif\Desktop\codes\AkGida_MyInfo\AkGida_MyInfo\bin\roslyn\System.Reflection.Metadata.dll
+C:\Users\admelif\Desktop\codes\AkGida_MyInfo\AkGida_MyInfo\bin\roslyn\vbc.exe
+C:\Users\admelif\Desktop\codes\AkGida_MyInfo\AkGida_MyInfo\bin\roslyn\vbc.exe.config
+C:\Users\admelif\Desktop\codes\AkGida_MyInfo\AkGida_MyInfo\bin\roslyn\vbc.rsp
+C:\Users\admelif\Desktop\codes\AkGida_MyInfo\AkGida_MyInfo\bin\roslyn\VBCSCompiler.exe
+C:\Users\admelif\Desktop\codes\AkGida_MyInfo\AkGida_MyInfo\bin\roslyn\VBCSCompiler.exe.config
+C:\Users\admelif\Desktop\codes\AkGida_MyInfo\AkGida_MyInfo\bin\AkGida_MyInfo.dll.config
+C:\Users\admelif\Desktop\codes\AkGida_MyInfo\AkGida_MyInfo\bin\AkGida_MyInfo.dll
+C:\Users\admelif\Desktop\codes\AkGida_MyInfo\AkGida_MyInfo\bin\AkGida_MyInfo.pdb
+C:\Users\admelif\Desktop\codes\AkGida_MyInfo\AkGida_MyInfo\bin\Antlr3.Runtime.dll
+C:\Users\admelif\Desktop\codes\AkGida_MyInfo\AkGida_MyInfo\bin\Microsoft.AI.Agent.Intercept.dll
+C:\Users\admelif\Desktop\codes\AkGida_MyInfo\AkGida_MyInfo\bin\Microsoft.AI.DependencyCollector.dll
+C:\Users\admelif\Desktop\codes\AkGida_MyInfo\AkGida_MyInfo\bin\Microsoft.AI.PerfCounterCollector.dll
+C:\Users\admelif\Desktop\codes\AkGida_MyInfo\AkGida_MyInfo\bin\Microsoft.AI.ServerTelemetryChannel.dll
+C:\Users\admelif\Desktop\codes\AkGida_MyInfo\AkGida_MyInfo\bin\Microsoft.AI.Web.dll
+C:\Users\admelif\Desktop\codes\AkGida_MyInfo\AkGida_MyInfo\bin\Microsoft.AI.WindowsServer.dll
+C:\Users\admelif\Desktop\codes\AkGida_MyInfo\AkGida_MyInfo\bin\Microsoft.ApplicationInsights.dll
+C:\Users\admelif\Desktop\codes\AkGida_MyInfo\AkGida_MyInfo\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+C:\Users\admelif\Desktop\codes\AkGida_MyInfo\AkGida_MyInfo\bin\Microsoft.Web.Infrastructure.dll
+C:\Users\admelif\Desktop\codes\AkGida_MyInfo\AkGida_MyInfo\bin\Newtonsoft.Json.dll
+C:\Users\admelif\Desktop\codes\AkGida_MyInfo\AkGida_MyInfo\bin\System.Web.Helpers.dll
+C:\Users\admelif\Desktop\codes\AkGida_MyInfo\AkGida_MyInfo\bin\System.Web.Mvc.dll
+C:\Users\admelif\Desktop\codes\AkGida_MyInfo\AkGida_MyInfo\bin\System.Web.Optimization.dll
+C:\Users\admelif\Desktop\codes\AkGida_MyInfo\AkGida_MyInfo\bin\System.Web.Razor.dll
+C:\Users\admelif\Desktop\codes\AkGida_MyInfo\AkGida_MyInfo\bin\System.Web.WebPages.Deployment.dll
+C:\Users\admelif\Desktop\codes\AkGida_MyInfo\AkGida_MyInfo\bin\System.Web.WebPages.dll
+C:\Users\admelif\Desktop\codes\AkGida_MyInfo\AkGida_MyInfo\bin\System.Web.WebPages.Razor.dll
+C:\Users\admelif\Desktop\codes\AkGida_MyInfo\AkGida_MyInfo\bin\WebGrease.dll
+C:\Users\admelif\Desktop\codes\AkGida_MyInfo\AkGida_MyInfo\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+C:\Users\admelif\Desktop\codes\AkGida_MyInfo\AkGida_MyInfo\bin\System.Web.Helpers.xml
+C:\Users\admelif\Desktop\codes\AkGida_MyInfo\AkGida_MyInfo\bin\System.Web.Mvc.xml
+C:\Users\admelif\Desktop\codes\AkGida_MyInfo\AkGida_MyInfo\bin\System.Web.Optimization.xml
+C:\Users\admelif\Desktop\codes\AkGida_MyInfo\AkGida_MyInfo\bin\System.Web.Razor.xml
+C:\Users\admelif\Desktop\codes\AkGida_MyInfo\AkGida_MyInfo\bin\System.Web.WebPages.xml
+C:\Users\admelif\Desktop\codes\AkGida_MyInfo\AkGida_MyInfo\bin\System.Web.WebPages.Deployment.xml
+C:\Users\admelif\Desktop\codes\AkGida_MyInfo\AkGida_MyInfo\bin\System.Web.WebPages.Razor.xml
+C:\Users\admelif\Desktop\codes\AkGida_MyInfo\AkGida_MyInfo\bin\Antlr3.Runtime.pdb
+C:\Users\admelif\Desktop\codes\AkGida_MyInfo\AkGida_MyInfo\bin\Newtonsoft.Json.xml
+C:\Users\admelif\Desktop\codes\AkGida_MyInfo\AkGida_MyInfo\bin\Microsoft.ApplicationInsights.xml
+C:\Users\admelif\Desktop\codes\AkGida_MyInfo\AkGida_MyInfo\bin\Microsoft.AI.DependencyCollector.xml
+C:\Users\admelif\Desktop\codes\AkGida_MyInfo\AkGida_MyInfo\bin\Microsoft.AI.ServerTelemetryChannel.xml
+C:\Users\admelif\Desktop\codes\AkGida_MyInfo\AkGida_MyInfo\bin\Microsoft.AI.WindowsServer.xml
+C:\Users\admelif\Desktop\codes\AkGida_MyInfo\AkGida_MyInfo\bin\Microsoft.AI.Web.xml
+C:\Users\admelif\Desktop\codes\AkGida_MyInfo\AkGida_MyInfo\bin\tr\System.Web.Helpers.resources.dll
+C:\Users\admelif\Desktop\codes\AkGida_MyInfo\AkGida_MyInfo\bin\tr\System.Web.Mvc.resources.dll
+C:\Users\admelif\Desktop\codes\AkGida_MyInfo\AkGida_MyInfo\bin\tr\System.Web.Optimization.resources.dll
+C:\Users\admelif\Desktop\codes\AkGida_MyInfo\AkGida_MyInfo\bin\tr\System.Web.Razor.resources.dll
+C:\Users\admelif\Desktop\codes\AkGida_MyInfo\AkGida_MyInfo\bin\tr\System.Web.WebPages.resources.dll
+C:\Users\admelif\Desktop\codes\AkGida_MyInfo\AkGida_MyInfo\bin\tr\System.Web.WebPages.Deployment.resources.dll
+C:\Users\admelif\Desktop\codes\AkGida_MyInfo\AkGida_MyInfo\bin\tr\System.Web.WebPages.Razor.resources.dll
+C:\Users\admelif\Desktop\codes\AkGida_MyInfo\AkGida_MyInfo\obj\Debug\AkGida_MyInfo.csprojAssemblyReference.cache
+C:\Users\admelif\Desktop\codes\AkGida_MyInfo\AkGida_MyInfo\obj\Debug\AkGida_MyInfo.csproj.CoreCompileInputs.cache
+C:\Users\admelif\Desktop\codes\AkGida_MyInfo\AkGida_MyInfo\obj\Debug\AkGida_MyInfo.csproj.CopyComplete
+C:\Users\admelif\Desktop\codes\AkGida_MyInfo\AkGida_MyInfo\obj\Debug\AkGida_MyInfo.dll
+C:\Users\admelif\Desktop\codes\AkGida_MyInfo\AkGida_MyInfo\obj\Debug\AkGida_MyInfo.pdb
+C:\Users\admelif\Desktop\codes\AkGida_MyInfo\AkGida_MyInfo\bin\EntityFramework.dll
+C:\Users\admelif\Desktop\codes\AkGida_MyInfo\AkGida_MyInfo\bin\EntityFramework.SqlServer.dll
+C:\Users\admelif\Desktop\codes\AkGida_MyInfo\AkGida_MyInfo\bin\EntityFramework.xml
+C:\Users\admelif\Desktop\codes\AkGida_MyInfo\AkGida_MyInfo\bin\EntityFramework.SqlServer.xml
+C:\Users\elif.aytac\Desktop\codes\AkGida_MyInfo\AkGida_MyInfo\bin\ApplicationInsights.config
+C:\Users\elif.aytac\Desktop\codes\AkGida_MyInfo\AkGida_MyInfo\bin\roslyn\csc.exe
+C:\Users\elif.aytac\Desktop\codes\AkGida_MyInfo\AkGida_MyInfo\bin\roslyn\csc.exe.config
+C:\Users\elif.aytac\Desktop\codes\AkGida_MyInfo\AkGida_MyInfo\bin\roslyn\csc.rsp
+C:\Users\elif.aytac\Desktop\codes\AkGida_MyInfo\AkGida_MyInfo\bin\roslyn\csi.exe
+C:\Users\elif.aytac\Desktop\codes\AkGida_MyInfo\AkGida_MyInfo\bin\roslyn\csi.rsp
+C:\Users\elif.aytac\Desktop\codes\AkGida_MyInfo\AkGida_MyInfo\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+C:\Users\elif.aytac\Desktop\codes\AkGida_MyInfo\AkGida_MyInfo\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+C:\Users\elif.aytac\Desktop\codes\AkGida_MyInfo\AkGida_MyInfo\bin\roslyn\Microsoft.CodeAnalysis.CSharp.Scripting.dll
+C:\Users\elif.aytac\Desktop\codes\AkGida_MyInfo\AkGida_MyInfo\bin\roslyn\Microsoft.CodeAnalysis.dll
+C:\Users\elif.aytac\Desktop\codes\AkGida_MyInfo\AkGida_MyInfo\bin\roslyn\Microsoft.CodeAnalysis.Scripting.dll
+C:\Users\elif.aytac\Desktop\codes\AkGida_MyInfo\AkGida_MyInfo\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+C:\Users\elif.aytac\Desktop\codes\AkGida_MyInfo\AkGida_MyInfo\bin\roslyn\Microsoft.CSharp.Core.targets
+C:\Users\elif.aytac\Desktop\codes\AkGida_MyInfo\AkGida_MyInfo\bin\roslyn\Microsoft.DiaSymReader.Native.amd64.dll
+C:\Users\elif.aytac\Desktop\codes\AkGida_MyInfo\AkGida_MyInfo\bin\roslyn\Microsoft.DiaSymReader.Native.x86.dll
+C:\Users\elif.aytac\Desktop\codes\AkGida_MyInfo\AkGida_MyInfo\bin\roslyn\Microsoft.VisualBasic.Core.targets
+C:\Users\elif.aytac\Desktop\codes\AkGida_MyInfo\AkGida_MyInfo\bin\roslyn\System.AppContext.dll
+C:\Users\elif.aytac\Desktop\codes\AkGida_MyInfo\AkGida_MyInfo\bin\roslyn\System.Collections.Immutable.dll
+C:\Users\elif.aytac\Desktop\codes\AkGida_MyInfo\AkGida_MyInfo\bin\roslyn\System.Diagnostics.StackTrace.dll
+C:\Users\elif.aytac\Desktop\codes\AkGida_MyInfo\AkGida_MyInfo\bin\roslyn\System.IO.FileSystem.dll
+C:\Users\elif.aytac\Desktop\codes\AkGida_MyInfo\AkGida_MyInfo\bin\roslyn\System.IO.FileSystem.Primitives.dll
+C:\Users\elif.aytac\Desktop\codes\AkGida_MyInfo\AkGida_MyInfo\bin\roslyn\System.Reflection.Metadata.dll
+C:\Users\elif.aytac\Desktop\codes\AkGida_MyInfo\AkGida_MyInfo\bin\roslyn\vbc.exe
+C:\Users\elif.aytac\Desktop\codes\AkGida_MyInfo\AkGida_MyInfo\bin\roslyn\vbc.exe.config
+C:\Users\elif.aytac\Desktop\codes\AkGida_MyInfo\AkGida_MyInfo\bin\roslyn\vbc.rsp
+C:\Users\elif.aytac\Desktop\codes\AkGida_MyInfo\AkGida_MyInfo\bin\roslyn\VBCSCompiler.exe
+C:\Users\elif.aytac\Desktop\codes\AkGida_MyInfo\AkGida_MyInfo\bin\roslyn\VBCSCompiler.exe.config
+C:\Users\elif.aytac\Desktop\codes\AkGida_MyInfo\AkGida_MyInfo\bin\AkGida_MyInfo.dll.config
+C:\Users\elif.aytac\Desktop\codes\AkGida_MyInfo\AkGida_MyInfo\bin\AkGida_MyInfo.dll
+C:\Users\elif.aytac\Desktop\codes\AkGida_MyInfo\AkGida_MyInfo\bin\AkGida_MyInfo.pdb
+C:\Users\elif.aytac\Desktop\codes\AkGida_MyInfo\AkGida_MyInfo\bin\Antlr3.Runtime.dll
+C:\Users\elif.aytac\Desktop\codes\AkGida_MyInfo\AkGida_MyInfo\bin\EntityFramework.dll
+C:\Users\elif.aytac\Desktop\codes\AkGida_MyInfo\AkGida_MyInfo\bin\EntityFramework.SqlServer.dll
+C:\Users\elif.aytac\Desktop\codes\AkGida_MyInfo\AkGida_MyInfo\bin\Microsoft.AI.Agent.Intercept.dll
+C:\Users\elif.aytac\Desktop\codes\AkGida_MyInfo\AkGida_MyInfo\bin\Microsoft.AI.DependencyCollector.dll
+C:\Users\elif.aytac\Desktop\codes\AkGida_MyInfo\AkGida_MyInfo\bin\Microsoft.AI.PerfCounterCollector.dll
+C:\Users\elif.aytac\Desktop\codes\AkGida_MyInfo\AkGida_MyInfo\bin\Microsoft.AI.ServerTelemetryChannel.dll
+C:\Users\elif.aytac\Desktop\codes\AkGida_MyInfo\AkGida_MyInfo\bin\Microsoft.AI.Web.dll
+C:\Users\elif.aytac\Desktop\codes\AkGida_MyInfo\AkGida_MyInfo\bin\Microsoft.AI.WindowsServer.dll
+C:\Users\elif.aytac\Desktop\codes\AkGida_MyInfo\AkGida_MyInfo\bin\Microsoft.ApplicationInsights.dll
+C:\Users\elif.aytac\Desktop\codes\AkGida_MyInfo\AkGida_MyInfo\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+C:\Users\elif.aytac\Desktop\codes\AkGida_MyInfo\AkGida_MyInfo\bin\Microsoft.Web.Infrastructure.dll
+C:\Users\elif.aytac\Desktop\codes\AkGida_MyInfo\AkGida_MyInfo\bin\Newtonsoft.Json.dll
+C:\Users\elif.aytac\Desktop\codes\AkGida_MyInfo\AkGida_MyInfo\bin\System.Web.Helpers.dll
+C:\Users\elif.aytac\Desktop\codes\AkGida_MyInfo\AkGida_MyInfo\bin\System.Web.Mvc.dll
+C:\Users\elif.aytac\Desktop\codes\AkGida_MyInfo\AkGida_MyInfo\bin\System.Web.Optimization.dll
+C:\Users\elif.aytac\Desktop\codes\AkGida_MyInfo\AkGida_MyInfo\bin\System.Web.Razor.dll
+C:\Users\elif.aytac\Desktop\codes\AkGida_MyInfo\AkGida_MyInfo\bin\System.Web.WebPages.Deployment.dll
+C:\Users\elif.aytac\Desktop\codes\AkGida_MyInfo\AkGida_MyInfo\bin\System.Web.WebPages.dll
+C:\Users\elif.aytac\Desktop\codes\AkGida_MyInfo\AkGida_MyInfo\bin\System.Web.WebPages.Razor.dll
+C:\Users\elif.aytac\Desktop\codes\AkGida_MyInfo\AkGida_MyInfo\bin\WebGrease.dll
+C:\Users\elif.aytac\Desktop\codes\AkGida_MyInfo\AkGida_MyInfo\bin\EntityFramework.xml
+C:\Users\elif.aytac\Desktop\codes\AkGida_MyInfo\AkGida_MyInfo\bin\EntityFramework.SqlServer.xml
+C:\Users\elif.aytac\Desktop\codes\AkGida_MyInfo\AkGida_MyInfo\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+C:\Users\elif.aytac\Desktop\codes\AkGida_MyInfo\AkGida_MyInfo\bin\System.Web.Helpers.xml
+C:\Users\elif.aytac\Desktop\codes\AkGida_MyInfo\AkGida_MyInfo\bin\System.Web.Mvc.xml
+C:\Users\elif.aytac\Desktop\codes\AkGida_MyInfo\AkGida_MyInfo\bin\System.Web.Optimization.xml
+C:\Users\elif.aytac\Desktop\codes\AkGida_MyInfo\AkGida_MyInfo\bin\System.Web.Razor.xml
+C:\Users\elif.aytac\Desktop\codes\AkGida_MyInfo\AkGida_MyInfo\bin\System.Web.WebPages.xml
+C:\Users\elif.aytac\Desktop\codes\AkGida_MyInfo\AkGida_MyInfo\bin\System.Web.WebPages.Deployment.xml
+C:\Users\elif.aytac\Desktop\codes\AkGida_MyInfo\AkGida_MyInfo\bin\System.Web.WebPages.Razor.xml
+C:\Users\elif.aytac\Desktop\codes\AkGida_MyInfo\AkGida_MyInfo\bin\Antlr3.Runtime.pdb
+C:\Users\elif.aytac\Desktop\codes\AkGida_MyInfo\AkGida_MyInfo\bin\Newtonsoft.Json.xml
+C:\Users\elif.aytac\Desktop\codes\AkGida_MyInfo\AkGida_MyInfo\bin\Microsoft.ApplicationInsights.xml
+C:\Users\elif.aytac\Desktop\codes\AkGida_MyInfo\AkGida_MyInfo\bin\Microsoft.AI.DependencyCollector.xml
+C:\Users\elif.aytac\Desktop\codes\AkGida_MyInfo\AkGida_MyInfo\bin\Microsoft.AI.ServerTelemetryChannel.xml
+C:\Users\elif.aytac\Desktop\codes\AkGida_MyInfo\AkGida_MyInfo\bin\Microsoft.AI.WindowsServer.xml
+C:\Users\elif.aytac\Desktop\codes\AkGida_MyInfo\AkGida_MyInfo\bin\Microsoft.AI.Web.xml
+C:\Users\elif.aytac\Desktop\codes\AkGida_MyInfo\AkGida_MyInfo\bin\tr\System.Web.Helpers.resources.dll
+C:\Users\elif.aytac\Desktop\codes\AkGida_MyInfo\AkGida_MyInfo\bin\tr\System.Web.Mvc.resources.dll
+C:\Users\elif.aytac\Desktop\codes\AkGida_MyInfo\AkGida_MyInfo\bin\tr\System.Web.Optimization.resources.dll
+C:\Users\elif.aytac\Desktop\codes\AkGida_MyInfo\AkGida_MyInfo\bin\tr\System.Web.Razor.resources.dll
+C:\Users\elif.aytac\Desktop\codes\AkGida_MyInfo\AkGida_MyInfo\bin\tr\System.Web.WebPages.resources.dll
+C:\Users\elif.aytac\Desktop\codes\AkGida_MyInfo\AkGida_MyInfo\bin\tr\System.Web.WebPages.Deployment.resources.dll
+C:\Users\elif.aytac\Desktop\codes\AkGida_MyInfo\AkGida_MyInfo\bin\tr\System.Web.WebPages.Razor.resources.dll
+C:\Users\elif.aytac\Desktop\codes\AkGida_MyInfo\AkGida_MyInfo\obj\Debug\AkGida_MyInfo.csprojAssemblyReference.cache
+C:\Users\elif.aytac\Desktop\codes\AkGida_MyInfo\AkGida_MyInfo\obj\Debug\AkGida_MyInfo.csproj.CoreCompileInputs.cache
+C:\Users\elif.aytac\Desktop\codes\AkGida_MyInfo\AkGida_MyInfo\obj\Debug\AkGida_MyInfo.csproj.CopyComplete
+C:\Users\elif.aytac\Desktop\codes\AkGida_MyInfo\AkGida_MyInfo\obj\Debug\AkGida_MyInfo.dll
+C:\Users\elif.aytac\Desktop\codes\AkGida_MyInfo\AkGida_MyInfo\obj\Debug\AkGida_MyInfo.pdb
+C:\Users\elif.aytac\Desktop\codes\AkGida_MyInfo\AkGida_MyInfo\bin\Google.Protobuf.dll
+C:\Users\elif.aytac\Desktop\codes\AkGida_MyInfo\AkGida_MyInfo\bin\MySql.Data.dll
+C:\Users\elif.aytac\Desktop\codes\AkGida_MyInfo\AkGida_MyInfo\bin\MySql.Data.Entity.EF6.dll
+C:\Users\elif.aytac\Desktop\codes\AkGida_MyInfo\AkGida_MyInfo\bin\Google.Protobuf.xml
+C:\Users\elif.aytac\Desktop\codes\AkGida_MyInfo\AkGida_MyInfo\bin\MySql.Data.xml
+C:\Users\elif.aytac\Desktop\codes\AkGida_MyInfo\AkGida_MyInfo\bin\MySql.Data.Entity.EF6.xml

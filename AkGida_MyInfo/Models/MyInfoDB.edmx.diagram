@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="8569eb95f7e14acd83f982d94eff2cbf" Name="Diagram1">
+        <EntityTypeShape EntityType="AkGida_MyInfoModel.Companies" Width="1.5" PointX="0.75" PointY="5.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="AkGida_MyInfoModel.CompanyDuyuru" Width="1.5" PointX="3" PointY="2.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="AkGida_MyInfoModel.Departments" Width="1.5" PointX="3" PointY="5.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="AkGida_MyInfoModel.Duyurular" Width="1.5" PointX="0.75" PointY="1.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="AkGida_MyInfoModel.Menu" Width="1.5" PointX="5.25" PointY="8.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="AkGida_MyInfoModel.Personels" Width="1.5" PointX="5.25" PointY="5.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="AkGida_MyInfoModel.Slider" Width="1.5" PointX="5.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="AkGida_MyInfoModel.sysdiagrams" Width="1.5" PointX="7.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="AkGida_MyInfoModel.YemekSirketi" Width="1.5" PointX="3" PointY="10" IsExpanded="true" />
+        <AssociationConnector Association="AkGida_MyInfoModel.FK_CompanyDuyuru_Companies" ManuallyRouted="false" />
+        <AssociationConnector Association="AkGida_MyInfoModel.FK_Departments_Companies" ManuallyRouted="false" />
+        <AssociationConnector Association="AkGida_MyInfoModel.FK_YemekSirketi_Companies" ManuallyRouted="false" />
+        <AssociationConnector Association="AkGida_MyInfoModel.FK_CompanyDuyuru_Duyurular" ManuallyRouted="false" />
+        <AssociationConnector Association="AkGida_MyInfoModel.FK_Personels_Departments" ManuallyRouted="false" />
+        <AssociationConnector Association="AkGida_MyInfoModel.FK_Menu_YemekSirketi" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

@@ -1,0 +1,568 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="AkGida_MyInfoModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Companies">
+          <Key>
+            <PropertyRef Name="CompanyID" />
+          </Key>
+          <Property Name="CompanyID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="CompanyName" Type="nvarchar" MaxLength="150" />
+          <Property Name="CompanyAddress" Type="nvarchar" MaxLength="300" />
+          <Property Name="CompanyType" Type="nvarchar" MaxLength="30" />
+          <Property Name="CompanyTel" Type="nvarchar" MaxLength="13" />
+        </EntityType>
+        <EntityType Name="CompanyDuyuru">
+          <Key>
+            <PropertyRef Name="CompanyDuyuruID" />
+          </Key>
+          <Property Name="CompanyDuyuruID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="CompanyID" Type="int" />
+          <Property Name="DuyuruID" Type="int" />
+        </EntityType>
+        <EntityType Name="Departments">
+          <Key>
+            <PropertyRef Name="DepartmentID" />
+          </Key>
+          <Property Name="DepartmentID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="DepartmentName" Type="varchar" MaxLength="50" />
+          <Property Name="CompanyID" Type="int" />
+        </EntityType>
+        <EntityType Name="Duyurular">
+          <Key>
+            <PropertyRef Name="DuyuruID" />
+          </Key>
+          <Property Name="DuyuruID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Baslik" Type="nvarchar" MaxLength="100" />
+          <Property Name="Icerik" Type="nvarchar" MaxLength="400" />
+          <Property Name="DuyuruTarih" Type="datetime" />
+        </EntityType>
+        <EntityType Name="Menu">
+          <Key>
+            <PropertyRef Name="MenuID" />
+          </Key>
+          <Property Name="MenuID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="YemekSirketiID" Type="int" />
+          <Property Name="Tarih" Type="datetime" />
+          <Property Name="Corba1" Type="varchar" MaxLength="50" />
+          <Property Name="Corba2" Type="varchar" MaxLength="50" />
+          <Property Name="AnaYemek1" Type="varchar" MaxLength="50" />
+          <Property Name="AnaYemek2" Type="varchar" MaxLength="50" />
+          <Property Name="AnaYemek3" Type="varchar" MaxLength="50" />
+          <Property Name="AnaYemek4" Type="varchar" MaxLength="50" />
+          <Property Name="Ekstra" Type="varchar" MaxLength="50" />
+          <Property Name="Pilav" Type="varchar" MaxLength="50" />
+          <Property Name="Makarna" Type="varchar" MaxLength="50" />
+          <Property Name="Meyve" Type="varchar" MaxLength="50" />
+          <Property Name="Salata" Type="varchar" MaxLength="50" />
+          <Property Name="Fiyat" Type="money" />
+        </EntityType>
+        <EntityType Name="Personels">
+          <Key>
+            <PropertyRef Name="PersonelID" />
+          </Key>
+          <Property Name="PersonelID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="PersonelName" Type="varchar" MaxLength="50" />
+          <Property Name="PersonelSurname" Type="varchar" MaxLength="50" />
+          <Property Name="PersonelTel" Type="varchar" MaxLength="13" />
+          <Property Name="PersonelDahiliNo" Type="varchar" MaxLength="4" />
+          <Property Name="PersonelEposta" Type="varchar" MaxLength="50" />
+          <Property Name="DepartmentID" Type="int" />
+          <Property Name="Yetki" Type="int" />
+        </EntityType>
+        <EntityType Name="Slider">
+          <Key>
+            <PropertyRef Name="SliderID" />
+          </Key>
+          <Property Name="SliderID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="SliderFoto" Type="image" />
+          <Property Name="SliderText" Type="nvarchar" MaxLength="350" />
+          <Property Name="BaslangicTarihi" Type="datetime" />
+          <Property Name="BitisTarihi" Type="datetime" />
+          <Property Name="ResimYolu" Type="nvarchar" MaxLength="150" />
+        </EntityType>
+        <EntityType Name="sysdiagrams">
+          <Key>
+            <PropertyRef Name="diagram_id" />
+          </Key>
+          <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
+          <Property Name="principal_id" Type="int" Nullable="false" />
+          <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="version" Type="int" />
+          <Property Name="definition" Type="varbinary(max)" />
+        </EntityType>
+        <EntityType Name="YemekSirketi">
+          <Key>
+            <PropertyRef Name="YemekSirketiID" />
+          </Key>
+          <Property Name="YemekSirketiID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="YemekSirketiAdi" Type="nvarchar" MaxLength="70" />
+          <Property Name="CompanyID" Type="int" />
+        </EntityType>
+        <Association Name="FK_CompanyDuyuru_Companies">
+          <End Role="Companies" Type="Self.Companies" Multiplicity="0..1" />
+          <End Role="CompanyDuyuru" Type="Self.CompanyDuyuru" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Companies">
+              <PropertyRef Name="CompanyID" />
+            </Principal>
+            <Dependent Role="CompanyDuyuru">
+              <PropertyRef Name="CompanyID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_CompanyDuyuru_Duyurular">
+          <End Role="Duyurular" Type="Self.Duyurular" Multiplicity="0..1" />
+          <End Role="CompanyDuyuru" Type="Self.CompanyDuyuru" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Duyurular">
+              <PropertyRef Name="DuyuruID" />
+            </Principal>
+            <Dependent Role="CompanyDuyuru">
+              <PropertyRef Name="DuyuruID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Departments_Companies">
+          <End Role="Companies" Type="Self.Companies" Multiplicity="0..1" />
+          <End Role="Departments" Type="Self.Departments" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Companies">
+              <PropertyRef Name="CompanyID" />
+            </Principal>
+            <Dependent Role="Departments">
+              <PropertyRef Name="CompanyID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Menu_YemekSirketi">
+          <End Role="YemekSirketi" Type="Self.YemekSirketi" Multiplicity="0..1" />
+          <End Role="Menu" Type="Self.Menu" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="YemekSirketi">
+              <PropertyRef Name="YemekSirketiID" />
+            </Principal>
+            <Dependent Role="Menu">
+              <PropertyRef Name="YemekSirketiID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Personels_Departments">
+          <End Role="Departments" Type="Self.Departments" Multiplicity="0..1" />
+          <End Role="Personels" Type="Self.Personels" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Departments">
+              <PropertyRef Name="DepartmentID" />
+            </Principal>
+            <Dependent Role="Personels">
+              <PropertyRef Name="DepartmentID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_YemekSirketi_Companies">
+          <End Role="Companies" Type="Self.Companies" Multiplicity="0..1" />
+          <End Role="YemekSirketi" Type="Self.YemekSirketi" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Companies">
+              <PropertyRef Name="CompanyID" />
+            </Principal>
+            <Dependent Role="YemekSirketi">
+              <PropertyRef Name="CompanyID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="AkGida_MyInfoModelStoreContainer">
+          <EntitySet Name="Companies" EntityType="Self.Companies" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="CompanyDuyuru" EntityType="Self.CompanyDuyuru" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Departments" EntityType="Self.Departments" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Duyurular" EntityType="Self.Duyurular" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Menu" EntityType="Self.Menu" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Personels" EntityType="Self.Personels" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Slider" EntityType="Self.Slider" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="YemekSirketi" EntityType="Self.YemekSirketi" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK_CompanyDuyuru_Companies" Association="Self.FK_CompanyDuyuru_Companies">
+            <End Role="Companies" EntitySet="Companies" />
+            <End Role="CompanyDuyuru" EntitySet="CompanyDuyuru" />
+          </AssociationSet>
+          <AssociationSet Name="FK_CompanyDuyuru_Duyurular" Association="Self.FK_CompanyDuyuru_Duyurular">
+            <End Role="Duyurular" EntitySet="Duyurular" />
+            <End Role="CompanyDuyuru" EntitySet="CompanyDuyuru" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Departments_Companies" Association="Self.FK_Departments_Companies">
+            <End Role="Companies" EntitySet="Companies" />
+            <End Role="Departments" EntitySet="Departments" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Menu_YemekSirketi" Association="Self.FK_Menu_YemekSirketi">
+            <End Role="YemekSirketi" EntitySet="YemekSirketi" />
+            <End Role="Menu" EntitySet="Menu" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Personels_Departments" Association="Self.FK_Personels_Departments">
+            <End Role="Departments" EntitySet="Departments" />
+            <End Role="Personels" EntitySet="Personels" />
+          </AssociationSet>
+          <AssociationSet Name="FK_YemekSirketi_Companies" Association="Self.FK_YemekSirketi_Companies">
+            <End Role="Companies" EntitySet="Companies" />
+            <End Role="YemekSirketi" EntitySet="YemekSirketi" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="AkGida_MyInfoModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="Companies">
+          <Key>
+            <PropertyRef Name="CompanyID" />
+          </Key>
+          <Property Name="CompanyID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="CompanyName" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Name="CompanyAddress" Type="String" MaxLength="300" FixedLength="false" Unicode="true" />
+          <Property Name="CompanyType" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+          <Property Name="CompanyTel" Type="String" MaxLength="13" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="CompanyDuyuru" Relationship="Self.FK_CompanyDuyuru_Companies" FromRole="Companies" ToRole="CompanyDuyuru" />
+          <NavigationProperty Name="Departments" Relationship="Self.FK_Departments_Companies" FromRole="Companies" ToRole="Departments" />
+          <NavigationProperty Name="YemekSirketi" Relationship="Self.FK_YemekSirketi_Companies" FromRole="Companies" ToRole="YemekSirketi" />
+        </EntityType>
+        <EntityType Name="CompanyDuyuru">
+          <Key>
+            <PropertyRef Name="CompanyDuyuruID" />
+          </Key>
+          <Property Name="CompanyDuyuruID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="CompanyID" Type="Int32" />
+          <Property Name="DuyuruID" Type="Int32" />
+          <NavigationProperty Name="Companies" Relationship="Self.FK_CompanyDuyuru_Companies" FromRole="CompanyDuyuru" ToRole="Companies" />
+          <NavigationProperty Name="Duyurular" Relationship="Self.FK_CompanyDuyuru_Duyurular" FromRole="CompanyDuyuru" ToRole="Duyurular" />
+        </EntityType>
+        <EntityType Name="Departments">
+          <Key>
+            <PropertyRef Name="DepartmentID" />
+          </Key>
+          <Property Name="DepartmentID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="DepartmentName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="CompanyID" Type="Int32" />
+          <NavigationProperty Name="Companies" Relationship="Self.FK_Departments_Companies" FromRole="Departments" ToRole="Companies" />
+          <NavigationProperty Name="Personels" Relationship="Self.FK_Personels_Departments" FromRole="Departments" ToRole="Personels" />
+        </EntityType>
+        <EntityType Name="Duyurular">
+          <Key>
+            <PropertyRef Name="DuyuruID" />
+          </Key>
+          <Property Name="DuyuruID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Baslik" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="Icerik" Type="String" MaxLength="400" FixedLength="false" Unicode="true" />
+          <Property Name="DuyuruTarih" Type="DateTime" Precision="3" />
+          <NavigationProperty Name="CompanyDuyuru" Relationship="Self.FK_CompanyDuyuru_Duyurular" FromRole="Duyurular" ToRole="CompanyDuyuru" />
+        </EntityType>
+        <EntityType Name="Menu">
+          <Key>
+            <PropertyRef Name="MenuID" />
+          </Key>
+          <Property Name="MenuID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="YemekSirketiID" Type="Int32" />
+          <Property Name="Tarih" Type="DateTime" Precision="3" />
+          <Property Name="Corba1" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Corba2" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="AnaYemek1" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="AnaYemek2" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="AnaYemek3" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="AnaYemek4" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Ekstra" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Pilav" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Makarna" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Meyve" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Salata" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Fiyat" Type="Decimal" Precision="19" Scale="4" />
+          <NavigationProperty Name="YemekSirketi" Relationship="Self.FK_Menu_YemekSirketi" FromRole="Menu" ToRole="YemekSirketi" />
+        </EntityType>
+        <EntityType Name="Personels">
+          <Key>
+            <PropertyRef Name="PersonelID" />
+          </Key>
+          <Property Name="PersonelID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="PersonelName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="PersonelSurname" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="PersonelTel" Type="String" MaxLength="13" FixedLength="false" Unicode="false" />
+          <Property Name="PersonelDahiliNo" Type="String" MaxLength="4" FixedLength="false" Unicode="false" />
+          <Property Name="PersonelEposta" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="DepartmentID" Type="Int32" />
+          <Property Name="Yetki" Type="Int32" />
+          <NavigationProperty Name="Departments" Relationship="Self.FK_Personels_Departments" FromRole="Personels" ToRole="Departments" />
+        </EntityType>
+        <EntityType Name="Slider">
+          <Key>
+            <PropertyRef Name="SliderID" />
+          </Key>
+          <Property Name="SliderID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="SliderFoto" Type="Binary" MaxLength="Max" FixedLength="false" />
+          <Property Name="SliderText" Type="String" MaxLength="350" FixedLength="false" Unicode="true" />
+          <Property Name="BaslangicTarihi" Type="DateTime" Precision="3" />
+          <Property Name="BitisTarihi" Type="DateTime" Precision="3" />
+          <Property Name="ResimYolu" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="sysdiagrams">
+          <Key>
+            <PropertyRef Name="diagram_id" />
+          </Key>
+          <Property Name="name" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="principal_id" Type="Int32" Nullable="false" />
+          <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="version" Type="Int32" />
+          <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="YemekSirketi">
+          <Key>
+            <PropertyRef Name="YemekSirketiID" />
+          </Key>
+          <Property Name="YemekSirketiID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="YemekSirketiAdi" Type="String" MaxLength="70" FixedLength="false" Unicode="true" />
+          <Property Name="CompanyID" Type="Int32" />
+          <NavigationProperty Name="Companies" Relationship="Self.FK_YemekSirketi_Companies" FromRole="YemekSirketi" ToRole="Companies" />
+          <NavigationProperty Name="Menu" Relationship="Self.FK_Menu_YemekSirketi" FromRole="YemekSirketi" ToRole="Menu" />
+        </EntityType>
+        <Association Name="FK_CompanyDuyuru_Companies">
+          <End Role="Companies" Type="Self.Companies" Multiplicity="0..1" />
+          <End Role="CompanyDuyuru" Type="Self.CompanyDuyuru" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Companies">
+              <PropertyRef Name="CompanyID" />
+            </Principal>
+            <Dependent Role="CompanyDuyuru">
+              <PropertyRef Name="CompanyID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Departments_Companies">
+          <End Role="Companies" Type="Self.Companies" Multiplicity="0..1" />
+          <End Role="Departments" Type="Self.Departments" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Companies">
+              <PropertyRef Name="CompanyID" />
+            </Principal>
+            <Dependent Role="Departments">
+              <PropertyRef Name="CompanyID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_YemekSirketi_Companies">
+          <End Role="Companies" Type="Self.Companies" Multiplicity="0..1" />
+          <End Role="YemekSirketi" Type="Self.YemekSirketi" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Companies">
+              <PropertyRef Name="CompanyID" />
+            </Principal>
+            <Dependent Role="YemekSirketi">
+              <PropertyRef Name="CompanyID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_CompanyDuyuru_Duyurular">
+          <End Role="Duyurular" Type="Self.Duyurular" Multiplicity="0..1" />
+          <End Role="CompanyDuyuru" Type="Self.CompanyDuyuru" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Duyurular">
+              <PropertyRef Name="DuyuruID" />
+            </Principal>
+            <Dependent Role="CompanyDuyuru">
+              <PropertyRef Name="DuyuruID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Personels_Departments">
+          <End Role="Departments" Type="Self.Departments" Multiplicity="0..1" />
+          <End Role="Personels" Type="Self.Personels" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Departments">
+              <PropertyRef Name="DepartmentID" />
+            </Principal>
+            <Dependent Role="Personels">
+              <PropertyRef Name="DepartmentID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Menu_YemekSirketi">
+          <End Role="YemekSirketi" Type="Self.YemekSirketi" Multiplicity="0..1" />
+          <End Role="Menu" Type="Self.Menu" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="YemekSirketi">
+              <PropertyRef Name="YemekSirketiID" />
+            </Principal>
+            <Dependent Role="Menu">
+              <PropertyRef Name="YemekSirketiID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="AkGida_MyInfoEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Companies" EntityType="Self.Companies" />
+          <EntitySet Name="CompanyDuyuru" EntityType="Self.CompanyDuyuru" />
+          <EntitySet Name="Departments" EntityType="Self.Departments" />
+          <EntitySet Name="Duyurular" EntityType="Self.Duyurular" />
+          <EntitySet Name="Menu" EntityType="Self.Menu" />
+          <EntitySet Name="Personels" EntityType="Self.Personels" />
+          <EntitySet Name="Slider" EntityType="Self.Slider" />
+          <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" />
+          <EntitySet Name="YemekSirketi" EntityType="Self.YemekSirketi" />
+          <AssociationSet Name="FK_CompanyDuyuru_Companies" Association="Self.FK_CompanyDuyuru_Companies">
+            <End Role="Companies" EntitySet="Companies" />
+            <End Role="CompanyDuyuru" EntitySet="CompanyDuyuru" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Departments_Companies" Association="Self.FK_Departments_Companies">
+            <End Role="Companies" EntitySet="Companies" />
+            <End Role="Departments" EntitySet="Departments" />
+          </AssociationSet>
+          <AssociationSet Name="FK_YemekSirketi_Companies" Association="Self.FK_YemekSirketi_Companies">
+            <End Role="Companies" EntitySet="Companies" />
+            <End Role="YemekSirketi" EntitySet="YemekSirketi" />
+          </AssociationSet>
+          <AssociationSet Name="FK_CompanyDuyuru_Duyurular" Association="Self.FK_CompanyDuyuru_Duyurular">
+            <End Role="Duyurular" EntitySet="Duyurular" />
+            <End Role="CompanyDuyuru" EntitySet="CompanyDuyuru" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Personels_Departments" Association="Self.FK_Personels_Departments">
+            <End Role="Departments" EntitySet="Departments" />
+            <End Role="Personels" EntitySet="Personels" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Menu_YemekSirketi" Association="Self.FK_Menu_YemekSirketi">
+            <End Role="YemekSirketi" EntitySet="YemekSirketi" />
+            <End Role="Menu" EntitySet="Menu" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="AkGida_MyInfoModelStoreContainer" CdmEntityContainer="AkGida_MyInfoEntities">
+          <EntitySetMapping Name="Companies">
+            <EntityTypeMapping TypeName="AkGida_MyInfoModel.Companies">
+              <MappingFragment StoreEntitySet="Companies">
+                <ScalarProperty Name="CompanyID" ColumnName="CompanyID" />
+                <ScalarProperty Name="CompanyName" ColumnName="CompanyName" />
+                <ScalarProperty Name="CompanyAddress" ColumnName="CompanyAddress" />
+                <ScalarProperty Name="CompanyType" ColumnName="CompanyType" />
+                <ScalarProperty Name="CompanyTel" ColumnName="CompanyTel" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="CompanyDuyuru">
+            <EntityTypeMapping TypeName="AkGida_MyInfoModel.CompanyDuyuru">
+              <MappingFragment StoreEntitySet="CompanyDuyuru">
+                <ScalarProperty Name="CompanyDuyuruID" ColumnName="CompanyDuyuruID" />
+                <ScalarProperty Name="CompanyID" ColumnName="CompanyID" />
+                <ScalarProperty Name="DuyuruID" ColumnName="DuyuruID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Departments">
+            <EntityTypeMapping TypeName="AkGida_MyInfoModel.Departments">
+              <MappingFragment StoreEntitySet="Departments">
+                <ScalarProperty Name="DepartmentID" ColumnName="DepartmentID" />
+                <ScalarProperty Name="DepartmentName" ColumnName="DepartmentName" />
+                <ScalarProperty Name="CompanyID" ColumnName="CompanyID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Duyurular">
+            <EntityTypeMapping TypeName="AkGida_MyInfoModel.Duyurular">
+              <MappingFragment StoreEntitySet="Duyurular">
+                <ScalarProperty Name="DuyuruID" ColumnName="DuyuruID" />
+                <ScalarProperty Name="Baslik" ColumnName="Baslik" />
+                <ScalarProperty Name="Icerik" ColumnName="Icerik" />
+                <ScalarProperty Name="DuyuruTarih" ColumnName="DuyuruTarih" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Menu">
+            <EntityTypeMapping TypeName="AkGida_MyInfoModel.Menu">
+              <MappingFragment StoreEntitySet="Menu">
+                <ScalarProperty Name="MenuID" ColumnName="MenuID" />
+                <ScalarProperty Name="YemekSirketiID" ColumnName="YemekSirketiID" />
+                <ScalarProperty Name="Tarih" ColumnName="Tarih" />
+                <ScalarProperty Name="Corba1" ColumnName="Corba1" />
+                <ScalarProperty Name="Corba2" ColumnName="Corba2" />
+                <ScalarProperty Name="AnaYemek1" ColumnName="AnaYemek1" />
+                <ScalarProperty Name="AnaYemek2" ColumnName="AnaYemek2" />
+                <ScalarProperty Name="AnaYemek3" ColumnName="AnaYemek3" />
+                <ScalarProperty Name="AnaYemek4" ColumnName="AnaYemek4" />
+                <ScalarProperty Name="Ekstra" ColumnName="Ekstra" />
+                <ScalarProperty Name="Pilav" ColumnName="Pilav" />
+                <ScalarProperty Name="Makarna" ColumnName="Makarna" />
+                <ScalarProperty Name="Meyve" ColumnName="Meyve" />
+                <ScalarProperty Name="Salata" ColumnName="Salata" />
+                <ScalarProperty Name="Fiyat" ColumnName="Fiyat" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Personels">
+            <EntityTypeMapping TypeName="AkGida_MyInfoModel.Personels">
+              <MappingFragment StoreEntitySet="Personels">
+                <ScalarProperty Name="PersonelID" ColumnName="PersonelID" />
+                <ScalarProperty Name="PersonelName" ColumnName="PersonelName" />
+                <ScalarProperty Name="PersonelSurname" ColumnName="PersonelSurname" />
+                <ScalarProperty Name="PersonelTel" ColumnName="PersonelTel" />
+                <ScalarProperty Name="PersonelDahiliNo" ColumnName="PersonelDahiliNo" />
+                <ScalarProperty Name="PersonelEposta" ColumnName="PersonelEposta" />
+                <ScalarProperty Name="DepartmentID" ColumnName="DepartmentID" />
+                <ScalarProperty Name="Yetki" ColumnName="Yetki" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Slider">
+            <EntityTypeMapping TypeName="AkGida_MyInfoModel.Slider">
+              <MappingFragment StoreEntitySet="Slider">
+                <ScalarProperty Name="SliderID" ColumnName="SliderID" />
+                <ScalarProperty Name="SliderFoto" ColumnName="SliderFoto" />
+                <ScalarProperty Name="SliderText" ColumnName="SliderText" />
+                <ScalarProperty Name="BaslangicTarihi" ColumnName="BaslangicTarihi" />
+                <ScalarProperty Name="BitisTarihi" ColumnName="BitisTarihi" />
+                <ScalarProperty Name="ResimYolu" ColumnName="ResimYolu" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="sysdiagrams">
+            <EntityTypeMapping TypeName="AkGida_MyInfoModel.sysdiagrams">
+              <MappingFragment StoreEntitySet="sysdiagrams">
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="principal_id" ColumnName="principal_id" />
+                <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
+                <ScalarProperty Name="version" ColumnName="version" />
+                <ScalarProperty Name="definition" ColumnName="definition" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="YemekSirketi">
+            <EntityTypeMapping TypeName="AkGida_MyInfoModel.YemekSirketi">
+              <MappingFragment StoreEntitySet="YemekSirketi">
+                <ScalarProperty Name="YemekSirketiID" ColumnName="YemekSirketiID" />
+                <ScalarProperty Name="YemekSirketiAdi" ColumnName="YemekSirketiAdi" />
+                <ScalarProperty Name="CompanyID" ColumnName="CompanyID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

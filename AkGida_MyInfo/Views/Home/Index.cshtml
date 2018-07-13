@@ -1,0 +1,169 @@
+﻿@*@model IEnumerable<AkGida_MyInfo.Models.Companies>*@
+@using AkGida_MyInfo.Models
+@model List<Companies>
+
+@{
+
+    ViewBag.Title = "Ak Gıda - MyInfo";
+}
+
+
+
+<style>
+    .grid-container {
+        display: grid;
+        grid-template-columns: auto auto auto;
+        background-color: #18c1b6;
+        padding: 3px;
+        
+        
+    }
+
+    .grid-item {
+        /*background-color: rgba(255, 255, 255, 0.8);*/
+        background-color: rgb(255, 255, 255);
+        border: 1px solid rgb(24, 193, 182);
+        padding: 20px;
+        font-size: 16px;
+        text-align: center;
+        
+    }
+</style>
+
+
+
+@*<div class="jumbotron">
+
+    <div class="col-md-12">
+        <center>
+            <img src="\Assets\ak_gida_banner.jpg" />
+        </center>
+
+    </div>
+
+</div>*@
+
+
+
+@*Companies tablosunun sğtunları ekrana bastırılıyor.*@
+
+@*<div class="row">
+    @foreach (var item in Model)
+    {
+        <div class="col-md-4">
+            <h2><p align="center">@item.CompanyName</p>  </h2>
+
+            <p>
+                <b>@item.CompanyType</b> <br />
+                @item.CompanyAddress
+                <br />
+                <b>Telefon:</b> @item.CompanyTel
+            </p>
+
+            <p><a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301865">Learn more &raquo;</a></p>
+        </div>
+
+
+    }
+</div>*@
+
+
+
+<div class="grid-container">
+
+    @foreach (var item in Model)
+    {
+    <div class="grid-item">
+        
+            <h2><a href="@Url.Action("Departments", "Home" , new {companyid=item.CompanyID })">@item.CompanyName</a> </h2>
+
+            <p>
+                <b>@item.CompanyType</b> <br />
+                @item.CompanyAddress
+                <br />
+                <b>Telefon:</b> @item.CompanyTel
+            </p>
+
+            <p><a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301865">Learn more &raquo;</a></p>
+      
+    </div>
+
+    }
+
+</div>
+
+
+
+@*<div class="row">
+        <div class="col-md-4">
+            <h2><p align="center">Genel Merkez</p>  </h2>
+            <p>
+                <b>AK GIDA SAN. TİC. A.Ş.</b> <br />
+                Ofis Park Maltepe - Altayçeşme Mahallesi Çamlı
+                Sokak No: 21 Maltepe / İstanbul
+                <br />
+                <b>Telefon:</b> 0216 225 47 00
+            </p>
+            <p><a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301865">Learn more &raquo;</a></p>
+        </div>
+        <div class="col-md-4">
+            <h2> <p align="center">Sakarya/Pamukova<br />Üretim Tesisi</p></h2>
+            <p>
+                <b>AK GIDA SAN. TİC. A.Ş.</b> <br />
+                Gökgöz Köyü  Beylik yerleri mevkii 54920
+                Pamukova / Sakarya
+                <br />
+                <b>Telefon:</b> 0264 554 00 00
+            </p>
+            <p><a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301866">Learn more &raquo;</a></p>
+        </div>
+        <div class="col-md-4">
+            <h2> <p align="center">Karaman<br />Üretim Tesisi</p> </h2>
+            <p>
+                <b>AK GIDA SAN. TİC. A.Ş. Karaman Şube</b> <br />
+                Organize Sanayi Bölgesi 5.Cadde  /Karaman
+                <br />
+                <b>Telefon:</b> 0338 224 16 00
+            </p>
+            <p><a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301867">Learn more &raquo;</a></p>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-4">
+            <h2><p align="center">Lüleburgaz<br />Üretim Tesisi</p> </h2>
+            <p>
+                <b>AK GIDA SAN. TİC. A.Ş. Lüleburgaz Şube</b> <br />
+                Köyaltı iki yol arası Evren Sekiz
+                Lüleburgaz / Kırklareli
+                <br />
+                <b>Telefon:</b> 0288 443 90 70
+            </p>
+            <p><a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301865">Learn more &raquo;</a></p>
+        </div>
+        <div class="col-md-4">
+            <h2><p align="center">Kahramanmaraş<br />Üretim Tesisi</p> </h2>
+            <p>
+                <b>AK GIDA SAN. TİC. A.Ş. Kahramanmaraş Şube</b> <br />
+                Şehit Ali Mahallesi Balsuyu Bulvarı No :45
+                Kılılı Kasabası / Türkoğlu /Kahramanmaraş
+                <br />
+                <b>Telefon:</b> 0344 629 26 26
+            </p>
+            <p><a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301866">Learn more &raquo;</a></p>
+        </div>
+        <div class="col-md-4">
+            <h2><p align="center">Aydın<br />Üretim Tesisi</p> </h2>
+            <p>
+                <b>AK GIDA SAN. TİC. A.Ş. Aydın Şube</b> <br />
+                Ortaklar Organize Sanayi Bölgesi Atatürk Bulvarı
+                No:2 Ortaklar / Germencik/ Aydın
+                <br />
+                <b>Telefon:</b> 0256 577 41 70
+            </p>
+            <p><a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301867">Learn more &raquo;</a></p>
+        </div>
+    </div>*@
+
+
+

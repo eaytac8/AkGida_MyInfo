@@ -1,0 +1,163 @@
+﻿@{
+    ViewBag.Title = "Hakkımızda";
+}
+<center>
+
+    <h2>@ViewBag.Title</h2>
+</center>
+
+
+<html>
+<head>
+    <title>
+        Hakkımızda
+    </title>
+    <link rel="icon" type="image/x-icon" href="\Assets\favicon.ico"/>
+    <link rel="stylesheet" href="/documents/general/assets/css/reset.css" media="screen"></link>
+    <link rel="stylesheet" href="/documents/general/assets/css/general.css" media="screen"></link>
+    <link rel="stylesheet" href="/documents/general/assets/plugins/fancybox/jquery.fancybox.css" media="screen"></link>
+    <link rel="stylesheet" href="/documents/general/assets/css/common.css" media="screen"></link>
+    <link rel="stylesheet" href="/documents/akgida/assets/css/site.css" media="screen"></link>
+    @*<script type="text/javascript" src="/documents/general/assets/js/html5shiv.js"></script>*@
+    @*<script type="text/javascript" src=" /documents/general/assets/js/jquery-1.9.1.min.js"></script>*@
+    <meta name="robots" content="index, follow" />
+</head>
+<body id="mainBody">
+    <form method="post" action="/tr/hakkimizda" id="ctl02">
+        <div class="aspNetHidden">
+            <input type="hidden" name="__VIEWSTATE" id="__VIEWSTATE" value="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" />
+        </div>
+
+        <div class="aspNetHidden">
+
+            <input type="hidden" name="__VIEWSTATEGENERATOR" id="__VIEWSTATEGENERATOR" value="CC48EC6B" />
+            <input type="hidden" name="__VIEWSTATEENCRYPTED" id="__VIEWSTATEENCRYPTED" value="" />
+        </div><header>
+            <div class="container">
+                <div>
+                    <a href="/tr/" class="logo"></a>
+
+                </div>
+                @*<div class="header-nav">
+                    <ul class="h-list">
+                        <li><a href="/tr/">Ana Sayfa</a></li>
+                        <li><a href="/tr/hakkimizda">Hakkımızda</a></li>
+                        <li><a href="/tr/basin-odasi">Basın Odası</a></li>
+                        <li><a href="http://92.45.35.152/GO/02DZY32VDUZ0BM9AQBICAY1N3FNWBHES3NYD96GH6GDN8G82DOTR" target="_blank">İnsan Kaynakları</a></li>
+                        <li><a href="/tr/bilgi-toplumu-hizmetleri">Bilgi Toplumu Hizmetleri</a></li>
+                        <li><a href="/tr/iletisim">İletişim</a></li>
+                    </ul>
+
+                </div>*@
+            </div>
+        </header><section>
+            <div class="container">
+                <div class="wrapper showcase">
+                    <div class="wrapper-body">
+                        <a href="#">
+                           <center>
+                               <img alt="" src="\Assets\hakkimizda_header.jpg" />
+                           </center> 
+                        </a>
+
+                    </div>
+                </div>
+                <div class="f-cf m-t20">
+                    <div class="main w-full">
+                        @*<div class="wrapper breadcrumb">
+                            <div class="wrapper-body">
+                                <ul class="h-list">
+                                    <li><a href="/tr/">Anasayfa</a></li>
+                                    <li>Hakkımızda</li>
+                                </ul>
+
+                            </div>
+                        </div>*@
+                        <div class="semi-separator"></div><div class="wrapper content-detail">
+                            
+                            <div class="wrapper-body">
+                                <article>
+                                    @*<img alt="" class="article-media f-left m-r20" src="~/Assets/akgida_hakkimizda.jpg" />*@
+                                    <p><br />
+                                        <strong>1996 </strong>yılı Ağustos ayında <strong>Akyazı K&ouml;y-T&uuml;r </strong>fabrikasının  satın alınması ile kurulan Ak Gıda San. ve Tic. A.Ş. T&uuml;rkiye ve komşu coğrafyaların  en b&uuml;y&uuml;k s&uuml;t işleme kapasitesine sahip Pamukova tesislerine <strong>1998 </strong>yılında <strong>450</strong> d&ouml;n&uuml;m arazinin satın alınması ile taşındı. Akyazı fabrikasında <strong>UHT  s&uuml;t, yoğurt, beyaz peynir ve kaşar peyniri</strong> &uuml;retimleri ile başlayan  yolculuğumuz şu anda T&uuml;rkiye&rsquo;nin 5 farklı b&ouml;lgesinde 5 &uuml;retim tesisinde  &uuml;retilen, 23 farklı markada 339 nihai &uuml;r&uuml;n &ccedil;eşidiyle devam etmektedir. <br />
+                                        <br />
+                                        T&uuml;rkiye&rsquo;nin  sayılı sanayi kuruluşlarından biri olan firmamız &lsquo;İstanbul Sanayi Odası&rsquo;nın  &lsquo;2012 yılı T&uuml;rkiye'deki En Y&uuml;ksek Cirolu 500 Şirket&rsquo; listesinde &Uuml;lker  şirketleri arasında 1. aynı zamanda T&uuml;rkiye sıralamasında 43. olarak yer  almaktadır.<br />
+                                        <br />
+                                        İlk ve en b&uuml;y&uuml;k &uuml;retim tesisimiz Pamukova fabrikamızda <strong>1500  ton/g&uuml;n </strong>s&uuml;t işleme kapasitesi ile i&ccedil; piyasa ile birlikte Orta doğu  &uuml;lkelerine, Avrupa&rsquo;ya ve Amerika&rsquo;ya &uuml;r&uuml;n verilmektedir.<strong> 940 </strong>&ccedil;alışanın bulunduğu &uuml;retim tesisimiz diğer  &uuml;retim tesislerimiz ile birlikte yaklaşık 200 bin kişinin ge&ccedil;im kaynağı olarak  ekonomideki yerini almaktadır.<br />
+                                        <br />
+                                        İkinci &uuml;retim  tesisimiz olan Karaman Fabrikamız <strong>1000 ton/g&uuml;n </strong>s&uuml;t işleme kapasitesi ile <strong>425</strong> &ccedil;alışanımıza istihdam sağlamakta ve s&uuml;t, yoğurt, ayran ve peynir  &ccedil;eşitleri &uuml;retimini ger&ccedil;ekleştirmektedir.<br />
+                                        <br />
+                                        L&uuml;leburgaz  Fabrikamız <strong>500 ton/g&uuml;n </strong>s&uuml;t işleme kapasitesi ile <strong>145</strong> &ccedil;alışanımıza  istihdam sağlamakta ve s&uuml;t, yoğurt ve ayran &uuml;retimi ger&ccedil;ekleştirmektedir.<br />
+                                        <br />
+                                        Kahramanmaraş  şehrinin ilk s&uuml;t fabrikası olma &ouml;zelliğini taşıyan Kahramanmaraş Fabrikamız <strong>500  ton/g&uuml;n </strong>s&uuml;t işleme kapasitesi ile <strong>172</strong> &ccedil;alışanımıza istihdam  sağlamakta ve s&uuml;t, yoğurt ve ayran &uuml;retimi ger&ccedil;ekleştirmektedir.<br />
+                                        <br />
+                                        2013 yılında a&ccedil;ılan &nbsp;Aydın Fabrikamız <strong>500 ton/g&uuml;n </strong>s&uuml;t işleme  kapasitesi ile <strong>159 </strong>&ccedil;alışanımıza istihdam sağlamakta peynir &ccedil;eşitlerinin  &uuml;retimi ger&ccedil;ekleştirmektedir.<br />
+                                        <br />
+                                    </p>
+                                    <div class="f-clear"></div>
+                                </article>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>@*<footer>
+            <div class="container">
+                <div class="f-cf">
+                    <div class="w9 f-left">
+                        <h4>Hızlı Ulaşım</h4>
+                        <div class="separator"></div>
+                        <div class="footer-nav">
+                            <ul class="h-list">
+                                <li><a href="/tr/">Ana Sayfa</a></li>
+                                <li><a href="/tr/hakkimizda">Hakkımızda</a></li>
+                                <li><a href="/tr/bilgi-toplumu-hizmetleri">Bilgi Toplumu Hizmetleri</a></li>
+                                <li><a href="http://92.45.35.152/GO/02DZY32VDUZ0BM9AQBICAY1N3FNWBHES3NYD96GH6GDN8G82DOTR" target="_blank">İnsan Kaynakları</a></li>
+                                <li><a href="/tr/basin-odasi">Basın Odası</a></li>
+                                <li><a href="/documents/akgida/download/bilgi-guvenligi-politikasi-1.pdf">Bilgi G&uuml;venliği Politikası</a></li>
+                                <li><a href="/tr/iletisim">İletişim</a></li>
+                            </ul>
+                        </div>
+                        <div class="separator"></div>
+                        <a href="#" class="logoSol"></a>
+                    </div>
+                    <div class="w3 f-left m-l20">
+                        <h4>AK GIDA</h4>
+                        <div class="separator"></div>
+                        <a href="#" class="logo"></a>
+                        <p>&copy; Copyright 2013</p>
+                    </div>
+                </div>
+
+            </div>
+        </footer>*@<div>
+            <script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-929155-13']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+            </script>
+
+        </div>
+
+        <script type="text/javascript">
+//<![CDATA[
+var CultureCode='tr-TR';var LanguageCode='tr';var CountryCode='TR';var CountryId=1;var LanguageId=1;var CountryLanguageId=1;var BaseSiteLanguageId=null;var PageId=5;var SiteId=2;var DocumentsPath='/documents/akgida';var SiteLanguageId=2;var RouteLanguageIdentifier='tr';var Url='http://www.akgida.com.tr/tr/hakkimizda';//]]>
+        </script>
+    </form>
+    <script type="text/javascript" src="/documents/general/assets/js/jquery-ui-1.10.3.js"></script>
+    <script type="text/javascript" src=" /documents/general/assets/js/jquery.flexslider-min.js"></script>
+    <script type="text/javascript" src=" /documents/general/assets/js/jquery.selectbox-0.2.1.js"></script>
+    <script type="text/javascript" src=" /documents/general/assets/plugins/fancybox/jquery.fancybox.min.js"></script>
+    <script type="text/javascript" src="/documents/general/assets/js/site.js"></script>
+</body>
+</html>
+

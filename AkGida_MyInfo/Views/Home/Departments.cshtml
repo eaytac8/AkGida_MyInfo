@@ -1,0 +1,77 @@
+﻿@*@model AkGida_MyInfo.Models.Departments
+
+    @{
+        ViewBag.Title = "Departments";
+        Layout = "~/Views/Shared/_Layout.cshtml";
+    }
+
+    <h2>Departments</h2>*@
+
+
+
+@using AkGida_MyInfo.Models
+@model List<Departments>
+
+
+@*@model AkGida_MyInfo.Models.Departments*@
+
+
+@{
+    ViewBag.Title = "DepartmentView";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2><p align="center">Departmanlar</p></h2>
+
+
+
+<style>
+    .grid-container {
+        display: grid;
+        grid-template-columns: auto auto auto;
+        background-color: #18c1b6;
+        padding: 3px;
+    }
+
+    .grid-item {
+        /*background-color: rgba(255, 255, 255, 0.8);*/
+        background-color: rgb(255, 255, 255);
+        border: 1px solid rgb(24, 193, 182);
+        padding: 20px;
+        font-size: 16px;
+        text-align: center;
+    }
+</style>
+
+
+
+<div class="grid-container">
+    @foreach (var item in Model)
+    {
+    <div class="grid-item">
+        <h3><a href="@Url.Action("Departments","Home", new {departmentid = item.DepartmentID })">@item.DepartmentName</a></h3>
+
+
+        @*<h3>@item.DepartmentName</h3>*@
+
+    </div>
+
+
+    }
+
+</div>
+
+
+@*<div class="grid-container">
+    @foreach (var item in Model)
+    {
+        <div class="grid-item">
+            
+
+
+            <h3>@item.Personels</h3>
+
+        </div>
+    }
+
+</div>*@
