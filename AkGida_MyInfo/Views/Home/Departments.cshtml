@@ -17,7 +17,7 @@
 
 
 @{
-    ViewBag.Title = "DepartmentView";
+    ViewBag.Title = "Departmanlar";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
@@ -48,30 +48,40 @@
 <div class="grid-container">
     @foreach (var item in Model)
     {
-    <div class="grid-item">
-        <h3><a href="@Url.Action("Departments","Home", new {departmentid = item.DepartmentID })">@item.DepartmentName</a></h3>
+        <div class="grid-item">
+            <h3 id=@item.DepartmentID.ToString()>@item.DepartmentName</h3>
 
 
-        @*<h3>@item.DepartmentName</h3>*@
+            @*<h3>@item.DepartmentName</h3>*@
 
-    </div>
+        </div>
 
 
     }
 
 </div>
+<br />
 
 
+<div id="partial" class="row"></div>
+<script>
+    var idd = 1;
+    $("#partial").html(@'@Html.Action("PersonelPartial,1")');
+</script>
+
+
+
+@*@Html.Partial("PersonelPartial");*@
 @*<div class="grid-container">
-    @foreach (var item in Model)
-    {
-        <div class="grid-item">
-            
+        @foreach (var item in Model)
+        {
+            <div class="grid-item">
 
 
-            <h3>@item.Personels</h3>
 
-        </div>
-    }
+                <h3>@item.Personels</h3>
 
-</div>*@
+            </div>
+        }
+
+    </div>*@

@@ -68,6 +68,7 @@ namespace AkGida_MyInfo.Controllers
                     while(reader.Read())
                     {
                         dprmnt = new Departments();
+                        dprmnt.DepartmentID = reader.GetInt32(0);
                         dprmnt.DepartmentName = reader.GetString(1);
                         department.Add(dprmnt);
                         Console.WriteLine("Department Adı:" + dprmnt.DepartmentName);
@@ -84,17 +85,13 @@ namespace AkGida_MyInfo.Controllers
             return View(department);
         }
 
-
-
-        public ActionResult Personels(int? departmentid)
+        public PartialViewResult PersonelPartial(int ? departmentid)
         {
-            List<Personels> personel = new List<Personels>();
-            Personels prsnl;
-
+            List<Personels> Obj_personel = new List<Personels>();
+            Personels personels;
             using (SqlConnection connection = new SqlConnection(@"Data Source=MININT-UL27J5C\SQLEXPRESS;Initial Catalog=AkGida_MyInfo;User ID=sa;Password=Ea123456;MultipleActiveResultSets=True;Application Name=EntityFramework"))
             {
-                SqlCommand command = new SqlCommand(
-                    $"Select * from Personels Where DepartmentID = {departmentid}", connection);
+                SqlCommand command = new SqlCommand($"Select * from Personels Where [DepartmentID] = {departmentid}", connection);
                 connection.Open();
                 SqlDataReader reader = command.ExecuteReader();
 
@@ -102,14 +99,14 @@ namespace AkGida_MyInfo.Controllers
                 {
                     while (reader.Read())
                     {
-                        prsnl = new Personels();
-                        prsnl.PersonelName = reader.GetString(1);
-                        prsnl.PersonelSurname = reader.GetString(2);
-                        prsnl.PersonelTel = reader.GetString(3);
-                        prsnl.PersonelDahiliNo = reader.GetInt32(4).ToString();
-                        prsnl.PersonelEposta = reader.GetString(5);
-                        personel.Add(prsnl);
-                        Console.WriteLine("Personel Adı:" + prsnl.PersonelName);
+                        personels = new Personels();
+                        personels.PersonelName = reader.GetString(1);
+                        personels.PersonelSurname = reader.GetString(2);
+                        personels.PersonelTel = reader.GetString(3);
+                        personels.PersonelDahiliNo = reader.GetString(4);
+                        personels.PersonelEposta = reader.GetString(5);
+                        Obj_personel.Add(personels);
+                        Console.WriteLine("Personel Adı:" + personels.PersonelName);
                     }
                 }
                 finally
@@ -117,10 +114,48 @@ namespace AkGida_MyInfo.Controllers
                     reader.Close();
 
                 }
-
+                connection.Close();
             }
-            return View(personel);
+
+
+            return PartialView("PersonelPartial", Obj_personel);
         }
+
+        //public ActionResult Personels(int? departmentid)
+        //{
+        //    List<Personels> personel = new List<Personels>();
+        //    Personels prsnl;
+
+        //    using (SqlConnection connection = new SqlConnection(@"Data Source=MININT-UL27J5C\SQLEXPRESS;Initial Catalog=AkGida_MyInfo;User ID=sa;Password=Ea123456;MultipleActiveResultSets=True;Application Name=EntityFramework"))
+        //    {
+        //        SqlCommand command = new SqlCommand(
+        //            $"Select * from Personels Where DepartmentID = {departmentid}", connection);
+        //        connection.Open();
+        //        SqlDataReader reader = command.ExecuteReader();
+
+        //        try
+        //        {
+        //            while (reader.Read())
+        //            {
+        //                prsnl = new Personels();
+        //                prsnl.PersonelName = reader.GetString(1);
+        //                prsnl.PersonelSurname = reader.GetString(2);
+        //                prsnl.PersonelTel = reader.GetString(3);
+        //                prsnl.PersonelDahiliNo = reader.GetInt32(4).ToString();
+        //                prsnl.PersonelEposta = reader.GetString(5);
+        //                personel.Add(prsnl);
+        //                Console.WriteLine("Personel Adı:" + prsnl.PersonelName);
+        //            }
+        //        }
+        //        finally
+        //        {
+        //            reader.Close();
+
+        //        }
+
+        //    }
+        //    return View(personel);
+        //}
 
 
 

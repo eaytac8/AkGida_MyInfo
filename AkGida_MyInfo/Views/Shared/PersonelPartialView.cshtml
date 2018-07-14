@@ -1,0 +1,25 @@
+﻿@using AkGida_MyInfo.Models
+@model List<Personels>
+
+<div class="grid-container">
+
+    @foreach (var item in Model)
+    {
+        <div class="grid-item">
+
+            <h2>@(item.PersonelName +" "+item.PersonelSurname )</h2>
+
+            <p>
+                <b>@item.PersonelDahiliNo</b> <br />
+                @item.PersonelEposta
+                <br />
+                <b>Telefon:</b> @item.PersonelTel
+            </p>
+
+            <p><a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301865">Learn more &raquo;</a></p>
+
+        </div>
+
+    }
+
+</div>
