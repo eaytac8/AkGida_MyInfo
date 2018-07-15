@@ -11,42 +11,44 @@ namespace AkGida_MyInfo.Controllers
 {
     public class HomeController : Controller
     {
-        AkGida_MyInfoEntities db = new AkGida_MyInfoEntities();
-
+         AkGida_MyInfoEntities db = new AkGida_MyInfoEntities();
+        
 
         public ActionResult Index()
         {
-            List<Companies> company=new List<Companies>();
-            Companies comp;
 
-            using (SqlConnection connection = new SqlConnection(@"Data Source=MININT-UL27J5C\SQLEXPRESS;Initial Catalog=AkGida_MyInfo;User ID=sa;Password=Ea123456;MultipleActiveResultSets=True;Application Name=EntityFramework"))
-            {
-                SqlCommand command = new SqlCommand(
-             "Select * from Companies", connection);
-                connection.Open();
-                SqlDataReader reader = command.ExecuteReader();
-                try
-                {//"Insert Into Users(name,username) Values("Ali","aliasdsa")"
-                    while (reader.Read())
-                    {
-                        comp = new Companies();
-                        comp.CompanyID = reader.GetInt32(0);
-                        comp.CompanyName = reader.GetString(1);
-                        comp.CompanyAddress = reader.GetString(2);
-                        comp.CompanyType = reader.GetString(3);
-                        comp.CompanyTel = reader.GetString(4);
-                        company.Add(comp);
-                        //Console.WriteLine("sdasdasda");
-                        Console.WriteLine("Şirketin tipi:"+comp.CompanyType);
-                    }
-                }
-                finally
-                {
-                    // Always call Close when done reading.
-                    reader.Close();
-                }
-                connection.Close();
-            }
+            List<Companies> company = new List<Companies>();
+            company = db.Companies.ToList();
+            //List<Companies> company = new List<Companies>();
+            //Companies comp;
+            //using (connection)
+            //{
+            //    SqlCommand command = new SqlCommand(
+            // "Select * from Companies", connection);
+            //    connection.Open();
+            //    SqlDataReader reader = command.ExecuteReader();
+            //    try
+            //    {//"Insert Into Users(name,username) Values("Ali","aliasdsa")"
+            //        while (reader.Read())
+            //        {
+            //            comp = new Companies();
+            //            comp.CompanyID = reader.GetInt32(0);
+            //            comp.CompanyName = reader.GetString(1);
+            //            comp.CompanyAddress = reader.GetString(2);
+            //            comp.CompanyType = reader.GetString(3);
+            //            comp.CompanyTel = reader.GetString(4);
+            //            company.Add(comp);
+            //            //Console.WriteLine("sdasdasda");
+            //            Console.WriteLine("Şirketin tipi:"+comp.CompanyType);
+            //        }
+            //    }
+            //    finally
+            //    {
+            //        // Always call Close when done reading.
+            //        reader.Close();
+            //    }
+            //    connection.Close();
+            //}
 
             return View(company);
         }
@@ -54,110 +56,21 @@ namespace AkGida_MyInfo.Controllers
 
         public ActionResult Departments(int? companyid)
         {
+
             List<Departments> department = new List<Departments>();
-            Departments dprmnt;
-
-            using (SqlConnection connection = new SqlConnection(@"Data Source=MININT-UL27J5C\SQLEXPRESS;Initial Catalog=AkGida_MyInfo;User ID=sa;Password=Ea123456;MultipleActiveResultSets=True;Application Name=EntityFramework"))
-            {
-                SqlCommand command = new SqlCommand($"Select * from Departments Where CompanyId = {companyid}",connection);
-                connection.Open();
-                SqlDataReader reader = command.ExecuteReader();
-
-                try
-                {
-                    while(reader.Read())
-                    {
-                        dprmnt = new Departments();
-                        dprmnt.DepartmentID = reader.GetInt32(0);
-                        dprmnt.DepartmentName = reader.GetString(1);
-                        department.Add(dprmnt);
-                        Console.WriteLine("Department Adı:" + dprmnt.DepartmentName);
-                    }
-                }
-                finally
-                {
-                    reader.Close();
-                    
-                }
-                connection.Close();
-            }
+            department = db.Departments.Where(x => x.CompanyID == companyid).ToList();
             
             return View(department);
         }
 
-        public PartialViewResult PersonelPartial(int ? departmentid)
+        public PartialViewResult PartialPers(int ? departmanid)
         {
-            List<Personels> Obj_personel = new List<Personels>();
-            Personels personels;
-            using (SqlConnection connection = new SqlConnection(@"Data Source=MININT-UL27J5C\SQLEXPRESS;Initial Catalog=AkGida_MyInfo;User ID=sa;Password=Ea123456;MultipleActiveResultSets=True;Application Name=EntityFramework"))
-            {
-                SqlCommand command = new SqlCommand($"Select * from Personels Where [DepartmentID] = {departmentid}", connection);
-                connection.Open();
-                SqlDataReader reader = command.ExecuteReader();
+            List<Personels> personels = new List<Personels>();
+            personels = db.Personels.Where(x => x.DepartmentID == departmanid).ToList();
 
-                try
-                {
-                    while (reader.Read())
-                    {
-                        personels = new Personels();
-                        personels.PersonelName = reader.GetString(1);
-                        personels.PersonelSurname = reader.GetString(2);
-                        personels.PersonelTel = reader.GetString(3);
-                        personels.PersonelDahiliNo = reader.GetString(4);
-                        personels.PersonelEposta = reader.GetString(5);
-                        Obj_personel.Add(personels);
-                        Console.WriteLine("Personel Adı:" + personels.PersonelName);
-                    }
-                }
-                finally
-                {
-                    reader.Close();
+            return PartialView("PersonelPartialView",personels);
 
-                }
-                connection.Close();
-            }
-
-
-            return PartialView("PersonelPartial", Obj_personel);
         }
-
-        //public ActionResult Personels(int? departmentid)
-        //{
-        //    List<Personels> personel = new List<Personels>();
-        //    Personels prsnl;
-
-        //    using (SqlConnection connection = new SqlConnection(@"Data Source=MININT-UL27J5C\SQLEXPRESS;Initial Catalog=AkGida_MyInfo;User ID=sa;Password=Ea123456;MultipleActiveResultSets=True;Application Name=EntityFramework"))
-        //    {
-        //        SqlCommand command = new SqlCommand(
-        //            $"Select * from Personels Where DepartmentID = {departmentid}", connection);
-        //        connection.Open();
-        //        SqlDataReader reader = command.ExecuteReader();
-
-        //        try
-        //        {
-        //            while (reader.Read())
-        //            {
-        //                prsnl = new Personels();
-        //                prsnl.PersonelName = reader.GetString(1);
-        //                prsnl.PersonelSurname = reader.GetString(2);
-        //                prsnl.PersonelTel = reader.GetString(3);
-        //                prsnl.PersonelDahiliNo = reader.GetInt32(4).ToString();
-        //                prsnl.PersonelEposta = reader.GetString(5);
-        //                personel.Add(prsnl);
-        //                Console.WriteLine("Personel Adı:" + prsnl.PersonelName);
-        //            }
-        //        }
-        //        finally
-        //        {
-        //            reader.Close();
-
-        //        }
-
-        //    }
-        //    return View(personel);
-        //}
-
-
 
 
         public ActionResult About()
@@ -182,7 +95,7 @@ namespace AkGida_MyInfo.Controllers
         //}
 
     }
-
+ 
     public class AnasayfaDTO
     {
         public List<Slider> slider { get; set; }
@@ -194,3 +107,39 @@ namespace AkGida_MyInfo.Controllers
 
     }
 }
+
+/* Personel Veri Tabanından veri çekme..*/
+
+//List<Personels> Obj_personel = new List<Personels>();
+//Personels personels;
+//            using (SqlConnection connection = new SqlConnection(@"Data Source=MININT-UL27J5C\SQLEXPRESS;Initial Catalog=AkGida_MyInfo;User ID=sa;Password=Ea123456;MultipleActiveResultSets=True;Application Name=EntityFramework"))
+//            {
+//                SqlCommand command = new SqlCommand($"Select * from Personels Where [DepartmentID] = {departmanid}", connection);
+//connection.Open();
+//                SqlDataReader reader = command.ExecuteReader();
+
+//                try
+//                {
+//                    while (reader.Read())
+//                    {
+//                        personels = new Personels();
+//personels.PersonelName = reader.GetString(1);
+//                        personels.PersonelSurname = reader.GetString(2);
+//                        personels.PersonelTel = reader.GetString(3);
+//                        personels.PersonelDahiliNo = reader.GetString(4);
+//                        personels.PersonelEposta = reader.GetString(5);
+//                        Obj_personel.Add(personels);
+//                        Console.WriteLine("Personel Adı:" + personels.PersonelName);
+//                    }
+//                }
+//                finally
+//                {
+//                    reader.Close();
+
+//                }
+//                connection.Close();
+//            }
+//            ViewBag.Durum = "Personel";
+//            ViewBag.Pers = Obj_personel;
+
+//            return PartialView("PersonelPatialView", Obj_personel);

@@ -1,7 +1,25 @@
-﻿namespace AkGida_MyInfo.Controllers
+﻿
+using AkGida_MyInfo.Models;
+using System.Data.Entity;
+using System.Data.SqlClient;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Web;
+
+namespace AkGida_MyInfo.Controllers
 {
-    internal class AkGida_MyInfoEntities
+    internal class AkGida_MyInfoEntities:DbContext
     {
-        public object Companies { get; internal set; }
+        public DbSet<Companies> Companies { get; set; }
+        public DbSet<CompanyDuyuru> CompanyDuyuru { get; set; }
+        public DbSet<Departments> Departments { get; set; }
+        public DbSet<Duyurular> Duyurular { get; set; }
+        public DbSet<Menu> Menu { get; set; }
+        public DbSet<Personels> Personels { get; set; }
+        public DbSet<Slider> Sliders { get; set; }
+        public DbSet<sysdiagrams> sysdiagrams { get; set; }
+        public DbSet<YemekSirketi> YemekSirketi { get; set; }
+
     }
 }
