@@ -4,16 +4,16 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="AkGida_MyInfoModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+    <Schema Namespace="AkGida_MyInfoModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="Companies">
           <Key>
             <PropertyRef Name="CompanyID" />
           </Key>
-          <Property Name="CompanyID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="CompanyID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
           <Property Name="CompanyName" Type="nvarchar" MaxLength="150" />
           <Property Name="CompanyAddress" Type="nvarchar" MaxLength="300" />
-          <Property Name="CompanyType" Type="nvarchar" MaxLength="30" />
-          <Property Name="CompanyTel" Type="nvarchar" MaxLength="13" />
+          <Property Name="CompanyType" Type="nvarchar" MaxLength="150" />
+          <Property Name="CompanyTel" Type="nvarchar" MaxLength="16" />
         </EntityType>
         <EntityType Name="CompanyDuyuru">
           <Key>
@@ -39,6 +39,14 @@
           <Property Name="Baslik" Type="nvarchar" MaxLength="100" />
           <Property Name="Icerik" Type="nvarchar" MaxLength="400" />
           <Property Name="DuyuruTarih" Type="datetime" />
+        </EntityType>
+        <EntityType Name="MasterAdmin">
+          <Key>
+            <PropertyRef Name="MadminID" />
+          </Key>
+          <Property Name="MadminID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="MadminMail" Type="varchar" MaxLength="50" />
+          <Property Name="MadminPassword" Type="varchar" MaxLength="30" />
         </EntityType>
         <EntityType Name="Menu">
           <Key>
@@ -68,7 +76,7 @@
           <Property Name="PersonelName" Type="varchar" MaxLength="50" />
           <Property Name="PersonelSurname" Type="varchar" MaxLength="50" />
           <Property Name="PersonelTel" Type="varchar" MaxLength="13" />
-          <Property Name="PersonelDahiliNo" Type="varchar" MaxLength="4" />
+          <Property Name="PersonelDahiliNo" Type="varchar" MaxLength="5" />
           <Property Name="PersonelEposta" Type="varchar" MaxLength="50" />
           <Property Name="DepartmentID" Type="int" />
           <Property Name="Yetki" Type="int" />
@@ -179,6 +187,7 @@
           <EntitySet Name="CompanyDuyuru" EntityType="Self.CompanyDuyuru" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Departments" EntityType="Self.Departments" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Duyurular" EntityType="Self.Duyurular" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="MasterAdmin" EntityType="Self.MasterAdmin" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Menu" EntityType="Self.Menu" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Personels" EntityType="Self.Personels" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Slider" EntityType="Self.Slider" Schema="dbo" store:Type="Tables" />
@@ -209,8 +218,7 @@
             <End Role="YemekSirketi" EntitySet="YemekSirketi" />
           </AssociationSet>
         </EntityContainer>
-      </Schema>
-    </edmx:StorageModels>
+      </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="AkGida_MyInfoModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
@@ -221,8 +229,8 @@
           <Property Name="CompanyID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="CompanyName" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
           <Property Name="CompanyAddress" Type="String" MaxLength="300" FixedLength="false" Unicode="true" />
-          <Property Name="CompanyType" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
-          <Property Name="CompanyTel" Type="String" MaxLength="13" FixedLength="false" Unicode="true" />
+          <Property Name="CompanyType" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Name="CompanyTel" Type="String" MaxLength="16" FixedLength="false" Unicode="true" />
           <NavigationProperty Name="CompanyDuyuru" Relationship="Self.FK_CompanyDuyuru_Companies" FromRole="Companies" ToRole="CompanyDuyuru" />
           <NavigationProperty Name="Departments" Relationship="Self.FK_Departments_Companies" FromRole="Companies" ToRole="Departments" />
           <NavigationProperty Name="YemekSirketi" Relationship="Self.FK_YemekSirketi_Companies" FromRole="Companies" ToRole="YemekSirketi" />
@@ -286,7 +294,7 @@
           <Property Name="PersonelName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="PersonelSurname" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="PersonelTel" Type="String" MaxLength="13" FixedLength="false" Unicode="false" />
-          <Property Name="PersonelDahiliNo" Type="String" MaxLength="4" FixedLength="false" Unicode="false" />
+          <Property Name="PersonelDahiliNo" Type="String" MaxLength="5" FixedLength="false" Unicode="false" />
           <Property Name="PersonelEposta" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="DepartmentID" Type="Int32" />
           <Property Name="Yetki" Type="Int32" />
@@ -429,7 +437,16 @@
             <End Role="YemekSirketi" EntitySet="YemekSirketi" />
             <End Role="Menu" EntitySet="Menu" />
           </AssociationSet>
+          <EntitySet Name="MasterAdmin" EntityType="AkGida_MyInfoModel.MasterAdmin" />
         </EntityContainer>
+        <EntityType Name="MasterAdmin">
+          <Key>
+            <PropertyRef Name="MadminID" />
+          </Key>
+          <Property Name="MadminID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="MadminMail" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="MadminPassword" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+        </EntityType>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -539,6 +556,15 @@
                 <ScalarProperty Name="YemekSirketiID" ColumnName="YemekSirketiID" />
                 <ScalarProperty Name="YemekSirketiAdi" ColumnName="YemekSirketiAdi" />
                 <ScalarProperty Name="CompanyID" ColumnName="CompanyID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="MasterAdmin">
+            <EntityTypeMapping TypeName="AkGida_MyInfoModel.MasterAdmin">
+              <MappingFragment StoreEntitySet="MasterAdmin">
+                <ScalarProperty Name="MadminPassword" ColumnName="MadminPassword" />
+                <ScalarProperty Name="MadminMail" ColumnName="MadminMail" />
+                <ScalarProperty Name="MadminID" ColumnName="MadminID" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

@@ -4,11 +4,11 @@
     <Key>
       <PropertyRef Name="CompanyID" />
     </Key>
-    <Property Name="CompanyID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="CompanyID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
     <Property Name="CompanyName" Type="nvarchar" MaxLength="150" />
     <Property Name="CompanyAddress" Type="nvarchar" MaxLength="300" />
-    <Property Name="CompanyType" Type="nvarchar" MaxLength="30" />
-    <Property Name="CompanyTel" Type="nvarchar" MaxLength="13" />
+    <Property Name="CompanyType" Type="nvarchar" MaxLength="150" />
+    <Property Name="CompanyTel" Type="nvarchar" MaxLength="16" />
   </EntityType>
   <EntityType Name="CompanyDuyuru">
     <Key>
@@ -34,6 +34,14 @@
     <Property Name="Baslik" Type="nvarchar" MaxLength="100" />
     <Property Name="Icerik" Type="nvarchar" MaxLength="400" />
     <Property Name="DuyuruTarih" Type="datetime" />
+  </EntityType>
+  <EntityType Name="MasterAdmin">
+    <Key>
+      <PropertyRef Name="MadminID" />
+    </Key>
+    <Property Name="MadminID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="MadminMail" Type="varchar" MaxLength="50" />
+    <Property Name="MadminPassword" Type="varchar" MaxLength="30" />
   </EntityType>
   <EntityType Name="Menu">
     <Key>
@@ -63,7 +71,7 @@
     <Property Name="PersonelName" Type="varchar" MaxLength="50" />
     <Property Name="PersonelSurname" Type="varchar" MaxLength="50" />
     <Property Name="PersonelTel" Type="varchar" MaxLength="13" />
-    <Property Name="PersonelDahiliNo" Type="varchar" MaxLength="4" />
+    <Property Name="PersonelDahiliNo" Type="varchar" MaxLength="5" />
     <Property Name="PersonelEposta" Type="varchar" MaxLength="50" />
     <Property Name="DepartmentID" Type="int" />
     <Property Name="Yetki" Type="int" />
@@ -174,6 +182,7 @@
     <EntitySet Name="CompanyDuyuru" EntityType="Self.CompanyDuyuru" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Departments" EntityType="Self.Departments" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Duyurular" EntityType="Self.Duyurular" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="MasterAdmin" EntityType="Self.MasterAdmin" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Menu" EntityType="Self.Menu" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Personels" EntityType="Self.Personels" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Slider" EntityType="Self.Slider" Schema="dbo" store:Type="Tables" />

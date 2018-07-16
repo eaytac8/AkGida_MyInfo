@@ -20,6 +20,7 @@
         <AssociationConnector Association="AkGida_MyInfoModel.FK_CompanyDuyuru_Duyurular" ManuallyRouted="false" />
         <AssociationConnector Association="AkGida_MyInfoModel.FK_Personels_Departments" ManuallyRouted="false" />
         <AssociationConnector Association="AkGida_MyInfoModel.FK_Menu_YemekSirketi" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="AkGida_MyInfoModel.MasterAdmin" Width="1.5" PointX="7.375" PointY="3.625" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

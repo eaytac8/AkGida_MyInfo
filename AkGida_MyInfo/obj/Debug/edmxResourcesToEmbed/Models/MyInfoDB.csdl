@@ -7,8 +7,8 @@
     <Property Name="CompanyID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
     <Property Name="CompanyName" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
     <Property Name="CompanyAddress" Type="String" MaxLength="300" FixedLength="false" Unicode="true" />
-    <Property Name="CompanyType" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
-    <Property Name="CompanyTel" Type="String" MaxLength="13" FixedLength="false" Unicode="true" />
+    <Property Name="CompanyType" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+    <Property Name="CompanyTel" Type="String" MaxLength="16" FixedLength="false" Unicode="true" />
     <NavigationProperty Name="CompanyDuyuru" Relationship="Self.FK_CompanyDuyuru_Companies" FromRole="Companies" ToRole="CompanyDuyuru" />
     <NavigationProperty Name="Departments" Relationship="Self.FK_Departments_Companies" FromRole="Companies" ToRole="Departments" />
     <NavigationProperty Name="YemekSirketi" Relationship="Self.FK_YemekSirketi_Companies" FromRole="Companies" ToRole="YemekSirketi" />
@@ -72,7 +72,7 @@
     <Property Name="PersonelName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
     <Property Name="PersonelSurname" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
     <Property Name="PersonelTel" Type="String" MaxLength="13" FixedLength="false" Unicode="false" />
-    <Property Name="PersonelDahiliNo" Type="String" MaxLength="4" FixedLength="false" Unicode="false" />
+    <Property Name="PersonelDahiliNo" Type="String" MaxLength="5" FixedLength="false" Unicode="false" />
     <Property Name="PersonelEposta" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
     <Property Name="DepartmentID" Type="Int32" />
     <Property Name="Yetki" Type="Int32" />
@@ -215,5 +215,14 @@
       <End Role="YemekSirketi" EntitySet="YemekSirketi" />
       <End Role="Menu" EntitySet="Menu" />
     </AssociationSet>
+    <EntitySet Name="MasterAdmin" EntityType="AkGida_MyInfoModel.MasterAdmin" />
   </EntityContainer>
+  <EntityType Name="MasterAdmin">
+    <Key>
+      <PropertyRef Name="MadminID" />
+    </Key>
+    <Property Name="MadminID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="MadminMail" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="MadminPassword" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+  </EntityType>
 </Schema>

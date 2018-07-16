@@ -1,5 +1,4 @@
-﻿@*@model IEnumerable<AkGida_MyInfo.Models.Companies>*@
-@using AkGida_MyInfo.Models
+﻿@using AkGida_MyInfo.Models
 @model List<Companies>
 
 @{
@@ -29,6 +28,32 @@
         
     }
 </style>
+
+
+
+<div class="grid-container">
+
+    @foreach (var item in Model)
+    {
+        <div class="grid-item">
+
+            <h2><a href="@Url.Action("Departments", "Home" , new {companyid=item.CompanyID })">@item.CompanyName</a> </h2>
+
+            <p>
+                <b>@item.CompanyType</b> <br />
+                @item.CompanyAddress
+                <br />
+                <b>Telefon:</b> @item.CompanyTel
+            </p>
+
+            <p><a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301865">Learn more &raquo;</a></p>
+
+        </div>
+
+    }
+
+</div>
+
 
 
 
@@ -69,28 +94,9 @@
 
 
 
-<div class="grid-container">
 
-    @foreach (var item in Model)
-    {
-    <div class="grid-item">
-        
-            <h2><a href="@Url.Action("Departments", "Home" , new {companyid=item.CompanyID })">@item.CompanyName</a> </h2>
 
-            <p>
-                <b>@item.CompanyType</b> <br />
-                @item.CompanyAddress
-                <br />
-                <b>Telefon:</b> @item.CompanyTel
-            </p>
 
-            <p><a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301865">Learn more &raquo;</a></p>
-      
-    </div>
-
-    }
-
-</div>
 
 
 

@@ -17,7 +17,7 @@ namespace AkGida_MyInfo.Controllers
         public ActionResult Index()
         {
 
-            List<Companies> company = new List<Companies>();
+            List<Companies> company = new List<Companies>();  
             company = db.Companies.ToList();
             //List<Companies> company = new List<Companies>();
             //Companies comp;
@@ -63,15 +63,59 @@ namespace AkGida_MyInfo.Controllers
             return View(department);
         }
 
-        public PartialViewResult PartialPers(int ? departmanid)
+        public JsonResult PartialPers(int? departmanid)
         {
-            List<Personels> personels = new List<Personels>();
-            personels = db.Personels.Where(x => x.DepartmentID == departmanid).ToList();
+            //List<Personels> personels = new List<Personels>();
+            //personels = db.Personels.Where(x => x.DepartmentID == departmanid).ToList();
+            List<Personels> Obj_personel = new List<Personels>();
+            Personels personels;
+            using (SqlConnection connection = new SqlConnection(@"Data Source=MININT-UL27J5C\SQLEXPRESS;Initial Catalog=AkGida_MyInfo;User ID=sa;Password=Ea123456;MultipleActiveResultSets=True;Application Name=EntityFramework"))
+            {
+                SqlCommand command = new SqlCommand($"Select * from Personels Where [DepartmentID] = {departmanid}", connection);
+                connection.Open();
+                SqlDataReader reader = command.ExecuteReader();
 
-            return PartialView("PersonelPartialView",personels);
+                try
+                {
+                    while (reader.Read())
+                    {
+                        personels = new Personels();
+                        personels.PersonelName = reader.GetString(1);
+                        personels.PersonelSurname = reader.GetString(2);
+                        personels.PersonelTel = reader.GetString(3);
+                        personels.PersonelDahiliNo = reader.GetString(4);
+                        personels.PersonelEposta = reader.GetString(5);
+                        Obj_personel.Add(personels);
+                        Console.WriteLine("Personel Adı:" + personels.PersonelName);
+                    }
+                }
+                finally
+                {
+                    reader.Close();
+
+                }
+                connection.Close();
+            }
+
+            return Json(Obj_personel, JsonRequestBehavior.AllowGet);
 
         }
 
+
+        public JsonResult YemekSirketi(int? companyidd)
+        {
+            List<YemekSirketi> yemeksirketi = new List<YemekSirketi>();
+            yemeksirketi = db.YemekSirketi.Where(x => x.CompanyID == companyidd).ToList();
+
+            return Json(yemeksirketi, JsonRequestBehavior.AllowGet);
+        }
+
+        public ActionResult Menu(int? yemeksirketiid)
+        {
+            List<Menu> menu = new List<Menu>();
+            menu = db.Menu.Where(x => x.YemekSirketiID == yemeksirketiid).ToList();
+            return View(menu);
+        }
 
         public ActionResult About()
         {
@@ -104,7 +148,6 @@ namespace AkGida_MyInfo.Controllers
         //public List<Slider> slider { get; set; }
         //public List<Slider> slider { get; set; }
         //public List<Slider> slider { get; set; }
-
     }
 }
 

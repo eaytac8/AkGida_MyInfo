@@ -1,19 +1,6 @@
-﻿@*@model AkGida_MyInfo.Models.Departments
-
-    @{
-        ViewBag.Title = "Departments";
-        Layout = "~/Views/Shared/_Layout.cshtml";
-    }
-
-    <h2>Departments</h2>*@
-
-
-
-@using AkGida_MyInfo.Models
+﻿@using AkGida_MyInfo.Models
 @model List<Departments>
 
-
-@*@model AkGida_MyInfo.Models.Departments*@
 
 
 @{
@@ -21,15 +8,13 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2><p align="center">Departmanlar</p></h2>
-
+<h2 align="center">Departmanlar</h2>
 
 
 <style>
     .grid-container {
         display: grid;
         grid-template-columns: auto auto auto;
-        background-color: #18c1b6;
         padding: 3px;
     }
 
@@ -41,25 +26,35 @@
         font-size: 16px;
         text-align: center;
     }
+
+    table > tr > td {
+        border: 1px solid rgb(24, 193, 182) !important;
+        padding: 6px;
+    }
+
 </style>
+
 <div class="grid-container">
     @foreach (var item in Model)
     {
         <div class="grid-item">
-            <h3><a id=@item.DepartmentID.ToString() href="@Url.Action("PartialPers", "Home" , new {departmanid=item.DepartmentID})">@item.DepartmentName </a></h3>
-
+            <h3><b id=@item.DepartmentID.ToString()>@item.DepartmentName </b></h3>
         </div>
     }
 
 </div>
 <hr />
-<div class="grid-container">
-    <script>
+<table id="Liste"  style="width:100%; display:none;">
+</table>
 
-        $(function ClickToID() {
-            $("div a").click(function () {
+@*<script>
+
+    $(function ClickToID() {
+        $("div b").click(function () {
                 var divID = this.id;//Or $(this).attr("id");
                 console.log("tıklandı:" + divID);
+            $("#Liste").html("");
+            $("#Liste").hide(300, function () {
                 //Your code here
                 $.ajax({
                     method: "POST",
@@ -69,10 +64,64 @@
                         console.log("Veriler Gonderildi.");
                     }
                 }).done(function (d) {
-                    console.log(d);
+                    console.log("d:"+d);
+                    $("#Liste").show(300, function () {
+                        for (var i in d) {
 
-                }).fail(function () {
-                    console.log("Uc deger için istek yapılırken hata oluştu..");
+                            var divPersonel = $("<div id='grid-item'><h2>" + d[i].PersonelName + "  " + d[i].PersonelSurname + "</h2>" +
+                                "<p><b>" + d[i].PersonelDahiliNo + " " + d[i].PersonelTel + " " + d[i].PersonelEposta + "</b></p></div > ");
+                            $("#Liste").append(divPersonel);
+                            console.log("Çekilen Veri: " + d[i].PersonelName + " " + d[i].PersonelSurname);
+                        }
+                    })
+
+                    }).fail(function () {
+                        console.log("hata olustu..");
+                });
+            });
+
+
+        });
+    });
+
+</script>*@
+
+
+
+
+    <script>
+
+        $(function ClickToID() {
+            $("div b").click(function () {
+                var divID = this.id;//Or $(this).attr("id");
+                console.log("tıklandı:" + divID);
+                $("#Liste").html("");
+                $("#Liste").hide(300, function () {
+                    //Your code here
+                    $.ajax({
+                        method: "POST",
+                        url: "/Home/PartialPers",
+                        data: { departmanid: divID },
+                        beforeSend: function () {
+                            console.log("Veriler Gonderildi.");
+                        }
+                    }).done(function (d) {
+                        console.log("d:" + d);
+                        
+                        $("#Liste").show(300, function () {
+
+                            
+                            for (var i in d) {
+
+                                var divPersonel = $('<tr><td>' + d[i].PersonelName + '</td><td>' + d[i].PersonelSurname + '</td><td>' + d[i].PersonelDahiliNo + '</td><td>' + d[i].PersonelTel + '</td><td>' + d[i].PersonelEposta + '</td></tr>');
+                                $("#Liste").append(divPersonel);
+                                console.log("Çekilen Veri: " + d[i].PersonelName + " " + d[i].PersonelSurname);
+                            }
+                        })
+
+                    }).fail(function () {
+                        console.log("hata olustu..");
+                    });
                 });
 
 
@@ -81,17 +130,41 @@
 
     </script>
 
-    @*@Html.Partial("PersonelPartial");*@
-    @*<div class="grid-container">
-            @foreach (var item in Model)
-            {
-                <div class="grid-item">
 
 
 
-                    <h3>@item.Personels</h3>
 
-                </div>
-            }
+    <script>
+        $(function ClickToID() {
+            $("div b").click(function () {
+                var divID = this.id;
+                console.log("tıklandı:" + divID);
+                $("#Liste2").html("");
+                $("#Liste2").hide(300, function () {
+                    //Your code here
+                    $.ajax({
+                        method: "POST",
+                        url: "/Home/YemekSirketi",
+                        data: { companyidd: divID },
+                        beforeSend: function () {
+                            console.log("Veriler Gonderildi.");
+                        }
+                    }).done(function (d) {
+                        console.log("d:" + d);
+                        $("#Liste2").show(300, function () {
 
-        </div>*@
+                            for (var i in d) {
+
+                                var divYemekSirketi = $("<h2>" + d[i].YemekSirketiAdi + "</h2> ");
+                                $("#Liste2").append(divYemekSirketi);
+                                console.log("Çekilen Veri: " + d[i].YemekSirketiAdi);
+                            }
+                        })
+                    }).fail(function () {
+                        console.log("hata olustu..");
+                    });
+                });
+            });
+        });
+    </script>
+

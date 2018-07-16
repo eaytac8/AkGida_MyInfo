@@ -217,6 +217,7 @@ textarea {
 }
 
 table {
+    border: 5px solid !important;
     border-collapse: collapse;
     border-spacing: 0;
 }
@@ -1598,7 +1599,7 @@ th {
         padding: 10px;
         line-height: 1.428571429;
         vertical-align: top;
-        border-top: 1px solid #e6e7e8;
+        border-top: 1px solid #e6e7e8 !important;
     }
 
     .table thead > tr > th {

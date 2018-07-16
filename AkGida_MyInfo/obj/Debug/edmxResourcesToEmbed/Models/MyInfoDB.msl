@@ -107,5 +107,14 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
+    <EntitySetMapping Name="MasterAdmin">
+      <EntityTypeMapping TypeName="AkGida_MyInfoModel.MasterAdmin">
+        <MappingFragment StoreEntitySet="MasterAdmin">
+          <ScalarProperty Name="MadminPassword" ColumnName="MadminPassword" />
+          <ScalarProperty Name="MadminMail" ColumnName="MadminMail" />
+          <ScalarProperty Name="MadminID" ColumnName="MadminID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
   </EntityContainerMapping>
 </Mapping>
