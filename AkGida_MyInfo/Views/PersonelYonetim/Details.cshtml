@@ -1,0 +1,75 @@
+﻿@model AkGida_MyInfo.Models.Personels
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Personels</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.PersonelName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PersonelName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PersonelSurname)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PersonelSurname)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PersonelTel)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PersonelTel)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PersonelDahiliNo)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PersonelDahiliNo)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PersonelEposta)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PersonelEposta)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Yetki)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Yetki)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Departments.DepartmentName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Departments.DepartmentName)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.PersonelID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

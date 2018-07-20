@@ -4,7 +4,7 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="8569eb95f7e14acd83f982d94eff2cbf" Name="Diagram1">
+      <Diagram DiagramId="8569eb95f7e14acd83f982d94eff2cbf" Name="Diagram1" ZoomLevel="93">
         <EntityTypeShape EntityType="AkGida_MyInfoModel.Companies" Width="1.5" PointX="0.75" PointY="5.25" IsExpanded="true" />
         <EntityTypeShape EntityType="AkGida_MyInfoModel.CompanyDuyuru" Width="1.5" PointX="3" PointY="2.5" IsExpanded="true" />
         <EntityTypeShape EntityType="AkGida_MyInfoModel.Departments" Width="1.5" PointX="3" PointY="5.875" IsExpanded="true" />
@@ -20,8 +20,12 @@
         <AssociationConnector Association="AkGida_MyInfoModel.FK_CompanyDuyuru_Duyurular" ManuallyRouted="false" />
         <AssociationConnector Association="AkGida_MyInfoModel.FK_Personels_Departments" ManuallyRouted="false" />
         <AssociationConnector Association="AkGida_MyInfoModel.FK_Menu_YemekSirketi" ManuallyRouted="false" />
-        <EntityTypeShape EntityType="AkGida_MyInfoModel.MasterAdmin" Width="1.5" PointX="7.375" PointY="3.625" />
-      </Diagram>
+        <EntityTypeShape EntityType="AkGida_MyInfoModel.Role" Width="1.5" PointX="7.375" PointY="8.25" />
+        <EntityTypeShape EntityType="AkGida_MyInfoModel.Users" Width="1.5" PointX="9.625" PointY="9.625" />
+        <EntityTypeShape EntityType="AkGida_MyInfoModel.Yetkiler" Width="1.5" PointX="9.625" PointY="7" />
+        <AssociationConnector Association="AkGida_MyInfoModel.RoleYetki" />
+        <AssociationConnector Association="AkGida_MyInfoModel.UserRole" />
+        </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>
 </edmx:Edmx>

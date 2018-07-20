@@ -11,17 +11,25 @@ namespace AkGida_MyInfo.Models
 {
     using System;
     using System.Collections.Generic;
-    
+    using System.ComponentModel.DataAnnotations;
+
     public partial class Menu
     {
         public int MenuID { get; set; }
+        [Display(Name = "Yemek Þirketi")]
         public Nullable<int> YemekSirketiID { get; set; }
         public Nullable<System.DateTime> Tarih { get; set; }
+        [Display(Name = "Çorba 1")]
         public string Corba1 { get; set; }
+        [Display(Name = "Çorba 2")]
         public string Corba2 { get; set; }
+        [Display(Name = "Ana Yemek 1")]
         public string AnaYemek1 { get; set; }
+        [Display(Name = "Ana Yemek 2")]
         public string AnaYemek2 { get; set; }
+        [Display(Name = "Ana Yemek 3")]
         public string AnaYemek3 { get; set; }
+        [Display(Name = "Ana Yemek 4")]
         public string AnaYemek4 { get; set; }
         public string Ekstra { get; set; }
         public string Pilav { get; set; }

@@ -11,7 +11,8 @@ namespace AkGida_MyInfo.Models
 {
     using System;
     using System.Collections.Generic;
-    
+    using System.ComponentModel.DataAnnotations;
+
     public partial class YemekSirketi
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
@@ -21,7 +22,9 @@ namespace AkGida_MyInfo.Models
         }
     
         public int YemekSirketiID { get; set; }
+        [Display(Name ="Yemek Þirketi")]
         public string YemekSirketiAdi { get; set; }
+        [Display(Name = "Þube")]
         public Nullable<int> CompanyID { get; set; }
     
         public virtual Companies Companies { get; set; }

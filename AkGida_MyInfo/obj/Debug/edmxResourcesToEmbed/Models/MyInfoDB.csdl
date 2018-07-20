@@ -215,14 +215,51 @@
       <End Role="YemekSirketi" EntitySet="YemekSirketi" />
       <End Role="Menu" EntitySet="Menu" />
     </AssociationSet>
-    <EntitySet Name="MasterAdmin" EntityType="AkGida_MyInfoModel.MasterAdmin" />
+    <EntitySet Name="Role" EntityType="AkGida_MyInfoModel.Role" />
+    <EntitySet Name="Users" EntityType="AkGida_MyInfoModel.Users" />
+    <EntitySet Name="Yetkiler" EntityType="AkGida_MyInfoModel.Yetkiler" />
+    <AssociationSet Name="RoleYetki" Association="AkGida_MyInfoModel.RoleYetki">
+      <End Role="Role" EntitySet="Role" />
+      <End Role="Yetkiler" EntitySet="Yetkiler" />
+    </AssociationSet>
+    <AssociationSet Name="UserRole" Association="AkGida_MyInfoModel.UserRole">
+      <End Role="Role" EntitySet="Role" />
+      <End Role="Users" EntitySet="Users" />
+    </AssociationSet>
   </EntityContainer>
-  <EntityType Name="MasterAdmin">
+  <EntityType Name="Role">
     <Key>
-      <PropertyRef Name="MadminID" />
+      <PropertyRef Name="RoleID" />
     </Key>
-    <Property Name="MadminID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="MadminMail" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-    <Property Name="MadminPassword" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="RoleID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="RoleDescription" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Yetkiler" Relationship="AkGida_MyInfoModel.RoleYetki" FromRole="Role" ToRole="Yetkiler" />
+    <NavigationProperty Name="Users" Relationship="AkGida_MyInfoModel.UserRole" FromRole="Role" ToRole="Users" />
   </EntityType>
+  <EntityType Name="Users">
+    <Key>
+      <PropertyRef Name="UserID" />
+    </Key>
+    <Property Name="UserID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Email" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="Password" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Role" Relationship="AkGida_MyInfoModel.UserRole" FromRole="Users" ToRole="Role" />
+  </EntityType>
+  <EntityType Name="Yetkiler">
+    <Key>
+      <PropertyRef Name="YetkiID" />
+    </Key>
+    <Property Name="YetkiID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="YetkiDescription" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="CompanyID" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Role" Relationship="AkGida_MyInfoModel.RoleYetki" FromRole="Yetkiler" ToRole="Role" />
+  </EntityType>
+  <Association Name="RoleYetki">
+    <End Type="AkGida_MyInfoModel.Role" Role="Role" Multiplicity="*" />
+    <End Type="AkGida_MyInfoModel.Yetkiler" Role="Yetkiler" Multiplicity="*" />
+  </Association>
+  <Association Name="UserRole">
+    <End Type="AkGida_MyInfoModel.Role" Role="Role" Multiplicity="*" />
+    <End Type="AkGida_MyInfoModel.Users" Role="Users" Multiplicity="*" />
+  </Association>
 </Schema>

@@ -11,7 +11,8 @@ namespace AkGida_MyInfo.Models
 {
     using System;
     using System.Collections.Generic;
-    
+    using System.ComponentModel.DataAnnotations;
+
     public partial class Companies
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
@@ -21,11 +22,16 @@ namespace AkGida_MyInfo.Models
             this.Departments = new HashSet<Departments>();
             this.YemekSirketi = new HashSet<YemekSirketi>();
         }
-    
+
+       
         public int CompanyID { get; set; }
+        [Display(Name ="Þube")]
         public string CompanyName { get; set; }
+        [Display(Name = "Þube Adresi")]
         public string CompanyAddress { get; set; }
+        [Display(Name = "Þube Türü")]
         public string CompanyType { get; set; }
+        [Display(Name = "Telefon No")]
         public string CompanyTel { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]

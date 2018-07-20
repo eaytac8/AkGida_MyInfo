@@ -1,0 +1,136 @@
+﻿@model AkGida_MyInfo.Models.Menu
+
+@{
+    ViewBag.Title = "Menüyü Sil";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+
+<h3>Bu menüyü silmek istediğinize emin misiniz?</h3>
+<div>
+    
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Tarih)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Tarih)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Corba1)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Corba1)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Corba2)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Corba2)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.AnaYemek1)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.AnaYemek1)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.AnaYemek2)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.AnaYemek2)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.AnaYemek3)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.AnaYemek3)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.AnaYemek4)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.AnaYemek4)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Ekstra)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Ekstra)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Pilav)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Pilav)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Makarna)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Makarna)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Meyve)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Meyve)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Salata)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Salata)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Fiyat)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Fiyat)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.YemekSirketi.YemekSirketiAdi)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.YemekSirketi.YemekSirketiAdi)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Sil" class="btn btn-success" /> |
+            @Html.ActionLink("listeye Geri Dön", "Index")
+        </div>
+    }
+</div>

@@ -1,5 +1,6 @@
-﻿@using AkGida_MyInfo.Models
-@model List<Departments>
+﻿@using AkGida_MyInfo.ViewModel
+@using AkGida_MyInfo.Models
+@model ViewModels
 
 
 
@@ -19,7 +20,6 @@
     }
 
     .grid-item {
-        /*background-color: rgba(255, 255, 255, 0.8);*/
         background-color: rgb(255, 255, 255);
         border: 1px solid rgb(24, 193, 182);
         padding: 20px;
@@ -32,29 +32,32 @@
         padding: 6px;
     }
 
+    table > tr > th {
+        align-content: center;
+    }
 </style>
 
 <div class="grid-container">
-    @foreach (var item in Model)
+    @foreach (Departments item in Model.Departmanlarim)
     {
         <div class="grid-item">
-            <h3><b id=@item.DepartmentID.ToString()>@item.DepartmentName </b></h3>
+            <h3><b id=@item.DepartmentID>@item.DepartmentName</b></h3>
         </div>
     }
 
 </div>
 <hr />
-<table id="Liste"  style="width:100%; display:none;">
-</table>
+<table id="Liste" style="width:100%; display:none;"></table>
 
-@*<script>
+
+<script>
 
     $(function ClickToID() {
         $("div b").click(function () {
-                var divID = this.id;//Or $(this).attr("id");
-                console.log("tıklandı:" + divID);
+            var divID = this.id;//Or $(this).attr("id");
+            console.log("tıklandı:" + divID);
             $("#Liste").html("");
-            $("#Liste").hide(300, function () {
+            $("#Liste").hide(1, function () {
                 //Your code here
                 $.ajax({
                     method: "POST",
@@ -64,19 +67,22 @@
                         console.log("Veriler Gonderildi.");
                     }
                 }).done(function (d) {
-                    console.log("d:"+d);
-                    $("#Liste").show(300, function () {
+                    console.log("d:" + d);
+
+                    $("#Liste").show(1, function () {
+
+                        var thead = $('<tr><th>Personel Ad</th><th>Personel Soyad</th><th>Dahili No</th><th>Telefon No</th><th>Mail Adresi</th></tr>');
+                        $("#Liste").append(thead);
                         for (var i in d) {
 
-                            var divPersonel = $("<div id='grid-item'><h2>" + d[i].PersonelName + "  " + d[i].PersonelSurname + "</h2>" +
-                                "<p><b>" + d[i].PersonelDahiliNo + " " + d[i].PersonelTel + " " + d[i].PersonelEposta + "</b></p></div > ");
+                            var divPersonel = $('<tr><td>' + d[i].PersonelName + '</td><td>' + d[i].PersonelSurname + '</td><td>' + d[i].PersonelDahiliNo + '</td><td>' + d[i].PersonelTel + '</td><td>' + d[i].PersonelEposta + '</td></tr>');
                             $("#Liste").append(divPersonel);
-                            console.log("Çekilen Veri: " + d[i].PersonelName + " " + d[i].PersonelSurname);
+
                         }
                     })
 
-                    }).fail(function () {
-                        console.log("hata olustu..");
+                }).fail(function () {
+                    console.log("hata olustu..");
                 });
             });
 
@@ -84,61 +90,49 @@
         });
     });
 
-</script>*@
+</script>
+
+
+<div class="container text-center">
+    <br>
+    <div class="row">
+        <div class="col-md-4">
+            <h3>Yemek Şirketleri</h3>
+            @foreach (YemekSirketi y_item in Model.YemekSirketlerim)
+            {
+                <frame>
+                    <div class="grid-item">
+                        <h3>@y_item.YemekSirketiAdi</h3>
+                    </div>
+
+                </frame>
+
+            }
+        </div>
+        <div class="col-md-8">
+            <h3>Duyurular</h3>
+            @foreach (Duyurular y_item in Model.Duyurularim)
+            {
+                <frame>
+                    <div class="grid-item">
+                        <h3>@y_item.Baslik</h3>
+                        <p>@y_item.Icerik</p>
+                    </div>
+
+                </frame>
+
+            }
+        </div>
+    </div>
+</div><br>
 
 
 
-
-    <script>
-
-        $(function ClickToID() {
-            $("div b").click(function () {
-                var divID = this.id;//Or $(this).attr("id");
-                console.log("tıklandı:" + divID);
-                $("#Liste").html("");
-                $("#Liste").hide(300, function () {
-                    //Your code here
-                    $.ajax({
-                        method: "POST",
-                        url: "/Home/PartialPers",
-                        data: { departmanid: divID },
-                        beforeSend: function () {
-                            console.log("Veriler Gonderildi.");
-                        }
-                    }).done(function (d) {
-                        console.log("d:" + d);
-                        
-                        $("#Liste").show(300, function () {
-
-                            
-                            for (var i in d) {
-
-                                var divPersonel = $('<tr><td>' + d[i].PersonelName + '</td><td>' + d[i].PersonelSurname + '</td><td>' + d[i].PersonelDahiliNo + '</td><td>' + d[i].PersonelTel + '</td><td>' + d[i].PersonelEposta + '</td></tr>');
-                                $("#Liste").append(divPersonel);
-                                console.log("Çekilen Veri: " + d[i].PersonelName + " " + d[i].PersonelSurname);
-                            }
-                        })
-
-                    }).fail(function () {
-                        console.log("hata olustu..");
-                    });
-                });
-
-
-            });
-        });
-
-    </script>
-
-
-
-
-
-    <script>
-        $(function ClickToID() {
-            $("div b").click(function () {
-                var divID = this.id;
-                console.log("tıklandı:" + divID);
+@*<script>
+        $(function ClickToIDD() {
+            $().click(function () {
+                var divID =Companies.CompanyID ;
+                console.log("company tıklandı:" + divID);
                 $("#Liste2").html("");
                 $("#Liste2").hide(300, function () {
                     //Your code here
@@ -166,5 +160,66 @@
                 });
             });
         });
-    </script>
+    </script>*@
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@*personeller tablo şekline getirilmeden görüntüleniyor*@
+
+
+@*<script>
+
+        $(function ClickToID() {
+            $("div b").click(function () {
+                    var divID = this.id;//Or $(this).attr("id");
+                    console.log("tıklandı:" + divID);
+                $("#Liste").html("");
+                $("#Liste").hide(300, function () {
+                    //Your code here
+                    $.ajax({
+                        method: "POST",
+                        url: "/Home/PartialPers",
+                        data: { departmanid: divID },
+                        beforeSend: function () {
+                            console.log("Veriler Gonderildi.");
+                        }
+                    }).done(function (d) {
+                        console.log("d:"+d);
+                        $("#Liste").show(300, function () {
+                            for (var i in d) {
+
+                                var divPersonel = $("<div id='grid-item'><h2>" + d[i].PersonelName + "  " + d[i].PersonelSurname + "</h2>" +
+                                    "<p><b>" + d[i].PersonelDahiliNo + " " + d[i].PersonelTel + " " + d[i].PersonelEposta + "</b></p></div > ");
+                                $("#Liste").append(divPersonel);
+                                console.log("Çekilen Veri: " + d[i].PersonelName + " " + d[i].PersonelSurname);
+                            }
+                        })
+
+                        }).fail(function () {
+                            console.log("hata olustu..");
+                    });
+                });
+
+
+            });
+        });
+
+    </script>*@

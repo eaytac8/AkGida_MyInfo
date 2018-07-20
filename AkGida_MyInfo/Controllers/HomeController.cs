@@ -5,20 +5,22 @@ using System.Web;
 using System.Web.Mvc;
 using AkGida_MyInfo.Models;
 using System.Data.SqlClient;
+using AkGida_MyInfo.ViewModel;
 
 
 namespace AkGida_MyInfo.Controllers
 {
     public class HomeController : Controller
     {
-         AkGida_MyInfoEntities db = new AkGida_MyInfoEntities();
-        
+        AkGida_MyInfoEntities db = new AkGida_MyInfoEntities();
+        ViewModels modeller;
+
 
         public ActionResult Index()
         {
 
-            List<Companies> company = new List<Companies>();  
-            company = db.Companies.ToList();
+            List<Companies> company = new List<Companies>();
+            company = db.Companies.OrderBy(x => x.CompanyID).ToList();
             //List<Companies> company = new List<Companies>();
             //Companies comp;
             //using (connection)
@@ -56,11 +58,57 @@ namespace AkGida_MyInfo.Controllers
 
         public ActionResult Departments(int? companyid)
         {
+            modeller = new ViewModels();
 
             List<Departments> department = new List<Departments>();
-            department = db.Departments.Where(x => x.CompanyID == companyid).ToList();
-            
-            return View(department);
+            department = db.Departments.Where(x => x.CompanyID == companyid).OrderBy(x => x.CompanyID).ThenBy(x => x.DepartmentName).ToList();
+
+            List<Duyurular> duyurular = new List<Duyurular>();
+            Duyurular duyuru;
+            try
+            {
+                using (SqlConnection connection = new SqlConnection(@"Data Source=MININT-UL27J5C\SQLEXPRESS;Initial Catalog=AkGida_MyInfo;User ID=sa;Password=Ea123456;MultipleActiveResultSets=True;Application Name=EntityFramework"))
+                {
+                    SqlCommand command = new SqlCommand($"SELECT D.DuyuruID,D.Baslik,D.DuyuruTarih,D.Icerik,CD.CompanyDuyuruID,C.CompanyID FROM Duyurular as D " +
+                        "INNER JOIN CompanyDuyuru as CD ON  CD.CompanyDuyuruID= D.DuyuruID INNER JOIN Companies as C" +
+     $"   ON C.CompanyID = CD.CompanyDuyuruID WHERE C.CompanyID = {companyid}", connection);
+                    connection.Open();
+                    SqlDataReader reader = command.ExecuteReader();
+
+                    try
+                    {
+                        while (reader.Read())
+                        {
+                            duyuru = new Duyurular();
+                            duyuru.DuyuruID = reader.GetInt32(0);
+                            duyuru.Baslik = reader.GetString(1);
+                            duyuru.Icerik = reader.GetString(3);
+                            duyuru.DuyuruTarih = reader.GetDateTime(2);
+                            duyurular.Add(duyuru);
+                        }
+                    }
+                    finally
+                    {
+                        reader.Close();
+
+                    }
+                    connection.Close();
+                }
+
+                List<YemekSirketi> yemekSirketi = new List<YemekSirketi>();
+
+                yemekSirketi = db.YemekSirketi.Where(T => T.CompanyID == companyid).ToList();
+                modeller.Duyurularim = duyurular;
+                modeller.Departmanlarim = department;
+                modeller.YemekSirketlerim = yemekSirketi;
+            }
+            catch (Exception)
+            {
+
+                return RedirectToAction("Index");
+            }
+
+            return View(modeller);
         }
 
         public JsonResult PartialPers(int? departmanid)
@@ -71,7 +119,7 @@ namespace AkGida_MyInfo.Controllers
             Personels personels;
             using (SqlConnection connection = new SqlConnection(@"Data Source=MININT-UL27J5C\SQLEXPRESS;Initial Catalog=AkGida_MyInfo;User ID=sa;Password=Ea123456;MultipleActiveResultSets=True;Application Name=EntityFramework"))
             {
-                SqlCommand command = new SqlCommand($"Select * from Personels Where [DepartmentID] = {departmanid}", connection);
+                SqlCommand command = new SqlCommand($"Select * from Personels Where [DepartmentID] = {departmanid} Order By PersonelName", connection);
                 connection.Open();
                 SqlDataReader reader = command.ExecuteReader();
 
@@ -139,7 +187,7 @@ namespace AkGida_MyInfo.Controllers
         //}
 
     }
- 
+
     public class AnasayfaDTO
     {
         public List<Slider> slider { get; set; }

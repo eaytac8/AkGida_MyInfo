@@ -11,15 +11,22 @@ namespace AkGida_MyInfo.Models
 {
     using System;
     using System.Collections.Generic;
-    
+    using System.ComponentModel.DataAnnotations;
+
     public partial class Personels
     {
         public int PersonelID { get; set; }
+        [Display(Name = "Adý")]
         public string PersonelName { get; set; }
+        [Display(Name = "Soyadý")]
         public string PersonelSurname { get; set; }
+        [Display(Name = "Telefon")]
         public string PersonelTel { get; set; }
+        [Display(Name = "Dahili No")]
         public string PersonelDahiliNo { get; set; }
+        [Display(Name = "E-Posta")]
         public string PersonelEposta { get; set; }
+        [Display(Name = "Departman Adý")]
         public Nullable<int> DepartmentID { get; set; }
         public Nullable<int> Yetki { get; set; }
     

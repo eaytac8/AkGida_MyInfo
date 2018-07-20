@@ -107,14 +107,47 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <EntitySetMapping Name="MasterAdmin">
-      <EntityTypeMapping TypeName="AkGida_MyInfoModel.MasterAdmin">
-        <MappingFragment StoreEntitySet="MasterAdmin">
-          <ScalarProperty Name="MadminPassword" ColumnName="MadminPassword" />
-          <ScalarProperty Name="MadminMail" ColumnName="MadminMail" />
-          <ScalarProperty Name="MadminID" ColumnName="MadminID" />
+    <EntitySetMapping Name="Role">
+      <EntityTypeMapping TypeName="AkGida_MyInfoModel.Role">
+        <MappingFragment StoreEntitySet="Role">
+          <ScalarProperty Name="RoleDescription" ColumnName="RoleDescription" />
+          <ScalarProperty Name="RoleID" ColumnName="RoleID" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
+    <EntitySetMapping Name="Users">
+      <EntityTypeMapping TypeName="AkGida_MyInfoModel.Users">
+        <MappingFragment StoreEntitySet="Users">
+          <ScalarProperty Name="Password" ColumnName="Password" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="UserID" ColumnName="UserID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Yetkiler">
+      <EntityTypeMapping TypeName="AkGida_MyInfoModel.Yetkiler">
+        <MappingFragment StoreEntitySet="Yetkiler">
+          <ScalarProperty Name="CompanyID" ColumnName="CompanyID" />
+          <ScalarProperty Name="YetkiDescription" ColumnName="YetkiDescription" />
+          <ScalarProperty Name="YetkiID" ColumnName="YetkiID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <AssociationSetMapping Name="RoleYetki" TypeName="AkGida_MyInfoModel.RoleYetki" StoreEntitySet="RoleYetki">
+      <EndProperty Name="Yetkiler">
+        <ScalarProperty Name="YetkiID" ColumnName="YetkiID" />
+      </EndProperty>
+      <EndProperty Name="Role">
+        <ScalarProperty Name="RoleID" ColumnName="RoleID" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="UserRole" TypeName="AkGida_MyInfoModel.UserRole" StoreEntitySet="UserRole">
+      <EndProperty Name="Users">
+        <ScalarProperty Name="UserID" ColumnName="UserID" />
+      </EndProperty>
+      <EndProperty Name="Role">
+        <ScalarProperty Name="RoleID" ColumnName="RoleID" />
+      </EndProperty>
+    </AssociationSetMapping>
   </EntityContainerMapping>
 </Mapping>

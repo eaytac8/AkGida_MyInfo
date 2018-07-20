@@ -35,14 +35,6 @@
     <Property Name="Icerik" Type="nvarchar" MaxLength="400" />
     <Property Name="DuyuruTarih" Type="datetime" />
   </EntityType>
-  <EntityType Name="MasterAdmin">
-    <Key>
-      <PropertyRef Name="MadminID" />
-    </Key>
-    <Property Name="MadminID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="MadminMail" Type="varchar" MaxLength="50" />
-    <Property Name="MadminPassword" Type="varchar" MaxLength="30" />
-  </EntityType>
   <EntityType Name="Menu">
     <Key>
       <PropertyRef Name="MenuID" />
@@ -76,6 +68,23 @@
     <Property Name="DepartmentID" Type="int" />
     <Property Name="Yetki" Type="int" />
   </EntityType>
+  <EntityType Name="Role">
+    <Key>
+      <PropertyRef Name="RoleID" />
+    </Key>
+    <Property Name="RoleID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="RoleDescription" Type="nvarchar" MaxLength="100" Nullable="false" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'AkGida_MyInfo.dbo.RoleYetki' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="RoleYetki">
+    <Key>
+      <PropertyRef Name="RoleID" />
+      <PropertyRef Name="YetkiID" />
+    </Key>
+    <Property Name="RoleID" Type="int" Nullable="false" />
+    <Property Name="YetkiID" Type="int" Nullable="false" />
+  </EntityType>
   <EntityType Name="Slider">
     <Key>
       <PropertyRef Name="SliderID" />
@@ -97,6 +106,24 @@
     <Property Name="version" Type="int" />
     <Property Name="definition" Type="varbinary(max)" />
   </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'AkGida_MyInfo.dbo.UserRole' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="UserRole">
+    <Key>
+      <PropertyRef Name="UserID" />
+      <PropertyRef Name="RoleID" />
+    </Key>
+    <Property Name="UserID" Type="int" Nullable="false" />
+    <Property Name="RoleID" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Users">
+    <Key>
+      <PropertyRef Name="UserID" />
+    </Key>
+    <Property Name="UserID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Email" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="Password" Type="nvarchar" MaxLength="50" Nullable="false" />
+  </EntityType>
   <EntityType Name="YemekSirketi">
     <Key>
       <PropertyRef Name="YemekSirketiID" />
@@ -104,6 +131,14 @@
     <Property Name="YemekSirketiID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="YemekSirketiAdi" Type="nvarchar" MaxLength="70" />
     <Property Name="CompanyID" Type="int" />
+  </EntityType>
+  <EntityType Name="Yetkiler">
+    <Key>
+      <PropertyRef Name="YetkiID" />
+    </Key>
+    <Property Name="YetkiID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="YetkiDescription" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="CompanyID" Type="int" Nullable="false" />
   </EntityType>
   <Association Name="FK_CompanyDuyuru_Companies">
     <End Role="Companies" Type="Self.Companies" Multiplicity="0..1" />
@@ -165,6 +200,54 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
+  <Association Name="FK_RoleYetki_Role">
+    <End Role="Role" Type="Self.Role" Multiplicity="1" />
+    <End Role="RoleYetki" Type="Self.RoleYetki" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Role">
+        <PropertyRef Name="RoleID" />
+      </Principal>
+      <Dependent Role="RoleYetki">
+        <PropertyRef Name="RoleID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_RoleYetki_Yetkiler">
+    <End Role="Yetkiler" Type="Self.Yetkiler" Multiplicity="1" />
+    <End Role="RoleYetki" Type="Self.RoleYetki" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Yetkiler">
+        <PropertyRef Name="YetkiID" />
+      </Principal>
+      <Dependent Role="RoleYetki">
+        <PropertyRef Name="YetkiID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_UserRole_Role">
+    <End Role="Role" Type="Self.Role" Multiplicity="1" />
+    <End Role="UserRole" Type="Self.UserRole" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Role">
+        <PropertyRef Name="RoleID" />
+      </Principal>
+      <Dependent Role="UserRole">
+        <PropertyRef Name="RoleID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_UserRole_Users">
+    <End Role="Users" Type="Self.Users" Multiplicity="1" />
+    <End Role="UserRole" Type="Self.UserRole" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Users">
+        <PropertyRef Name="UserID" />
+      </Principal>
+      <Dependent Role="UserRole">
+        <PropertyRef Name="UserID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
   <Association Name="FK_YemekSirketi_Companies">
     <End Role="Companies" Type="Self.Companies" Multiplicity="0..1" />
     <End Role="YemekSirketi" Type="Self.YemekSirketi" Multiplicity="*" />
@@ -182,12 +265,26 @@
     <EntitySet Name="CompanyDuyuru" EntityType="Self.CompanyDuyuru" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Departments" EntityType="Self.Departments" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Duyurular" EntityType="Self.Duyurular" Schema="dbo" store:Type="Tables" />
-    <EntitySet Name="MasterAdmin" EntityType="Self.MasterAdmin" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Menu" EntityType="Self.Menu" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Personels" EntityType="Self.Personels" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Role" EntityType="Self.Role" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Slider" EntityType="Self.Slider" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Users" EntityType="Self.Users" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="YemekSirketi" EntityType="Self.YemekSirketi" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Yetkiler" EntityType="Self.Yetkiler" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="RoleYetki" EntityType="Self.RoleYetki" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [RoleYetki].[RoleID] AS [RoleID], 
+    [RoleYetki].[YetkiID] AS [YetkiID]
+    FROM [dbo].[RoleYetki] AS [RoleYetki]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="UserRole" EntityType="Self.UserRole" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [UserRole].[UserID] AS [UserID], 
+    [UserRole].[RoleID] AS [RoleID]
+    FROM [dbo].[UserRole] AS [UserRole]</DefiningQuery>
+    </EntitySet>
     <AssociationSet Name="FK_CompanyDuyuru_Companies" Association="Self.FK_CompanyDuyuru_Companies">
       <End Role="Companies" EntitySet="Companies" />
       <End Role="CompanyDuyuru" EntitySet="CompanyDuyuru" />
@@ -207,6 +304,22 @@
     <AssociationSet Name="FK_Personels_Departments" Association="Self.FK_Personels_Departments">
       <End Role="Departments" EntitySet="Departments" />
       <End Role="Personels" EntitySet="Personels" />
+    </AssociationSet>
+    <AssociationSet Name="FK_RoleYetki_Role" Association="Self.FK_RoleYetki_Role">
+      <End Role="Role" EntitySet="Role" />
+      <End Role="RoleYetki" EntitySet="RoleYetki" />
+    </AssociationSet>
+    <AssociationSet Name="FK_RoleYetki_Yetkiler" Association="Self.FK_RoleYetki_Yetkiler">
+      <End Role="Yetkiler" EntitySet="Yetkiler" />
+      <End Role="RoleYetki" EntitySet="RoleYetki" />
+    </AssociationSet>
+    <AssociationSet Name="FK_UserRole_Role" Association="Self.FK_UserRole_Role">
+      <End Role="Role" EntitySet="Role" />
+      <End Role="UserRole" EntitySet="UserRole" />
+    </AssociationSet>
+    <AssociationSet Name="FK_UserRole_Users" Association="Self.FK_UserRole_Users">
+      <End Role="Users" EntitySet="Users" />
+      <End Role="UserRole" EntitySet="UserRole" />
     </AssociationSet>
     <AssociationSet Name="FK_YemekSirketi_Companies" Association="Self.FK_YemekSirketi_Companies">
       <End Role="Companies" EntitySet="Companies" />

@@ -1,0 +1,112 @@
+﻿@model IEnumerable<AkGida_MyInfo.Models.Personels>
+
+@{
+    ViewBag.Title = "Personel Listesi";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+
+<p>
+    @*@Html.ActionLink("Yeni Personel Oluştur", "Create")*@
+    <a href="/PersonelYonetim/Create" button type="button" class="btn btn-primary">Personel Ekle</a>
+</p>
+
+
+<div class="table-responsive">
+    <table class="table table-bordered nomargin">
+        <thead>
+            <tr>
+                <th>Adı</th>
+                <th>Soyadı</th>
+                <th>Dahili No</th>
+                <th>Corbus</th>
+                <th>Kişisel No</th>
+                <th>E-Posta</th>
+                <th>Departman</th>
+                <th>Şube</th>
+                <th>İşlemler</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+            <tr>
+                <td>@item.PersonelName</td>
+                <td>@item.PersonelSurname</td>
+                <td>@item.PersonelDahiliNo</td>
+                <td>corbus</td>
+                <td>@item.PersonelTel</td>
+                <td>@item.PersonelEposta</td>
+                <td>@item.Departments.DepartmentName</td>
+                <td>@item.Departments.Companies.CompanyName</td>
+                <td>
+                    <a href="/PersonelYonetim/Edit/@item.PersonelID" class="btn btn-info btn-xs"><i class="fa fa-edit white"></i> Düzenle </a>
+                    <a href="/PersonelYonetim/Delete/@item.PersonelID" class="btn btn-danger btn-xs"><i class="fa fa-times white"></i> Sil </a>
+                </td>
+            </tr>
+            }
+
+        </tbody>
+    </table>
+</div>
+
+
+
+@*<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.PersonelName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PersonelSurname)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PersonelTel)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PersonelDahiliNo)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PersonelEposta)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Yetki)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Departments.DepartmentName)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.PersonelName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.PersonelSurname)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.PersonelTel)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.PersonelDahiliNo)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.PersonelEposta)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Yetki)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Departments.DepartmentName)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.PersonelID }) |
+            @Html.ActionLink("Details", "Details", new { id=item.PersonelID }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.PersonelID })
+        </td>
+    </tr>
+}
+
+</table>*@

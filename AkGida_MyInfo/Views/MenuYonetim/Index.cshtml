@@ -1,0 +1,112 @@
+﻿@model IEnumerable<AkGida_MyInfo.Models.Menu>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Tarih)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Corba1)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Corba2)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.AnaYemek1)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.AnaYemek2)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.AnaYemek3)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.AnaYemek4)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Ekstra)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Pilav)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Makarna)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Meyve)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Salata)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Fiyat)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.YemekSirketi.YemekSirketiAdi)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Tarih)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Corba1)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Corba2)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.AnaYemek1)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.AnaYemek2)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.AnaYemek3)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.AnaYemek4)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Ekstra)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Pilav)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Makarna)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Meyve)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Salata)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Fiyat)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.YemekSirketi.YemekSirketiAdi)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.MenuID }) |
+            @Html.ActionLink("Details", "Details", new { id=item.MenuID }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.MenuID })
+        </td>
+    </tr>
+}
+
+</table>

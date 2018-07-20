@@ -11,10 +11,13 @@ namespace AkGida_MyInfo.Models
 {
     using System;
     using System.Collections.Generic;
-    
+    using System.ComponentModel.DataAnnotations;
+
     public partial class CompanyDuyuru
     {
+        
         public int CompanyDuyuruID { get; set; }
+        [Display(Name = "Þube")]
         public Nullable<int> CompanyID { get; set; }
         public Nullable<int> DuyuruID { get; set; }
     
