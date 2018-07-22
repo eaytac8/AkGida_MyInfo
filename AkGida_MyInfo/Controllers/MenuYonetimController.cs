@@ -7,6 +7,7 @@ using System.Net;
 using System.Web;
 using System.Web.Mvc;
 using AkGida_MyInfo.Models;
+using AkGida_MyInfo.ViewModel;
 
 namespace AkGida_MyInfo.Controllers
 {
@@ -25,15 +26,44 @@ namespace AkGida_MyInfo.Controllers
         // GET: MenuYonetim/Create
         public ActionResult Create()
         {
-            ViewBag.YemekSirketiID = new SelectList(db.YemekSirketi, "YemekSirketiID", "YemekSirketiAdi");
-            ViewBag.CompanyID = new SelectList(db.Companies, "CompanyID", "CompanyName");
-            return View();
+            MenuCreate model = new MenuCreate();
+            List<Companies> companyList = db.Companies.OrderBy(x => x.CompanyID).ToList();
+            model.CompanyList = (from c in companyList
+                                 select new SelectListItem
+                                 {
+                                     Text = c.CompanyName,
+                                     Value = c.CompanyID.ToString()
+
+                                 }).ToList();
+
+            model.CompanyList.Insert(0, new SelectListItem { Text = "Seçiniz..", Value = "", Selected = true });
+
+            return View(model);
+            
         }
+
+        //[HttpPost]
+        //public ActionResult Create(int CompanyID)
+        //{
+        //    return RedirectToAction("Create", "MenuYonetim");
+        //}
+
         [HttpPost]
-        public ActionResult Create(int CompanyID)
+        public JsonResult YemekSirketiList(int id)
         {
-            return RedirectToAction("Create", "MenuYonetim");
+            List<YemekSirketi> ySirList = db.YemekSirketi.Where(x => x.CompanyID==id).OrderBy(x => x.YemekSirketiAdi).ToList();
+
+            List<SelectListItem> itemList = (from y in ySirList
+                                            select new SelectListItem
+                                            {
+                                                Text = y.YemekSirketiAdi,
+                                                Value = y.YemekSirketiID.ToString()
+                                            }).ToList();
+
+            return Json(itemList,JsonRequestBehavior.AllowGet);
         }
+        
+
 
         // POST: MenuYonetim/Create
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 

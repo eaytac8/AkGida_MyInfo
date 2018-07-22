@@ -7,6 +7,7 @@ using System.Net;
 using System.Web;
 using System.Web.Mvc;
 using AkGida_MyInfo.Models;
+using AkGida_MyInfo.ViewModel;
 
 namespace AkGida_MyInfo.Controllers
 {
@@ -17,7 +18,7 @@ namespace AkGida_MyInfo.Controllers
         // GET: PersonelYonetim
         public ActionResult Index()
         {
-            //düşünüyorum da bi dk.tamam
+          
             var personels = db.Personels.Include(p => p.Departments).OrderBy(x => x.Departments.CompanyID).ThenBy(x => x.DepartmentID).ThenBy(x => x.PersonelName);
             return View(personels.ToList());
         }
@@ -25,14 +26,49 @@ namespace AkGida_MyInfo.Controllers
         // GET: PersonelYonetim/Create
         public ActionResult Create()
         {
-            ViewBag.Company = new SelectList(db.Companies, "CompanyID", "CompanyName");
+            PersonelCreate model = new PersonelCreate();
+            List<Companies> companyList = db.Companies.OrderBy(x => x.CompanyID).ToList();
+            model.CompanyList = (from c in companyList
+                                 select new SelectListItem
+                                 {
+                                     Text = c.CompanyName,
+                                     Value = c.CompanyID.ToString()
+
+                                 }).ToList();
+
+            model.CompanyList.Insert(0, new SelectListItem { Text = "Seçiniz..", Value = "", Selected = true });
+
+            return View(model);
+
+
+            /*ViewBag.Company = new SelectList(db.Companies, "CompanyID", "CompanyName");*/  //-------en son burasıydı, bir alt satır değil
             //ViewBag.DepartmentID = new SelectList(db.Departments, "DepartmentID", "DepartmentName");
-            return View();
+            //return View();
         }
+
+
+
+        [HttpPost]
+        public JsonResult DepartmentList(int id)
+        {
+            List<Departments> dprtmnList = db.Departments.Where(x => x.CompanyID == id).OrderBy(x => x.DepartmentName).ToList();
+
+            List<SelectListItem> itemList = (from d in dprtmnList
+                                             select new SelectListItem
+                                             {
+                                                 Text = d.DepartmentName,
+                                                 Value = d.DepartmentID.ToString()
+                                             }).ToList();
+
+            return Json(itemList, JsonRequestBehavior.AllowGet);
+        }
+
+
 
         // POST: PersonelYonetim/Create
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
+
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult Create([Bind(Include = "PersonelID,PersonelName,PersonelSurname,PersonelTel,PersonelDahiliNo,PersonelEposta,DepartmentID,Yetki")] Personels personels)
@@ -47,6 +83,11 @@ namespace AkGida_MyInfo.Controllers
             ViewBag.DepartmentID = new SelectList(db.Departments, "DepartmentID", "DepartmentName", personels.DepartmentID);
             return View(personels);
         }
+
+
+
+
+
 
         // GET: PersonelYonetim/Edit/5
         public ActionResult Edit(int? id)

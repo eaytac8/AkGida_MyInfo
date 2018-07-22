@@ -3,7 +3,8 @@
 <head>
     <meta charset="utf-8" />
     <meta http-equiv="Content-type" content="text/html; charset=utf-8" />
-    <title>Smarty Admin</title>
+    <title>My Info - Yönetim</title>
+    <link rel="shortcut icon" href="\Assets\favicon.ico" />
     <meta name="description" content="" />
     <meta name="Author" content="Dorin Grigoras [www.stepofweb.com]" />
 
@@ -195,7 +196,7 @@
 
             <!-- Logo -->
             <span class="logo pull-left">
-                <img src="~/Content/Admin/assets/images/logo_light.png" alt="admin panel" height="35" />
+                <img src="~/Content/Admin/assets/images/logo_light.png" alt="admin panel" height="35"/>
             </span>
 
             <form method="get" action="page-search.html" class="search pull-left hidden-xs">
@@ -263,11 +264,8 @@
 
             <!-- page title -->
             <header id="page-header">
-                <h1>Blank Page</h1>
-                <ol class="breadcrumb">
-                    <li><a href="#">Pages</a></li>
-                    <li class="active">Blank Page</li>
-                </ol>
+                <h1>@ViewBag.Title</h1>
+                
             </header>
             <!-- /page title -->
 
@@ -285,7 +283,7 @@
 
 
     <!-- JAVASCRIPT FILES -->
-    <script type="text/javascript">var plugin_path = '~/Content/Admin/assets/plugins/';</script>
+    <script type="text/javascript">var plugin_path = '/Content/Admin/assets/plugins/';</script>
     <script type="text/javascript" src="~/Content/Admin/assets/js/app.js"></script>
 
 </body>

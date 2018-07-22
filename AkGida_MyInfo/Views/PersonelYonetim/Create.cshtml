@@ -4,9 +4,10 @@
     ViewBag.Title = "Personel Ekle";
     Layout = "~/Views/Shared/_AdminLayout.cshtml";
 }
-@{
+
+@*@{
     List<SelectListItem> departmanlar = new List<SelectListItem>();
-}
+}*@
 
 @using (Html.BeginForm())
 {
@@ -55,21 +56,28 @@
                 @Html.ValidationMessageFor(model => model.personel.PersonelEposta, "", new { @class = "text-danger" })
             </div>
         </div>
+
+
         <div class="form-group">
             @Html.LabelFor(model => model.company.CompanyID, "Company", htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-9">
-                @Html.DropDownList("Company", null, htmlAttributes: new { @id = "CompanySec" , @class = "form-control" })
+                @Html.DropDownListFor(x => x.company.CompanyID, Model.CompanyList, htmlAttributes: new { @id = "CompanySec", @class = "form-control" })
                 @Html.ValidationMessageFor(model => model.company.CompanyID, "", new { @class = "text-danger" })
             </div>
         </div>
 
-        @*<div class="form-group" style="display:none">
-                @Html.LabelFor(model => model.personel.DepartmentID, "Departman", htmlAttributes: new { @class = "control-label col-md-2" })
-                <div class="col-md-9">
-                    @Html.DropDownList("Departman", null, htmlAttributes: new { @class = "form-control" })
-                    @Html.ValidationMessageFor(model => model.personel.DepartmentID, "", new { @class = "text-danger" })
-                </div>
-            </div>*@
+
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.departman.DepartmentID, "Departman", htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-9">
+                @Html.DropDownListFor(x => x.departman.DepartmentID, Model.DepartmanList, htmlAttributes: new {@id="DepartmentID1",@class = "form-control" })
+                @Html.ValidationMessageFor(model => model.departman.DepartmentID, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+
+
 
         <div class="form-group">
             @Html.LabelFor(model => model.personel.Yetki, htmlAttributes: new { @class = "control-label col-md-2" })
@@ -86,37 +94,77 @@
         </div>
     </div>
 }
-<script>
-    $(document).ready(function () {
-        $("#CompanySec").click(function () {
-            var cName = document.getElementById("Company");
-            var companyName = cName.options[cName.selectedIndex].text;
-            console.log("Seçilen Company" + companyName);
-            document.getElementById('Departman').options.length = 0;
-            $.ajax({
-                method: "POST",
-                url: "/PersonelYonetim/DepartmanGetir",
-                data: { CompName: companyName },
-                BeforeSend: function () {
-                    console.log("verileri gitti");
-                }
-            }).done(function (data) {
-                console.log(data);
-                var select = document.getElementById("Departman");
-                for (var i = 0; i < data.length; i++) {
-                    var option = document.createElement('option');
-                    option.text = data[i].DepartmanName;
-                    option.value = data[i].DepartmanID;
-                    select.add(option, 0);
-                }
 
-            }).fail(function () {
-                console.log("hata")
+
+@section scripts
+{
+    <script type="text/javascript">
+        $(document).ready(function ()
+        {
+            $("#CompanySec").change(function ()
+            {
+                var id = $(this).val();
+                var departmentList = $("DepartmentID1");
+                //departmentList.empty();
+
+                $.ajax(
+                    {
+                        url: '/PersonelYonetim/DepartmentList',
+                        type: 'POST',
+                        dataType: 'json',
+                        data: { 'id': id },
+                        success: function (data) {
+                            console.log(data[1].Value);
+                            $.each(data, function (index, option)
+                            {
+                                departmentList.append('<option value=' + option.Value + '>' + option.Text + '</option>');
+                                console.log("departman listesi");
+                                console.log(option.Value + "  " + option.Text);
+                            });
+                        },
+                        fail: function () {
+                            console.log("hata");
+                        }
+                    });
+            });
+        });
+
+    </script>
+}
+
+
+
+@*<script>
+        $(document).ready(function () {
+            $("#CompanySec").click(function () {
+                var cName = document.getElementById("Company");
+                var companyName = cName.options[cName.selectedIndex].text;
+                console.log("Seçilen Company" + companyName);
+                document.getElementById('Departman').options.length = 0;
+                $.ajax({
+                    method: "POST",
+                    url: "/PersonelYonetim/DepartmanGetir",
+                    data: { CompName: companyName },
+                    BeforeSend: function () {
+                        console.log("verileri gitti");
+                    }
+                }).done(function (data) {
+                    console.log(data);
+                    var select = document.getElementById("Departman");
+                    for (var i = 0; i < data.length; i++) {
+                        var option = document.createElement('option');
+                        option.text = data[i].DepartmanName;
+                        option.value = data[i].DepartmanID;
+                        select.add(option, 0);
+                    }
+
+                }).fail(function () {
+                    console.log("hata")
+                })
             })
-        })
 
-    })
-</script>
+        })
+    </script>*@
 
 <div>
     @Html.ActionLink("Listeye Geri Gön", "Index")

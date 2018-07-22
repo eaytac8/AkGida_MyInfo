@@ -229,6 +229,7 @@
       <DependentUpon>MyInfoDB.tt</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ViewModel\MenuCreate.cs" />
     <Compile Include="ViewModel\PersonelCreate.cs" />
     <Compile Include="ViewModel\ViewModels.cs" />
   </ItemGroup>
@@ -1057,6 +1058,8 @@
     <Content Include="Content\Admin\assets\images\demo\thumb\small3.jpg" />
     <Content Include="Content\Admin\assets\images\demo\thumb\small4.jpg" />
     <Content Include="Content\Admin\assets\images\demo\thumb\small5.jpg" />
+    <Content Include="Content\Admin\assets\images\logo_dark.png" />
+    <Content Include="Content\Admin\assets\images\logo_light.png" />
     <Content Include="Content\Admin\assets\images\female.png" />
     <Content Include="Content\Admin\assets\images\flags\ad.png" />
     <Content Include="Content\Admin\assets\images\flags\ae.png" />
@@ -1327,8 +1330,8 @@
     <Content Include="Content\Admin\assets\images\loaders\8s.gif" />
     <Content Include="Content\Admin\assets\images\loaders\9.gif" />
     <Content Include="Content\Admin\assets\images\loaders\9s.gif" />
-    <Content Include="Content\Admin\assets\images\logo_dark.png" />
-    <Content Include="Content\Admin\assets\images\logo_light.png" />
+    <Content Include="Content\Admin\assets\images\logo_dark2.png" />
+    <Content Include="Content\Admin\assets\images\logo_light2.png" />
     <Content Include="Content\Admin\assets\images\male.png" />
     <Content Include="Content\Admin\assets\images\noavatar.jpg" />
     <Content Include="Content\Admin\assets\images\patterns\none.jpg" />
