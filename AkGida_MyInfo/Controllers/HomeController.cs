@@ -165,6 +165,13 @@ namespace AkGida_MyInfo.Controllers
             return View(menu);
         }
 
+        public ActionResult Slider()
+        {
+            List<Slider> slider = new List<Slider>();
+            slider = db.Sliders.OrderBy(x => x.SliderID).ToList();
+            return View(slider);
+        }
+
         public ActionResult About()
         {
             //ViewBag.Message = "Your application description page.";
@@ -190,7 +197,8 @@ namespace AkGida_MyInfo.Controllers
 
     public class AnasayfaDTO
     {
-        public List<Slider> slider { get; set; }
+        public List<Companies> Companylerim{ get; set; }
+        public List<Slider> Sliderlerim { get; set; }
         public List<Duyurular> duyuru { get; set; }
         public List<Companies> company { get; set; }
         //public List<Slider> slider { get; set; }
