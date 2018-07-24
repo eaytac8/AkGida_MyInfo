@@ -1,37 +1,29 @@
-﻿<!DOCTYPE html>
+﻿<!DOCTYPE HTML>
+<!--
+    Phantom by HTML5 UP
+    html5up.net | 
+    Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
 <html>
 <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>@ViewBag.Title</title>
-    <link rel="shortcut icon" href="\Assets\favicon.ico" />
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <link rel="stylesheet" href="~/Template/assets/css/main.css" />
+    <noscript><link rel="stylesheet" href="~/Template/assets/css/noscript.css" /></noscript>
 
-    <script src="~/Scripts/jquery-3.0.0.min.js"></script>
-    <script src="~/Scripts/bootstrap.min.js"></script><!------------------title icon-->
+
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
 </head>
-<body>
-    @*<div class="navbar navbar-inverse navbar-fixed-top">
-            <div class="container">
-                <div class="navbar-header">
-                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                    </button>
-                    @Html.ActionLink("My Info", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
-                </div>
-                <div class="navbar-collapse collapse">
-                    <ul class="nav navbar-nav">
-                        <li>@Html.ActionLink("Ana Sayfa", "Index", "Home")</li>
-                        <li>@Html.ActionLink("Hakkımızda", "About", "Home")</li>
-                        <li>@Html.ActionLink("İletişim", "Contact", "Home")</li>
-                    </ul>
-                </div>
-            </div>
-        </div>*@
+
+@Scripts.Render("~/bundles/jquery")
+@Scripts.Render("~/bundles/bootstrap")
+@RenderSection("scripts", required: false)
+
+
+
+<body class="is-preload">
 
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
@@ -55,21 +47,399 @@
                 <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Ara</button>
             </form>
         </div>
-        </nav>
+    </nav>
 
 
 
-    <div class="container body-content">
-        @RenderBody()
-        <hr />
-        <footer>
-            <p>&copy; @DateTime.Now.Year - ASP.NET Uygulamam</p>
-        </footer>
+
+
+
+
+
+    <!-- Wrapper -->
+    @*<div id="wrapper">*@
+
+    <!-- Header -->
+    @*<header id="header">
+            <div class="inner">
+
+                <!-- Logo -->
+                <a href="index.html" class="logo">
+                        <span class="symbol"><img src="~/Template/images/logo.svg" alt="" /></span><span class="title">MY INFO</span>
+                    </a>
+
+                <!-- Nav -->
+                <nav>
+                    <ul>
+                        <li><a href="#menu">Menu</a></li>
+                    </ul>
+                </nav>
+
+            </div>
+        </header>*@
+
+    <!-- Menu -->
+    @*<nav id="menu">
+            <h2>Menu</h2>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="generic.html">Ipsum veroeros</a></li>
+                <li><a href="generic.html">Tempus etiam</a></li>
+                <li><a href="generic.html">Consequat dolor</a></li>
+                <li><a href="elements.html">Elements</a></li>
+            </ul>
+        </nav>*@
+
+    <!-- Main -->
+    @*<div id="main">
+        <div class="inner">*@
+    @*<header>
+            <h1>
+                This is Phantom, a free, fully responsive site<br />
+                template designed by <a href="http://html5up.net">HTML5 UP</a>.
+            </h1>
+            <p>Etiam quis viverra lorem, in semper lorem. Sed nisl arcu euismod sit amet nisi euismod sed cursus arcu elementum ipsum arcu vivamus quis venenatis orci lorem ipsum et magna feugiat veroeros aliquam. Lorem ipsum dolor sit amet nullam dolore.</p>
+        </header>*@
+    @*<section class="tiles">
+
+            <article class="style1">
+                <span class="image">
+                    <img src="~/Template/images/pic01.jpg" alt="" />
+                </span>
+                <a href="generic.html">
+                    <h2>Magna</h2>
+                    <div class="content">
+                        <p>Sed nisl arcu euismod sit amet nisi lorem etiam dolor veroeros et feugiat.</p>
+                    </div>
+                </a>
+            </article>
+
+            <article class="style2">
+                <span class="image">
+                    <img src="~/Template/images/pic02.jpg" alt="" />
+                </span>
+                <a href="generic.html">
+                    <h2>Lorem</h2>
+                    <div class="content">
+                        <p>Sed nisl arcu euismod sit amet nisi lorem etiam dolor veroeros et feugiat.</p>
+                    </div>
+                </a>
+            </article>
+            <article class="style3">
+                <span class="image">
+                    <img src="~/Template/images/pic03.jpg" alt="" />
+                </span>
+                <a href="generic.html">
+                    <h2>Feugiat</h2>
+                    <div class="content">
+                        <p>Sed nisl arcu euismod sit amet nisi lorem etiam dolor veroeros et feugiat.</p>
+                    </div>
+                </a>
+            </article>
+            <article class="style4">
+                <span class="image">
+                    <img src="~/Template/images/pic04.jpg" alt="" />
+                </span>
+                <a href="generic.html">
+                    <h2>Tempus</h2>
+                    <div class="content">
+                        <p>Sed nisl arcu euismod sit amet nisi lorem etiam dolor veroeros et feugiat.</p>
+                    </div>
+                </a>
+            </article>
+            <article class="style5">
+                <span class="image">
+                    <img src="~/Template/images/pic05.jpg" alt="" />
+                </span>
+                <a href="generic.html">
+                    <h2>Aliquam</h2>
+                    <div class="content">
+                        <p>Sed nisl arcu euismod sit amet nisi lorem etiam dolor veroeros et feugiat.</p>
+                    </div>
+                </a>
+            </article>
+            <article class="style6">
+                <span class="image">
+                    <img src="~/Template/images/pic06.jpg" alt="" />
+                </span>
+                <a href="generic.html">
+                    <h2>Veroeros</h2>
+                    <div class="content">
+                        <p>Sed nisl arcu euismod sit amet nisi lorem etiam dolor veroeros et feugiat.</p>
+                    </div>
+                </a>
+            </article>
+            <article class="style2">
+                <span class="image">
+                    <img src="~/Template/images/pic07.jpg" alt="" />
+                </span>
+                <a href="generic.html">
+                    <h2>Ipsum</h2>
+                    <div class="content">
+                        <p>Sed nisl arcu euismod sit amet nisi lorem etiam dolor veroeros et feugiat.</p>
+                    </div>
+                </a>
+            </article>
+
+
+            <article class="style3">
+                <span class="image">
+                    <img src="~/Template/images/pic08.jpg" alt="" />
+                </span>
+                <a href="generic.html">
+                    <h2>Dolor</h2>
+                    <div class="content">
+                        <p>Sed nisl arcu euismod sit amet nisi lorem etiam dolor veroeros et feugiat.</p>
+                    </div>
+                </a>
+            </article>
+
+
+
+            <article class="style1">
+                <span class="image">
+                    <img src="~/Template/images/pic09.jpg" alt="" />
+                </span>
+                <a href="generic.html">
+                    <h2>Nullam</h2>
+                    <div class="content">
+                        <p>Sed nisl arcu euismod sit amet nisi lorem etiam dolor veroeros et feugiat.</p>
+                    </div>
+                </a>
+            </article>
+            <article class="style5">
+                <span class="image">
+                    <img src="~/Template/images/pic10.jpg" alt="" />
+                </span>
+                <a href="generic.html">
+                    <h2>Ultricies</h2>
+                    <div class="content">
+                        <p>Sed nisl arcu euismod sit amet nisi lorem etiam dolor veroeros et feugiat.</p>
+                    </div>
+                </a>
+            </article>
+            <article class="style6">
+                <span class="image">
+                    <img src="~/Template/images/pic11.jpg" alt="" />
+                </span>
+                <a href="generic.html">
+                    <h2>Dictum</h2>
+                    <div class="content">
+                        <p>Sed nisl arcu euismod sit amet nisi lorem etiam dolor veroeros et feugiat.</p>
+                    </div>
+                </a>
+            </article>
+            <article class="style4">
+                <span class="image">
+                    <img src="~/Template/images/pic12.jpg" alt="" />
+                </span>
+                <a href="generic.html">
+                    <h2>Pretium</h2>
+                    <div class="content">
+                        <p>Sed nisl arcu euismod sit amet nisi lorem etiam dolor veroeros et feugiat.</p>
+                    </div>
+                </a>
+            </article>
+        </section>*@
+    @*</div>
+        </div>*@
+
+    @RenderBody();
+
+
+    <!-- Footer -->
+    <footer id="footer">
+        <div class="inner">
+            @*<section>
+                    <h2>Get in touch</h2>
+                    <form method="post" action="#">
+                        <div class="fields">
+                            <div class="field half">
+                                <input type="text" name="name" id="name" placeholder="Name" />
+                            </div>
+                            <div class="field half">
+                                <input type="email" name="email" id="email" placeholder="Email" />
+                            </div>
+                            <div class="field">
+                                <textarea name="message" id="message" placeholder="Message"></textarea>
+                            </div>
+                        </div>
+                        <ul class="actions">
+                            <li><input type="submit" value="Send" class="primary" /></li>
+                        </ul>
+                    </form>
+                </section>*@
+            <section>
+                <h2>Follow</h2>
+                <ul class="icons">
+                    <li><a href="#" class="icon style2 fa-twitter"><span class="label">Twitter</span></a></li>
+                    <li><a href="#" class="icon style2 fa-facebook"><span class="label">Facebook</span></a></li>
+                    <li><a href="#" class="icon style2 fa-instagram"><span class="label">Instagram</span></a></li>
+                    <li><a href="#" class="icon style2 fa-dribbble"><span class="label">Dribbble</span></a></li>
+                    <li><a href="#" class="icon style2 fa-github"><span class="label">GitHub</span></a></li>
+                    <li><a href="#" class="icon style2 fa-500px"><span class="label">500px</span></a></li>
+                    <li><a href="#" class="icon style2 fa-phone"><span class="label">Phone</span></a></li>
+                    <li><a href="#" class="icon style2 fa-envelope-o"><span class="label">Email</span></a></li>
+                </ul>
+            </section>
+            <ul class="copyright">
+                <li>&copy; Untitled. All rights reserved</li>
+                <li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+            </ul>
+        </div>
+    </footer>
+
     </div>
 
+    <!-- Scripts -->
+    <script src="~/Template/assets/js/jquery.min.js"></script>
+    <script src="~/Template/assets/js/browser.min.js"></script>
+    <script src="~/Template/assets/js/breakpoints.min.js"></script>
+    <script src="~/Template/assets/js/util.js"></script>
+    <script src="~/Template/assets/js/main.js"></script>
 
-    @Scripts.Render("~/bundles/jquery")
-    @Scripts.Render("~/bundles/bootstrap")
-    @RenderSection("scripts", required: false)
+
+
 </body>
 </html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@*
+    ------------Aç-------------
+
+    <!DOCTYPE html>*@
+@*<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">*@
+@*<title>@ViewBag.Title</title>
+    <link rel="shortcut icon" href="\Assets\favicon.ico" />
+
+    <script src="~/Scripts/jquery-3.0.0.min.js"></script>
+    <script src="~/Scripts/bootstrap.min.js"></script>*@<!------------------title icon-->
+@*@Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")*@
+
+@*<style>
+            .container {
+                max-width: 100% !important;
+            }
+        </style>
+    </head>
+    <body>*@
+
+
+
+
+@*
+    ------------Kapat-------------
+
+    <div class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                @Html.ActionLink("My Info", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
+            </div>
+            <div class="navbar-collapse collapse">
+                <ul class="nav navbar-nav">
+                    <li>@Html.ActionLink("Ana Sayfa", "Index", "Home")</li>
+                    <li>@Html.ActionLink("Hakkımızda", "About", "Home")</li>
+                    <li>@Html.ActionLink("İletişim", "Contact", "Home")</li>
+                </ul>
+            </div>
+        </div>
+    </div>*@
+
+
+
+
+
+@*
+            ------------Aç-------------
+
+            <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
+                @Html.ActionLink("My Info", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
+                <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+                    <li class="nav-item ">
+                        <a class="nav-link" href="/Home/Index">Ana Sayfa<span class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/Home/About">Hakkımızda<span class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/Home/Contact">İletişim<span class="sr-only">(current)</span></a>
+                    </li>
+                </ul>
+                <form class="form-inline my-2 my-lg-0">
+                    <input class="form-control mr-sm-2" type="search" placeholder="Ara" aria-label="Search">
+                    <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Ara</button>
+                </form>
+            </div>
+            </nav>
+
+
+
+        <div class="container body-content">
+            @RenderBody()
+            <hr />
+            <footer>
+                <p>&copy; @DateTime.Now.Year - ASP.NET Uygulamam</p>
+            </footer>
+        </div>
+
+
+        @Scripts.Render("~/bundles/jquery")
+        @Scripts.Render("~/bundles/bootstrap")
+        @RenderSection("scripts", required: false)
+    </body>
+    </html>*@

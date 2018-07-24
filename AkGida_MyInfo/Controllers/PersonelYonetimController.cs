@@ -18,11 +18,10 @@ namespace AkGida_MyInfo.Controllers
         // GET: PersonelYonetim
         public ActionResult Index()
         {
-          
-            var personels = db.Personels.Include(p => p.Departments).OrderBy(x => x.Departments.CompanyID).ThenBy(x => x.DepartmentID).ThenBy(x => x.PersonelName);
-            return View(personels.ToList());
+            var personel1 = db.Personels.Include(p => p.Departments).OrderBy(x => x.Departments.CompanyID).ThenBy(x => x.DepartmentID).ThenBy(x => x.PersonelName);
+            return View(personel1.ToList());
         }
-
+        
         // GET: PersonelYonetim/Create
         public ActionResult Create()
         {
@@ -45,6 +44,52 @@ namespace AkGida_MyInfo.Controllers
             //ViewBag.DepartmentID = new SelectList(db.Departments, "DepartmentID", "DepartmentName");
             //return View();
         }
+
+        //[HttpPost]
+        //[ValidateAntiForgeryToken]
+        //public ActionResult Create(/*[Bind(Include = "PersonelID,PersonelName,PersonelSurname,PersonelTel,PersonelDahiliNo,PersonelEposta,DepartmentID,Yetki")]*/ Personels personels)
+        //{
+        //    if (ModelState.IsValid)
+        //    {
+        //        db.Personels.Add(personels);
+        //        db.SaveChanges();
+        //        return RedirectToAction("Index");
+        //    }
+
+        //    ViewBag.DepartmentID = new SelectList(db.Departments, "DepartmentID", "DepartmentName", personels.DepartmentID);
+        //    return View(personels);
+        //}
+
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult Create(/*[Bind(Include = "PersonelID,PersonelName,PersonelSurname,PersonelTel,PersonelDahiliNo,PersonelEposta,DepartmentID,Yetki")]*/ PersonelCreate personels)
+        {
+            if (ModelState.IsValid)
+            {
+                db.Personels.Add(personels.personel);
+                db.SaveChanges();
+                return RedirectToAction("Index");
+            }
+            //ViewBag.Company = new SelectList(db.Companies, "CompanyID", "CompanyName");
+            PersonelCreate model = new PersonelCreate();
+            List<Companies> companyList = db.Companies.OrderBy(x => x.CompanyID).ToList();
+            model.CompanyList = (from c in companyList
+                                 select new SelectListItem
+                                 {
+                                     Text = c.CompanyName,
+                                     Value = c.CompanyID.ToString()
+
+                                 }).ToList();
+
+            model.CompanyList.Insert(0, new SelectListItem { Text = "Seçiniz..", Value = "", Selected = true });
+
+            return View(model);
+            
+        }
+
+
+
 
 
 
@@ -69,20 +114,7 @@ namespace AkGida_MyInfo.Controllers
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
 
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "PersonelID,PersonelName,PersonelSurname,PersonelTel,PersonelDahiliNo,PersonelEposta,DepartmentID,Yetki")] Personels personels)
-        {
-            if (ModelState.IsValid)
-            {
-                db.Personels.Add(personels);
-                db.SaveChanges();
-                return RedirectToAction("Index");
-            }
-
-            ViewBag.DepartmentID = new SelectList(db.Departments, "DepartmentID", "DepartmentName", personels.DepartmentID);
-            return View(personels);
-        }
+       
 
 
 

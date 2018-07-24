@@ -70,7 +70,7 @@ namespace AkGida_MyInfo.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "MenuID,YemekSirketiID,Tarih,Corba1,Corba2,AnaYemek1,AnaYemek2,AnaYemek3,AnaYemek4,Ekstra,Pilav,Makarna,Meyve,Salata,Fiyat")] Menu menu)
+        public ActionResult Create(/*[Bind(Include = "MenuID,YemekSirketiID,Tarih,Corba1,Corba2,AnaYemek1,AnaYemek2,AnaYemek3,AnaYemek4,Ekstra,Pilav,Makarna,Meyve,Salata,Fiyat")]*/ Menu menu)
         {
             if (ModelState.IsValid)
             {

@@ -16,7 +16,7 @@ namespace AkGida_MyInfo.Controllers
 
         // GET: DepartmentYonetim
         public ActionResult Index()
-        {
+        {// bunlar kendisi geldi otomatik. ve çalışıyordu. bu kısımda hata varmı bi dk ben bi içine bakyım ne tür bilgiler var içlerinde
             var departments = db.Departments.Include(d => d.Companies).OrderBy(x => x.CompanyID).ThenBy(x => x.DepartmentName);
             return View(departments.ToList());
         }

@@ -2,8 +2,6 @@
 @using AkGida_MyInfo.Models
 @model ViewModels
 
-
-
 @{
     ViewBag.Title = "Departmanlar";
     Layout = "~/Views/Shared/_Layout.cshtml";
@@ -35,17 +33,55 @@
     table > tr > th {
         align-content: center;
     }
+
+    a:hover {
+        cursor: pointer;
+    }
 </style>
 
-<div class="grid-container">
-    @foreach (Departments item in Model.Departmanlarim)
-    {
-        <div class="grid-item">
-            <h3><b id=@item.DepartmentID>@item.DepartmentName</b></h3>
-        </div>
-    }
+@*<div class="grid-container">
+        @foreach (Departments item in Model.Departmanlarim)
+        {
+            <div class="grid-item">
+                <h3><b id=@item.DepartmentID>@item.DepartmentName</b></h3>
+            </div>
+        }
 
+    </div>*@
+
+<div id="wrapper">
+    <div id="main">
+        <div class="inner">
+            <section class="tiles">
+                @foreach (Departments item in Model.Departmanlarim)
+                {
+                    <article class="style07">
+                        <span class="image">
+                            <img src="~/Template/images/pic02.jpg" alt="" />
+                        </span>
+
+                        <a id="@item.DepartmentID" class="tile-link">
+
+                            <h5>@item.DepartmentName</h5>
+
+                            <div class="content">
+                                <p>
+                                </p>
+                            </div>
+                        </a>
+                    </article>
+                }
+            </section>
+        </div>
+    </div>
 </div>
+
+
+
+
+
+
+
 <hr />
 <table id="Liste" style="width:100%; display:none;"></table>
 
@@ -53,7 +89,7 @@
 <script>
 
     $(function ClickToID() {
-        $("div b").click(function () {
+        $(".tile-link").click(function () {
             var divID = this.id;//Or $(this).attr("id");
             console.log("tıklandı:" + divID);
             $("#Liste").html("");
