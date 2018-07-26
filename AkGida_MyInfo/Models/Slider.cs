@@ -11,14 +11,20 @@ namespace AkGida_MyInfo.Models
 {
     using System;
     using System.Collections.Generic;
-    
+    using System.ComponentModel.DataAnnotations;
+
     public partial class Slider
     {
         public int SliderID { get; set; }
+        [Display(Name ="Resim")]
         public byte[] SliderFoto { get; set; }
+        [Display(Name = "Ýçerik")]
         public string SliderText { get; set; }
+        [Display(Name = "Baþlangýç Tarihi")]
         public Nullable<System.DateTime> BaslangicTarihi { get; set; }
+        [Display(Name = "Bitiþ Tarihi")]
         public Nullable<System.DateTime> BitisTarihi { get; set; }
+        [Display(Name = "Resim Yolu")]
         public string ResimYolu { get; set; }
     }
 }

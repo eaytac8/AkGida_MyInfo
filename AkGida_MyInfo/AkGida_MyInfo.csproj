@@ -170,6 +170,7 @@
     <Compile Include="Controllers\AkGida_MyInfoEntities.cs" />
     <Compile Include="Controllers\CompanyYonetimController.cs" />
     <Compile Include="Controllers\DepartmentYonetimController.cs" />
+    <Compile Include="Controllers\GenelDuyuruYonetimController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\MenuYonetimController.cs" />
     <Compile Include="Controllers\PersonelYonetimController.cs" />
@@ -229,6 +230,7 @@
       <DependentUpon>MyInfoDB.tt</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ViewModel\CompanySlider.cs" />
     <Compile Include="ViewModel\MenuCreate.cs" />
     <Compile Include="ViewModel\PersonelCreate.cs" />
     <Compile Include="ViewModel\ViewModels.cs" />
@@ -2528,6 +2530,7 @@
     <Content Include="Content\bootstrap-reboot.min.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\User\image\DefaultImage.jpg" />
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
@@ -2975,6 +2978,10 @@
     <Content Include="Template\assets\sass\main.scss" />
     <Content Include="Template\assets\sass\noscript.scss" />
     <Content Include="Views\Shared\DenemeView.cshtml" />
+    <Content Include="Views\GenelDuyuruYonetim\Create.cshtml" />
+    <Content Include="Views\GenelDuyuruYonetim\Delete.cshtml" />
+    <Content Include="Views\GenelDuyuruYonetim\Edit.cshtml" />
+    <Content Include="Views\GenelDuyuruYonetim\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -2984,6 +2991,7 @@
     <Folder Include="Content\Admin\assets\plugins\jquery-file-upload\server\node\public\files\thumbnail\" />
     <Folder Include="Content\Admin\assets\plugins\jquery-file-upload\server\node\tmp\" />
     <Folder Include="Content\Admin\assets\plugins\jquery-file-upload\server\php\files\thumbnail\" />
+    <Folder Include="Images\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />

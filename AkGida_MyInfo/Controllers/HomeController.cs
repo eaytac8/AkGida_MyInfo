@@ -18,9 +18,16 @@ namespace AkGida_MyInfo.Controllers
 
         public ActionResult Index()
         {
-
+            CompanySlider companySlider = new CompanySlider();
             List<Companies> company = new List<Companies>();
             company = db.Companies.OrderBy(x => x.CompanyID).ToList();
+
+            List<Slider> slider = new List<Slider>();
+            slider = db.Slider.Where(x => (x.BaslangicTarihi<=DateTime.Now && x.BitisTarihi>DateTime.Now)).ToList();
+
+            companySlider.Companylerim = company;
+            companySlider.Sliderlerim = slider;
+
             //List<Companies> company = new List<Companies>();
             //Companies comp;
             //using (connection)
@@ -52,7 +59,7 @@ namespace AkGida_MyInfo.Controllers
             //    connection.Close();
             //}
 
-            return View(company);
+            return View(companySlider);
         }
 
 
@@ -165,12 +172,6 @@ namespace AkGida_MyInfo.Controllers
             return View(menu);
         }
 
-        public ActionResult Slider()
-        {
-            List<Slider> slider = new List<Slider>();
-            slider = db.Sliders.OrderBy(x => x.SliderID).ToList();
-            return View(slider);
-        }
 
         public ActionResult About()
         {
@@ -195,16 +196,16 @@ namespace AkGida_MyInfo.Controllers
 
     }
 
-    public class AnasayfaDTO
-    {
-        public List<Companies> Companylerim{ get; set; }
-        public List<Slider> Sliderlerim { get; set; }
-        public List<Duyurular> duyuru { get; set; }
-        public List<Companies> company { get; set; }
-        //public List<Slider> slider { get; set; }
-        //public List<Slider> slider { get; set; }
-        //public List<Slider> slider { get; set; }
-    }
+    //public class AnasayfaDTO
+    //{
+    //    public List<Companies> Companylerim{ get; set; }
+    //    public List<Slider> Sliderlerim { get; set; }
+    //    public List<Duyurular> duyuru { get; set; }
+    //    public List<Companies> company { get; set; }
+    //    //public List<Slider> slider { get; set; }
+    //    //public List<Slider> slider { get; set; }
+    //    //public List<Slider> slider { get; set; }
+    //}
 }
 
 /* Personel Veri Tabanından veri çekme..*/

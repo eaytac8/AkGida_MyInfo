@@ -185,6 +185,7 @@ C:\Users\elif.aytac\Desktop\codes\AkGida_MyInfo\AkGida_MyInfo\bin\AkGida_MyInfo.
 C:\Users\elif.aytac\Desktop\codes\AkGida_MyInfo\AkGida_MyInfo\bin\Antlr3.Runtime.dll
 C:\Users\elif.aytac\Desktop\codes\AkGida_MyInfo\AkGida_MyInfo\bin\EntityFramework.dll
 C:\Users\elif.aytac\Desktop\codes\AkGida_MyInfo\AkGida_MyInfo\bin\EntityFramework.SqlServer.dll
+C:\Users\elif.aytac\Desktop\codes\AkGida_MyInfo\AkGida_MyInfo\bin\Google.Protobuf.dll
 C:\Users\elif.aytac\Desktop\codes\AkGida_MyInfo\AkGida_MyInfo\bin\Microsoft.AI.Agent.Intercept.dll
 C:\Users\elif.aytac\Desktop\codes\AkGida_MyInfo\AkGida_MyInfo\bin\Microsoft.AI.DependencyCollector.dll
 C:\Users\elif.aytac\Desktop\codes\AkGida_MyInfo\AkGida_MyInfo\bin\Microsoft.AI.PerfCounterCollector.dll
@@ -194,6 +195,8 @@ C:\Users\elif.aytac\Desktop\codes\AkGida_MyInfo\AkGida_MyInfo\bin\Microsoft.AI.W
 C:\Users\elif.aytac\Desktop\codes\AkGida_MyInfo\AkGida_MyInfo\bin\Microsoft.ApplicationInsights.dll
 C:\Users\elif.aytac\Desktop\codes\AkGida_MyInfo\AkGida_MyInfo\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
 C:\Users\elif.aytac\Desktop\codes\AkGida_MyInfo\AkGida_MyInfo\bin\Microsoft.Web.Infrastructure.dll
+C:\Users\elif.aytac\Desktop\codes\AkGida_MyInfo\AkGida_MyInfo\bin\MySql.Data.dll
+C:\Users\elif.aytac\Desktop\codes\AkGida_MyInfo\AkGida_MyInfo\bin\MySql.Data.Entity.EF6.dll
 C:\Users\elif.aytac\Desktop\codes\AkGida_MyInfo\AkGida_MyInfo\bin\Newtonsoft.Json.dll
 C:\Users\elif.aytac\Desktop\codes\AkGida_MyInfo\AkGida_MyInfo\bin\System.Web.Helpers.dll
 C:\Users\elif.aytac\Desktop\codes\AkGida_MyInfo\AkGida_MyInfo\bin\System.Web.Mvc.dll
@@ -205,7 +208,10 @@ C:\Users\elif.aytac\Desktop\codes\AkGida_MyInfo\AkGida_MyInfo\bin\System.Web.Web
 C:\Users\elif.aytac\Desktop\codes\AkGida_MyInfo\AkGida_MyInfo\bin\WebGrease.dll
 C:\Users\elif.aytac\Desktop\codes\AkGida_MyInfo\AkGida_MyInfo\bin\EntityFramework.xml
 C:\Users\elif.aytac\Desktop\codes\AkGida_MyInfo\AkGida_MyInfo\bin\EntityFramework.SqlServer.xml
+C:\Users\elif.aytac\Desktop\codes\AkGida_MyInfo\AkGida_MyInfo\bin\Google.Protobuf.xml
 C:\Users\elif.aytac\Desktop\codes\AkGida_MyInfo\AkGida_MyInfo\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+C:\Users\elif.aytac\Desktop\codes\AkGida_MyInfo\AkGida_MyInfo\bin\MySql.Data.xml
+C:\Users\elif.aytac\Desktop\codes\AkGida_MyInfo\AkGida_MyInfo\bin\MySql.Data.Entity.EF6.xml
 C:\Users\elif.aytac\Desktop\codes\AkGida_MyInfo\AkGida_MyInfo\bin\System.Web.Helpers.xml
 C:\Users\elif.aytac\Desktop\codes\AkGida_MyInfo\AkGida_MyInfo\bin\System.Web.Mvc.xml
 C:\Users\elif.aytac\Desktop\codes\AkGida_MyInfo\AkGida_MyInfo\bin\System.Web.Optimization.xml
@@ -232,9 +238,3 @@ C:\Users\elif.aytac\Desktop\codes\AkGida_MyInfo\AkGida_MyInfo\obj\Debug\AkGida_M
 C:\Users\elif.aytac\Desktop\codes\AkGida_MyInfo\AkGida_MyInfo\obj\Debug\AkGida_MyInfo.csproj.CopyComplete
 C:\Users\elif.aytac\Desktop\codes\AkGida_MyInfo\AkGida_MyInfo\obj\Debug\AkGida_MyInfo.dll
 C:\Users\elif.aytac\Desktop\codes\AkGida_MyInfo\AkGida_MyInfo\obj\Debug\AkGida_MyInfo.pdb
-C:\Users\elif.aytac\Desktop\codes\AkGida_MyInfo\AkGida_MyInfo\bin\Google.Protobuf.dll
-C:\Users\elif.aytac\Desktop\codes\AkGida_MyInfo\AkGida_MyInfo\bin\MySql.Data.dll
-C:\Users\elif.aytac\Desktop\codes\AkGida_MyInfo\AkGida_MyInfo\bin\MySql.Data.Entity.EF6.dll
-C:\Users\elif.aytac\Desktop\codes\AkGida_MyInfo\AkGida_MyInfo\bin\Google.Protobuf.xml
-C:\Users\elif.aytac\Desktop\codes\AkGida_MyInfo\AkGida_MyInfo\bin\MySql.Data.xml
-C:\Users\elif.aytac\Desktop\codes\AkGida_MyInfo\AkGida_MyInfo\bin\MySql.Data.Entity.EF6.xml
