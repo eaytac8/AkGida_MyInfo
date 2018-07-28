@@ -42,9 +42,10 @@ namespace AkGida_MyInfo.Controllers
                     file.SaveAs(path);
                     ViewBag.Message = "File uploaded successfully";
                     Slider sliderim = new Slider();
-                    slider.ResimYolu = $"~/Images/{file.FileName}";
-                    //String dosyaadi = file.FileName;
-                   
+                    slider.ResimYolu = $"~/Images/{Path.GetFileName(file.FileName)}";
+                    //slider.ResimYolu = $"~/Images/{file.FileName}";
+                    String dosyaadi = file.FileName;
+
                     //sliderim.ResimYolu = path;
                     //sliderim.BitisTarihi = slider.BitisTarihi;
                     //sliderim.BaslangicTarihi = slider.BaslangicTarihi;
