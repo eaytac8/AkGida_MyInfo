@@ -101,7 +101,7 @@ jQuery(document).ready(function() {
 				+ '<!-- /STYLESWITCHER -->';
 
 	// ADD CLASS
-	jQuery("head").append('<link href="assets/plugins/styleswitcher/styleswitcher.css" rel="stylesheet" type="text/css" />');
+    jQuery("head").append('<link href="~/Content/User/assets/plugins/styleswitcher/styleswitcher.css" rel="stylesheet" type="text/css" />');
 	jQuery("body").append(_sw);
 	jQuery("#switcher, #showSwitcher").removeClass('hide');
 

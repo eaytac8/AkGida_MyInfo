@@ -70,6 +70,8 @@ namespace AkGida_MyInfo.Controllers
             List<Departments> department = new List<Departments>();
             department = db.Departments.Where(x => x.CompanyID == companyid).OrderBy(x => x.CompanyID).ThenBy(x => x.DepartmentName).ToList();
 
+            
+
             List<Duyurular> duyurular = new List<Duyurular>();
             Duyurular duyuru;
             try
@@ -103,11 +105,12 @@ namespace AkGida_MyInfo.Controllers
                 }
 
                 List<YemekSirketi> yemekSirketi = new List<YemekSirketi>();
-
                 yemekSirketi = db.YemekSirketi.Where(T => T.CompanyID == companyid).ToList();
+
                 modeller.Duyurularim = duyurular;
                 modeller.Departmanlarim = department;
                 modeller.YemekSirketlerim = yemekSirketi;
+                
             }
             catch (Exception)
             {
@@ -120,8 +123,9 @@ namespace AkGida_MyInfo.Controllers
 
         public JsonResult PartialPers(int? departmanid)
         {
-            //List<Personels> personels = new List<Personels>();
-            //personels = db.Personels.Where(x => x.DepartmentID == departmanid).ToList();
+            List<Personels> personeller = new List<Personels>();
+            personeller = db.Personels.Where(x => x.DepartmentID == departmanid).ToList();
+
             List<Personels> Obj_personel = new List<Personels>();
             Personels personels;
             using (SqlConnection connection = new SqlConnection(@"Data Source=MININT-UL27J5C\SQLEXPRESS;Initial Catalog=AkGida_MyInfo;User ID=sa;Password=Ea123456;MultipleActiveResultSets=True;Application Name=EntityFramework"))
@@ -155,6 +159,17 @@ namespace AkGida_MyInfo.Controllers
             return Json(Obj_personel, JsonRequestBehavior.AllowGet);
 
         }
+
+
+        //public JsonResult PartialPers(int? departmanid)
+        //{
+        //    //modeller = new ViewModels();
+        //    List<Personels> personeller = new List<Personels>();
+        //    personeller = db.Personels.Where(x => x.DepartmentID == departmanid).ToList();
+        //    //modeller.Personellerim = personeller;
+        //    return Json(modeller, JsonRequestBehavior.AllowGet);
+
+        //}
 
 
         public JsonResult YemekSirketi(int? companyidd)

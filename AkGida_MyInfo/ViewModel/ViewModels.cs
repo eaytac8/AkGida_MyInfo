@@ -11,6 +11,6 @@ namespace AkGida_MyInfo.ViewModel
         public List<Departments> Departmanlarim { get; set; } 
         public List<YemekSirketi> YemekSirketlerim { get; set; }
         public List<Duyurular> Duyurularim { get; set; }
-
+       
     }
 }
