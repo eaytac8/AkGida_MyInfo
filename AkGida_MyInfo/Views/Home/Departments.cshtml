@@ -185,12 +185,20 @@
     <br>
     <div class="row">
         <div class="col-md-4">
-            <h3>Yemek Şirketleri</h3>
-            @foreach (YemekSirketi y_item in Model.YemekSirketlerim)
+            <h3>Günün Menüsü</h3>
+            @foreach (Menu m_item in Model.Menulerim)
             {
                 <frame>
                     <div class="grid-item">
-                        <h3>@y_item.YemekSirketiAdi</h3>
+                        <h3>@m_item.Tarih</h3>
+                        <h5>@m_item.Corba</h5>
+                        <h5>@m_item.AnaYemek</h5>
+                        <h5>@m_item.Diyet</h5>
+                        <h5>@m_item.PilavMakarna</h5>
+                        <h5>@m_item.Tatli</h5>
+                        <h5>@m_item.Meyve</h5>
+                        <h5>@m_item.Salata</h5>
+                        <h5>@m_item.Companies.CompanyName</h5>
                     </div>
                 </frame>
 
@@ -198,12 +206,12 @@
         </div>
         <div class="col-md-8">
             <h3>Duyurular</h3>
-            @foreach (Duyurular y_item in Model.Duyurularim)
+            @foreach (Duyurular d_item in Model.Duyurularim)
             {
                 <frame>
                     <div class="grid-item">
-                        <h3>@y_item.Baslik</h3>
-                        <p>@y_item.Icerik</p>
+                        <h3>@d_item.Baslik</h3>
+                        <p>@d_item.Icerik</p>
                     </div>
                 </frame>
 

@@ -9,7 +9,7 @@ namespace AkGida_MyInfo.ViewModel
     public class ViewModels
     {
         public List<Departments> Departmanlarim { get; set; } 
-        public List<YemekSirketi> YemekSirketlerim { get; set; }
+        public List<Menu> Menulerim { get; set; }
         public List<Duyurular> Duyurularim { get; set; }
        
     }

@@ -104,12 +104,12 @@ namespace AkGida_MyInfo.Controllers
                     connection.Close();
                 }
 
-                List<YemekSirketi> yemekSirketi = new List<YemekSirketi>();
-                yemekSirketi = db.YemekSirketi.Where(T => T.CompanyID == companyid).ToList();
+                List<Menu> menu = new List<Menu>();
+                menu = db.Menu.Where(T => T.CompanyID == companyid && T.Tarih==DateTime.Now).ToList();
 
                 modeller.Duyurularim = duyurular;
                 modeller.Departmanlarim = department;
-                modeller.YemekSirketlerim = yemekSirketi;
+                modeller.Menulerim = menu;
                 
             }
             catch (Exception)
@@ -141,9 +141,11 @@ namespace AkGida_MyInfo.Controllers
                         personels = new Personels();
                         personels.PersonelName = reader.GetString(1);
                         personels.PersonelSurname = reader.GetString(2);
-                        personels.PersonelTel = reader.GetString(3);
+                        personels.Corbus = reader.GetString(3);
                         personels.PersonelDahiliNo = reader.GetString(4);
-                        personels.PersonelEposta = reader.GetString(5);
+                        personels.PersonelTel = reader.GetString(5);
+                        personels.PersonelEposta = reader.GetString(6);
+                        personels.Birthday = reader.GetDateTime(8);
                         Obj_personel.Add(personels);
                         Console.WriteLine("Personel Adı:" + personels.PersonelName);
                     }
@@ -172,20 +174,20 @@ namespace AkGida_MyInfo.Controllers
         //}
 
 
-        public JsonResult YemekSirketi(int? companyidd)
-        {
-            List<YemekSirketi> yemeksirketi = new List<YemekSirketi>();
-            yemeksirketi = db.YemekSirketi.Where(x => x.CompanyID == companyidd).ToList();
-
-            return Json(yemeksirketi, JsonRequestBehavior.AllowGet);
-        }
-
-        public ActionResult Menu(int? yemeksirketiid)
+        public JsonResult Menu(int? companyidd)
         {
             List<Menu> menu = new List<Menu>();
-            menu = db.Menu.Where(x => x.YemekSirketiID == yemeksirketiid).ToList();
-            return View(menu);
+            menu = db.Menu.Where(x => x.CompanyID == companyidd).ToList();
+
+            return Json(menu, JsonRequestBehavior.AllowGet);
         }
+
+        //public ActionResult Menu(int? yemeksirketiid)
+        //{
+        //    List<Menu> menu = new List<Menu>();
+        //    menu = db.Menu.Where(x => x.YemekSirketiID == yemeksirketiid).ToList();
+        //    return View(menu);
+        //}
 
 
         public ActionResult About()

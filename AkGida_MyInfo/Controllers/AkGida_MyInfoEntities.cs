@@ -19,7 +19,7 @@ namespace AkGida_MyInfo.Controllers
         public DbSet<Personels> Personels { get; set; }
         public DbSet<Slider> Slider { get; set; }
         public DbSet<sysdiagrams> sysdiagrams { get; set; }
-        public DbSet<YemekSirketi> YemekSirketi { get; set; }
+        public DbSet<Servis> Servis { get; set; }
         public DbSet<Role> Role { get; set;}
         public DbSet<Users> Users { get; set; }
         public DbSet<Yetkiler> Yetkiler { get; set; }

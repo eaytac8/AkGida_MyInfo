@@ -18,28 +18,31 @@ namespace AkGida_MyInfo.Controllers
         // GET: MenuYonetim
         public ActionResult Index()
         {
-            var menu = db.Menu.Include(m => m.YemekSirketi);
-            return View(menu.ToList());
+            var menu = db.Menu.Include(m => m.Companies);
+            return View(menu.OrderBy(x => x.CompanyID).ThenBy(x => x.Tarih).ToList());
         }
 
 
         // GET: MenuYonetim/Create
         public ActionResult Create()
         {
-            MenuCreate model = new MenuCreate();
-            List<Companies> companyList = db.Companies.OrderBy(x => x.CompanyID).ToList();
-            model.CompanyList = (from c in companyList
-                                 select new SelectListItem
-                                 {
-                                     Text = c.CompanyName,
-                                     Value = c.CompanyID.ToString()
+            //MenuCreate model = new MenuCreate();
+            //List<Companies> companyList = db.Companies.OrderBy(x => x.CompanyID).ToList();
+            //model.CompanyList = (from c in companyList
+            //                     select new SelectListItem
+            //                     {
+            //                         Text = c.CompanyName,
+            //                         Value = c.CompanyID.ToString()
 
-                                 }).ToList();
+            //                     }).ToList();
 
-            model.CompanyList.Insert(0, new SelectListItem { Text = "Seçiniz..", Value = "", Selected = true });
+            //model.CompanyList.Insert(0, new SelectListItem { Text = "Seçiniz..", Value = "", Selected = true });
 
-            return View(model);
-            
+            //return View(model);
+
+            ViewBag.CompanyID = new SelectList(db.Companies, "CompanyID", "CompanyName");
+            return View();
+
         }
 
         //[HttpPost]
@@ -48,21 +51,21 @@ namespace AkGida_MyInfo.Controllers
         //    return RedirectToAction("Create", "MenuYonetim");
         //}
 
-        [HttpPost]
-        public JsonResult YemekSirketiList(int id)
-        {
-            List<YemekSirketi> ySirList = db.YemekSirketi.Where(x => x.CompanyID==id).OrderBy(x => x.YemekSirketiAdi).ToList();
+        //[HttpPost]
+        //public JsonResult YemekSirketiList(int id)
+        //{
+        //    List<YemekSirketi> ySirList = db.YemekSirketi.Where(x => x.CompanyID==id).OrderBy(x => x.YemekSirketiAdi).ToList();
 
-            List<SelectListItem> itemList = (from y in ySirList
-                                            select new SelectListItem
-                                            {
-                                                Text = y.YemekSirketiAdi,
-                                                Value = y.YemekSirketiID.ToString()
-                                            }).ToList();
+        //    List<SelectListItem> itemList = (from y in ySirList
+        //                                    select new SelectListItem
+        //                                    {
+        //                                        Text = y.YemekSirketiAdi,
+        //                                        Value = y.YemekSirketiID.ToString()
+        //                                    }).ToList();
 
-            return Json(itemList,JsonRequestBehavior.AllowGet);
-        }
-        
+        //    return Json(itemList,JsonRequestBehavior.AllowGet);
+        //}
+
 
 
         // POST: MenuYonetim/Create
@@ -79,7 +82,7 @@ namespace AkGida_MyInfo.Controllers
                 return RedirectToAction("Index");
             }
 
-            ViewBag.YemekSirketiID = new SelectList(db.YemekSirketi, "YemekSirketiID", "YemekSirketiAdi", menu.YemekSirketiID);
+            ViewBag.CompanyID = new SelectList(db.Companies, "CompanyID", "CompanyName", menu.CompanyID);
             return View(menu);
         }
 
@@ -95,7 +98,7 @@ namespace AkGida_MyInfo.Controllers
             {
                 return HttpNotFound();
             }
-            ViewBag.YemekSirketiID = new SelectList(db.YemekSirketi, "YemekSirketiID", "YemekSirketiAdi", menu.YemekSirketiID);
+            ViewBag.CompanyID = new SelectList(db.Companies, "CompanyID", "CompanyName", menu.CompanyID);
             return View(menu);
         }
 
@@ -104,7 +107,7 @@ namespace AkGida_MyInfo.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "MenuID,YemekSirketiID,Tarih,Corba1,Corba2,AnaYemek1,AnaYemek2,AnaYemek3,AnaYemek4,Ekstra,Pilav,Makarna,Meyve,Salata,Fiyat")] Menu menu)
+        public ActionResult Edit(/*[Bind(Include = "MenuID,YemekSirketiID,Tarih,Corba1,Corba2,AnaYemek1,AnaYemek2,AnaYemek3,AnaYemek4,Ekstra,Pilav,Makarna,Meyve,Salata,Fiyat")]*/ Menu menu)
         {
             if (ModelState.IsValid)
             {
@@ -112,7 +115,7 @@ namespace AkGida_MyInfo.Controllers
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            ViewBag.YemekSirketiID = new SelectList(db.YemekSirketi, "YemekSirketiID", "YemekSirketiAdi", menu.YemekSirketiID);
+            ViewBag.CompanyID = new SelectList(db.Companies, "CompanyID", "CompanyName", menu.CompanyID);
             return View(menu);
         }
 

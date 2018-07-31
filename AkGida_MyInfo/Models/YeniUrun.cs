@@ -15,32 +15,16 @@ namespace AkGida_MyInfo.Models
 using System;
     using System.Collections.Generic;
     
-public partial class Menu
+public partial class YeniUrun
 {
 
-    public int MenuID { get; set; }
+    public int UrunID { get; set; }
 
-    public Nullable<int> CompanyID { get; set; }
+    public string UrunAdi { get; set; }
 
-    public Nullable<System.DateTime> Tarih { get; set; }
+    public string Tanitim { get; set; }
 
-    public string Corba { get; set; }
-
-    public string AnaYemek { get; set; }
-
-    public string Diyet { get; set; }
-
-    public string PilavMakarna { get; set; }
-
-    public string Tatli { get; set; }
-
-    public string Meyve { get; set; }
-
-    public string Salata { get; set; }
-
-
-
-    public virtual Companies Companies { get; set; }
+    public string ResimYolu { get; set; }
 
 }
 

@@ -15,29 +15,26 @@ namespace AkGida_MyInfo.Models
 using System;
     using System.Collections.Generic;
     
-public partial class Yetkiler
+public partial class Servis
 {
 
-    [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-    public Yetkiler()
-    {
+    public int ServisID { get; set; }
 
-        this.Role = new HashSet<Role>();
+    public Nullable<int> CompanyID { get; set; }
 
-    }
+    public string SoforAdi { get; set; }
 
+    public string SoforSoyadi { get; set; }
 
-    public int YetkiID { get; set; }
+    public string Telefon { get; set; }
 
-    public string YetkiDescription { get; set; }
+    public string Plaka { get; set; }
 
-    public int CompanyID { get; set; }
-
+    public string Guzergah { get; set; }
 
 
-    [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
 
-    public virtual ICollection<Role> Role { get; set; }
+    public virtual Companies Companies { get; set; }
 
 }
 

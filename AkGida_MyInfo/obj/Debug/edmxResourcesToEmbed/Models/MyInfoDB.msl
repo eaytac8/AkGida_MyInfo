@@ -40,53 +40,6 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <EntitySetMapping Name="Menu">
-      <EntityTypeMapping TypeName="AkGida_MyInfoModel.Menu">
-        <MappingFragment StoreEntitySet="Menu">
-          <ScalarProperty Name="MenuID" ColumnName="MenuID" />
-          <ScalarProperty Name="YemekSirketiID" ColumnName="YemekSirketiID" />
-          <ScalarProperty Name="Tarih" ColumnName="Tarih" />
-          <ScalarProperty Name="Corba1" ColumnName="Corba1" />
-          <ScalarProperty Name="Corba2" ColumnName="Corba2" />
-          <ScalarProperty Name="AnaYemek1" ColumnName="AnaYemek1" />
-          <ScalarProperty Name="AnaYemek2" ColumnName="AnaYemek2" />
-          <ScalarProperty Name="AnaYemek3" ColumnName="AnaYemek3" />
-          <ScalarProperty Name="AnaYemek4" ColumnName="AnaYemek4" />
-          <ScalarProperty Name="Ekstra" ColumnName="Ekstra" />
-          <ScalarProperty Name="Pilav" ColumnName="Pilav" />
-          <ScalarProperty Name="Makarna" ColumnName="Makarna" />
-          <ScalarProperty Name="Meyve" ColumnName="Meyve" />
-          <ScalarProperty Name="Salata" ColumnName="Salata" />
-          <ScalarProperty Name="Fiyat" ColumnName="Fiyat" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
-    <EntitySetMapping Name="Personels">
-      <EntityTypeMapping TypeName="AkGida_MyInfoModel.Personels">
-        <MappingFragment StoreEntitySet="Personels">
-          <ScalarProperty Name="PersonelID" ColumnName="PersonelID" />
-          <ScalarProperty Name="PersonelName" ColumnName="PersonelName" />
-          <ScalarProperty Name="PersonelSurname" ColumnName="PersonelSurname" />
-          <ScalarProperty Name="PersonelTel" ColumnName="PersonelTel" />
-          <ScalarProperty Name="PersonelDahiliNo" ColumnName="PersonelDahiliNo" />
-          <ScalarProperty Name="PersonelEposta" ColumnName="PersonelEposta" />
-          <ScalarProperty Name="DepartmentID" ColumnName="DepartmentID" />
-          <ScalarProperty Name="Yetki" ColumnName="Yetki" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
-    <EntitySetMapping Name="Slider">
-      <EntityTypeMapping TypeName="AkGida_MyInfoModel.Slider">
-        <MappingFragment StoreEntitySet="Slider">
-          <ScalarProperty Name="SliderID" ColumnName="SliderID" />
-          <ScalarProperty Name="SliderFoto" ColumnName="SliderFoto" />
-          <ScalarProperty Name="SliderText" ColumnName="SliderText" />
-          <ScalarProperty Name="BaslangicTarihi" ColumnName="BaslangicTarihi" />
-          <ScalarProperty Name="BitisTarihi" ColumnName="BitisTarihi" />
-          <ScalarProperty Name="ResimYolu" ColumnName="ResimYolu" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
     <EntitySetMapping Name="sysdiagrams">
       <EntityTypeMapping TypeName="AkGida_MyInfoModel.sysdiagrams">
         <MappingFragment StoreEntitySet="sysdiagrams">
@@ -95,15 +48,6 @@
           <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
           <ScalarProperty Name="version" ColumnName="version" />
           <ScalarProperty Name="definition" ColumnName="definition" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
-    <EntitySetMapping Name="YemekSirketi">
-      <EntityTypeMapping TypeName="AkGida_MyInfoModel.YemekSirketi">
-        <MappingFragment StoreEntitySet="YemekSirketi">
-          <ScalarProperty Name="YemekSirketiID" ColumnName="YemekSirketiID" />
-          <ScalarProperty Name="YemekSirketiAdi" ColumnName="YemekSirketiAdi" />
-          <ScalarProperty Name="CompanyID" ColumnName="CompanyID" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
@@ -149,5 +93,72 @@
         <ScalarProperty Name="RoleID" ColumnName="RoleID" />
       </EndProperty>
     </AssociationSetMapping>
+    <EntitySetMapping Name="Servis">
+      <EntityTypeMapping TypeName="AkGida_MyInfoModel.Servis">
+        <MappingFragment StoreEntitySet="Servis">
+          <ScalarProperty Name="Guzergah" ColumnName="Guzergah" />
+          <ScalarProperty Name="Plaka" ColumnName="Plaka" />
+          <ScalarProperty Name="Telefon" ColumnName="Telefon" />
+          <ScalarProperty Name="SoforSoyadi" ColumnName="SoforSoyadi" />
+          <ScalarProperty Name="SoforAdi" ColumnName="SoforAdi" />
+          <ScalarProperty Name="CompanyID" ColumnName="CompanyID" />
+          <ScalarProperty Name="ServisID" ColumnName="ServisID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="YeniUrun">
+      <EntityTypeMapping TypeName="AkGida_MyInfoModel.YeniUrun">
+        <MappingFragment StoreEntitySet="YeniUrun">
+          <ScalarProperty Name="ResimYolu" ColumnName="ResimYolu" />
+          <ScalarProperty Name="Tanitim" ColumnName="Tanitim" />
+          <ScalarProperty Name="UrunAdi" ColumnName="UrunAdi" />
+          <ScalarProperty Name="UrunID" ColumnName="UrunID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Menu">
+      <EntityTypeMapping TypeName="AkGida_MyInfoModel.Menu">
+        <MappingFragment StoreEntitySet="Menu">
+          <ScalarProperty Name="Salata" ColumnName="Salata" />
+          <ScalarProperty Name="Meyve" ColumnName="Meyve" />
+          <ScalarProperty Name="Tatli" ColumnName="Tatli" />
+          <ScalarProperty Name="PilavMakarna" ColumnName="PilavMakarna" />
+          <ScalarProperty Name="Diyet" ColumnName="Diyet" />
+          <ScalarProperty Name="AnaYemek" ColumnName="AnaYemek" />
+          <ScalarProperty Name="Corba" ColumnName="Corba" />
+          <ScalarProperty Name="Tarih" ColumnName="Tarih" />
+          <ScalarProperty Name="CompanyID" ColumnName="CompanyID" />
+          <ScalarProperty Name="MenuID" ColumnName="MenuID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Personels">
+      <EntityTypeMapping TypeName="AkGida_MyInfoModel.Personels">
+        <MappingFragment StoreEntitySet="Personels">
+          <ScalarProperty Name="Birthday" ColumnName="Birthday" />
+          <ScalarProperty Name="DepartmentID" ColumnName="DepartmentID" />
+          <ScalarProperty Name="PersonelEposta" ColumnName="PersonelEposta" />
+          <ScalarProperty Name="PersonelTel" ColumnName="PersonelTel" />
+          <ScalarProperty Name="PersonelDahiliNo" ColumnName="PersonelDahiliNo" />
+          <ScalarProperty Name="Corbus" ColumnName="Corbus" />
+          <ScalarProperty Name="PersonelSurname" ColumnName="PersonelSurname" />
+          <ScalarProperty Name="PersonelName" ColumnName="PersonelName" />
+          <ScalarProperty Name="PersonelID" ColumnName="PersonelID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Slider">
+      <EntityTypeMapping TypeName="AkGida_MyInfoModel.Slider">
+        <MappingFragment StoreEntitySet="Slider">
+          <ScalarProperty Name="ResimYolu" ColumnName="ResimYolu" />
+          <ScalarProperty Name="BitisTarihi" ColumnName="BitisTarihi" />
+          <ScalarProperty Name="BaslangicTarihi" ColumnName="BaslangicTarihi" />
+          <ScalarProperty Name="SliderText" ColumnName="SliderText" />
+          <ScalarProperty Name="SliderBaslik" ColumnName="SliderBaslik" />
+          <ScalarProperty Name="SliderFoto" ColumnName="SliderFoto" />
+          <ScalarProperty Name="SliderID" ColumnName="SliderID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
   </EntityContainerMapping>
 </Mapping>
