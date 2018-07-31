@@ -3668,6 +3668,7 @@
     <Content Include="Content\User\assets\images\demo\wb\WB0840507-min.png" />
     <Content Include="Content\User\assets\images\demo\wb\WB0PNJ9B6-min.png" />
     <Content Include="Content\User\assets\images\demo\yellow-min.jpg" />
+    <Content Include="Content\User\assets\images\favicon.ico" />
     <Content Include="Content\User\assets\images\female.png" />
     <Content Include="Content\User\assets\images\flags\ad.png" />
     <Content Include="Content\User\assets\images\flags\ae.png" />

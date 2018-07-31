@@ -105,7 +105,7 @@ namespace AkGida_MyInfo.Controllers
                 }
 
                 List<Menu> menu = new List<Menu>();
-                menu = db.Menu.Where(T => T.CompanyID == companyid && T.Tarih==DateTime.Now).ToList();
+                menu = db.Menu.Where(T => T.CompanyID == companyid && T.Tarih==DateTime.Today).ToList();
 
                 modeller.Duyurularim = duyurular;
                 modeller.Departmanlarim = department;
