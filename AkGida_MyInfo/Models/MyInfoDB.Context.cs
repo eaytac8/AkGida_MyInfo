@@ -34,11 +34,7 @@ public partial class AkGida_MyInfoEntities : DbContext
 
     public virtual DbSet<Companies> Companies { get; set; }
 
-    public virtual DbSet<CompanyDuyuru> CompanyDuyuru { get; set; }
-
     public virtual DbSet<Departments> Departments { get; set; }
-
-    public virtual DbSet<Duyurular> Duyurular { get; set; }
 
     public virtual DbSet<sysdiagrams> sysdiagrams { get; set; }
 
@@ -57,6 +53,8 @@ public partial class AkGida_MyInfoEntities : DbContext
     public virtual DbSet<Personels> Personels { get; set; }
 
     public virtual DbSet<Slider> Slider { get; set; }
+
+    public virtual DbSet<Duyurular> Duyurular { get; set; }
 
 }
 

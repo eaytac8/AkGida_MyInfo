@@ -12,7 +12,6 @@ namespace AkGida_MyInfo.Controllers
     internal class AkGida_MyInfoEntities:DbContext
     {
         public DbSet<Companies> Companies { get; set; }
-        public DbSet<CompanyDuyuru> CompanyDuyuru { get; set; }
         public DbSet<Departments> Departments { get; set; }
         public DbSet<Duyurular> Duyurular { get; set; }
         public DbSet<Menu> Menu { get; set; }

@@ -173,6 +173,7 @@
     <Compile Include="Controllers\AkGida_MyInfoEntities.cs" />
     <Compile Include="Controllers\CompanyYonetimController.cs" />
     <Compile Include="Controllers\DepartmentYonetimController.cs" />
+    <Compile Include="Controllers\DuyuruYonetimController.cs" />
     <Compile Include="Controllers\GenelDuyuruYonetimController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\MenuYonetimController.cs" />
@@ -181,9 +182,6 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\Companies.cs">
-      <DependentUpon>MyInfoDB.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\CompanyDuyuru.cs">
       <DependentUpon>MyInfoDB.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\Departments.cs">
@@ -5659,6 +5657,11 @@
     <Content Include="Views\GenelDuyuruYonetim\Delete.cshtml" />
     <Content Include="Views\GenelDuyuruYonetim\Edit.cshtml" />
     <Content Include="Views\GenelDuyuruYonetim\Index.cshtml" />
+    <Content Include="Views\DuyuruYonetim\Create.cshtml" />
+    <Content Include="Views\DuyuruYonetim\Delete.cshtml" />
+    <Content Include="Views\DuyuruYonetim\Edit.cshtml" />
+    <Content Include="Views\DuyuruYonetim\Index.cshtml" />
+    <Content Include="Views\Home\Deneme.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

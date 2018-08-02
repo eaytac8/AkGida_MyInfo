@@ -18,7 +18,7 @@
 
 		// Load Bootstrap JS
 		loadScript(plugin_path + 'bootstrap/js/bootstrap.min.js', function() {
-
+      
 			FirstInit();
 
 		});

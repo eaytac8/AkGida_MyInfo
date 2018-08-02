@@ -1,38 +1,31 @@
-﻿@model AkGida_MyInfo.Models.Slider
+﻿@model AkGida_MyInfo.Models.Duyurular
 
 @{
-    ViewBag.Title = "Genel Duyuruyu Sil";
+    ViewBag.Title = "Şube Duyurusu Sil";
     Layout = "~/Views/Shared/_AdminLayout.cshtml";
 }
 
+<h2>Delete</h2>
 
 <h3>Bu duyuruyu silmek istediğinize emin misiniz?</h3>
 <div>
-    <h4>Slider</h4>
+    <h4>Duyurular</h4>
     <hr />
     <dl class="dl-horizontal">
         <dt>
-            @Html.DisplayNameFor(model => model.SliderFoto)
+            @Html.DisplayNameFor(model => model.Baslik)
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.SliderFoto)
+            @Html.DisplayFor(model => model.Baslik)
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.SliderBaslik)
+            @Html.DisplayNameFor(model => model.Icerik)
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.SliderBaslik)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.SliderText)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.SliderText)
+            @Html.DisplayFor(model => model.Icerik)
         </dd>
 
         <dt>
@@ -66,7 +59,7 @@
 
         <div class="form-actions no-color">
             <input type="submit" value="Sil" class="btn btn-danger" /> |
-            @Html.ActionLink("Listeye Geri Dön", "Index")
+            @Html.ActionLink("listeye Geri Dön", "Index")
         </div>
     }
 </div>

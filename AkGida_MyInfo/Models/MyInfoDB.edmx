@@ -15,14 +15,6 @@
           <Property Name="CompanyType" Type="nvarchar" MaxLength="150" />
           <Property Name="CompanyTel" Type="nvarchar" MaxLength="16" />
         </EntityType>
-        <EntityType Name="CompanyDuyuru">
-          <Key>
-            <PropertyRef Name="CompanyDuyuruID" />
-          </Key>
-          <Property Name="CompanyDuyuruID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="CompanyID" Type="int" />
-          <Property Name="DuyuruID" Type="int" />
-        </EntityType>
         <EntityType Name="Departments">
           <Key>
             <PropertyRef Name="DepartmentID" />
@@ -36,9 +28,12 @@
             <PropertyRef Name="DuyuruID" />
           </Key>
           <Property Name="DuyuruID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="Baslik" Type="nvarchar" MaxLength="100" />
-          <Property Name="Icerik" Type="nvarchar" MaxLength="400" />
-          <Property Name="DuyuruTarih" Type="datetime" />
+          <Property Name="CompanyID" Type="int" />
+          <Property Name="Baslik" Type="nvarchar" MaxLength="250" />
+          <Property Name="Icerik" Type="nvarchar" MaxLength="350" />
+          <Property Name="BaslangicTarihi" Type="datetime" />
+          <Property Name="BitisTarihi" Type="datetime" />
+          <Property Name="ResimYolu" Type="nvarchar" MaxLength="250" />
         </EntityType>
         <EntityType Name="Menu">
           <Key>
@@ -155,30 +150,6 @@ warning 6002: The table/view 'AkGida_MyInfo.dbo.UserRole' does not have a primar
           <Property Name="YetkiDescription" Type="nvarchar" MaxLength="100" Nullable="false" />
           <Property Name="CompanyID" Type="int" Nullable="false" />
         </EntityType>
-        <Association Name="FK_CompanyDuyuru_Companies">
-          <End Role="Companies" Type="Self.Companies" Multiplicity="0..1" />
-          <End Role="CompanyDuyuru" Type="Self.CompanyDuyuru" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Companies">
-              <PropertyRef Name="CompanyID" />
-            </Principal>
-            <Dependent Role="CompanyDuyuru">
-              <PropertyRef Name="CompanyID" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_CompanyDuyuru_Duyurular">
-          <End Role="Duyurular" Type="Self.Duyurular" Multiplicity="0..1" />
-          <End Role="CompanyDuyuru" Type="Self.CompanyDuyuru" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Duyurular">
-              <PropertyRef Name="DuyuruID" />
-            </Principal>
-            <Dependent Role="CompanyDuyuru">
-              <PropertyRef Name="DuyuruID" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
         <Association Name="FK_Departments_Companies">
           <End Role="Companies" Type="Self.Companies" Multiplicity="0..1" />
           <End Role="Departments" Type="Self.Departments" Multiplicity="*" />
@@ -187,6 +158,18 @@ warning 6002: The table/view 'AkGida_MyInfo.dbo.UserRole' does not have a primar
               <PropertyRef Name="CompanyID" />
             </Principal>
             <Dependent Role="Departments">
+              <PropertyRef Name="CompanyID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Duyurular_Companies">
+          <End Role="Companies" Type="Self.Companies" Multiplicity="0..1" />
+          <End Role="Duyurular" Type="Self.Duyurular" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Companies">
+              <PropertyRef Name="CompanyID" />
+            </Principal>
+            <Dependent Role="Duyurular">
               <PropertyRef Name="CompanyID" />
             </Dependent>
           </ReferentialConstraint>
@@ -277,7 +260,6 @@ warning 6002: The table/view 'AkGida_MyInfo.dbo.UserRole' does not have a primar
         </Association>
         <EntityContainer Name="AkGida_MyInfoModelStoreContainer">
           <EntitySet Name="Companies" EntityType="Self.Companies" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="CompanyDuyuru" EntityType="Self.CompanyDuyuru" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Departments" EntityType="Self.Departments" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Duyurular" EntityType="Self.Duyurular" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Menu" EntityType="Self.Menu" Schema="dbo" store:Type="Tables" />
@@ -301,17 +283,13 @@ warning 6002: The table/view 'AkGida_MyInfo.dbo.UserRole' does not have a primar
     [UserRole].[RoleID] AS [RoleID]
     FROM [dbo].[UserRole] AS [UserRole]</DefiningQuery>
           </EntitySet>
-          <AssociationSet Name="FK_CompanyDuyuru_Companies" Association="Self.FK_CompanyDuyuru_Companies">
-            <End Role="Companies" EntitySet="Companies" />
-            <End Role="CompanyDuyuru" EntitySet="CompanyDuyuru" />
-          </AssociationSet>
-          <AssociationSet Name="FK_CompanyDuyuru_Duyurular" Association="Self.FK_CompanyDuyuru_Duyurular">
-            <End Role="Duyurular" EntitySet="Duyurular" />
-            <End Role="CompanyDuyuru" EntitySet="CompanyDuyuru" />
-          </AssociationSet>
           <AssociationSet Name="FK_Departments_Companies" Association="Self.FK_Departments_Companies">
             <End Role="Companies" EntitySet="Companies" />
             <End Role="Departments" EntitySet="Departments" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Duyurular_Companies" Association="Self.FK_Duyurular_Companies">
+            <End Role="Companies" EntitySet="Companies" />
+            <End Role="Duyurular" EntitySet="Duyurular" />
           </AssociationSet>
           <AssociationSet Name="FK_Menu_Companies" Association="Self.FK_Menu_Companies">
             <End Role="Companies" EntitySet="Companies" />
@@ -355,20 +333,10 @@ warning 6002: The table/view 'AkGida_MyInfo.dbo.UserRole' does not have a primar
           <Property Name="CompanyAddress" Type="String" MaxLength="300" FixedLength="false" Unicode="true" />
           <Property Name="CompanyType" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
           <Property Name="CompanyTel" Type="String" MaxLength="16" FixedLength="false" Unicode="true" />
-          <NavigationProperty Name="CompanyDuyuru" Relationship="Self.FK_CompanyDuyuru_Companies" FromRole="Companies" ToRole="CompanyDuyuru" />
           <NavigationProperty Name="Departments" Relationship="Self.FK_Departments_Companies" FromRole="Companies" ToRole="Departments" />
           <NavigationProperty Name="Servis" Relationship="AkGida_MyInfoModel.FK_Servis_Companies" FromRole="Companies" ToRole="Servis" />
           <NavigationProperty Name="Menu" Relationship="AkGida_MyInfoModel.FK_Menu_Companies" FromRole="Companies" ToRole="Menu" />
-        </EntityType>
-        <EntityType Name="CompanyDuyuru">
-          <Key>
-            <PropertyRef Name="CompanyDuyuruID" />
-          </Key>
-          <Property Name="CompanyDuyuruID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="CompanyID" Type="Int32" />
-          <Property Name="DuyuruID" Type="Int32" />
-          <NavigationProperty Name="Companies" Relationship="Self.FK_CompanyDuyuru_Companies" FromRole="CompanyDuyuru" ToRole="Companies" />
-          <NavigationProperty Name="Duyurular" Relationship="Self.FK_CompanyDuyuru_Duyurular" FromRole="CompanyDuyuru" ToRole="Duyurular" />
+          <NavigationProperty Name="Duyurular" Relationship="AkGida_MyInfoModel.FK_Duyurular_Companies" FromRole="Companies" ToRole="Duyurular" />
         </EntityType>
         <EntityType Name="Departments">
           <Key>
@@ -380,16 +348,6 @@ warning 6002: The table/view 'AkGida_MyInfo.dbo.UserRole' does not have a primar
           <NavigationProperty Name="Companies" Relationship="Self.FK_Departments_Companies" FromRole="Departments" ToRole="Companies" />
           <NavigationProperty Name="Personels" Relationship="AkGida_MyInfoModel.FK_Personels_Departments" FromRole="Departments" ToRole="Personels" />
         </EntityType>
-        <EntityType Name="Duyurular">
-          <Key>
-            <PropertyRef Name="DuyuruID" />
-          </Key>
-          <Property Name="DuyuruID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="Baslik" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
-          <Property Name="Icerik" Type="String" MaxLength="400" FixedLength="false" Unicode="true" />
-          <Property Name="DuyuruTarih" Type="DateTime" Precision="3" />
-          <NavigationProperty Name="CompanyDuyuru" Relationship="Self.FK_CompanyDuyuru_Duyurular" FromRole="Duyurular" ToRole="CompanyDuyuru" />
-        </EntityType>
         <EntityType Name="sysdiagrams">
           <Key>
             <PropertyRef Name="diagram_id" />
@@ -400,18 +358,6 @@ warning 6002: The table/view 'AkGida_MyInfo.dbo.UserRole' does not have a primar
           <Property Name="version" Type="Int32" />
           <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
         </EntityType>
-        <Association Name="FK_CompanyDuyuru_Companies">
-          <End Role="Companies" Type="Self.Companies" Multiplicity="0..1" />
-          <End Role="CompanyDuyuru" Type="Self.CompanyDuyuru" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Companies">
-              <PropertyRef Name="CompanyID" />
-            </Principal>
-            <Dependent Role="CompanyDuyuru">
-              <PropertyRef Name="CompanyID" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
         <Association Name="FK_Departments_Companies">
           <End Role="Companies" Type="Self.Companies" Multiplicity="0..1" />
           <End Role="Departments" Type="Self.Departments" Multiplicity="*" />
@@ -424,35 +370,13 @@ warning 6002: The table/view 'AkGida_MyInfo.dbo.UserRole' does not have a primar
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK_CompanyDuyuru_Duyurular">
-          <End Role="Duyurular" Type="Self.Duyurular" Multiplicity="0..1" />
-          <End Role="CompanyDuyuru" Type="Self.CompanyDuyuru" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Duyurular">
-              <PropertyRef Name="DuyuruID" />
-            </Principal>
-            <Dependent Role="CompanyDuyuru">
-              <PropertyRef Name="DuyuruID" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
         <EntityContainer Name="AkGida_MyInfoEntities" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="Companies" EntityType="Self.Companies" />
-          <EntitySet Name="CompanyDuyuru" EntityType="Self.CompanyDuyuru" />
           <EntitySet Name="Departments" EntityType="Self.Departments" />
-          <EntitySet Name="Duyurular" EntityType="Self.Duyurular" />
           <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" />
-          <AssociationSet Name="FK_CompanyDuyuru_Companies" Association="Self.FK_CompanyDuyuru_Companies">
-            <End Role="Companies" EntitySet="Companies" />
-            <End Role="CompanyDuyuru" EntitySet="CompanyDuyuru" />
-          </AssociationSet>
           <AssociationSet Name="FK_Departments_Companies" Association="Self.FK_Departments_Companies">
             <End Role="Companies" EntitySet="Companies" />
             <End Role="Departments" EntitySet="Departments" />
-          </AssociationSet>
-          <AssociationSet Name="FK_CompanyDuyuru_Duyurular" Association="Self.FK_CompanyDuyuru_Duyurular">
-            <End Role="Duyurular" EntitySet="Duyurular" />
-            <End Role="CompanyDuyuru" EntitySet="CompanyDuyuru" />
           </AssociationSet>
           <EntitySet Name="Role" EntityType="AkGida_MyInfoModel.Role" />
           <EntitySet Name="Users" EntityType="AkGida_MyInfoModel.Users" />
@@ -482,6 +406,11 @@ warning 6002: The table/view 'AkGida_MyInfo.dbo.UserRole' does not have a primar
             <End Role="Personels" EntitySet="Personels" />
           </AssociationSet>
           <EntitySet Name="Slider" EntityType="AkGida_MyInfoModel.Slider" />
+          <EntitySet Name="Duyurular" EntityType="AkGida_MyInfoModel.Duyurular" />
+          <AssociationSet Name="FK_Duyurular_Companies" Association="AkGida_MyInfoModel.FK_Duyurular_Companies">
+            <End Role="Companies" EntitySet="Companies" />
+            <End Role="Duyurular" EntitySet="Duyurular" />
+          </AssociationSet>
         </EntityContainer>
         <EntityType Name="Role">
           <Key>
@@ -619,6 +548,31 @@ warning 6002: The table/view 'AkGida_MyInfo.dbo.UserRole' does not have a primar
           <Property Name="BitisTarihi" Type="DateTime" Precision="3" />
           <Property Name="ResimYolu" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
         </EntityType>
+        <EntityType Name="Duyurular">
+          <Key>
+            <PropertyRef Name="DuyuruID" />
+          </Key>
+          <Property Name="DuyuruID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Baslik" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="Icerik" Type="String" MaxLength="350" FixedLength="false" Unicode="true" />
+          <Property Name="BaslangicTarihi" Type="DateTime" Precision="3" />
+          <Property Name="BitisTarihi" Type="DateTime" Precision="3" />
+          <Property Name="ResimYolu" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="CompanyID" Type="Int32" />
+          <NavigationProperty Name="Companies" Relationship="AkGida_MyInfoModel.FK_Duyurular_Companies" FromRole="Duyurular" ToRole="Companies" />
+        </EntityType>
+        <Association Name="FK_Duyurular_Companies">
+          <End Type="AkGida_MyInfoModel.Companies" Role="Companies" Multiplicity="0..1" />
+          <End Type="AkGida_MyInfoModel.Duyurular" Role="Duyurular" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Companies">
+              <PropertyRef Name="CompanyID" />
+            </Principal>
+            <Dependent Role="Duyurular">
+              <PropertyRef Name="CompanyID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -636,31 +590,12 @@ warning 6002: The table/view 'AkGida_MyInfo.dbo.UserRole' does not have a primar
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="CompanyDuyuru">
-            <EntityTypeMapping TypeName="AkGida_MyInfoModel.CompanyDuyuru">
-              <MappingFragment StoreEntitySet="CompanyDuyuru">
-                <ScalarProperty Name="CompanyDuyuruID" ColumnName="CompanyDuyuruID" />
-                <ScalarProperty Name="CompanyID" ColumnName="CompanyID" />
-                <ScalarProperty Name="DuyuruID" ColumnName="DuyuruID" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
           <EntitySetMapping Name="Departments">
             <EntityTypeMapping TypeName="AkGida_MyInfoModel.Departments">
               <MappingFragment StoreEntitySet="Departments">
                 <ScalarProperty Name="DepartmentID" ColumnName="DepartmentID" />
                 <ScalarProperty Name="DepartmentName" ColumnName="DepartmentName" />
                 <ScalarProperty Name="CompanyID" ColumnName="CompanyID" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="Duyurular">
-            <EntityTypeMapping TypeName="AkGida_MyInfoModel.Duyurular">
-              <MappingFragment StoreEntitySet="Duyurular">
-                <ScalarProperty Name="DuyuruID" ColumnName="DuyuruID" />
-                <ScalarProperty Name="Baslik" ColumnName="Baslik" />
-                <ScalarProperty Name="Icerik" ColumnName="Icerik" />
-                <ScalarProperty Name="DuyuruTarih" ColumnName="DuyuruTarih" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -781,6 +716,19 @@ warning 6002: The table/view 'AkGida_MyInfo.dbo.UserRole' does not have a primar
                 <ScalarProperty Name="SliderBaslik" ColumnName="SliderBaslik" />
                 <ScalarProperty Name="SliderFoto" ColumnName="SliderFoto" />
                 <ScalarProperty Name="SliderID" ColumnName="SliderID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Duyurular">
+            <EntityTypeMapping TypeName="AkGida_MyInfoModel.Duyurular">
+              <MappingFragment StoreEntitySet="Duyurular">
+                <ScalarProperty Name="CompanyID" ColumnName="CompanyID" />
+                <ScalarProperty Name="ResimYolu" ColumnName="ResimYolu" />
+                <ScalarProperty Name="BitisTarihi" ColumnName="BitisTarihi" />
+                <ScalarProperty Name="BaslangicTarihi" ColumnName="BaslangicTarihi" />
+                <ScalarProperty Name="Icerik" ColumnName="Icerik" />
+                <ScalarProperty Name="Baslik" ColumnName="Baslik" />
+                <ScalarProperty Name="DuyuruID" ColumnName="DuyuruID" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

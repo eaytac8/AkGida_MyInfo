@@ -3,8 +3,9 @@
 @model ViewModels
 @{
     ViewBag.Title = "Departmanlar";
-    Layout = "~/Views/Shared/_Layout.cshtml";
+    /*Layout = "~/Views/Shared/_Layout.cshtml";*/
 }
+
 <h4 align="center">Departmanlar</h4>
 
 <!-- CORE CSS -->
@@ -14,7 +15,25 @@
 <link href="~/Content/User/assets/css/essentials.css" rel="stylesheet" type="text/css" />
 <link href="~/Content/User/assets/css/layout.css" rel="stylesheet" type="text/css" />
 
+<!-- SWIE SLIDER -->
+<link href="~/Content/User/assets/plugins/slider.swiper/dist/css/swiper.min.css" rel="stylesheet" type="text/css" />
+
+
 <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+
+
+<!-- JAVASCRIPT FILES -->
+<script type="text/javascript">var plugin_path = '/Content/User/assets/plugins/';</script>
+@*<script type="text/javascript" src="~/Content/User/assets/plugins/jquery/jquery-2.1.4.min.js"></script>*@
+
+<script type="text/javascript" src="~/Content/User/assets/js/scripts.js"></script>
+
+<!-- STYLESWITCHER - REMOVE -->
+<script async type="text/javascript" src="~/Content/User/assets/plugins/styleswitcher/styleswitcher.js"></script>
+
+
+
+
 
 <style>
 
@@ -48,7 +67,6 @@
 </style>
 
 
-
 <!-- TOGGLES -->
 <div class="toggle toggle-transparent toggle-bordered-full margin-top-60">
 
@@ -65,29 +83,29 @@
 
 
                     @*@foreach (Personels p_item in Model.Personellerim)
-        {
-            <table>
-                <tr>
-                    <th>First name</th>
-                    <th>Last name</th>
-                    <th>Telefon</th>
-                    <th>Dahili No</th>
-                    <th>E-Posta</th>
-                    <th>Departman</th>
-                    <th>Şube</th>
-                </tr>
+                        {
+                            <table>
+                                <tr>
+                                    <th>First name</th>
+                                    <th>Last name</th>
+                                    <th>Telefon</th>
+                                    <th>Dahili No</th>
+                                    <th>E-Posta</th>
+                                    <th>Departman</th>
+                                    <th>Şube</th>
+                                </tr>
 
-                <tr>
-                    <td>@p_item.PersonelName</td>
-                    <td>@p_item.PersonelSurname</td>
-                    <td>@p_item.PersonelTel</td>
-                    <td>@p_item.PersonelDahiliNo</td>
-                    <td>@p_item.PersonelEposta</td>
-                    <td>@p_item.Departments.DepartmentName</td>
-                    <td>@p_item.Departments.Companies.CompanyName</td>
-                </tr>
-            </table>
-        }*@
+                                <tr>
+                                    <td>@p_item.PersonelName</td>
+                                    <td>@p_item.PersonelSurname</td>
+                                    <td>@p_item.PersonelTel</td>
+                                    <td>@p_item.PersonelDahiliNo</td>
+                                    <td>@p_item.PersonelEposta</td>
+                                    <td>@p_item.Departments.DepartmentName</td>
+                                    <td>@p_item.Departments.Companies.CompanyName</td>
+                                </tr>
+                            </table>
+                        }*@
 
                 </p>
 
@@ -139,58 +157,58 @@
 
 @*<table id="Liste" style="width:100%; display:none;"></table>
 
-<script>
+    <script>
 
-    $(function ClickToID() {
-        $(".tile-link").click(function () {
-            var divID = this.id;//Or $(this).attr("id");
-            console.log("tıklandı:" + divID);
-            $("#Liste").html("");
-            $("#Liste").hide(1, function () {
-                //Your code here
-                $.ajax({
-                    method: "POST",
-                    url: "/Home/PartialPers",
-                    data: { departmanid: divID },
-                    beforeSend: function () {
-                        console.log("Veriler Gonderildi.");
-                    }
-                }).done(function (d) {
-                    console.log("d:" + d);
-
-                    $("#Liste").show(1, function () {
-
-                        var thead = $('<tr><th>Personel Ad</th><th>Personel Soyad</th><th>Dahili No</th><th>Telefon No</th><th>Mail Adresi</th></tr>');
-                        $("#Liste").append(thead);
-                        for (var i in d) {
-
-                            var divPersonel = $('<tr><td>' + d[i].PersonelName + '</td><td>' + d[i].PersonelSurname + '</td><td>' + d[i].PersonelDahiliNo + '</td><td>' + d[i].PersonelTel + '</td><td>' + d[i].PersonelEposta + '</td></tr>');
-                            $("#Liste").append(divPersonel);
-
+        $(function ClickToID() {
+            $(".tile-link").click(function () {
+                var divID = this.id;//Or $(this).attr("id");
+                console.log("tıklandı:" + divID);
+                $("#Liste").html("");
+                $("#Liste").hide(1, function () {
+                    //Your code here
+                    $.ajax({
+                        method: "POST",
+                        url: "/Home/PartialPers",
+                        data: { departmanid: divID },
+                        beforeSend: function () {
+                            console.log("Veriler Gonderildi.");
                         }
-                    })
+                    }).done(function (d) {
+                        console.log("d:" + d);
 
-                }).fail(function () {
-                    console.log("hata olustu..");
+                        $("#Liste").show(1, function () {
+
+                            var thead = $('<tr><th>Personel Ad</th><th>Personel Soyad</th><th>Dahili No</th><th>Telefon No</th><th>Mail Adresi</th></tr>');
+                            $("#Liste").append(thead);
+                            for (var i in d) {
+
+                                var divPersonel = $('<tr><td>' + d[i].PersonelName + '</td><td>' + d[i].PersonelSurname + '</td><td>' + d[i].PersonelDahiliNo + '</td><td>' + d[i].PersonelTel + '</td><td>' + d[i].PersonelEposta + '</td></tr>');
+                                $("#Liste").append(divPersonel);
+
+                            }
+                        })
+
+                    }).fail(function () {
+                        console.log("hata olustu..");
+                    });
                 });
+
+
             });
-
-
         });
-    });
 
-</script>*@
+    </script>*@
 
 <div class="container text-center">
     <br>
     <div class="row">
-        <div class="col-md-4">
+        <div class="col-md-4" >
             <h3>Günün Menüsü</h3>
             @foreach (Menu m_item in Model.Menulerim)
             {
                 <frame>
                     <div class="grid-item">
-                        @*<h3>@m_item.Tarih.</h3>*@
+                        @*<h3>@m_item.Tarih</h3>*@
                         <h5>@m_item.Corba</h5>
                         <h5>@m_item.AnaYemek</h5>
                         <h5>@m_item.Diyet</h5>
@@ -198,27 +216,43 @@
                         <h5>@m_item.Tatli</h5>
                         <h5>@m_item.Meyve</h5>
                         <h5>@m_item.Salata</h5>
-                        @*<h5>@m_item.Companies.CompanyName</h5>*@
                     </div>
                 </frame>
 
             }
         </div>
+
         <div class="col-md-8">
             <h3>Duyurular</h3>
-            @foreach (Duyurular d_item in Model.Duyurularim)
-            {
-                <frame>
-                    <div class="grid-item">
-                        <h3>@d_item.Baslik</h3>
-                        <p>@d_item.Icerik</p>
-                    </div>
-                </frame>
 
-            }
+            <div class="blog-post-item">
+                <!-- OWL SLIDER -->
+                <div class="owl-carousel buttons-autohide controlls-over" data-plugin-options='{"items": 1, "autoPlay": 3000, "autoHeight": false, "navigation": true, "pagination": true, "transitionStyle":"fadeUp", "progressBar":"false"}'>
+
+                    @foreach (Duyurular d_item in Model.Duyurularim)
+                    {
+                        <div>
+                            <img class="img-responsive" src="@Url.Content(d_item.ResimYolu)" alt="">
+                        </div>
+
+                    }
+                </div>
+                <!-- /OWL SLIDER -->
+
+            </div>
+
         </div>
+
     </div>
 </div><br>
+
+
+
+
+
+
+
+
 
 @*<script>
         $(function ClickToIDD() {
@@ -305,12 +339,5 @@
     </script>*@
 
 
-
-<!-- JAVASCRIPT FILES -->
-<script type="text/javascript">var plugin_path = '~/Content/User/assets/plugins/';</script>
-<script type="text/javascript" src="~/Content/User/assets/plugins/jquery/jquery-2.1.4.min.js"></script>
-
-<script type="text/javascript" src="~/Content/User/assets/js/scripts.js"></script>
-
-<!-- STYLESWITCHER - REMOVE -->
-<script async type="text/javascript" src="~/Content/User/assets/plugins/styleswitcher/styleswitcher.js"></script>
+<!-- SWIPE SLIDER -->
+<script type="text/javascript" src="~/Content/User/assets/plugins/slider.swiper/dist/js/swiper.min.js"></script>

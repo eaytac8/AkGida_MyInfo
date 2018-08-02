@@ -1,20 +1,20 @@
-﻿@model IEnumerable<AkGida_MyInfo.Models.Slider>
+﻿@model IEnumerable<AkGida_MyInfo.Models.Duyurular>
 
 @{
-    ViewBag.Title = "Genel Duyuru Listesi";
+    ViewBag.Title = "Şube Duyuru Listesi";
     Layout = "~/Views/Shared/_AdminLayout.cshtml";
 }
 
+
 <p>
-    @*@Html.ActionLink("Create New", "Create")*@
-    <a href="/GenelDuyuruYonetim/Create" button type="button" class="btn btn-primary">Duyuru Ekle</a>
+    <a href="/DuyuruYonetim/Create" button type="button" class="btn btn-primary">Duyuru Ekle</a>
 </p>
+
 
 <div class="table-responsive">
     <table class="table table-bordered nomargin">
         <thead>
             <tr>
-                @*<th>Resim</th>*@
                 <th>Başlık</th>
                 <th>İçerik</th>
                 <th>Başlangıç Tarihi</th>
@@ -27,19 +27,17 @@
             @foreach (var item in Model)
             {
                 <tr>
-                    @*<td>@item.SliderFoto</td>*@
-                    <td>@item.SliderBaslik</td>
-                    <td>@item.SliderText</td>
+                    <td>@item.Baslik</td>
+                    <td>@item.Icerik</td>
                     <td>@item.BaslangicTarihi</td>
                     <td>@item.BitisTarihi</td>
                     <td>@item.ResimYolu</td>
                     <td>
-                        <a href="/GenelDuyuruYonetim/Edit/@item.SliderID" class="btn btn-info btn-xs"><i class="fa fa-edit white"></i> Düzenle </a>
-                        <a href="/GenelDuyuruYonetim/Delete/@item.SliderID" class="btn btn-danger btn-xs"><i class="fa fa-times white"></i> Sil </a>
+                        <a href="/DuyuruYonetim/Edit/@item.DuyuruID" class="btn btn-info btn-xs"><i class="fa fa-edit white"></i> Düzenle </a>
+                        <a href="/DuyuruYonetim/Delete/@item.DuyuruID" class="btn btn-danger btn-xs"><i class="fa fa-times white"></i> Sil </a>
                     </td>
                 </tr>
             }
-
         </tbody>
     </table>
 </div>

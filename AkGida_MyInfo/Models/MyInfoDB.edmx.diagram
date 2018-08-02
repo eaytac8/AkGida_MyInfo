@@ -6,13 +6,9 @@
     <edmx:Diagrams>
       <Diagram DiagramId="8569eb95f7e14acd83f982d94eff2cbf" Name="Diagram1" ZoomLevel="89">
         <EntityTypeShape EntityType="AkGida_MyInfoModel.Companies" Width="1.5" PointX="0.75" PointY="5.25" IsExpanded="true" />
-        <EntityTypeShape EntityType="AkGida_MyInfoModel.CompanyDuyuru" Width="1.5" PointX="3" PointY="2.5" IsExpanded="true" />
         <EntityTypeShape EntityType="AkGida_MyInfoModel.Departments" Width="1.5" PointX="3" PointY="5.875" IsExpanded="true" />
-        <EntityTypeShape EntityType="AkGida_MyInfoModel.Duyurular" Width="1.5" PointX="0.75" PointY="1.5" IsExpanded="true" />
         <EntityTypeShape EntityType="AkGida_MyInfoModel.sysdiagrams" Width="1.5" PointX="7.75" PointY="0.75" IsExpanded="true" />
-        <AssociationConnector Association="AkGida_MyInfoModel.FK_CompanyDuyuru_Companies" ManuallyRouted="false" />
         <AssociationConnector Association="AkGida_MyInfoModel.FK_Departments_Companies" ManuallyRouted="false" />
-        <AssociationConnector Association="AkGida_MyInfoModel.FK_CompanyDuyuru_Duyurular" ManuallyRouted="false" />
         <EntityTypeShape EntityType="AkGida_MyInfoModel.Role" Width="1.5" PointX="7.375" PointY="8.25" />
         <EntityTypeShape EntityType="AkGida_MyInfoModel.Users" Width="1.5" PointX="9.625" PointY="9.625" />
         <EntityTypeShape EntityType="AkGida_MyInfoModel.Yetkiler" Width="1.5" PointX="9.625" PointY="7" />
@@ -26,6 +22,8 @@
         <EntityTypeShape EntityType="AkGida_MyInfoModel.Personels" Width="1.5" PointX="5.25" PointY="4.375" />
         <AssociationConnector Association="AkGida_MyInfoModel.FK_Personels_Departments" />
         <EntityTypeShape EntityType="AkGida_MyInfoModel.Slider" Width="1.5" PointX="5.375" PointY="0.875" />
+        <EntityTypeShape EntityType="AkGida_MyInfoModel.Duyurular" Width="1.5" PointX="1" PointY="0.5" />
+        <AssociationConnector Association="AkGida_MyInfoModel.FK_Duyurular_Companies" />
         </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

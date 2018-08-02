@@ -10,14 +10,6 @@
     <Property Name="CompanyType" Type="nvarchar" MaxLength="150" />
     <Property Name="CompanyTel" Type="nvarchar" MaxLength="16" />
   </EntityType>
-  <EntityType Name="CompanyDuyuru">
-    <Key>
-      <PropertyRef Name="CompanyDuyuruID" />
-    </Key>
-    <Property Name="CompanyDuyuruID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="CompanyID" Type="int" />
-    <Property Name="DuyuruID" Type="int" />
-  </EntityType>
   <EntityType Name="Departments">
     <Key>
       <PropertyRef Name="DepartmentID" />
@@ -31,9 +23,12 @@
       <PropertyRef Name="DuyuruID" />
     </Key>
     <Property Name="DuyuruID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="Baslik" Type="nvarchar" MaxLength="100" />
-    <Property Name="Icerik" Type="nvarchar" MaxLength="400" />
-    <Property Name="DuyuruTarih" Type="datetime" />
+    <Property Name="CompanyID" Type="int" />
+    <Property Name="Baslik" Type="nvarchar" MaxLength="250" />
+    <Property Name="Icerik" Type="nvarchar" MaxLength="350" />
+    <Property Name="BaslangicTarihi" Type="datetime" />
+    <Property Name="BitisTarihi" Type="datetime" />
+    <Property Name="ResimYolu" Type="nvarchar" MaxLength="250" />
   </EntityType>
   <EntityType Name="Menu">
     <Key>
@@ -150,30 +145,6 @@ warning 6002: The table/view 'AkGida_MyInfo.dbo.UserRole' does not have a primar
     <Property Name="YetkiDescription" Type="nvarchar" MaxLength="100" Nullable="false" />
     <Property Name="CompanyID" Type="int" Nullable="false" />
   </EntityType>
-  <Association Name="FK_CompanyDuyuru_Companies">
-    <End Role="Companies" Type="Self.Companies" Multiplicity="0..1" />
-    <End Role="CompanyDuyuru" Type="Self.CompanyDuyuru" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="Companies">
-        <PropertyRef Name="CompanyID" />
-      </Principal>
-      <Dependent Role="CompanyDuyuru">
-        <PropertyRef Name="CompanyID" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="FK_CompanyDuyuru_Duyurular">
-    <End Role="Duyurular" Type="Self.Duyurular" Multiplicity="0..1" />
-    <End Role="CompanyDuyuru" Type="Self.CompanyDuyuru" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="Duyurular">
-        <PropertyRef Name="DuyuruID" />
-      </Principal>
-      <Dependent Role="CompanyDuyuru">
-        <PropertyRef Name="DuyuruID" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
   <Association Name="FK_Departments_Companies">
     <End Role="Companies" Type="Self.Companies" Multiplicity="0..1" />
     <End Role="Departments" Type="Self.Departments" Multiplicity="*" />
@@ -182,6 +153,18 @@ warning 6002: The table/view 'AkGida_MyInfo.dbo.UserRole' does not have a primar
         <PropertyRef Name="CompanyID" />
       </Principal>
       <Dependent Role="Departments">
+        <PropertyRef Name="CompanyID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Duyurular_Companies">
+    <End Role="Companies" Type="Self.Companies" Multiplicity="0..1" />
+    <End Role="Duyurular" Type="Self.Duyurular" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Companies">
+        <PropertyRef Name="CompanyID" />
+      </Principal>
+      <Dependent Role="Duyurular">
         <PropertyRef Name="CompanyID" />
       </Dependent>
     </ReferentialConstraint>
@@ -272,7 +255,6 @@ warning 6002: The table/view 'AkGida_MyInfo.dbo.UserRole' does not have a primar
   </Association>
   <EntityContainer Name="AkGida_MyInfoModelStoreContainer">
     <EntitySet Name="Companies" EntityType="Self.Companies" Schema="dbo" store:Type="Tables" />
-    <EntitySet Name="CompanyDuyuru" EntityType="Self.CompanyDuyuru" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Departments" EntityType="Self.Departments" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Duyurular" EntityType="Self.Duyurular" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Menu" EntityType="Self.Menu" Schema="dbo" store:Type="Tables" />
@@ -296,17 +278,13 @@ warning 6002: The table/view 'AkGida_MyInfo.dbo.UserRole' does not have a primar
     [UserRole].[RoleID] AS [RoleID]
     FROM [dbo].[UserRole] AS [UserRole]</DefiningQuery>
     </EntitySet>
-    <AssociationSet Name="FK_CompanyDuyuru_Companies" Association="Self.FK_CompanyDuyuru_Companies">
-      <End Role="Companies" EntitySet="Companies" />
-      <End Role="CompanyDuyuru" EntitySet="CompanyDuyuru" />
-    </AssociationSet>
-    <AssociationSet Name="FK_CompanyDuyuru_Duyurular" Association="Self.FK_CompanyDuyuru_Duyurular">
-      <End Role="Duyurular" EntitySet="Duyurular" />
-      <End Role="CompanyDuyuru" EntitySet="CompanyDuyuru" />
-    </AssociationSet>
     <AssociationSet Name="FK_Departments_Companies" Association="Self.FK_Departments_Companies">
       <End Role="Companies" EntitySet="Companies" />
       <End Role="Departments" EntitySet="Departments" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Duyurular_Companies" Association="Self.FK_Duyurular_Companies">
+      <End Role="Companies" EntitySet="Companies" />
+      <End Role="Duyurular" EntitySet="Duyurular" />
     </AssociationSet>
     <AssociationSet Name="FK_Menu_Companies" Association="Self.FK_Menu_Companies">
       <End Role="Companies" EntitySet="Companies" />

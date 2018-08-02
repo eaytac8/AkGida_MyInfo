@@ -18,28 +18,23 @@ using System;
 public partial class Duyurular
 {
 
-    [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-    public Duyurular()
-    {
-
-        this.CompanyDuyuru = new HashSet<CompanyDuyuru>();
-
-    }
-
-
     public int DuyuruID { get; set; }
 
     public string Baslik { get; set; }
 
     public string Icerik { get; set; }
 
-    public Nullable<System.DateTime> DuyuruTarih { get; set; }
+    public Nullable<System.DateTime> BaslangicTarihi { get; set; }
+
+    public Nullable<System.DateTime> BitisTarihi { get; set; }
+
+    public string ResimYolu { get; set; }
+
+    public Nullable<int> CompanyID { get; set; }
 
 
 
-    [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-
-    public virtual ICollection<CompanyDuyuru> CompanyDuyuru { get; set; }
+    public virtual Companies Companies { get; set; }
 
 }
 

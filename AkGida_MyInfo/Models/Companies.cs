@@ -22,13 +22,13 @@ public partial class Companies
     public Companies()
     {
 
-        this.CompanyDuyuru = new HashSet<CompanyDuyuru>();
-
         this.Departments = new HashSet<Departments>();
 
         this.Servis = new HashSet<Servis>();
 
         this.Menu = new HashSet<Menu>();
+
+        this.Duyurular = new HashSet<Duyurular>();
 
     }
 
@@ -47,10 +47,6 @@ public partial class Companies
 
     [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
 
-    public virtual ICollection<CompanyDuyuru> CompanyDuyuru { get; set; }
-
-    [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-
     public virtual ICollection<Departments> Departments { get; set; }
 
     [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
@@ -60,6 +56,10 @@ public partial class Companies
     [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
 
     public virtual ICollection<Menu> Menu { get; set; }
+
+    [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+
+    public virtual ICollection<Duyurular> Duyurular { get; set; }
 
 }
 

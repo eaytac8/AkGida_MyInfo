@@ -14,8 +14,9 @@ namespace AkGida_MyInfo.Models
 
 using System;
     using System.Collections.Generic;
-    
-public partial class Personels
+    using System.ComponentModel.DataAnnotations;
+
+    public partial class Personels
 {
 
     public int PersonelID { get; set; }

@@ -12,31 +12,12 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <EntitySetMapping Name="CompanyDuyuru">
-      <EntityTypeMapping TypeName="AkGida_MyInfoModel.CompanyDuyuru">
-        <MappingFragment StoreEntitySet="CompanyDuyuru">
-          <ScalarProperty Name="CompanyDuyuruID" ColumnName="CompanyDuyuruID" />
-          <ScalarProperty Name="CompanyID" ColumnName="CompanyID" />
-          <ScalarProperty Name="DuyuruID" ColumnName="DuyuruID" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
     <EntitySetMapping Name="Departments">
       <EntityTypeMapping TypeName="AkGida_MyInfoModel.Departments">
         <MappingFragment StoreEntitySet="Departments">
           <ScalarProperty Name="DepartmentID" ColumnName="DepartmentID" />
           <ScalarProperty Name="DepartmentName" ColumnName="DepartmentName" />
           <ScalarProperty Name="CompanyID" ColumnName="CompanyID" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
-    <EntitySetMapping Name="Duyurular">
-      <EntityTypeMapping TypeName="AkGida_MyInfoModel.Duyurular">
-        <MappingFragment StoreEntitySet="Duyurular">
-          <ScalarProperty Name="DuyuruID" ColumnName="DuyuruID" />
-          <ScalarProperty Name="Baslik" ColumnName="Baslik" />
-          <ScalarProperty Name="Icerik" ColumnName="Icerik" />
-          <ScalarProperty Name="DuyuruTarih" ColumnName="DuyuruTarih" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
@@ -157,6 +138,19 @@
           <ScalarProperty Name="SliderBaslik" ColumnName="SliderBaslik" />
           <ScalarProperty Name="SliderFoto" ColumnName="SliderFoto" />
           <ScalarProperty Name="SliderID" ColumnName="SliderID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Duyurular">
+      <EntityTypeMapping TypeName="AkGida_MyInfoModel.Duyurular">
+        <MappingFragment StoreEntitySet="Duyurular">
+          <ScalarProperty Name="CompanyID" ColumnName="CompanyID" />
+          <ScalarProperty Name="ResimYolu" ColumnName="ResimYolu" />
+          <ScalarProperty Name="BitisTarihi" ColumnName="BitisTarihi" />
+          <ScalarProperty Name="BaslangicTarihi" ColumnName="BaslangicTarihi" />
+          <ScalarProperty Name="Icerik" ColumnName="Icerik" />
+          <ScalarProperty Name="Baslik" ColumnName="Baslik" />
+          <ScalarProperty Name="DuyuruID" ColumnName="DuyuruID" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
