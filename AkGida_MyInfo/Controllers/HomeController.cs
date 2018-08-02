@@ -78,9 +78,13 @@ namespace AkGida_MyInfo.Controllers
             List<Menu> menu = new List<Menu>();
             menu = db.Menu.Where(T => T.CompanyID == companyid && T.Tarih == DateTime.Today).ToList();
 
-                modeller.Duyurularim = duyurular;
-                modeller.Departmanlarim = department;
-                modeller.Menulerim = menu;
+            List<Personels> personel = new List<Personels>();
+            personel = db.Personels.Where(T => T.Departments.CompanyID== companyid).ToList();
+
+            modeller.Duyurularim = duyurular;
+            modeller.Departmanlarim = department;
+            modeller.Menulerim = menu;
+            modeller.Personellerim = personel;
 
             return View(modeller);
         }

@@ -22,6 +22,7 @@
 <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
 
 
+
 <!-- JAVASCRIPT FILES -->
 <script type="text/javascript">var plugin_path = '/Content/User/assets/plugins/';</script>
 @*<script type="text/javascript" src="~/Content/User/assets/plugins/jquery/jquery-2.1.4.min.js"></script>*@
@@ -74,40 +75,68 @@
     {
         <div class="toggle">
             <!-- toggle -->
-            <label id="@item.DepartmentID">@item.DepartmentName</label>
-            <div class="toggle-content">
-                <p class="clearfix">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas metus nulla, commodo a sodales sed, dignissim pretium nunc. Nam et lacus neque. Ut enim massa, sodales tempor convallis et, iaculis ac massa. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas metus nulla, commodo a sodales sed, dignissim pretium nunc. Nam et lacus neque. Ut enim massa, sodales tempor convallis et, iaculis ac massa.
-                    <br><br>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas metus nulla, commodo a sodales sed, dignissim pretium nunc. Nam et lacus neque. Ut enim massa, sodales tempor convallis et, iaculis ac massa. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas metus nulla, commodo a sodales sed, dignissim pretium nunc. Nam et lacus neque. Ut enim massa, sodales tempor convallis et, iaculis ac massa.
+            <label>@item.DepartmentName</label>
+            <div id=@item.DepartmentID.ToString() class="toggle-content">
+                <table class="table">
+                    <tr>
+                        <th>Adı</th>
+                        <th>Soyadı</th>
+                        <th>Corbus</th>
+                        <th>Dahili No</th>
+                        <th>Telefon</th>
+                        <th>E-Posta</th>
+                        <th>Departman</th>
+                        <th>Şube</th>
+                        <th>Doğum Tarihi</th>
+                    </tr>
 
-
-                    @*@foreach (Personels p_item in Model.Personellerim)
+                    @foreach (Personels item1 in Model.Personellerim)
+                    {
+                        if (item1.DepartmentID == item.DepartmentID)
                         {
-                            <table>
-                                <tr>
-                                    <th>First name</th>
-                                    <th>Last name</th>
-                                    <th>Telefon</th>
-                                    <th>Dahili No</th>
-                                    <th>E-Posta</th>
-                                    <th>Departman</th>
-                                    <th>Şube</th>
-                                </tr>
+                            <tr>
+                                <td>@item1.PersonelName</td>
+                                <td>@item1.PersonelSurname </td>
+                                <td>@item1.Corbus </td>
+                                <td>@item1.PersonelDahiliNo</td>
+                                <td>@item1.PersonelTel </td>
+                                <td>@item1.PersonelEposta</td>
+                                <td>@item1.Departments.DepartmentName</td>
+                                <td>@item1.Departments.Companies.CompanyName</td>
+                                <td>@item1.Birthday </td>
+                            </tr>
+                        }
+                    }
+                </table>
 
-                                <tr>
-                                    <td>@p_item.PersonelName</td>
-                                    <td>@p_item.PersonelSurname</td>
-                                    <td>@p_item.PersonelTel</td>
-                                    <td>@p_item.PersonelDahiliNo</td>
-                                    <td>@p_item.PersonelEposta</td>
-                                    <td>@p_item.Departments.DepartmentName</td>
-                                    <td>@p_item.Departments.Companies.CompanyName</td>
-                                </tr>
-                            </table>
-                        }*@
+                @*<p class="clearfix">
 
-                </p>
+                    @foreach (Personels p_item in Model.Personellerim)
+                         {
+                             <table>
+                                 <tr>
+                                     <th>First name</th>
+                                     <th>Last name</th>
+                                     <th>Telefon</th>
+                                     <th>Dahili No</th>
+                                     <th>E-Posta</th>
+                                     <th>Departman</th>
+                                     <th>Şube</th>
+                                 </tr>
+
+                                 <tr>
+                                     <td>@p_item.PersonelName</td>
+                                     <td>@p_item.PersonelSurname</td>
+                                     <td>@p_item.PersonelTel</td>
+                                     <td>@p_item.PersonelDahiliNo</td>
+                                     <td>@p_item.PersonelEposta</td>
+                                     <td>@p_item.Departments.DepartmentName</td>
+                                     <td>@p_item.Departments.Companies.CompanyName</td>
+                                 </tr>
+                             </table>
+                         }*@
+
+
 
             </div>
         </div><!-- /toggle -->
@@ -119,6 +148,14 @@
 
 
 <script>
+    //$(function ClickToID() {
+    //    $(".toggle-content").click(function () {
+    //        var divID = this.id;//Or $(this).attr("id");
+    //        $("#" + divID).click(function () {
+    //            $("#" + divID).toggle();
+    //        })
+    //    })
+    //})
 
     $("label").click(function (event) {
         $(".toggle-content").hide();
@@ -126,9 +163,6 @@
     });
 
 </script>
-
-
-
 
 <!-- /TOGGLES -->
 @*<div id="wrapper">
@@ -138,10 +172,10 @@
                     @foreach (Departments item in Model.Departmanlarim)
                     {
                         <article class="style07">
-                            <span class="image">
+                            <span class="image"> 
                                 <img src="~/Template/images/pic02.jpg" alt="" />
                             </span>
-                            <a id="@item.DepartmentID" class="tile-link">
+                            <a id=@item.DepartmentID.ToString() class="tile-link">
                                 <h6>@item.DepartmentName</h6>
                                 <div class="content">
                                     <p>
@@ -155,16 +189,17 @@
         </div>
     </div>*@
 
-@*<table id="Liste" style="width:100%; display:none;"></table>
+<table id="Liste" style="width:100%; display:none;"></table>
 
-    <script>
+@*<script>
 
         $(function ClickToID() {
-            $(".tile-link").click(function () {
+            $(".toggle-content").click(function () {
                 var divID = this.id;//Or $(this).attr("id");
                 console.log("tıklandı:" + divID);
-                $("#Liste").html("");
-                $("#Liste").hide(1, function () {
+                //buraya düşmüyor.
+                $('#' + divID).html("");
+                $ $('#' + divID).hide(1, function () {
                     //Your code here
                     $.ajax({
                         method: "POST",
@@ -176,14 +211,11 @@
                     }).done(function (d) {
                         console.log("d:" + d);
 
-                        $("#Liste").show(1, function () {
-
-                            var thead = $('<tr><th>Personel Ad</th><th>Personel Soyad</th><th>Dahili No</th><th>Telefon No</th><th>Mail Adresi</th></tr>');
-                            $("#Liste").append(thead);
+                        $('#' + divID).show(1, function () {
                             for (var i in d) {
 
-                                var divPersonel = $('<tr><td>' + d[i].PersonelName + '</td><td>' + d[i].PersonelSurname + '</td><td>' + d[i].PersonelDahiliNo + '</td><td>' + d[i].PersonelTel + '</td><td>' + d[i].PersonelEposta + '</td></tr>');
-                                $("#Liste").append(divPersonel);
+                                var divPersonel = $('<b>' + d[i].PersonelName + '</b><br/><b>' + d[i].PersonelSurname + '</b><br/><b>' + d[i].PersonelDahiliNo + '</b><br/><b>' + d[i].PersonelTel + '</b><br/><b>' + d[i].PersonelEposta + '</b><br/>');
+                                $('#' + divID).append(divPersonel);
 
                             }
                         })
@@ -199,10 +231,11 @@
 
     </script>*@
 
+
 <div class="container text-center">
     <br>
     <div class="row">
-        <div class="col-md-4" >
+        <div class="col-md-4">
             <h3>Günün Menüsü</h3>
             @foreach (Menu m_item in Model.Menulerim)
             {
