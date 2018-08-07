@@ -43,7 +43,7 @@ namespace AkGida_MyInfo.Controllers
                                                Path.GetFileName(file.FileName));
                     file.SaveAs(path);
                     ViewBag.Message = "File uploaded successfully";
-                    Duyurular duyurum = new Duyurular();
+                    //Duyurular duyurum = new Duyurular();
                     duyurular.ResimYolu = $"~/Images/{Path.GetFileName(file.FileName)}";
                     //slider.ResimYolu = $"~/Images/{file.FileName}";
                     String dosyaadi = file.FileName;

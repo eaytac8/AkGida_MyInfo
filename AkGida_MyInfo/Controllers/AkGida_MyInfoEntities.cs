@@ -22,6 +22,12 @@ namespace AkGida_MyInfo.Controllers
         public DbSet<Role> Role { get; set;}
         public DbSet<Users> Users { get; set; }
         public DbSet<Yetkiler> Yetkiler { get; set; }
-       
+        public DbSet<Baby> Baby { get; set; }
+        public DbSet<Death> Death { get; set; }
+        public DbSet<Congrats> Congrats { get; set; }
+        public DbSet<Thanks> Thanks { get; set; }
+        public DbSet<Weddings> Weddings { get; set; }
+        
+
     }
 }

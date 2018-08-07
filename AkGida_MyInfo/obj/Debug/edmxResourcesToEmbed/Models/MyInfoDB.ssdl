@@ -1,5 +1,16 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Schema Namespace="AkGida_MyInfoModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Baby">
+    <Key>
+      <PropertyRef Name="BabyID" />
+    </Key>
+    <Property Name="BabyID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="varchar" MaxLength="50" />
+    <Property Name="Surname" Type="varchar" MaxLength="50" />
+    <Property Name="ImagePath" Type="nvarchar" MaxLength="250" />
+    <Property Name="StartDate" Type="date" />
+    <Property Name="EndDate" Type="date" />
+  </EntityType>
   <EntityType Name="Companies">
     <Key>
       <PropertyRef Name="CompanyID" />
@@ -9,6 +20,28 @@
     <Property Name="CompanyAddress" Type="nvarchar" MaxLength="300" />
     <Property Name="CompanyType" Type="nvarchar" MaxLength="150" />
     <Property Name="CompanyTel" Type="nvarchar" MaxLength="16" />
+  </EntityType>
+  <EntityType Name="Congrats">
+    <Key>
+      <PropertyRef Name="CongratsID" />
+    </Key>
+    <Property Name="CongratsID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="varchar" MaxLength="50" />
+    <Property Name="Surname" Type="varchar" MaxLength="50" />
+    <Property Name="ImagePath" Type="nvarchar" MaxLength="250" />
+    <Property Name="StartDate" Type="date" />
+    <Property Name="EndDate" Type="date" />
+  </EntityType>
+  <EntityType Name="Death">
+    <Key>
+      <PropertyRef Name="DeathID" />
+    </Key>
+    <Property Name="DeathID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="varchar" MaxLength="50" />
+    <Property Name="Surname" Type="varchar" MaxLength="50" />
+    <Property Name="ImagePath" Type="nvarchar" MaxLength="250" />
+    <Property Name="StartDate" Type="date" />
+    <Property Name="EndDate" Type="date" />
   </EntityType>
   <EntityType Name="Departments">
     <Key>
@@ -110,6 +143,17 @@ warning 6002: The table/view 'AkGida_MyInfo.dbo.RoleYetki' does not have a prima
     <Property Name="version" Type="int" />
     <Property Name="definition" Type="varbinary(max)" />
   </EntityType>
+  <EntityType Name="Thanks">
+    <Key>
+      <PropertyRef Name="ThanksID" />
+    </Key>
+    <Property Name="ThanksID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="varchar" MaxLength="50" />
+    <Property Name="Surname" Type="varchar" MaxLength="50" />
+    <Property Name="ImagePath" Type="nvarchar" MaxLength="250" />
+    <Property Name="StartDate" Type="date" />
+    <Property Name="EndDate" Type="date" />
+  </EntityType>
   <!--Errors Found During Generation:
 warning 6002: The table/view 'AkGida_MyInfo.dbo.UserRole' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
   <EntityType Name="UserRole">
@@ -127,6 +171,17 @@ warning 6002: The table/view 'AkGida_MyInfo.dbo.UserRole' does not have a primar
     <Property Name="UserID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="Email" Type="nvarchar" MaxLength="100" Nullable="false" />
     <Property Name="Password" Type="nvarchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Weddings">
+    <Key>
+      <PropertyRef Name="WeddingID" />
+    </Key>
+    <Property Name="WeddingID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="varchar" MaxLength="50" />
+    <Property Name="Surname" Type="varchar" MaxLength="50" />
+    <Property Name="ImagePath" Type="nvarchar" MaxLength="250" />
+    <Property Name="StartDate" Type="date" />
+    <Property Name="EndDate" Type="date" />
   </EntityType>
   <EntityType Name="YeniUrun">
     <Key>
@@ -254,7 +309,10 @@ warning 6002: The table/view 'AkGida_MyInfo.dbo.UserRole' does not have a primar
     </ReferentialConstraint>
   </Association>
   <EntityContainer Name="AkGida_MyInfoModelStoreContainer">
+    <EntitySet Name="Baby" EntityType="Self.Baby" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Companies" EntityType="Self.Companies" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Congrats" EntityType="Self.Congrats" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Death" EntityType="Self.Death" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Departments" EntityType="Self.Departments" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Duyurular" EntityType="Self.Duyurular" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Menu" EntityType="Self.Menu" Schema="dbo" store:Type="Tables" />
@@ -263,7 +321,9 @@ warning 6002: The table/view 'AkGida_MyInfo.dbo.UserRole' does not have a primar
     <EntitySet Name="Servis" EntityType="Self.Servis" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Slider" EntityType="Self.Slider" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Thanks" EntityType="Self.Thanks" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Users" EntityType="Self.Users" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Weddings" EntityType="Self.Weddings" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="YeniUrun" EntityType="Self.YeniUrun" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Yetkiler" EntityType="Self.Yetkiler" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="RoleYetki" EntityType="Self.RoleYetki" store:Type="Tables" store:Schema="dbo">

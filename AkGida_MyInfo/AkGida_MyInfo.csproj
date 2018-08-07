@@ -171,17 +171,31 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\AdminController.cs" />
     <Compile Include="Controllers\AkGida_MyInfoEntities.cs" />
+    <Compile Include="Controllers\BabyYonetimController.cs" />
     <Compile Include="Controllers\CompanyYonetimController.cs" />
+    <Compile Include="Controllers\CongratsYonetimController.cs" />
+    <Compile Include="Controllers\DeathYonetimController.cs" />
     <Compile Include="Controllers\DepartmentYonetimController.cs" />
     <Compile Include="Controllers\DuyuruYonetimController.cs" />
     <Compile Include="Controllers\GenelDuyuruYonetimController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\MenuYonetimController.cs" />
     <Compile Include="Controllers\PersonelYonetimController.cs" />
+    <Compile Include="Controllers\ThanksYonetimController.cs" />
+    <Compile Include="Controllers\WeddingsYonetimController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\Baby.cs">
+      <DependentUpon>MyInfoDB.tt</DependentUpon>
+    </Compile>
     <Compile Include="Models\Companies.cs">
+      <DependentUpon>MyInfoDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Congrats.cs">
+      <DependentUpon>MyInfoDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Death.cs">
       <DependentUpon>MyInfoDB.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\Departments.cs">
@@ -223,7 +237,13 @@
     <Compile Include="Models\sysdiagrams.cs">
       <DependentUpon>MyInfoDB.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\Thanks.cs">
+      <DependentUpon>MyInfoDB.tt</DependentUpon>
+    </Compile>
     <Compile Include="Models\Users.cs">
+      <DependentUpon>MyInfoDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Weddings.cs">
       <DependentUpon>MyInfoDB.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\YeniUrun.cs">
@@ -5662,6 +5682,33 @@
     <Content Include="Views\DuyuruYonetim\Edit.cshtml" />
     <Content Include="Views\DuyuruYonetim\Index.cshtml" />
     <Content Include="Views\Home\Deneme.cshtml" />
+    <Content Include="Views\Home\Birthday.cshtml" />
+    <Content Include="Views\Home\BabyPartial.cshtml" />
+    <Content Include="Views\BabyYonetim\Create.cshtml" />
+    <Content Include="Views\BabyYonetim\Delete.cshtml" />
+    <Content Include="Views\BabyYonetim\Edit.cshtml" />
+    <Content Include="Views\BabyYonetim\Index.cshtml" />
+    <Content Include="Views\DeathYonetim\Create.cshtml" />
+    <Content Include="Views\DeathYonetim\Delete.cshtml" />
+    <Content Include="Views\DeathYonetim\Edit.cshtml" />
+    <Content Include="Views\DeathYonetim\Index.cshtml" />
+    <Content Include="Views\Home\DeathPartial.cshtml" />
+    <Content Include="Views\CongratsYonetim\Create.cshtml" />
+    <Content Include="Views\CongratsYonetim\Delete.cshtml" />
+    <Content Include="Views\CongratsYonetim\Edit.cshtml" />
+    <Content Include="Views\CongratsYonetim\Index.cshtml" />
+    <Content Include="Views\Home\CongratsPartial.cshtml" />
+    <Content Include="Views\ThanksYonetim\Create.cshtml" />
+    <Content Include="Views\ThanksYonetim\Delete.cshtml" />
+    <Content Include="Views\ThanksYonetim\Edit.cshtml" />
+    <Content Include="Views\ThanksYonetim\Index.cshtml" />
+    <Content Include="Views\Home\ThanksPartial.cshtml" />
+    <Content Include="Views\WeddingsYonetim\Create.cshtml" />
+    <Content Include="Views\WeddingsYonetim\Delete.cshtml" />
+    <Content Include="Views\WeddingsYonetim\Edit.cshtml" />
+    <Content Include="Views\WeddingsYonetim\Index.cshtml" />
+    <Content Include="Views\Home\WeddingsPartial.cshtml" />
+    <Content Include="Views\Home\Kariyer.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

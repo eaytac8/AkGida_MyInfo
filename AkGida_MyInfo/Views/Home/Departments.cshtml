@@ -6,8 +6,6 @@
     /*Layout = "~/Views/Shared/_Layout.cshtml";*/
 }
 
-<h4 align="center">Departmanlar</h4>
-
 <!-- CORE CSS -->
 <link href="~/Content/User/assets/plugins/bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
 
@@ -22,7 +20,6 @@
 <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
 
 
-
 <!-- JAVASCRIPT FILES -->
 <script type="text/javascript">var plugin_path = '/Content/User/assets/plugins/';</script>
 @*<script type="text/javascript" src="~/Content/User/assets/plugins/jquery/jquery-2.1.4.min.js"></script>*@
@@ -31,8 +28,6 @@
 
 <!-- STYLESWITCHER - REMOVE -->
 <script async type="text/javascript" src="~/Content/User/assets/plugins/styleswitcher/styleswitcher.js"></script>
-
-
 
 
 
@@ -67,15 +62,16 @@
     }
 </style>
 
+<h3 align="center" style="color:#337ab7">Departmanlar</h3>
 
 <!-- TOGGLES -->
-<div class="toggle toggle-transparent toggle-bordered-full margin-top-60">
+<div class="toggle toggle-transparent toggle-bordered-full margin-top-5">
 
     @foreach (Departments item in Model.Departmanlarim)
     {
-        <div class="toggle">
+        <div class="toggle" align="center">
             <!-- toggle -->
-            <label>@item.DepartmentName</label>
+            <label style="color:#337ab7">@item.DepartmentName</label>
             <div id=@item.DepartmentID.ToString() class="toggle-content">
                 <table class="table">
                     <tr>
@@ -108,54 +104,14 @@
                         }
                     }
                 </table>
-
-                @*<p class="clearfix">
-
-                    @foreach (Personels p_item in Model.Personellerim)
-                         {
-                             <table>
-                                 <tr>
-                                     <th>First name</th>
-                                     <th>Last name</th>
-                                     <th>Telefon</th>
-                                     <th>Dahili No</th>
-                                     <th>E-Posta</th>
-                                     <th>Departman</th>
-                                     <th>Şube</th>
-                                 </tr>
-
-                                 <tr>
-                                     <td>@p_item.PersonelName</td>
-                                     <td>@p_item.PersonelSurname</td>
-                                     <td>@p_item.PersonelTel</td>
-                                     <td>@p_item.PersonelDahiliNo</td>
-                                     <td>@p_item.PersonelEposta</td>
-                                     <td>@p_item.Departments.DepartmentName</td>
-                                     <td>@p_item.Departments.Companies.CompanyName</td>
-                                 </tr>
-                             </table>
-                         }*@
-
-
-
             </div>
         </div><!-- /toggle -->
     }
-
-
 
 </div>
 
 
 <script>
-    //$(function ClickToID() {
-    //    $(".toggle-content").click(function () {
-    //        var divID = this.id;//Or $(this).attr("id");
-    //        $("#" + divID).click(function () {
-    //            $("#" + divID).toggle();
-    //        })
-    //    })
-    //})
 
     $("label").click(function (event) {
         $(".toggle-content").hide();
@@ -165,83 +121,20 @@
 </script>
 
 <!-- /TOGGLES -->
-@*<div id="wrapper">
-        <div id="main">
-            <div class="inner">
-                <section class="tiles">
-                    @foreach (Departments item in Model.Departmanlarim)
-                    {
-                        <article class="style07">
-                            <span class="image"> 
-                                <img src="~/Template/images/pic02.jpg" alt="" />
-                            </span>
-                            <a id=@item.DepartmentID.ToString() class="tile-link">
-                                <h6>@item.DepartmentName</h6>
-                                <div class="content">
-                                    <p>
-                                    </p>
-                                </div>
-                            </a>
-                        </article>
-                    }
-                </section>
-            </div>
-        </div>
-    </div>*@
+
 
 <table id="Liste" style="width:100%; display:none;"></table>
-
-@*<script>
-
-        $(function ClickToID() {
-            $(".toggle-content").click(function () {
-                var divID = this.id;//Or $(this).attr("id");
-                console.log("tıklandı:" + divID);
-                //buraya düşmüyor.
-                $('#' + divID).html("");
-                $ $('#' + divID).hide(1, function () {
-                    //Your code here
-                    $.ajax({
-                        method: "POST",
-                        url: "/Home/PartialPers",
-                        data: { departmanid: divID },
-                        beforeSend: function () {
-                            console.log("Veriler Gonderildi.");
-                        }
-                    }).done(function (d) {
-                        console.log("d:" + d);
-
-                        $('#' + divID).show(1, function () {
-                            for (var i in d) {
-
-                                var divPersonel = $('<b>' + d[i].PersonelName + '</b><br/><b>' + d[i].PersonelSurname + '</b><br/><b>' + d[i].PersonelDahiliNo + '</b><br/><b>' + d[i].PersonelTel + '</b><br/><b>' + d[i].PersonelEposta + '</b><br/>');
-                                $('#' + divID).append(divPersonel);
-
-                            }
-                        })
-
-                    }).fail(function () {
-                        console.log("hata olustu..");
-                    });
-                });
-
-
-            });
-        });
-
-    </script>*@
 
 
 <div class="container text-center">
     <br>
     <div class="row">
         <div class="col-md-4">
-            <h3>Günün Menüsü</h3>
+            <h3 style="color:#337ab7">Günün Menüsü</h3>
             @foreach (Menu m_item in Model.Menulerim)
             {
                 <frame>
                     <div class="grid-item">
-                        @*<h3>@m_item.Tarih</h3>*@
                         <h5>@m_item.Corba</h5>
                         <h5>@m_item.AnaYemek</h5>
                         <h5>@m_item.Diyet</h5>
@@ -256,7 +149,7 @@
         </div>
 
         <div class="col-md-8">
-            <h3>Duyurular</h3>
+            <h3 style="color:#337ab7">Duyurular</h3>
 
             <div class="blog-post-item">
                 <!-- OWL SLIDER -->
@@ -278,98 +171,6 @@
 
     </div>
 </div><br>
-
-
-
-
-
-
-
-
-
-@*<script>
-        $(function ClickToIDD() {
-            $().click(function () {
-                var divID =Companies.CompanyID ;
-                console.log("company tıklandı:" + divID);
-                $("#Liste2").html("");
-                $("#Liste2").hide(300, function () {
-                    //Your code here
-                    $.ajax({
-                        method: "POST",
-                        url: "/Home/YemekSirketi",
-                        data: { companyidd: divID },
-                        beforeSend: function () {
-                            console.log("Veriler Gonderildi.");
-                        }
-                    }).done(function (d) {
-                        console.log("d:" + d);
-                        $("#Liste2").show(300, function () {
-
-                            for (var i in d) {
-
-                                var divYemekSirketi = $("<h2>" + d[i].YemekSirketiAdi + "</h2> ");
-                                $("#Liste2").append(divYemekSirketi);
-                                console.log("Çekilen Veri: " + d[i].YemekSirketiAdi);
-                            }
-                        })
-                    }).fail(function () {
-                        console.log("hata olustu..");
-                    });
-                });
-            });
-        });
-    </script>*@
-
-
-
-
-
-
-
-
-
-
-@*personeller tablo şekline getirilmeden görüntüleniyor*@
-
-@*<script>
-
-        $(function ClickToID() {
-            $("div b").click(function () {
-                    var divID = this.id;//Or $(this).attr("id");
-                    console.log("tıklandı:" + divID);
-                $("#Liste").html("");
-                $("#Liste").hide(300, function () {
-                    //Your code here
-                    $.ajax({
-                        method: "POST",
-                        url: "/Home/PartialPers",
-                        data: { departmanid: divID },
-                        beforeSend: function () {
-                            console.log("Veriler Gonderildi.");
-                        }
-                    }).done(function (d) {
-                        console.log("d:"+d);
-                        $("#Liste").show(300, function () {
-                            for (var i in d) {
-
-                                var divPersonel = $("<div id='grid-item'><h2>" + d[i].PersonelName + "  " + d[i].PersonelSurname + "</h2>" +
-                                    "<p><b>" + d[i].PersonelDahiliNo + " " + d[i].PersonelTel + " " + d[i].PersonelEposta + "</b></p></div > ");
-                                $("#Liste").append(divPersonel);
-                                console.log("Çekilen Veri: " + d[i].PersonelName + " " + d[i].PersonelSurname);
-                            }
-                        })
-
-                        }).fail(function () {
-                            console.log("hata olustu..");
-                    });
-                });
-
-
-            });
-        });
-
-    </script>*@
 
 
 <!-- SWIPE SLIDER -->

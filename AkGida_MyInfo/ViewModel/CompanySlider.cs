@@ -10,5 +10,6 @@ namespace AkGida_MyInfo.ViewModel
     {
         public List<Slider> Sliderlerim { get; set; }
         public List<Companies> Companylerim { get; set; }
+        //public List<Personels> Personellerim { get; set; }
     }
 }

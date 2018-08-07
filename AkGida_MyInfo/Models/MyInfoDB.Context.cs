@@ -56,6 +56,16 @@ public partial class AkGida_MyInfoEntities : DbContext
 
     public virtual DbSet<Duyurular> Duyurular { get; set; }
 
+    public virtual DbSet<Baby> Baby { get; set; }
+
+    public virtual DbSet<Congrats> Congrats { get; set; }
+
+    public virtual DbSet<Death> Death { get; set; }
+
+    public virtual DbSet<Thanks> Thanks { get; set; }
+
+    public virtual DbSet<Weddings> Weddings { get; set; }
+
 }
 
 }

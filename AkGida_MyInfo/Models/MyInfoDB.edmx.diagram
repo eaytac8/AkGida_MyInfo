@@ -4,7 +4,7 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="8569eb95f7e14acd83f982d94eff2cbf" Name="Diagram1" ZoomLevel="89">
+      <Diagram DiagramId="8569eb95f7e14acd83f982d94eff2cbf" Name="Diagram1" ZoomLevel="74">
         <EntityTypeShape EntityType="AkGida_MyInfoModel.Companies" Width="1.5" PointX="0.75" PointY="5.25" IsExpanded="true" />
         <EntityTypeShape EntityType="AkGida_MyInfoModel.Departments" Width="1.5" PointX="3" PointY="5.875" IsExpanded="true" />
         <EntityTypeShape EntityType="AkGida_MyInfoModel.sysdiagrams" Width="1.5" PointX="7.75" PointY="0.75" IsExpanded="true" />
@@ -24,6 +24,11 @@
         <EntityTypeShape EntityType="AkGida_MyInfoModel.Slider" Width="1.5" PointX="5.375" PointY="0.875" />
         <EntityTypeShape EntityType="AkGida_MyInfoModel.Duyurular" Width="1.5" PointX="1" PointY="0.5" />
         <AssociationConnector Association="AkGida_MyInfoModel.FK_Duyurular_Companies" />
+        <EntityTypeShape EntityType="AkGida_MyInfoModel.Baby" Width="1.5" PointX="10.375" PointY="0.75" />
+        <EntityTypeShape EntityType="AkGida_MyInfoModel.Congrats" Width="1.5" PointX="10.375" PointY="3.75" />
+        <EntityTypeShape EntityType="AkGida_MyInfoModel.Death" Width="1.5" PointX="5.375" PointY="11.75" />
+        <EntityTypeShape EntityType="AkGida_MyInfoModel.Thanks" Width="1.5" PointX="12.375" PointY="0.75" />
+        <EntityTypeShape EntityType="AkGida_MyInfoModel.Weddings" Width="1.5" PointX="12.375" PointY="3.75" />
         </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

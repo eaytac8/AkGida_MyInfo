@@ -18,8 +18,15 @@
 
     <hr />
     @Html.ValidationSummary(true, "", new { @class = "text-danger" })
-    <label for="file">Resim Yükleyin:</label>
-    <input type="file" name="file" id="file" /><br><br>
+   
+
+    <div class="form-group">
+        @Html.Label("Resim Ekleyin", htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-9">
+            <label for="file"></label>
+            <input type="file" name="file" id="file" />
+        </div>
+    </div>
 
     <div class="form-group">
         @Html.LabelFor(model => model.Baslik, htmlAttributes: new { @class = "control-label col-md-2" })

@@ -87,6 +87,11 @@
       <End Role="Companies" EntitySet="Companies" />
       <End Role="Duyurular" EntitySet="Duyurular" />
     </AssociationSet>
+    <EntitySet Name="Baby" EntityType="AkGida_MyInfoModel.Baby" />
+    <EntitySet Name="Congrats" EntityType="AkGida_MyInfoModel.Congrats" />
+    <EntitySet Name="Death" EntityType="AkGida_MyInfoModel.Death" />
+    <EntitySet Name="Thanks" EntityType="AkGida_MyInfoModel.Thanks" />
+    <EntitySet Name="Weddings" EntityType="AkGida_MyInfoModel.Weddings" />
   </EntityContainer>
   <EntityType Name="Role">
     <Key>
@@ -249,4 +254,59 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
+  <EntityType Name="Baby">
+    <Key>
+      <PropertyRef Name="BabyID" />
+    </Key>
+    <Property Name="BabyID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Surname" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="ImagePath" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Name="StartDate" Type="DateTime" Precision="0" />
+    <Property Name="EndDate" Type="DateTime" Precision="0" />
+  </EntityType>
+  <EntityType Name="Congrats">
+    <Key>
+      <PropertyRef Name="CongratsID" />
+    </Key>
+    <Property Name="CongratsID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Surname" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="ImagePath" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Name="StartDate" Type="DateTime" Precision="0" />
+    <Property Name="EndDate" Type="DateTime" Precision="0" />
+  </EntityType>
+  <EntityType Name="Death">
+    <Key>
+      <PropertyRef Name="DeathID" />
+    </Key>
+    <Property Name="DeathID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Surname" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="ImagePath" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Name="StartDate" Type="DateTime" Precision="0" />
+    <Property Name="EndDate" Type="DateTime" Precision="0" />
+  </EntityType>
+  <EntityType Name="Thanks">
+    <Key>
+      <PropertyRef Name="ThanksID" />
+    </Key>
+    <Property Name="ThanksID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Surname" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="ImagePath" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Name="StartDate" Type="DateTime" Precision="0" />
+    <Property Name="EndDate" Type="DateTime" Precision="0" />
+  </EntityType>
+  <EntityType Name="Weddings">
+    <Key>
+      <PropertyRef Name="WeddingID" />
+    </Key>
+    <Property Name="WeddingID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Surname" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="ImagePath" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Name="StartDate" Type="DateTime" Precision="0" />
+    <Property Name="EndDate" Type="DateTime" Precision="0" />
+  </EntityType>
 </Schema>

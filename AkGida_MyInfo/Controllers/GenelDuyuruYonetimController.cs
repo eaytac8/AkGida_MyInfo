@@ -43,13 +43,8 @@ namespace AkGida_MyInfo.Controllers
                     ViewBag.Message = "File uploaded successfully";
                     Slider sliderim = new Slider();
                     slider.ResimYolu = $"~/Images/{Path.GetFileName(file.FileName)}";
-                    //slider.ResimYolu = $"~/Images/{file.FileName}";
-                    String dosyaadi = file.FileName;
+                   
 
-                    //sliderim.ResimYolu = path;
-                    //sliderim.BitisTarihi = slider.BitisTarihi;
-                    //sliderim.BaslangicTarihi = slider.BaslangicTarihi;
-                    //sliderim.SliderText = slider.SliderText;
                     if (ModelState.IsValid)
                     {
                         db.Slider.Add(slider);

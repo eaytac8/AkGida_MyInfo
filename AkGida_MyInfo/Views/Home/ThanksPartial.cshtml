@@ -1,0 +1,7 @@
+﻿@using AkGida_MyInfo.Models
+@model IEnumerable<Thanks>
+
+@foreach (var item in Model)
+{
+    <li><a href="portfolio-grid-2-columns.html">@item.Name @item.Surname</a></li>
+}
