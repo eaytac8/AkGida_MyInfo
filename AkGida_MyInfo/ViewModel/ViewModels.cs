@@ -12,5 +12,6 @@ namespace AkGida_MyInfo.ViewModel
         public List<Menu> Menulerim { get; set; }
         public List<Duyurular> Duyurularim { get; set; }
         public List<Personels> Personellerim { get; set; }
+        public List<Servis> Servislerim { get; set; }
     }
 }

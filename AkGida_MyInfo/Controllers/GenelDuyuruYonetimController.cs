@@ -18,7 +18,7 @@ namespace AkGida_MyInfo.Controllers
         // GET: GenelDuyuruYonetim
         public ActionResult Index()
         {
-            return View(db.Slider.ToList());
+            return View(db.Slider.OrderByDescending(s => s.BaslangicTarihi).ThenByDescending(s => s.BitisTarihi).ToList());
         }
 
         // GET: GenelDuyuruYonetim/Create

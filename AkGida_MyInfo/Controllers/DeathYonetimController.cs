@@ -18,7 +18,7 @@ namespace AkGida_MyInfo.Controllers
         // GET: DeathYonetim
         public ActionResult Index()
         {
-            return View(db.Death.ToList());
+            return View(db.Death.OrderByDescending(d => d.StartDate).ThenByDescending(d => d.EndDate).ToList());
         }
 
 

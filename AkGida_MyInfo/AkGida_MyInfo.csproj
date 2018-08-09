@@ -181,6 +181,7 @@
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\MenuYonetimController.cs" />
     <Compile Include="Controllers\PersonelYonetimController.cs" />
+    <Compile Include="Controllers\ServisYonetimController.cs" />
     <Compile Include="Controllers\ThanksYonetimController.cs" />
     <Compile Include="Controllers\WeddingsYonetimController.cs" />
     <Compile Include="Global.asax.cs">
@@ -5708,7 +5709,11 @@
     <Content Include="Views\WeddingsYonetim\Edit.cshtml" />
     <Content Include="Views\WeddingsYonetim\Index.cshtml" />
     <Content Include="Views\Home\WeddingsPartial.cshtml" />
-    <Content Include="Views\Home\Kariyer.cshtml" />
+    <Content Include="Views\ServisYonetim\Create.cshtml" />
+    <Content Include="Views\ServisYonetim\Delete.cshtml" />
+    <Content Include="Views\ServisYonetim\Details.cshtml" />
+    <Content Include="Views\ServisYonetim\Edit.cshtml" />
+    <Content Include="Views\ServisYonetim\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

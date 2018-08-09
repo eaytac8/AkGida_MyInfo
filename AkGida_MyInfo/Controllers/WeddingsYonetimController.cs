@@ -18,7 +18,7 @@ namespace AkGida_MyInfo.Controllers
         // GET: WeddingsYonetim
         public ActionResult Index()
         {
-            return View(db.Weddings.ToList());
+            return View(db.Weddings.OrderByDescending(w => w.StartDate).ThenByDescending(w => w.EndDate).ToList());
         }
 
         // GET: WeddingsYonetim/Create

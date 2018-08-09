@@ -18,7 +18,7 @@ namespace AkGida_MyInfo.Controllers
         // GET: DuyuruYonetim
         public ActionResult Index()
         {
-            return View(db.Duyurular.ToList());
+            return View(db.Duyurular.OrderByDescending(d => d.BaslangicTarihi).ThenByDescending(d => d.BitisTarihi).ToList());
         }
 
   

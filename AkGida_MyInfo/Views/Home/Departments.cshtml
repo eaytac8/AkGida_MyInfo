@@ -170,8 +170,202 @@
         </div>
 
     </div>
-</div><br>
+</div>
+
+
+<!-- -->
+<section>
+    <div class="container">
+
+        <header class="text-center">
+            <h3 class="nomargin" style="color:#337ab7">Servis Bilgileri</h3>
+        </header>
+
+        <div class="divider divider-center">
+            <!-- divider -->
+            <i class="fa fa-chevron-down"></i>
+        </div>
+
+        <ul class="process-steps nav nav-tabs nav-justified margin-top-40">
+
+            @{int i = 1;}
+
+            @foreach (Servis item in Model.Servislerim)
+            {
+                <li>
+                    <a href=@("#servis"+item.ServisID.ToString()) data-toggle="tab">@i</a>
+                    <h5>@item.Guzergah</h5>
+                </li>
+                i++;
+            }
+
+        </ul>
+
+        <div class="tab-content margin-top-30">
+            @{int _sayac = 1; }
+            @foreach (Servis item in Model.Servislerim)
+            {
+                    <div class="tab-pane" id=@("servis"+item.ServisID.ToString())>
+                        <b>@item.SoforAdi @item.SoforSoyadi</b> <br />
+                        <b>Telefon:</b> @item.Telefon<br />
+                        @item.Plaka
+                    </div>
+                _sayac++;
+            }
+        </div>
+
+    </div>
+    <script>
+        $(document).ready(function () {
+            $(function () {
+               
+                $.ajax({
+                    method: "Get",
+                    url: "/Home/EtkinlikleriGetir",
+                    BeforeSend: function () {
+                        console.log("verileri gitti");
+                    }
+                }).done(function (d) {
+
+    </script>
+</section>
+<!-- / -->
+
+<!-- -->
+<section>
+    <div class="container">
+
+        <header class="text-center">
+            <h2 class="nomargin">Process Steps</h2>
+            <p class="font-lato size-20 nomargin">We truly care about our customers</p>
+        </header>
+
+        <div class="divider divider-center">
+            <!-- divider -->
+            <i class="fa fa-chevron-down"></i>
+        </div>
+        @{
+
+            int sayac = 1;
+            List<string> veriler = new List<string>();
+            veriler.Add("Research");
+            veriler.Add("Prototyping");
+            veriler.Add("Design");
+            veriler.Add("Development");
+            veriler.Add("Result");
+        }
+        <ul class="process-steps nav nav-tabs nav-justified margin-top-100">
+            @foreach (var item in veriler)
+            {
+                if (sayac == 1)
+                {
+                    <li >
+                        <a href=@("#step"+@sayac.ToString()) data-toggle="tab">@sayac</a>
+                        <h5>@item</h5>
+
+                    </li>
+                }
+                else
+                {
+                    <li>
+                        <a href=@("#step"+@sayac.ToString()) data-toggle="tab">@sayac</a>
+                        <h5>@item</h5>
+
+                    </li>
+                }
+                sayac++;
+            }
+
+            @*<li class="active">
+                    <a href="#step1" data-toggle="tab">1</a>
+                    <h5>Research</h5>
+                </li>
+                <li>
+                    <a href="#step2" data-toggle="tab">2</a>
+                    <h5>Prototyping</h5>
+                </li>
+                <li>
+                    <a href="#step3" data-toggle="tab">3</a>
+                    <h5>Design</h5>
+                </li>
+                <li>
+                    <a href="#step4" data-toggle="tab">4</a>
+                    <h5>Development</h5>
+                </li>
+                <li>
+                    <a href="#step5" data-toggle="tab">5</a>
+                    <h5>Result</h5>
+                </li>*@
+        </ul>
+
+        <div class="tab-content margin-top-30">
+            <div class="tab-pane active" id="step1">
+                <strong>Research</strong> heard of them jean shorts Austin. Nesciunt tofu stumptown aliqua, retro synth master cleanse. Mustache cliche tempor, williamsburg carles vegan helvetica. Reprehenderit butcher retro keffiyeh dreamcatcher synth. Cosby sweater eu banh mi, qui irure terry richardson ex squid. Aliquip placeat salvia cillum iphone. Seitan aliquip quis cardigan american apparel, butcher voluptate nisi qui.
+            </div>
+
+            <div class="tab-pane" id="step2">
+                <strong>Prototyping</strong>  denim you probably haven't heard of them jean shorts Austin. Nesciunt tofu stumptown aliqua, retro synth master cleanse. Mustache cliche tempor, williamsburg carles vegan helvetica. Reprehenderit butcher retro keffiyeh dreamcatcher synth. Cosby sweater eu banh mi, qui irure terry richardson ex squid. Aliquip placeat salvia cillum iphone. Seitan aliquip quis cardigan american apparel, butcher voluptate nisi qui.
+            </div>
+
+            <div class="tab-pane" id="step3">
+                <strong>Design</strong>  tofu stumptown aliqua, retro synth master cleanse. Mustache cliche tempor, williamsburg carles vegan helvetica. Reprehenderit butcher retro keffiyeh dreamcatcher synth. Cosby sweater eu banh mi, qui irure terry richardson ex squid. Aliquip placeat salvia cillum iphone. Seitan aliquip quis cardigan american apparel, butcher voluptate nisi qui.
+            </div>
+
+            <div class="tab-pane" id="step4">
+                <strong>Development</strong>  cliche tempor, williamsburg carles vegan helvetica. Reprehenderit butcher retro keffiyeh dreamcatcher synth. Cosby sweater eu banh mi, qui irure terry richardson ex squid. Aliquip placeat salvia cillum iphone. Seitan aliquip quis cardigan american apparel, butcher voluptate nisi qui.
+            </div>
+
+            <div class="tab-pane" id="step5">
+                <strong>Result</strong>  cliche tempor, williamsburg carles vegan helvetica. Reprehenderit butcher retro keffiyeh dreamcatcher synth. Cosby sweater eu banh mi, qui irure terry richardson ex squid. Aliquip placeat salvia cillum iphone. Seitan aliquip quis cardigan american apparel, butcher voluptate nisi qui.
+            </div>
+        </div>
+
+    </div>
+</section>
+<!-- / -->
+
 
 
 <!-- SWIPE SLIDER -->
 <script type="text/javascript" src="~/Content/User/assets/plugins/slider.swiper/dist/js/swiper.min.js"></script>
+
+
+
+
+@*<div class="tab-content margin-top-30">
+    <script>
+        $(function ClikToID() {
+            $(".tile-link").click(function () {
+                var hrefID = this.id;
+                console.log("tıklandı:" + hrefID);
+                $("#Liste").html("");
+                $("#Liste").hide(1, function () {
+
+                    $.ajax({
+                        method: "POST",
+                        url: "/Home/Departments",
+                        date: { ServisID: hrefID },
+                        beforeSend: function () {
+                            console.log("veriler gönderildi.");
+                        }
+                    }).done(function (s) {
+                        console.log("s:" + s);
+
+                        $("#Liste").show(1, function () {
+                            var thead = $('<tr><th>Güzergah</th><th>Şoför Adı</th><th>Şoför Soyadı</th><th>Telefon</th><th>Plaka</th></tr>');
+                            $("#Liste").append(thead);
+                            for (var i in s) {
+
+                                var hrefServis = $('<tr><td>' + s[i].Guzergah + '</td><td>' + s[i].SoforAdi + '</td><td>' + s[i].SoforSoyadi + '</td><td>' + s[i].Telefon + '</td><td>' + s[i].Plaka + '</td></tr>');
+                                $("#Liste").append(hrefServis);
+                            }
+                        })
+                    }).fail(function () {
+                        console.log("hata olustu..");
+                    });
+                });
+            });
+        });
+
+
+    </script>*@

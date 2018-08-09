@@ -6,15 +6,9 @@
 }
 
 @*slider*@
-@*<title>Bootstrap Theme The Band</title>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">*@
-@*<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">*@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 @*slider*@
-    
-
 
 
 <!-- REVOLUTION SLIDER -->
@@ -47,8 +41,8 @@
             data-height="750"
             data-height="800"
     -->
-  
-    
+
+
     <div class="fullscreenbanner" data-navigationStyle="preview4">
         <ul class="hide">
 
@@ -153,58 +147,39 @@
 @*Companies*@
 
 
+@*Yeni Ürün*@
+<!-- -->
+@*<section>
+    <div class="container">
 
-@*Companies*@
-@*<div id="wrapper">
-        <div id="main">
-            <div class="inner">
-                <section class="tiles">
-                    @foreach (Companies item in Model.Companylerim)
-                    {
-                        <article class="style07">
-                            <span class="image">
-                                <img src="~/Template/images/pic02.jpg" alt="" />
-                            </span>
-                            <a href="@Url.Action("Departments", "Home", new { companyid = item.CompanyID })">
-                                <h6 style="font-size:smaller">@item.CompanyName</h6>
-                                <div class="content">
-                                    <p style="font-size:14px;">
-                                        <b>@item.CompanyType</b> <br />
-                                        @item.CompanyAddress<br />
-                                        <b>Telefon:</b> @item.CompanyTel
-                                    </p>
-                                </div>
-                            </a>
-                        </article>
-                    }
-                </section>
+        <div class="row">
+
+            <div class="col-md-5 col-sm-5">
+                <a class="image-hover lightbox thumbnail" href="http://vimeo.com/56624256" data-plugin-options='{"type":"iframe"}'>
+                    <span class="image-hover-icon image-hover-light">
+                        <!-- image-hover-light | image-hover-dark -->
+                        <i class="fa fa-vimeo-square"><!-- video icon --></i>
+                    </span>
+                    <img class="img-responsive" src="~Contents/User/assets/images/demo/tr.jpg" alt="...">
+                </a>
             </div>
+
+            <div class="col-md-7 col-sm-7">
+
+                <header class="margin-bottom-60">
+                    <h2>Smarty Website+Admin+RTL</h2>
+                    <p class="lead font-lato">The most complete template, ever!</p>
+                </header>
+
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloribus deserunt, nobis quae eos provident quidem. Quaerat expedita dignissimos perferendis, nihil quo distinctio eius architecto reprehenderit maiores.</p>
+                <p>Similique excepturi voluptates placeat ducimus delectus magnam tempore dolore dolorem quisquam porro modi voluptatum eum saepe dolorum ratione officia sint eos minus.</p>
+
+                <a class="btn btn-default btn-lg size-15 margin-top-30 lightbox" href="http://vimeo.com/56624256" data-plugin-options='{"type":"iframe"}'>WATCH VIDEO</a>
+
+            </div>
+
         </div>
-    </div>*@
-@*Companies*@
 
-
-
-@*Companies tablosunun sğtunları ekrana bastırılıyor.*@
-@*<div class="grid-container">
-
-        @foreach (var item in Model)
-        {
-            <div class="grid-item">
-
-                <h2><a href="@Url.Action("Departments", "Home" , new {companyid=item.CompanyID })">@item.CompanyName</a> </h2>
-
-                <p>
-                    <b>@item.CompanyType</b> <br />
-                    @item.CompanyAddress
-                    <br />
-                    <b>Telefon:</b> @item.CompanyTel
-                </p>
-
-                <p><a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301865">Learn more &raquo;</a></p>
-
-            </div>
-
-        }
-
-    </div>*@
+    </div>
+</section>*@
+<!-- / -->

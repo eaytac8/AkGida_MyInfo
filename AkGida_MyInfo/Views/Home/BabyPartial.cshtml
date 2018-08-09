@@ -4,5 +4,12 @@
 
 @foreach (var item in Model)
 {
-    <li><a href="portfolio-grid-2-columns.html">@item.Name @item.Surname</a></li>
+    var bebek = item.Name + " " + item.Surname;
+    <li><a href="#BabyID" z>@bebek</a></li>
 }
+
+@*<script>
+    jQuery(function () {
+        jQuery('.BabyID').colorbox({ iframe: true, width: 550, height: 600, scrolling: false });
+    })(jQuery)
+</script>*@

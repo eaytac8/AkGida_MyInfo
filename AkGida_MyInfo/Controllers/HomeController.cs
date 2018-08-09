@@ -15,7 +15,6 @@ namespace AkGida_MyInfo.Controllers
         AkGida_MyInfoEntities db = new AkGida_MyInfoEntities();
         ViewModels modeller;
 
-
         public ActionResult Index()
         {
             CompanySlider companySlider = new CompanySlider();
@@ -28,13 +27,9 @@ namespace AkGida_MyInfo.Controllers
           
             companySlider.Companylerim = company;
             companySlider.Sliderlerim = slider;
-           
-
-           
 
             return View(companySlider);
         }
-
 
         public ActionResult Departments(int? companyid)
         {
@@ -55,56 +50,17 @@ namespace AkGida_MyInfo.Controllers
             List<Personels> personel = new List<Personels>();
             personel = db.Personels.Where(T => T.Departments.CompanyID == companyid).ToList();
 
+            List<Servis> servis = new List<Servis>();
+            servis = db.Servis.Where(S => S.CompanyID == companyid).OrderBy(S => S.SoforAdi).ThenBy(S => S.SoforSoyadi).ToList();
+
             modeller.Duyurularim = duyurular;
             modeller.Departmanlarim = department;
             modeller.Menulerim = menu;
             modeller.Personellerim = personel;
+            modeller.Servislerim = servis;
 
             return View(modeller);
         }
-
-
-        public JsonResult PartialPers(int? departmanid)
-        {
-            List<Personels> personeller = new List<Personels>();
-            personeller = db.Personels.Where(x => x.DepartmentID == departmanid).ToList();
-
-            List<Personels> Obj_personel = new List<Personels>();
-            Personels personels;
-            using (SqlConnection connection = new SqlConnection(@"Data Source=MININT-UL27J5C\SQLEXPRESS;Initial Catalog=AkGida_MyInfo;User ID=sa;Password=Ea123456;MultipleActiveResultSets=True;Application Name=EntityFramework"))
-            {
-                SqlCommand command = new SqlCommand($"Select * from Personels Where [DepartmentID] = {departmanid} Order By PersonelName", connection);
-                connection.Open();
-                SqlDataReader reader = command.ExecuteReader();
-
-                try
-                {
-                    while (reader.Read())
-                    {
-                        personels = new Personels();
-                        personels.PersonelName = reader.GetString(1);
-                        personels.PersonelSurname = reader.GetString(2);
-                        personels.Corbus = reader.GetString(3);
-                        personels.PersonelDahiliNo = reader.GetString(4);
-                        personels.PersonelTel = reader.GetString(5);
-                        personels.PersonelEposta = reader.GetString(6);
-                        personels.Birthday = reader.GetDateTime(8);
-                        Obj_personel.Add(personels);
-                        Console.WriteLine("Personel Adı:" + personels.PersonelName);
-                    }
-                }
-                finally
-                {
-                    reader.Close();
-
-                }
-                connection.Close();
-            }
-
-            return Json(Obj_personel, JsonRequestBehavior.AllowGet);
-
-        }
-
 
         public JsonResult Menu(int? companyidd)
         {
@@ -113,9 +69,6 @@ namespace AkGida_MyInfo.Controllers
 
             return Json(menu, JsonRequestBehavior.AllowGet);
         }
-
-
-
 
         public PartialViewResult Birthday()
         {
@@ -127,14 +80,12 @@ namespace AkGida_MyInfo.Controllers
             return PartialView("Birthday", personel);
         }
 
-       
         public PartialViewResult BabyPartial()
         {
             List<Baby> baby = new List<Baby>();
             baby = db.Baby.Where(B => (B.StartDate <= DateTime.Today && B.EndDate >= DateTime.Today)).ToList();
             return PartialView(baby);
         }
-
 
         public PartialViewResult DeathPartial()
         {
@@ -166,40 +117,67 @@ namespace AkGida_MyInfo.Controllers
 
         public ActionResult About()
         {
-            //ViewBag.Message = "Your application description page.";
-
             return View();
         }
 
         public ActionResult Contact()
         {
-            //ViewBag.Message = "Your contact page.";
-
             return View();
         }
 
-        //public ActionResult Kariyer()
-        //{
-            
-
-        //    return View();
-        //}
-
-
         public ActionResult Deneme()
         {
-
-
             return View();
         }
 
     }
 
-    
 }
 
 
 
+
+
+//public JsonResult PartialPers(int? departmanid)
+//{
+//    List<Personels> personeller = new List<Personels>();
+//    personeller = db.Personels.Where(x => x.DepartmentID == departmanid).ToList();
+
+//    List<Personels> Obj_personel = new List<Personels>();
+//    Personels personels;
+//    using (SqlConnection connection = new SqlConnection(@"Data Source=MININT-UL27J5C\SQLEXPRESS;Initial Catalog=AkGida_MyInfo;User ID=sa;Password=Ea123456;MultipleActiveResultSets=True;Application Name=EntityFramework"))
+//    {
+//        SqlCommand command = new SqlCommand($"Select * from Personels Where [DepartmentID] = {departmanid} Order By PersonelName", connection);
+//        connection.Open();
+//        SqlDataReader reader = command.ExecuteReader();
+
+//        try
+//        {
+//            while (reader.Read())
+//            {
+//                personels = new Personels();
+//                personels.PersonelName = reader.GetString(1);
+//                personels.PersonelSurname = reader.GetString(2);
+//                personels.Corbus = reader.GetString(3);
+//                personels.PersonelDahiliNo = reader.GetString(4);
+//                personels.PersonelTel = reader.GetString(5);
+//                personels.PersonelEposta = reader.GetString(6);
+//                personels.Birthday = reader.GetDateTime(8);
+//                Obj_personel.Add(personels);
+//                Console.WriteLine("Personel Adı:" + personels.PersonelName);
+//            }
+//        }
+//        finally
+//        {
+//            reader.Close();
+
+//        }
+//        connection.Close();
+//    }
+
+//    return Json(Obj_personel, JsonRequestBehavior.AllowGet);
+
+//}
 
 
 

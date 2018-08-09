@@ -18,7 +18,7 @@ namespace AkGida_MyInfo.Controllers
         // GET: ThanksYonetim
         public ActionResult Index()
         {
-            return View(db.Thanks.ToList());
+            return View(db.Thanks.OrderByDescending(t => t.StartDate).ThenByDescending(t => t.EndDate).ToList());
         }
 
  
