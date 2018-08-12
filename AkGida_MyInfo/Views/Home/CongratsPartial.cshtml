@@ -1,9 +1,8 @@
-﻿
-@using AkGida_MyInfo.Models
+﻿@using AkGida_MyInfo.Models
 @model IEnumerable<Congrats>
 
 @foreach (var item in Model)
 {
     var personel = item.Name + " " + item.Surname;
-    <li><a href="portfolio-grid-2-columns.html">@personel</a></li>
+    <li><a href=@item.ImagePath data-plugin-options='{"type":"iframe"}' target="_blank">@personel</a></li>
 }

@@ -1,14 +1,10 @@
 ﻿<!DOCTYPE html>
-<!--[if IE 8]>			<html class="ie ie8"> <![endif]-->
-<!--[if IE 9]>			<html class="ie ie9"> <![endif]-->
-<!--[if gt IE 9]><!-->
+
 <html>
-<!--<![endif]-->
 <head>
-
-
     <meta charset="utf-8" />
     <title>Ak Gıda - My Info</title>
+    <link rel="shortcut icon" href="\Assets\favicon.ico" />
     <meta name="keywords" content="HTML5,CSS3,Template" />
     <meta name="description" content="" />
     <meta name="Author" content="Dorin Grigoras [www.stepofweb.com]" />
@@ -22,17 +18,28 @@
     <!-- CORE CSS -->
     <link href="~/Content/User/assets/plugins/bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
 
+
     <!-- THEME CSS -->
     <link href="~/Content/User/assets/css/essentials.css" rel="stylesheet" type="text/css" />
     <link href="~/Content/User/assets/css/layout.css" rel="stylesheet" type="text/css" />
+    <link href="~/Content/User/assets/css/color_scheme/blue.css" rel="stylesheet" type="text/css" id="color_scheme" />
 
     <!-- PAGE LEVEL SCRIPTS -->
     <link href="~/Content/User/assets/css/header-1.css" rel="stylesheet" type="text/css" />
-    <link href="~/Content/User/assets/css/color_scheme/green.css" rel="stylesheet" type="text/css" id="color_scheme" />
+    <link href="~/Content/User/assets/css/color_scheme/blue.css" rel="stylesheet" type="text/css" id="color_scheme" />
 
     <!-- REVOLUTION SLIDER -->
     <link href="~/Content/User/assets/plugins/slider.revolution/css/extralayers.css" rel="stylesheet" type="text/css" />
     <link href="~/Content/User/assets/plugins/slider.revolution/css/settings.css" rel="stylesheet" type="text/css" />
+
+    @*<style>
+            .bodyBackground {
+                background-image: url("/Content/User/assets/images/background.jpg");
+                background-size: cover;
+            }
+        </style>*@
+
+
 </head>
 <!--
     AVAILABLE BODY CLASSES:
@@ -56,6 +63,8 @@
     data-background="~/Content/User/assets/images/boxed_background/1.jpg"
 -->
 <body class="smoothscroll enable-animation">
+
+@*<body class="bodyBackground">*@
 
     <!-- wrapper -->
     <div id="wrapper">
@@ -101,70 +110,41 @@
                     <ul class="pull-right nav nav-pills nav-second-main">
 
                         <!-- SEARCH -->
-                        @*<li class="search">
+                        <li class="search">
                             <a href="javascript:;">
                                 <i class="fa fa-search"></i>
                             </a>
                             <div class="search-box">
                                 <form action="page-search-result-1.html" method="get">
                                     <div class="input-group">
-                                        <input type="text" name="src" placeholder="Search" class="form-control" />
+                                        <input type="text" name="src" placeholder="Personel Ara" class="form-control" />
                                         <span class="input-group-btn">
-                                            <button class="btn btn-primary" type="submit">Search</button>
+                                            <button class="btn btn-primary" type="submit">Ara</button>
                                         </span>
                                     </div>
                                 </form>
                             </div>
-                        </li>*@
+                        </li>
                         <!-- /SEARCH -->
 
-
-                       
-                            <!-- Social Icons -->
-                        <div>
-                            <a href="https://www.facebook.com/akgidakariyer/" target="_blank" class="social-icon  social-icon-border social-facebook pull-left" data-toggle="tooltip" data-placement="top" title="Facebook">
-
-                                <i class="icon-facebook"></i>
-                                @*<i class="icon-facebook"></i>*@
-                            </a>
-
-                            @*<a href="#" target="_blank" class="social-icon social-icon-border social-twitter pull-left" data-toggle="tooltip" data-placement="top" title="Twitter">
-                                <i class="icon-twitter"></i>
-                               
-                            </a>*@
-
-                            <a href="https://www.instagram.com/akgidakariyer/?hl=tr" target="_blank" class="social-icon social-icon-border social-rss pull-left" data-toggle="tooltip" data-placement="top" title="Instagram">
-                                <i class="icon-instagram2"></i>
-                                @*<i class="icon-rss"></i>*@
-                            </a>
-
-                            <a href="https://tr.linkedin.com/company/akgida" target="_blank" class="social-icon social-icon-border social-linkedin pull-left" data-toggle="tooltip" data-placement="top" title="Linkedin">
-                                <i class="icon-linkedin"></i>
-                                @*<i class="icon-linkedin"></i>*@
-                            </a>
-
-
-                            @*<a href="#" target="_blank" class="social-icon social-icon-border social-gplus pull-left" data-toggle="tooltip" data-placement="top" title="Google plus">
-                                <i class="icon-gplus"></i>
-                              
-                            </a>*@
-
-
-
-
-                        </div>
-                            <!-- /Social Icons -->
-
-                        
-                       
-
-
-
+                        <!-- /Social Icons -->
+                        <li>
+                            <div class="pull-right social-icon-sm">
+                                <a target="_blank" href="https://www.facebook.com/akgidakariyer/" rel="nofollow"><i class="fa fa-facebook-square" style="color:#3B5998"></i></a>
+                                <a target="_blank" href="https://www.instagram.com/akgidakariyer/?hl=tr" rel="nofollow"><i class="fa fa-instagram" style="color:#855443"></i></a>
+                                <a target="_blank" href="https://tr.linkedin.com/company/akgida" rel="nofollow"><i class="fa fa-linkedin-square" style="color:#1884BB"></i></a>
+                                <a target="_blank" href="https://twitter.com/AkGidaKariyer" rel="nofollow"><i class="fa fa-twitter-square" style="color:#1DA1F2"></i></a>
+                            </div>
+                        </li>
                     </ul>
+                     <!-- /Social Icons -->
+
                     <!-- /BUTTONS -->
+
+
                     <!-- Logo -->
                     <a class="logo pull-left" href="/Home/Index">
-                        <img src="~/Content/User/assets/images/favicon.ico" alt="" />
+                        <img src="~/Content/User/assets/images/ak_gıda logo.png" alt="" width="165" height="80" />
                     </a>
 
                     <!--
@@ -175,17 +155,6 @@
                     -->
                     <div class="navbar-collapse pull-right nav-main-collapse collapse">
                         <nav class="nav-main">
-
-                            <!--
-                                NOTE
-
-                                For a regular link, remove "dropdown" class from LI tag and "dropdown-toggle" class from the href.
-                                Direct Link Example:
-
-                                <li>
-                                    <a href="#">HOME</a>
-                                </li>
-                            -->
                             <ul id="topMain" class="nav nav-pills nav-main">
 
                                 <li class="nav-item ">
@@ -201,94 +170,12 @@
                                 </li> <!-- İLETİŞİM -->
 
                                 <li class="nav-item">
-                                    @*<a class="nav-link" href="/Home/Kariyer">KARİYER FIRSATLARI<span class="sr-only">(current)</span></a>*@
-
                                     <a class="nav-link" href="https://www.kariyer.net/firma-profil/ak-gida-lactalis-turkiye-99863-45823" target="_blank">KARİYER FIRSATLARI<span class="sr-only">(current)</span></a>
                                 </li> <!-- KARİYER FIRSATLARI -->
 
-                                <!-- FEATURES -->
-                                @*<li class="dropdown">
-                                    <a class="dropdown-toggle" href="#">
-                                        FEATURES
-                                    </a>
-                                    <ul class="dropdown-menu">
-
-                                        <li class="dropdown">
-                                            <a class="dropdown-toggle" href="#">
-                                                <i class="et-browser"></i> MUTLU YILLAR
-                                            </a>
-                                            <ul class="dropdown-menu">
-                                                <li><a href="feature-slider-nivo.html">NIVO SLIDER</a></li>
-                                                <li><a href="feature-slider-camera.html">CAMERA SLIDER</a></li>
-                                                <li><a href="feature-slider-elastic.html">ELASTIC SLIDER</a></li>
-                                            </ul>
-                                        </li>
-
-                                        <li class="dropdown">
-                                            <a class="dropdown-toggle" href="#">
-                                                <i class="et-hotairballoon"></i> HOŞGELDİN BEBEK
-                                            </a>
-                                            <ul class="dropdown-menu">
-                                                <li><a href="feature-header-light.html">HEADER - LIGHT</a></li>
-                                                <li><a href="feature-header-dark.html">HEADER - DARK</a></li>
-                                                <li><a href="feature-header-transparent.html">HEADER - TRANSPARENT</a></li>
-                                                <li><a href="feature-header-transparent-line.html">HEADER - TRANSP+LINE</a></li>
-                                                <li><a href="feature-header-translucent.html">HEADER - TRANSLUCENT</a></li>
-
-                                                <li><a href="feature-header-nosticky.html">HEADER - NO STICKY</a></li>
-                                            </ul>
-                                        </li>
-
-                                        <li class="dropdown">
-                                            <a class="dropdown-toggle" href="#">
-                                                <i class="et-anchor"></i> BAŞINIZ SAĞOLSUN
-                                            </a>
-                                            <ul class="dropdown-menu">
-                                                <li><a href="feature-footer-1.html#footer">FOOTER - LAYOUT 1</a></li>
-                                                <li><a href="feature-footer-2.html#footer">FOOTER - LAYOUT 2</a></li>
-                                                <li><a href="feature-footer-3.html#footer">FOOTER - LAYOUT 3</a></li>
-                                            </ul>
-                                        </li>
-
-                                        <li class="dropdown">
-                                            <a class="dropdown-toggle" href="#">
-                                                <i class="et-circle-compass"></i> HAYIRLI OLSUN
-                                            </a>
-                                            <ul class="dropdown-menu">
-                                                <li><a href="feature-menu-0.html">MENU - OVERLAY</a></li>
-                                                <li><a href="feature-menu-1.html">MENU - STYLE 1</a></li>
-                                                <li><a href="feature-menu-2.html">MENU - STYLE 2</a></li>
-                                            </ul>
-                                        </li>
-
-                                        <li class="dropdown">
-                                            <a class="dropdown-toggle" href="#">
-                                                <i class="et-genius"></i> TEŞEKKÜRLER
-                                            </a>
-                                            <ul class="dropdown-menu">
-                                                <li><a href="feature-menu-dd-light.html">DROPDOWN - LIGHT</a></li>
-                                                <li><a href="feature-menu-dd-dark.html">DROPDOWN - DARK</a></li>
-                                                <li><a href="feature-menu-dd-color.html">DROPDOWN - COLOR</a></li>
-                                            </ul>
-                                        </li>
-
-                                        <li class="dropdown">
-                                            <a class="dropdown-toggle" href="#">
-                                                <i class="et-beaker"></i> DÜĞÜN DAVETİYESİ
-                                            </a>
-                                            <ul class="dropdown-menu">
-                                                <li><a href="feature-title-left.html">ALIGN LEFT</a></li>
-                                                <li><a href="feature-title-right.html">ALIGN RIGHT</a></li>
-                                                <li><a href="feature-title-center.html">ALIGN CENTER</a></li>
-                                            </ul>
-                                        </li>
-                                    </ul>
-                                </li>*@
-
-
 
                                 <li class="dropdown mega-menu">
-                                    <!-- PORTFOLIO -->
+                                    <!-- DİLEKLER -->
                                     <a class="dropdown-toggle" href="#">
                                         DİLEKLER
                                     </a>
@@ -346,6 +233,11 @@
                                     </ul>
                                 </li>
 
+                                <li class="nav-item">
+                                    <a class="nav-link" href="/Home/YeniUrunPartial" target="_blank" data-plugin-options='{"type":"iframe"}'>YENİ ÜRÜNLERİMİZ<span class="sr-only">(current)</span></a>
+                                    @*@{ Html.RenderAction("BabyPartial", "Home");}*@
+                                </li> <!-- Yeni Ürünlerimiz -->
+
                             </ul>
                         </nav>
                     </div>
@@ -353,142 +245,58 @@
                 </div>
             </header>
             <!-- /Top Nav -->
-
         </div>
 
 
-
-
-
-        @RenderBody();
-
+        @RenderBody()
 
 
         <!-- FOOTER -->
         <footer id="footer">
             <div class="container">
 
-                <div class="row">
+                @*<div class="row">*@
 
-                    <div class="col-md-3">
-                        <!-- Footer Logo -->
-                        <img class="footer-logo" src="~/Content/User/assets/images/logo-footer.png" alt="" />
-
-                        <!-- Small Description -->
-                        <p>Integer posuere erat a ante venenatis dapibus posuere velit aliquet.</p>
-
-                        <!-- Contact Address -->
-                        <address>
-                            <ul class="list-unstyled">
-                                <li class="footer-sprite address">
-                                    PO Box 21132<br>
-                                    Here Weare St, Melbourne<br>
-                                    Vivas 2355 Australia<br>
-                                </li>
-                                <li class="footer-sprite phone">
-                                    Phone: 1-800-565-2390
-                                </li>
-                                <li class="footer-sprite email">
-                                    <a href="mailto:support@yourname.com">support@yourname.com</a>
-                                </li>
-                            </ul>
-                        </address>
-                        <!-- /Contact Address -->
-
-                    </div>
-
-                    <div class="col-md-3">
-
-                        <!-- Latest Blog Post -->
-                        <h4 class="letter-spacing-1">LATEST NEWS</h4>
-                        <ul class="footer-posts list-unstyled">
-                            <li>
-                                <a href="#">Donec sed odio dui. Nulla vitae elit libero, a pharetra augue</a>
-                                <small>29 June 2015</small>
-                            </li>
-                            <li>
-                                <a href="#">Nullam id dolor id nibh ultricies</a>
-                                <small>29 June 2015</small>
-                            </li>
-                            <li>
-                                <a href="#">Duis mollis, est non commodo luctus</a>
-                                <small>29 June 2015</small>
-                            </li>
-                        </ul>
-                        <!-- /Latest Blog Post -->
-
-                    </div>
-
-                    <div class="col-md-2">
-
-                        <!-- Links -->
-                        <h4 class="letter-spacing-1">EXPLORE SMARTY</h4>
-                        <ul class="footer-links list-unstyled">
-                            <li><a href="#">Home</a></li>
-                            <li><a href="#">About Us</a></li>
-                            <li><a href="#">Our Services</a></li>
-                            <li><a href="#">Our Clients</a></li>
-                            <li><a href="#">Our Pricing</a></li>
-                            <li><a href="#">Smarty Tour</a></li>
-                            <li><a href="#">Contact Us</a></li>
-                        </ul>
-                        <!-- /Links -->
-
-                    </div>
-
+                    <!-- Footer Logo -->
                     <div class="col-md-4">
+                        <img class="footer-logo" src="~/Content/User/assets/images/footer_logo.png" alt="" width="150" height="60" />
+                    </div>
 
-                        <!-- Newsletter Form -->
-                        <h4 class="letter-spacing-1">KEEP IN TOUCH</h4>
-                        <p>Subscribe to Our Newsletter to get Important News &amp; Offers</p>
+                    <!-- Links -->
+                    <div class="col-md-4" align="center">
+                        <ul class=" list-unstyled" style="list-style:none outside none; position:relative; margin:0px;">
+                            <br />
+                            <li style="display:inline"><a href="/Home/Index">Ana Sayfa</a></li>
+                            <li style="display:inline">&bull;</li>
+                            <li style="display:inline"><a href="/Home/About">Hakkımızda</a></li>
+                            <li style="display:inline">&bull;</li>
+                            <li style="display:inline"><a href="/Home/Contact">İletişim</a></li>
+                        </ul>
+                    </div><!-- /Links -->
 
-                        <form class="validate" action="php/newsletter.php" method="post" data-success="Subscribed! Thank you!" data-toastr-position="bottom-right">
-                            <div class="input-group">
-                                <span class="input-group-addon"><i class="fa fa-envelope"></i></span>
-                                <input type="email" id="email" name="email" class="form-control required" placeholder="Enter your Email">
-                                <span class="input-group-btn">
-                                    <button class="btn btn-success" type="submit">Subscribe</button>
-                                </span>
-                            </div>
-                        </form>
-                        <!-- /Newsletter Form -->
-
-
-                        <!-- Social Icons -->
-                        <div class="margin-top-20">
-                            <a href="#" class="social-icon social-icon-border social-facebook pull-left" data-toggle="tooltip" data-placement="top" title="Facebook">
-
-                                <i class="icon-facebook"></i>
+                    <!-- Social Icons -->
+                    <div class="col-md-4">
+                        <div class="pull-right">
+                            <a target="_blank" href="https://www.facebook.com/akgidakariyer/" class="social-icon social-icon-border social-facebook pull-left" data-toggle="tooltip" data-placement="top" title="Facebook">
                                 <i class="icon-facebook"></i>
                             </a>
 
-                            <a href="#" class="social-icon social-icon-border social-twitter pull-left" data-toggle="tooltip" data-placement="top" title="Twitter">
-                                <i class="icon-twitter"></i>
-                                <i class="icon-twitter"></i>
+                            <a target="_blank" href="https://www.instagram.com/akgidakariyer/?hl=tr" class="social-icon social-icon-border social-instagram pull-left" data-toggle="tooltip" data-placement="top" title="Google plus">
+                                <i class="icon-instagram2"></i>
                             </a>
 
-                            <a href="#" class="social-icon social-icon-border social-gplus pull-left" data-toggle="tooltip" data-placement="top" title="Google plus">
-                                <i class="icon-gplus"></i>
-                                <i class="icon-gplus"></i>
-                            </a>
-
-                            <a href="#" class="social-icon social-icon-border social-linkedin pull-left" data-toggle="tooltip" data-placement="top" title="Linkedin">
-                                <i class="icon-linkedin"></i>
+                            <a target="_blank" href="https://tr.linkedin.com/company/akgida" class="social-icon social-icon-border social-linkedin pull-left" data-toggle="tooltip" data-placement="top" title="Linkedin">
                                 <i class="icon-linkedin"></i>
                             </a>
 
-                            <a href="#" class="social-icon social-icon-border social-rss pull-left" data-toggle="tooltip" data-placement="top" title="Rss">
-                                <i class="icon-rss"></i>
-                                <i class="icon-rss"></i>
+                            <a target="_blank" href="https://twitter.com/AkGidaKariyer" class="social-icon social-icon-border social-twitter pull-left" data-toggle="tooltip" data-placement="top" title="Twitter">
+                                <i class="icon-twitter"></i>
                             </a>
 
                         </div>
-                        <!-- /Social Icons -->
+                    </div> <!-- /Social Icons -->
 
-                    </div>
-
-                </div>
-
+                @*</div>*@
             </div>
 
             <div class="copyright">
@@ -498,7 +306,7 @@
                         <li>&bull;</li>
                         <li><a href="#">Privacy</a></li>
                     </ul>
-                    &copy; All Rights Reserved, Company LTD
+                    &copy; Her Hakkı Saklıdır, AK GIDA SAN. TİC. A.Ş.
                 </div>
             </div>
         </footer>
@@ -524,6 +332,7 @@
 
     <!-- STYLESWITCHER - REMOVE -->
     <script async type="text/javascript" src="~/Content/User/assets/plugins/styleswitcher/styleswitcher.js"></script>
+
 
     <!-- REVOLUTION SLIDER -->
     <script type="text/javascript" src="~/Content/User/assets/plugins/slider.revolution/js/jquery.themepunch.tools.min.js"></script>

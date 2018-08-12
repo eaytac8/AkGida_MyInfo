@@ -10,9 +10,9 @@
     <Property Name="CompanyType" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
     <Property Name="CompanyTel" Type="String" MaxLength="16" FixedLength="false" Unicode="true" />
     <NavigationProperty Name="Departments" Relationship="Self.FK_Departments_Companies" FromRole="Companies" ToRole="Departments" />
-    <NavigationProperty Name="Servis" Relationship="AkGida_MyInfoModel.FK_Servis_Companies" FromRole="Companies" ToRole="Servis" />
     <NavigationProperty Name="Menu" Relationship="AkGida_MyInfoModel.FK_Menu_Companies" FromRole="Companies" ToRole="Menu" />
     <NavigationProperty Name="Duyurular" Relationship="AkGida_MyInfoModel.FK_Duyurular_Companies" FromRole="Companies" ToRole="Duyurular" />
+    <NavigationProperty Name="Servis" Relationship="AkGida_MyInfoModel.FK_Servis_Companies" FromRole="Companies" ToRole="Servis" />
   </EntityType>
   <EntityType Name="Departments">
     <Key>
@@ -65,12 +65,7 @@
       <End Role="Role" EntitySet="Role" />
       <End Role="Users" EntitySet="Users" />
     </AssociationSet>
-    <EntitySet Name="Servis" EntityType="AkGida_MyInfoModel.Servis" />
     <EntitySet Name="YeniUrun" EntityType="AkGida_MyInfoModel.YeniUrun" />
-    <AssociationSet Name="FK_Servis_Companies" Association="AkGida_MyInfoModel.FK_Servis_Companies">
-      <End Role="Companies" EntitySet="Companies" />
-      <End Role="Servis" EntitySet="Servis" />
-    </AssociationSet>
     <EntitySet Name="Menu" EntityType="AkGida_MyInfoModel.Menu" />
     <AssociationSet Name="FK_Menu_Companies" Association="AkGida_MyInfoModel.FK_Menu_Companies">
       <End Role="Companies" EntitySet="Companies" />
@@ -92,6 +87,11 @@
     <EntitySet Name="Death" EntityType="AkGida_MyInfoModel.Death" />
     <EntitySet Name="Thanks" EntityType="AkGida_MyInfoModel.Thanks" />
     <EntitySet Name="Weddings" EntityType="AkGida_MyInfoModel.Weddings" />
+    <EntitySet Name="Servis" EntityType="AkGida_MyInfoModel.Servis" />
+    <AssociationSet Name="FK_Servis_Companies" Association="AkGida_MyInfoModel.FK_Servis_Companies">
+      <End Role="Companies" EntitySet="Companies" />
+      <End Role="Servis" EntitySet="Servis" />
+    </AssociationSet>
   </EntityContainer>
   <EntityType Name="Role">
     <Key>
@@ -128,19 +128,6 @@
     <End Type="AkGida_MyInfoModel.Role" Role="Role" Multiplicity="*" />
     <End Type="AkGida_MyInfoModel.Users" Role="Users" Multiplicity="*" />
   </Association>
-  <EntityType Name="Servis">
-    <Key>
-      <PropertyRef Name="ServisID" />
-    </Key>
-    <Property Name="ServisID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="CompanyID" Type="Int32" />
-    <Property Name="SoforAdi" Type="String" MaxLength="50" FixedLength="true" Unicode="true" />
-    <Property Name="SoforSoyadi" Type="String" MaxLength="50" FixedLength="true" Unicode="true" />
-    <Property Name="Telefon" Type="String" MaxLength="13" FixedLength="true" Unicode="true" />
-    <Property Name="Plaka" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
-    <Property Name="Guzergah" Type="String" MaxLength="300" FixedLength="false" Unicode="true" />
-    <NavigationProperty Name="Companies" Relationship="AkGida_MyInfoModel.FK_Servis_Companies" FromRole="Servis" ToRole="Companies" />
-  </EntityType>
   <EntityType Name="YeniUrun">
     <Key>
       <PropertyRef Name="UrunID" />
@@ -149,19 +136,8 @@
     <Property Name="UrunAdi" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
     <Property Name="Tanitim" Type="String" MaxLength="450" FixedLength="false" Unicode="true" />
     <Property Name="ResimYolu" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+    <Property Name="VideoYolu" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
   </EntityType>
-  <Association Name="FK_Servis_Companies">
-    <End Type="AkGida_MyInfoModel.Companies" Role="Companies" Multiplicity="0..1" />
-    <End Type="AkGida_MyInfoModel.Servis" Role="Servis" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="Companies">
-        <PropertyRef Name="CompanyID" />
-      </Principal>
-      <Dependent Role="Servis">
-        <PropertyRef Name="CompanyID" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
   <EntityType Name="Menu">
     <Key>
       <PropertyRef Name="MenuID" />
@@ -309,4 +285,29 @@
     <Property Name="StartDate" Type="DateTime" Precision="0" />
     <Property Name="EndDate" Type="DateTime" Precision="0" />
   </EntityType>
+  <EntityType Name="Servis">
+    <Key>
+      <PropertyRef Name="ServisID" />
+    </Key>
+    <Property Name="ServisID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="CompanyID" Type="Int32" />
+    <Property Name="SoforAdi" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="SoforSoyadi" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Telefon" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Plaka" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="Guzergah" Type="String" MaxLength="300" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Companies" Relationship="AkGida_MyInfoModel.FK_Servis_Companies" FromRole="Servis" ToRole="Companies" />
+  </EntityType>
+  <Association Name="FK_Servis_Companies">
+    <End Type="AkGida_MyInfoModel.Companies" Role="Companies" Multiplicity="0..1" />
+    <End Type="AkGida_MyInfoModel.Servis" Role="Servis" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Companies">
+        <PropertyRef Name="CompanyID" />
+      </Principal>
+      <Dependent Role="Servis">
+        <PropertyRef Name="CompanyID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
 </Schema>

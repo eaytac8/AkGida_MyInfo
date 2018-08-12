@@ -39,12 +39,12 @@ namespace AkGida_MyInfo.Controllers
             if (file != null && file.ContentLength > 0)
                 try
                 {
-                    string path = Path.Combine(Server.MapPath("~/Images"),
+                    string path = Path.Combine(Server.MapPath("/Images"),
                                                Path.GetFileName(file.FileName));
                     file.SaveAs(path);
                     ViewBag.Message = "File uploaded successfully";
                    
-                    thanks.ImagePath = $"~/Images/{Path.GetFileName(file.FileName)}";
+                    thanks.ImagePath = $"/Images/{Path.GetFileName(file.FileName)}";
 
                     if (ModelState.IsValid)
                     {
@@ -96,12 +96,12 @@ namespace AkGida_MyInfo.Controllers
             if (file != null && file.ContentLength > 0)
                 try
                 {
-                    string path = Path.Combine(Server.MapPath("~/Images"),
+                    string path = Path.Combine(Server.MapPath("/Images"),
                                                Path.GetFileName(file.FileName));
                     file.SaveAs(path);
                     ViewBag.Message = "File uploaded successfully";
 
-                    thanks.ImagePath = $"~/Images/{Path.GetFileName(file.FileName)}";
+                    thanks.ImagePath = $"/Images/{Path.GetFileName(file.FileName)}";
 
 
                     if (ModelState.IsValid)

@@ -324,3 +324,8 @@ C:\Users\elif.aytac\Downloads\AkGida_MyInfo-master\AkGida_MyInfo\obj\Debug\AkGid
 C:\Users\elif.aytac\Downloads\AkGida_MyInfo-master\AkGida_MyInfo\obj\Debug\AkGida_MyInfo.dll
 C:\Users\elif.aytac\Downloads\AkGida_MyInfo-master\AkGida_MyInfo\obj\Debug\AkGida_MyInfo.pdb
 C:\Users\elif.aytac\Downloads\AkGida_MyInfo-master\AkGida_MyInfo\obj\Debug\AkGida_MyInfo.csprojAssemblyReference.cache
+C:\Users\elif.aytac\Downloads\AkGida_MyInfo-master\AkGida_MyInfo\bin\WebMatrix.Data.dll
+C:\Users\elif.aytac\Downloads\AkGida_MyInfo-master\AkGida_MyInfo\bin\WebMatrix.WebData.dll
+C:\Users\elif.aytac\Downloads\AkGida_MyInfo-master\AkGida_MyInfo\bin\WebMatrix.Data.xml
+C:\Users\elif.aytac\Downloads\AkGida_MyInfo-master\AkGida_MyInfo\bin\WebMatrix.WebData.xml
+C:\Users\elif.aytac\Downloads\AkGida_MyInfo-master\AkGida_MyInfo\bin\Microsoft.Web.Helpers.dll

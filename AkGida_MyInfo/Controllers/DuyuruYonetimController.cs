@@ -18,7 +18,7 @@ namespace AkGida_MyInfo.Controllers
         // GET: DuyuruYonetim
         public ActionResult Index()
         {
-            return View(db.Duyurular.OrderByDescending(d => d.BaslangicTarihi).ThenByDescending(d => d.BitisTarihi).ToList());
+            return View(db.Duyurular.OrderBy(d => d.CompanyID).ThenByDescending(d => d.BaslangicTarihi).ThenByDescending(d => d.BitisTarihi).ToList());
         }
 
   
@@ -26,6 +26,7 @@ namespace AkGida_MyInfo.Controllers
         // GET: DuyuruYonetim/Create
         public ActionResult Create()
         {
+            ViewBag.CompanyID = new SelectList(db.Companies, "CompanyID", "CompanyName");
             return View();
         }
 
@@ -34,7 +35,7 @@ namespace AkGida_MyInfo.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "DuyuruID,Baslik,Icerik,BaslangicTarihi,BitisTarihi,ResimYolu")] Duyurular duyurular, HttpPostedFileBase file)
+        public ActionResult Create( Duyurular duyurular, HttpPostedFileBase file)
         {
             if (file != null && file.ContentLength > 0)
                 try
@@ -43,15 +44,11 @@ namespace AkGida_MyInfo.Controllers
                                                Path.GetFileName(file.FileName));
                     file.SaveAs(path);
                     ViewBag.Message = "File uploaded successfully";
-                    //Duyurular duyurum = new Duyurular();
+                    
                     duyurular.ResimYolu = $"~/Images/{Path.GetFileName(file.FileName)}";
-                    //slider.ResimYolu = $"~/Images/{file.FileName}";
+                    
                     String dosyaadi = file.FileName;
 
-                    //sliderim.ResimYolu = path;
-                    //sliderim.BitisTarihi = slider.BitisTarihi;
-                    //sliderim.BaslangicTarihi = slider.BaslangicTarihi;
-                    //sliderim.SliderText = slider.SliderText;
                     if (ModelState.IsValid)
                     {
                         db.Duyurular.Add(duyurular);
@@ -74,7 +71,7 @@ namespace AkGida_MyInfo.Controllers
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-
+            ViewBag.CompanyID = new SelectList(db.Companies, "CompanyID", "CompanyName", duyurular.CompanyID);
             return View(duyurular);
         }
 
@@ -90,6 +87,8 @@ namespace AkGida_MyInfo.Controllers
             {
                 return HttpNotFound();
             }
+
+            ViewBag.CompanyID = new SelectList(db.Companies, "CompanyID", "CompanyName", duyurular.CompanyID);
             return View(duyurular);
         }
 
@@ -98,7 +97,7 @@ namespace AkGida_MyInfo.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "DuyuruID,Baslik,Icerik,BaslangicTarihi,BitisTarihi,ResimYolu")] Duyurular duyurular, HttpPostedFileBase file)
+        public ActionResult Edit([Bind(Include = "DuyuruID,Baslik,Icerik,BaslangicTarihi,BitisTarihi,ResimYolu, CompanyID")] Duyurular duyurular, HttpPostedFileBase file)
         {
             if (file != null && file.ContentLength > 0)
                 try
@@ -128,8 +127,8 @@ namespace AkGida_MyInfo.Controllers
                 ViewBag.Message = "You have not specified a file.";
             }
 
+            ViewBag.CompanyID = new SelectList(db.Companies, "CompanyID", "CompanyName", duyurular.CompanyID);
 
-          
             return View(duyurular);
         }
 

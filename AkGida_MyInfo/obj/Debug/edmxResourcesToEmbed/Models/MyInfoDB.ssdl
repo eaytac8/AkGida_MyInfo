@@ -115,9 +115,9 @@ warning 6002: The table/view 'AkGida_MyInfo.dbo.RoleYetki' does not have a prima
     </Key>
     <Property Name="ServisID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="CompanyID" Type="int" />
-    <Property Name="SoforAdi" Type="nchar" MaxLength="50" />
-    <Property Name="SoforSoyadi" Type="nchar" MaxLength="50" />
-    <Property Name="Telefon" Type="nchar" MaxLength="13" />
+    <Property Name="SoforAdi" Type="varchar" MaxLength="50" />
+    <Property Name="SoforSoyadi" Type="varchar" MaxLength="50" />
+    <Property Name="Telefon" Type="varchar" MaxLength="50" />
     <Property Name="Plaka" Type="nvarchar" MaxLength="10" />
     <Property Name="Guzergah" Type="nvarchar" MaxLength="300" />
   </EntityType>
@@ -191,6 +191,7 @@ warning 6002: The table/view 'AkGida_MyInfo.dbo.UserRole' does not have a primar
     <Property Name="UrunAdi" Type="nvarchar" MaxLength="150" />
     <Property Name="Tanitim" Type="nvarchar" MaxLength="450" />
     <Property Name="ResimYolu" Type="nvarchar" MaxLength="150" />
+    <Property Name="VideoYolu" Type="nvarchar" MaxLength="150" />
   </EntityType>
   <EntityType Name="Yetkiler">
     <Key>

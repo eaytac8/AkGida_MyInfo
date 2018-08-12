@@ -26,6 +26,8 @@ public partial class YeniUrun
 
     public string ResimYolu { get; set; }
 
+    public string VideoYolu { get; set; }
+
 }
 
 }

@@ -18,7 +18,7 @@ namespace AkGida_MyInfo.Controllers
         public ActionResult Index()
         {
             var servis = db.Servis.Include(s => s.Companies);
-            return View(servis.OrderBy(s => s.CompanyID).ThenBy(s => s.SoforAdi).ThenBy(s => s.SoforSoyadi).ToList());
+            return View(servis.ToList());
         }
 
         // GET: ServisYonetim/Details/5

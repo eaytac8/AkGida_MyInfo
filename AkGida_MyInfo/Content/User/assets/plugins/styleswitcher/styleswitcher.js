@@ -82,10 +82,10 @@ jQuery(document).ready(function() {
 
 				+ '		<p class="nomargin-bottom">Images for Boxed Version</p>'
 				+ '		<button onclick="background_switch(\'none\');" class="pointer switcher_thumb"><img src="/Content/User/assets/images/demo/boxed_background/none.jpg" width="27" height="27" alt="" /></button>'
-				+ '		<button onclick="background_switch(\'assets/images/demo/boxed_background/1.jpg\');" class="pointer switcher_thumb"><img src="/Content/User/assets/images/demo/boxed_background/1_thumb.jpg" width="27" height="27" alt="" /></button>'
-				+ '		<button onclick="background_switch(\'assets/images/demo/boxed_background/2.jpg\');" class="pointer switcher_thumb"><img src="/Content/User/assets/images/demo/boxed_background/2_thumb.jpg" width="27" height="27" alt="" /></button>'
-				+ '		<button onclick="background_switch(\'assets/images/demo/boxed_background/3.jpg\');" class="pointer switcher_thumb"><img src="/Content/User/assets/images/demo/boxed_background/3_thumb.jpg" width="27" height="27" alt="" /></button>'
-				+ '		<button onclick="background_switch(\'assets/images/demo/boxed_background/4.jpg\');" class="pointer switcher_thumb"><img src="/Content/User/assets/images/demo/boxed_background/4_thumb.jpg" width="27" height="27" alt="" /></button>'
+				+ '		<button onclick="background_switch(\'/Content/User/assets/images/demo/boxed_background/1.jpg\');" class="pointer switcher_thumb"><img src="/Content/User/assets/images/demo/boxed_background/1_thumb.jpg" width="27" height="27" alt="" /></button>'
+				+ '		<button onclick="background_switch(\'/Content/User/assets/images/demo/boxed_background/2.jpg\');" class="pointer switcher_thumb"><img src="/Content/User/assets/images/demo/boxed_background/2_thumb.jpg" width="27" height="27" alt="" /></button>'
+				+ '		<button onclick="background_switch(\'/Content/User/assets/images/demo/boxed_background/3.jpg\');" class="pointer switcher_thumb"><img src="/Content/User/assets/images/demo/boxed_background/3_thumb.jpg" width="27" height="27" alt="" /></button>'
+				+ '		<button onclick="background_switch(\'/Content/User/assets/images/demo/boxed_background/4.jpg\');" class="pointer switcher_thumb"><img src="/Content/User/assets/images/demo/boxed_background/4_thumb.jpg" width="27" height="27" alt="" /></button>'
 
 				+ '		<hr />'
 
@@ -134,15 +134,15 @@ jQuery(document).ready(function() {
 	jQuery("input.dark_switch").bind("click", function() {
 		var color_skin = jQuery(this).attr('value');
 
-		if(color_skin == 'dark') {
+		if(color_skin === 'dark') {
 			jQuery("#css_dark_skin").remove();
-			jQuery("head").append('<link id="css_dark_skin" href="~/Content/User/assets/css/layout-dark.css" rel="stylesheet" type="text/css" title="dark" />');
+			jQuery("head").append('<link id="css_dark_skin" href="/Content/User/assets/css/layout-dark.css" rel="stylesheet" type="text/css" title="dark" />');
 			createCookie("color_skin", 'dark', 365);
-			jQuery("a.logo img").attr('src', 'assets/images/logo_light.png');
+            jQuery("a.logo img").attr('src', '/Content/User/assets/images/logo_light.png');
 		} else {
 			jQuery("#css_dark_skin").remove();
 			createCookie("color_skin", '', -1);
-			jQuery("a.logo img").attr('src', 'assets/images/logo_dark.png');
+            jQuery("a.logo img").attr('src', '/Content/User/assets/images/logo_dark.png');
 		}
 	});
 
@@ -154,14 +154,14 @@ jQuery(document).ready(function() {
 	jQuery("input.rtl_switch").bind("click", function() {
 		var _direction = jQuery(this).attr('value');
 
-		if(_direction == 'rtl') {
+		if(_direction === 'rtl') {
 			jQuery("#rtl_ltr").remove();
 			jQuery("#rtl_ltr_b1").remove();
 			jQuery("#rtl_ltr_b2").remove();
 
-			jQuery("head").append('<link href="~/Content/User/assets/plugins/bootstrap/RTL/bootstrap-rtl.min.css" rel="stylesheet" type="text/css" id="rtl_ltr_b1" />');
-			jQuery("head").append('<link href="~/Content/User/assets/plugins/bootstrap/RTL/bootstrap-flipped.min.css" rel="stylesheet" type="text/css" id="rtl_ltr_b2" />');
-			jQuery("head").append('<link href="~/Content/User/assets/css/layout-RTL.css" rel="stylesheet" type="text/css" id="rtl_ltr" />');
+			jQuery("head").append('<link href="/Content/User/assets/plugins/bootstrap/RTL/bootstrap-rtl.min.css" rel="stylesheet" type="text/css" id="rtl_ltr_b1" />');
+			jQuery("head").append('<link href="/Content/User/assets/plugins/bootstrap/RTL/bootstrap-flipped.min.css" rel="stylesheet" type="text/css" id="rtl_ltr_b2" />');
+			jQuery("head").append('<link href="/Content/User/assets/css/layout-RTL.css" rel="stylesheet" type="text/css" id="rtl_ltr" />');
 
 			createCookie("_direction", 'rtl', 365);
 		} else {
@@ -180,7 +180,7 @@ jQuery(document).ready(function() {
 	jQuery("input.boxed_switch").bind("click", function() {
 		var boxed_switch = jQuery(this).attr('value');
 
-		if(boxed_switch == 'boxed') {
+		if(boxed_switch === 'boxed') {
 			jQuery("body").removeClass('boxed');
 			jQuery("body").addClass('boxed');
 			createCookie("is_boxed", 'true', 365);
@@ -210,12 +210,9 @@ jQuery(document).ready(function() {
 
 
 
-	/** ********************************************************************************************************** **/
-	/** ********************************************************************************************************** **/
-	/** ********************************************************************************************************** **/
 	function setActiveStyleSheet(title) {
-		if(title != 'null' && title != null) {
-			jQuery("#color_scheme").attr('href', 'assets/css/color_scheme/' + title + '.css');
+		if(title !== 'null' && title !== null) {
+            jQuery("#color_scheme").attr('href', '/Content/User/assets/css/color_scheme/' + title + '.css');
 			if(jQuery("#css_dark_skin").length < 1) {
 				// jQuery("a.logo img").attr('src', 'assets/images/demo/logo/' + title + '.png');
 			}
@@ -243,7 +240,7 @@ jQuery(document).ready(function() {
 	function getPreferredStyleSheet() {
 		var i, a;
 		for(i=0; (a = document.getElementsByTagName("link")[i]); i++) {
-			if(a.getAttribute("rel").indexOf("style") != -1 && a.getAttribute("rel").indexOf("alt") == -1 && a.getAttribute("title")) { 
+			if(a.getAttribute("rel").indexOf("style") !== -1 && a.getAttribute("rel").indexOf("alt") === -1 && a.getAttribute("title")) { 
 				return a.getAttribute("title"); 
 			}
 		}
@@ -302,11 +299,9 @@ jQuery(document).ready(function() {
 	});
 
 
-	/**
-		Pattern Background
-	**/
+	
 	function pattern_switch(pattern) {
-		if(pattern == 'none' || pattern == '') {
+		if(pattern === 'none' || pattern === '') {
 			createCookie("pattern_switch", pattern, -1);
 			remove_pattern();
 		} else {
@@ -344,11 +339,9 @@ jQuery(document).ready(function() {
 
 
 
-	/**
-		Image Background
-	**/
+	
 	function background_switch(imgbkg) {
-		if(imgbkg == 'none' || imgbkg == '') {
+		if(imgbkg === 'none' || imgbkg === '') {
 
 			createCookie("background_switch", '', -1);
 			jQuery('body').attr('data-background', '');

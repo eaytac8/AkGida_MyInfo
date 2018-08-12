@@ -74,22 +74,10 @@
         <ScalarProperty Name="RoleID" ColumnName="RoleID" />
       </EndProperty>
     </AssociationSetMapping>
-    <EntitySetMapping Name="Servis">
-      <EntityTypeMapping TypeName="AkGida_MyInfoModel.Servis">
-        <MappingFragment StoreEntitySet="Servis">
-          <ScalarProperty Name="Guzergah" ColumnName="Guzergah" />
-          <ScalarProperty Name="Plaka" ColumnName="Plaka" />
-          <ScalarProperty Name="Telefon" ColumnName="Telefon" />
-          <ScalarProperty Name="SoforSoyadi" ColumnName="SoforSoyadi" />
-          <ScalarProperty Name="SoforAdi" ColumnName="SoforAdi" />
-          <ScalarProperty Name="CompanyID" ColumnName="CompanyID" />
-          <ScalarProperty Name="ServisID" ColumnName="ServisID" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
     <EntitySetMapping Name="YeniUrun">
       <EntityTypeMapping TypeName="AkGida_MyInfoModel.YeniUrun">
         <MappingFragment StoreEntitySet="YeniUrun">
+          <ScalarProperty Name="VideoYolu" ColumnName="VideoYolu" />
           <ScalarProperty Name="ResimYolu" ColumnName="ResimYolu" />
           <ScalarProperty Name="Tanitim" ColumnName="Tanitim" />
           <ScalarProperty Name="UrunAdi" ColumnName="UrunAdi" />
@@ -211,6 +199,19 @@
           <ScalarProperty Name="Surname" ColumnName="Surname" />
           <ScalarProperty Name="Name" ColumnName="Name" />
           <ScalarProperty Name="WeddingID" ColumnName="WeddingID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Servis">
+      <EntityTypeMapping TypeName="AkGida_MyInfoModel.Servis">
+        <MappingFragment StoreEntitySet="Servis">
+          <ScalarProperty Name="Guzergah" ColumnName="Guzergah" />
+          <ScalarProperty Name="Plaka" ColumnName="Plaka" />
+          <ScalarProperty Name="Telefon" ColumnName="Telefon" />
+          <ScalarProperty Name="SoforSoyadi" ColumnName="SoforSoyadi" />
+          <ScalarProperty Name="SoforAdi" ColumnName="SoforAdi" />
+          <ScalarProperty Name="CompanyID" ColumnName="CompanyID" />
+          <ScalarProperty Name="ServisID" ColumnName="ServisID" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>

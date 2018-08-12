@@ -44,8 +44,6 @@ public partial class AkGida_MyInfoEntities : DbContext
 
     public virtual DbSet<Yetkiler> Yetkiler { get; set; }
 
-    public virtual DbSet<Servis> Servis { get; set; }
-
     public virtual DbSet<YeniUrun> YeniUrun { get; set; }
 
     public virtual DbSet<Menu> Menu { get; set; }
@@ -65,6 +63,8 @@ public partial class AkGida_MyInfoEntities : DbContext
     public virtual DbSet<Thanks> Thanks { get; set; }
 
     public virtual DbSet<Weddings> Weddings { get; set; }
+
+    public virtual DbSet<Servis> Servis { get; set; }
 
 }
 

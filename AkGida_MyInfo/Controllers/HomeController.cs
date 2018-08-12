@@ -24,9 +24,12 @@ namespace AkGida_MyInfo.Controllers
             List<Slider> slider = new List<Slider>();
             slider = db.Slider.Where(x => (x.BaslangicTarihi <= DateTime.Today && x.BitisTarihi >= DateTime.Today)).ToList();
 
+            List<YeniUrun> yeniurun = new List<YeniUrun>();
+            yeniurun = db.YeniUrun.OrderBy(y => y.UrunID).ToList();
           
             companySlider.Companylerim = company;
             companySlider.Sliderlerim = slider;
+            companySlider.YeniUrunlerim = yeniurun;
 
             return View(companySlider);
         }
@@ -113,6 +116,13 @@ namespace AkGida_MyInfo.Controllers
             List<Weddings> weddings = new List<Weddings>();
             weddings = db.Weddings.Where(B => B.StartDate <= DateTime.Today && B.EndDate >= DateTime.Today).ToList();
             return PartialView(weddings);
+        }
+
+        public PartialViewResult YeniUrunPartial()
+        {
+            List<YeniUrun> yeniurun = new List<YeniUrun>();
+            yeniurun = db.YeniUrun.OrderBy(y => y.UrunID).ToList();
+            return PartialView(yeniurun);
         }
 
         public ActionResult About()

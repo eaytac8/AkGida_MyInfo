@@ -27,6 +27,7 @@ namespace AkGida_MyInfo.Controllers
         public DbSet<Congrats> Congrats { get; set; }
         public DbSet<Thanks> Thanks { get; set; }
         public DbSet<Weddings> Weddings { get; set; }
+        public DbSet<YeniUrun> YeniUrun { get; set; }
         
 
     }

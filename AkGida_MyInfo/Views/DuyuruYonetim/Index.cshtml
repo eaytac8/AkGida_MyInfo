@@ -20,6 +20,7 @@
                 <th>Başlangıç Tarihi</th>
                 <th>Bitiş Tarihi</th>
                 <th>Resim Yolu</th>
+                <th>Şube</th>
                 <th>İşlemler</th>
             </tr>
         </thead>
@@ -32,6 +33,7 @@
                     <td>@item.BaslangicTarihi</td>
                     <td>@item.BitisTarihi</td>
                     <td>@item.ResimYolu</td>
+                    <td>@item.Companies.CompanyName</td>
                     <td>
                         <a href="/DuyuruYonetim/Edit/@item.DuyuruID" class="btn btn-info btn-xs"><i class="fa fa-edit white"></i> Düzenle </a>
                         <a href="/DuyuruYonetim/Delete/@item.DuyuruID" class="btn btn-danger btn-xs"><i class="fa fa-times white"></i> Sil </a>

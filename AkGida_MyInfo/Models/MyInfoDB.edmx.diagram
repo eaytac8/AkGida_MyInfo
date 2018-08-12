@@ -4,7 +4,7 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="8569eb95f7e14acd83f982d94eff2cbf" Name="Diagram1" ZoomLevel="74">
+      <Diagram DiagramId="8569eb95f7e14acd83f982d94eff2cbf" Name="Diagram1" ZoomLevel="111">
         <EntityTypeShape EntityType="AkGida_MyInfoModel.Companies" Width="1.5" PointX="0.75" PointY="5.25" IsExpanded="true" />
         <EntityTypeShape EntityType="AkGida_MyInfoModel.Departments" Width="1.5" PointX="3" PointY="5.875" IsExpanded="true" />
         <EntityTypeShape EntityType="AkGida_MyInfoModel.sysdiagrams" Width="1.5" PointX="7.75" PointY="0.75" IsExpanded="true" />
@@ -14,9 +14,7 @@
         <EntityTypeShape EntityType="AkGida_MyInfoModel.Yetkiler" Width="1.5" PointX="9.625" PointY="7" />
         <AssociationConnector Association="AkGida_MyInfoModel.RoleYetki" />
         <AssociationConnector Association="AkGida_MyInfoModel.UserRole" />
-        <EntityTypeShape EntityType="AkGida_MyInfoModel.Servis" Width="1.5" PointX="3" PointY="13.5" />
-        <EntityTypeShape EntityType="AkGida_MyInfoModel.YeniUrun" Width="1.5" PointX="8.375" PointY="3.75" />
-        <AssociationConnector Association="AkGida_MyInfoModel.FK_Servis_Companies" />
+        <EntityTypeShape EntityType="AkGida_MyInfoModel.YeniUrun" Width="1.5" PointX="7.875" PointY="3.75" />
         <EntityTypeShape EntityType="AkGida_MyInfoModel.Menu" Width="1.5" PointX="3" PointY="9" />
         <AssociationConnector Association="AkGida_MyInfoModel.FK_Menu_Companies" />
         <EntityTypeShape EntityType="AkGida_MyInfoModel.Personels" Width="1.5" PointX="5.25" PointY="4.375" />
@@ -29,6 +27,8 @@
         <EntityTypeShape EntityType="AkGida_MyInfoModel.Death" Width="1.5" PointX="5.375" PointY="11.75" />
         <EntityTypeShape EntityType="AkGida_MyInfoModel.Thanks" Width="1.5" PointX="12.375" PointY="0.75" />
         <EntityTypeShape EntityType="AkGida_MyInfoModel.Weddings" Width="1.5" PointX="12.375" PointY="3.75" />
+        <EntityTypeShape EntityType="AkGida_MyInfoModel.Servis" Width="1.5" PointX="3" PointY="13.375" />
+        <AssociationConnector Association="AkGida_MyInfoModel.FK_Servis_Companies" />
         </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

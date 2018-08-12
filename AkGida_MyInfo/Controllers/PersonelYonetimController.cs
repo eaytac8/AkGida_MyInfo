@@ -38,27 +38,8 @@ namespace AkGida_MyInfo.Controllers
             model.CompanyList.Insert(0, new SelectListItem { Text = "Seçiniz..", Value = "", Selected = true });
 
             return View(model);
-
-
-            /*ViewBag.Company = new SelectList(db.Companies, "CompanyID", "CompanyName");*/  //-------en son burasıydı, bir alt satır değil
-            //ViewBag.DepartmentID = new SelectList(db.Departments, "DepartmentID", "DepartmentName");
-            //return View();
         }
 
-        //[HttpPost]
-        //[ValidateAntiForgeryToken]
-        //public ActionResult Create(/*[Bind(Include = "PersonelID,PersonelName,PersonelSurname,PersonelTel,PersonelDahiliNo,PersonelEposta,DepartmentID,Yetki")]*/ Personels personels)
-        //{
-        //    if (ModelState.IsValid)
-        //    {
-        //        db.Personels.Add(personels);
-        //        db.SaveChanges();
-        //        return RedirectToAction("Index");
-        //    }
-
-        //    ViewBag.DepartmentID = new SelectList(db.Departments, "DepartmentID", "DepartmentName", personels.DepartmentID);
-        //    return View(personels);
-        //}
 
 
         [HttpPost]

@@ -28,16 +28,16 @@ jQuery(document).ready(function() {
 				+ '		<h4>STYLE SWITCHER</h4>'
 /**
 				+ '		<ul class="list-unstyled">'
-				+ '			<li><a href="#" onclick="setActiveStyleSheet(\'green\'); return false;" title="green" class="color"><img src="~/Content/User/assets/plugins/styleswitcher/color_schemes/6.png" alt="" width="30" height="30" /></a></li>'
-				+ '			<li><a href="#" onclick="setActiveStyleSheet(\'red\'); return false;" title="red" class="color"><img src="~/Content/User/assets/plugins/styleswitcher/color_schemes/2.png" alt="" width="30" height="30" /></a></li>'
-				+ '			<li><a href="#" onclick="setActiveStyleSheet(\'orange\'); return false;" title="orange" class="color"><img src="~/Content/User/assets/plugins/styleswitcher/color_schemes/1.png" alt="" width="30" height="30" /></a></li>'
-				+ '			<li><a href="#" onclick="setActiveStyleSheet(\'pink\'); return false;" title="pink" class="color"><img src="~/Content/User/assets/plugins/styleswitcher/color_schemes/3.png" alt="" width="30" height="30" /></a></li>'
-				+ '			<li><a href="#" onclick="setActiveStyleSheet(\'yellow\'); return false;" title="yellow" class="color"><img src="~/Content/User/assets/plugins/styleswitcher/color_schemes/4.png" alt="" width="30" height="30" /></a></li>'
-				+ '			<li><a href="#" onclick="setActiveStyleSheet(\'darkgreen\'); return false;" title="darkgreen" class="color"><img src="~/Content/User/assets/plugins/styleswitcher/color_schemes/5.png" alt="" width="30" height="30" /></a></li>'
-				+ '			<li><a href="#" onclick="setActiveStyleSheet(\'darkblue\'); return false;" title="darkblue" class="color"><img src="~/Content/User/assets/plugins/styleswitcher/color_schemes/7.png" alt="" width="30" height="30" /></a></li>'
-				+ '			<li><a href="#" onclick="setActiveStyleSheet(\'blue\'); return false;" title="blue" class="color"><img src="~/Content/User/assets/plugins/styleswitcher/color_schemes/8.png" alt="" width="30" height="30" /></a></li>'
-				+ '			<li><a href="#" onclick="setActiveStyleSheet(\'brown\'); return false;" title="brown" class="color"><img src="~/Content/User/assets/plugins/styleswitcher/color_schemes/9.png" alt="" width="30" height="30" /></a></li>'
-				+ '			<li><a href="#" onclick="setActiveStyleSheet(\'lightgrey\'); return false;" title="lightgrey" class="color"><img src="~/Content/User/assets/plugins/styleswitcher/color_schemes/10.png" alt="" width="30" height="30" /></a></li>'
+				+ '			<li><a href="#" onclick="setActiveStyleSheet(\'green\'); return false;" title="green" class="color"><img src="/Content/User/assets/plugins/styleswitcher/color_schemes/6.png" alt="" width="30" height="30" /></a></li>'
+				+ '			<li><a href="#" onclick="setActiveStyleSheet(\'red\'); return false;" title="red" class="color"><img src="/Content/User/assets/plugins/styleswitcher/color_schemes/2.png" alt="" width="30" height="30" /></a></li>'
+				+ '			<li><a href="#" onclick="setActiveStyleSheet(\'orange\'); return false;" title="orange" class="color"><img src="/Content/User/assets/plugins/styleswitcher/color_schemes/1.png" alt="" width="30" height="30" /></a></li>'
+				+ '			<li><a href="#" onclick="setActiveStyleSheet(\'pink\'); return false;" title="pink" class="color"><img src="/Content/User/assets/plugins/styleswitcher/color_schemes/3.png" alt="" width="30" height="30" /></a></li>'
+				+ '			<li><a href="#" onclick="setActiveStyleSheet(\'yellow\'); return false;" title="yellow" class="color"><img src="/Content/User/assets/plugins/styleswitcher/color_schemes/4.png" alt="" width="30" height="30" /></a></li>'
+				+ '			<li><a href="#" onclick="setActiveStyleSheet(\'darkgreen\'); return false;" title="darkgreen" class="color"><img src="/Content/User/assets/plugins/styleswitcher/color_schemes/5.png" alt="" width="30" height="30" /></a></li>'
+				+ '			<li><a href="#" onclick="setActiveStyleSheet(\'darkblue\'); return false;" title="darkblue" class="color"><img src="/Content/User/assets/plugins/styleswitcher/color_schemes/7.png" alt="" width="30" height="30" /></a></li>'
+				+ '			<li><a href="#" onclick="setActiveStyleSheet(\'blue\'); return false;" title="blue" class="color"><img src="/Content/User/assets/plugins/styleswitcher/color_schemes/8.png" alt="" width="30" height="30" /></a></li>'
+				+ '			<li><a href="#" onclick="setActiveStyleSheet(\'brown\'); return false;" title="brown" class="color"><img src="/Content/User/assets/plugins/styleswitcher/color_schemes/9.png" alt="" width="30" height="30" /></a></li>'
+				+ '			<li><a href="#" onclick="setActiveStyleSheet(\'lightgrey\'); return false;" title="lightgrey" class="color"><img src="/Content/User/assets/plugins/styleswitcher/color_schemes/10.png" alt="" width="30" height="30" /></a></li>'
 				+ '		</ul>'
 **/
 				+ '		<div class="margin-top-10 text-left">'
@@ -87,7 +87,7 @@ jQuery(document).ready(function() {
 				+ '<!-- /STYLESWITCHER -->';
 
 	// ADD CLASS
-    jQuery("head").append('<link href="~/Content/User/assets/plugins/styleswitcher/styleswitcher.css" rel="stylesheet" type="text/css" />');
+    jQuery("head").append('<link href="/Content/User/assets/plugins/styleswitcher/styleswitcher.css" rel="stylesheet" type="text/css" />');
 	jQuery("body").append(_sw);
 	jQuery("#switcher, #showSwitcher").removeClass('hide');
 
@@ -120,9 +120,9 @@ jQuery(document).ready(function() {
 	jQuery("input.dark_switch").bind("click", function() {
 		var color_skin = jQuery(this).attr('value');
 
-		if(color_skin == 'dark') {
+		if(color_skin === 'dark') {
 			jQuery("#css_dark_skin").remove();
-			jQuery("head").append('<link id="css_dark_skin" href="~/Content/User/assets/css/layout-dark.css" rel="stylesheet" type="text/css" title="dark" />');
+			jQuery("head").append('<link id="css_dark_skin" href="/Content/User/assets/css/layout-dark.css" rel="stylesheet" type="text/css" title="dark" />');
 			createCookie("color_skin", 'dark', 365);
 			// jQuery("a.logo img").attr('src', 'assets/images/logo_dark.png');
 		} else {
@@ -138,7 +138,7 @@ jQuery(document).ready(function() {
 	jQuery("input.boxed_switch").bind("click", function() {
 		var boxed_switch = jQuery(this).attr('value');
 
-		if(boxed_switch == 'boxed') {
+		if(boxed_switch === 'boxed') {
 			jQuery("body").removeClass('boxed');
 			jQuery("body").addClass('boxed');
 			createCookie("is_boxed", 'true', 365);
@@ -170,12 +170,12 @@ jQuery(document).ready(function() {
 	jQuery("input.rtl_switch").bind("click", function() {
 		var _direction = jQuery(this).attr('value');
 
-		if(_direction == 'rtl') {
+		if(_direction === 'rtl') {
 			jQuery("#css_dark_skin").remove();
 
-			jQuery("head").append('<link id="rtl_ltr_b1" href="~/Content/User/assets/plugins/bootstrap/RTL/bootstrap-rtl.min.css" rel="stylesheet" type="text/css" title="rtl" />');
-			jQuery("head").append('<link id="rtl_ltr_b2" href="~/Content/User/assets/plugins/bootstrap/RTL/bootstrap-flipped.min.css" rel="stylesheet" type="text/css" title="rtl" />');
-			jQuery("head").append('<link id="rtl_ltr" href="~/Content/User/assets/css/layout-RTL.css" rel="stylesheet" type="text/css" title="rtl" />');
+			jQuery("head").append('<link id="rtl_ltr_b1" href="/Content/User/assets/plugins/bootstrap/RTL/bootstrap-rtl.min.css" rel="stylesheet" type="text/css" title="rtl" />');
+			jQuery("head").append('<link id="rtl_ltr_b2" href="/Content/User/assets/plugins/bootstrap/RTL/bootstrap-flipped.min.css" rel="stylesheet" type="text/css" title="rtl" />');
+			jQuery("head").append('<link id="rtl_ltr" href="/Content/User/assets/css/layout-RTL.css" rel="stylesheet" type="text/css" title="rtl" />');
 
 			createCookie("_direction", 'rtl', 365);
 		} else {
@@ -191,12 +191,10 @@ jQuery(document).ready(function() {
 
 
 
-	/** ********************************************************************************************************** **/
-	/** ********************************************************************************************************** **/
-	/** ********************************************************************************************************** **/
+
 	function setActiveStyleSheet(title) {
-		if(title != 'null' && title != null) {
-			jQuery("#color_scheme").attr('href', 'assets/css/color_scheme/' + title + '.css');
+		if(title !== 'null' && title !== null) {
+			jQuery("#color_scheme").attr('href', '/Content/User/assets/css/color_scheme/' + title + '.css');
 			if(jQuery("#css_dark_skin").length < 1) {
 				// jQuery("a.logo img").attr('src', 'assets/images/demo/logo/' + title + '.png');
 			}
@@ -224,7 +222,7 @@ jQuery(document).ready(function() {
 	function getPreferredStyleSheet() {
 		var i, a;
 		for(i=0; (a = document.getElementsByTagName("link")[i]); i++) {
-			if(a.getAttribute("rel").indexOf("style") != -1 && a.getAttribute("rel").indexOf("alt") == -1 && a.getAttribute("title")) { 
+			if(a.getAttribute("rel").indexOf("style") !== -1 && a.getAttribute("rel").indexOf("alt") === -1 && a.getAttribute("title")) { 
 				return a.getAttribute("title"); 
 			}
 		}
@@ -283,11 +281,9 @@ jQuery(document).ready(function() {
 	});
 
 
-	/**
-		Pattern Background
-	**/
+	
 	function pattern_switch(pattern) {
-		if(pattern == 'none' || pattern == '') {
+		if(pattern === 'none' || pattern === '') {
 			createCookie("pattern_switch", pattern, -1);
 			remove_pattern();
 		} else {
@@ -325,11 +321,9 @@ jQuery(document).ready(function() {
 
 
 
-	/**
-		Image Background
-	**/
+	
 	function background_switch(imgbkg) {
-		if(imgbkg == 'none' || imgbkg == '') {
+		if(imgbkg === 'none' || imgbkg === '') {
 
 			createCookie("background_switch", '', -1);
 			jQuery('body').attr('data-background', '');
