@@ -115,9 +115,9 @@
                                 <i class="fa fa-search"></i>
                             </a>
                             <div class="search-box">
-                                <form action="page-search-result-1.html" method="get">
+                                <form action="/Home/Search" method="get">
                                     <div class="input-group">
-                                        <input type="text" name="src" placeholder="Personel Ara" class="form-control" />
+                                        <input type="text" name="searchString" placeholder="Personel Ara" class="form-control" />
                                         <span class="input-group-btn">
                                             <button class="btn btn-primary" type="submit">Ara</button>
                                         </span>
@@ -126,6 +126,7 @@
                             </div>
                         </li>
                         <!-- /SEARCH -->
+
 
                         <!-- /Social Icons -->
                         <li>
@@ -144,7 +145,7 @@
 
                     <!-- Logo -->
                     <a class="logo pull-left" href="/Home/Index">
-                        <img src="~/Content/User/assets/images/ak_gıda logo.png" alt="" width="165" height="80" />
+                        <img src="~/Content/User/assets/images/ak_gida_logo.png" alt="" width="165" height="80" />
                     </a>
 
                     <!--
@@ -234,7 +235,8 @@
                                 </li>
 
                                 <li class="nav-item">
-                                    <a class="nav-link" href="/Home/YeniUrunPartial" target="_blank" data-plugin-options='{"type":"iframe"}'>YENİ ÜRÜNLERİMİZ<span class="sr-only">(current)</span></a>
+                                    <a class="nav-link" href="/Home/YeniUrun" @*data-plugin-options='{"type":"iframe"}'*@>YENİ ÜRÜNLERİMİZ<span class="sr-only">(current)</span></a>
+                                    @*<a class="nav-link" href="/Home/YeniUrunPartial" target="_blank" data-plugin-options='{"type":"iframe"}'>YENİ ÜRÜNLERİMİZ<span class="sr-only">(current)</span></a>*@
                                     @*@{ Html.RenderAction("BabyPartial", "Home");}*@
                                 </li> <!-- Yeni Ürünlerimiz -->
 

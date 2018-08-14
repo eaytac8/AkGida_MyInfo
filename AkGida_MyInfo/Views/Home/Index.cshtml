@@ -88,7 +88,7 @@
 @foreach (var item in from i in Model.Companylerim.Select((value, index) => new { value, index }) group i.value by i.index / 6 into g select g)
 {
 
-    <div class="container-fluid">
+    <div class="container">
         <div class="row">
 
             @foreach (Companies c_item in item)

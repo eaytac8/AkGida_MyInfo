@@ -370,7 +370,7 @@ jQuery(document).ready(function() {
 		jQuery("#css_dark_skin").remove();
 		jQuery('body').attr('data-background', '');
 		jQuery('.backstretch').remove();
-		jQuery("a.logo img").attr('src', '/Content/User/assets/images/logo.png');
+        jQuery("a.logo img").attr('src', '/Content/User/assets/images/ak_gida_logo.png');
 
 		jQuery("#is_light").trigger('click');
 		jQuery("#is_wide").trigger('click');

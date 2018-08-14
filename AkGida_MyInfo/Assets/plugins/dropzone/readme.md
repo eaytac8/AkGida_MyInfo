@@ -1,5 +1,5 @@
 <h1 align="center">
-  <img alt="Dropzone.js" src="http://www.dropzonejs.com/images/logo.png" />
+  <img alt="Dropzone.js" src="http://www.dropzonejs.com/images/ak_gida_logo.png" />
 </h1>
 
 *Version 3.7.0*

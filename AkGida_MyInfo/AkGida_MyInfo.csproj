@@ -2607,7 +2607,7 @@
     <Content Include="Content\User\assets\fonts\font-icons.svg" />
     <Content Include="Content\User\assets\fonts\fontawesome-webfont.svg" />
     <Content Include="Content\User\assets\images\1x1.png" />
-    <Content Include="Content\User\assets\images\ak_gıda logo.png" />
+    <Content Include="Content\User\assets\images\ak_gida_logo.png" />
     <Content Include="Content\User\assets\images\avatar.png" />
     <Content Include="Content\User\assets\images\avatar2.jpg" />
     <Content Include="Content\User\assets\images\background.jpg" />
@@ -6984,8 +6984,9 @@
     <Content Include="Views\YeniUrunYonetim\Delete.cshtml" />
     <Content Include="Views\YeniUrunYonetim\Edit.cshtml" />
     <Content Include="Views\YeniUrunYonetim\Index.cshtml" />
-    <Content Include="Views\Home\YeniUrunPartial.cshtml" />
     <Content Include="Views\Home\About.cshtml" />
+    <Content Include="Views\Home\Search.cshtml" />
+    <Content Include="Views\Home\YeniUrun.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

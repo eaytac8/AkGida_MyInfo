@@ -7,6 +7,8 @@ using AkGida_MyInfo.Models;
 using System.Data.SqlClient;
 using AkGida_MyInfo.ViewModel;
 using System.Globalization;
+using System.Threading.Tasks;
+using System.Data.Entity;
 
 namespace AkGida_MyInfo.Controllers
 {
@@ -118,12 +120,30 @@ namespace AkGida_MyInfo.Controllers
             return PartialView(weddings);
         }
 
-        public PartialViewResult YeniUrunPartial()
+        public ActionResult YeniUrun()
         {
             List<YeniUrun> yeniurun = new List<YeniUrun>();
             yeniurun = db.YeniUrun.OrderBy(y => y.UrunID).ToList();
-            return PartialView(yeniurun);
+            return View(yeniurun);
         }
+
+        public ActionResult Search(string searchString)
+        {
+            var personel = from p in db.Personels
+                         select p;
+            if(!String.IsNullOrEmpty(searchString))
+                {
+                personel = personel.Where(x => x.PersonelName.Contains(searchString) || x.PersonelSurname.Contains(searchString));
+
+                }
+            else
+            {
+                ViewBag.personelYok = "Personel bulunamadı.";
+            }
+
+            return View(personel);
+        }
+
 
         public ActionResult About()
         {

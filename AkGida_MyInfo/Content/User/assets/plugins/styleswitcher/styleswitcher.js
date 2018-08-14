@@ -138,11 +138,11 @@ jQuery(document).ready(function() {
 			jQuery("#css_dark_skin").remove();
 			jQuery("head").append('<link id="css_dark_skin" href="/Content/User/assets/css/layout-dark.css" rel="stylesheet" type="text/css" title="dark" />');
 			createCookie("color_skin", 'dark', 365);
-            jQuery("a.logo img").attr('src', '/Content/User/assets/images/logo_light.png');
+            jQuery("a.logo img").attr('src', '/Content/User/assets/images/ak_gida_logo.png');
 		} else {
 			jQuery("#css_dark_skin").remove();
 			createCookie("color_skin", '', -1);
-            jQuery("a.logo img").attr('src', '/Content/User/assets/images/logo_dark.png');
+            jQuery("a.logo img").attr('src', '/Content/User/assets/images/ak_gida_logo.png');
 		}
 	});
 
@@ -388,7 +388,7 @@ jQuery(document).ready(function() {
 		jQuery("#css_dark_skin").remove();
 		jQuery('body').attr('data-background', '');
 		jQuery('.backstretch').remove();
-		jQuery("a.logo img").attr('src', 'assets/images/logo.png');
+        jQuery("a.logo img").attr('src', '/Content/User/assets/images/ak_gida_logo.png');
 
 		jQuery("#is_light").trigger('click');
 		jQuery("#is_wide").trigger('click');

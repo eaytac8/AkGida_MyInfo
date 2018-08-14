@@ -1,0 +1,39 @@
+﻿@using AkGida_MyInfo.Models
+@model IEnumerable<Personels>
+<html>
+<head>
+
+</head>
+<body>
+
+    <table class="table">
+        <tr>
+            <th>Adı</th>
+            <th>Soyadı</th>
+            <th>Corbus</th>
+            <th>Dahili No</th>
+            <th>Telefon</th>
+            <th>E-Posta</th>
+            <th>Departman</th>
+            <th>Şube</th>
+            <th>Doğum Tarihi</th>
+        </tr>
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.PersonelName</td>
+                <td>@item.PersonelSurname</td>
+                <td>@item.Corbus</td>
+                <td>@item.PersonelDahiliNo</td>
+                <td>@item.PersonelTel</td>
+                <td>@item.PersonelEposta</td>
+                <td>@item.Departments.DepartmentName</td>
+                <td>@item.Departments.Companies.CompanyName</td>
+                <td>@item.Birthday</td>
+            </tr>
+        }
+    </table>
+
+</body>
+</html>
