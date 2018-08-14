@@ -2621,6 +2621,9 @@
     <Content Include="Content\User\assets\images\buttons\btn-appstore.png" />
     <Content Include="Content\User\assets\images\buttons\btn-googleplay-dark.png" />
     <Content Include="Content\User\assets\images\buttons\btn-googleplay.png" />
+    <Content Include="Content\User\assets\images\demo\boxed_background\5.jpg" />
+    <Content Include="Content\User\assets\images\demo\boxed_background\backgroundd.jpg" />
+    <Content Include="Content\User\assets\images\demo\boxed_background\background.jpg" />
     <Content Include="Content\User\assets\images\footer_logo.png" />
     <Content Include="Content\User\assets\images\caption_bg.png" />
     <Content Include="Content\User\assets\images\cc\American-Express.png" />

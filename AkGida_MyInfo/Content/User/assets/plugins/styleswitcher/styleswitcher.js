@@ -25,7 +25,7 @@ jQuery(document).ready(function() {
 		var _sw = '<!-- STYLESWITCHER - REMOVE ON PRODUCTION/DEVELOPMENT -->'
 				+ '<div id="switcher" class="hide hidden-xs">'
 				+ '	<div class="content-switcher">'
-				+ '		<h4>STYLE SWITCHER</h4>'
+				+ '		<h4>STYLE</h4>'
 
 				+ '		<ul class="list-unstyled">'
 				+ '			<li><a href="#" onclick="setActiveStyleSheet(\'green\'); return false;" title="green" class="color"><img src="/Content/User/assets/plugins/styleswitcher/color_schemes/6.png" alt="" width="30" height="30" /></a></li>'
@@ -63,7 +63,7 @@ jQuery(document).ready(function() {
 
 				+ '		</div>'
 
-				+ '		<p class="nomargin-bottom">Patterns for Boxed Version</p>'
+				+ '		<p class="nomargin-bottom">Desen</p>'
 				+ '		<div>'
 				+ '			<button onclick="pattern_switch(\'none\');" class="pointer switcher_thumb"><img src="/Content/User/assets/images/patterns/none.jpg" width="27" height="27" alt="" /></button>'
 				+ '			<button onclick="pattern_switch(\'pattern2\');" class="pointer switcher_thumb"><img src="/Content/User/assets/images/patterns/pattern2.png" width="27" height="27" alt="" /></button>'
@@ -80,12 +80,13 @@ jQuery(document).ready(function() {
 				+ '			<button onclick="pattern_switch(\'pattern10\');" class="pointer switcher_thumb"><img src="/Content/User/assets/images/patterns/pattern10.png" width="27" height="27" alt="" /></button>'
 				+ '		</div>'
 
-				+ '		<p class="nomargin-bottom">Images for Boxed Version</p>'
+				+ '		<p class="nomargin-bottom">Arka Plan</p>'
 				+ '		<button onclick="background_switch(\'none\');" class="pointer switcher_thumb"><img src="/Content/User/assets/images/demo/boxed_background/none.jpg" width="27" height="27" alt="" /></button>'
 				+ '		<button onclick="background_switch(\'/Content/User/assets/images/demo/boxed_background/1.jpg\');" class="pointer switcher_thumb"><img src="/Content/User/assets/images/demo/boxed_background/1_thumb.jpg" width="27" height="27" alt="" /></button>'
 				+ '		<button onclick="background_switch(\'/Content/User/assets/images/demo/boxed_background/2.jpg\');" class="pointer switcher_thumb"><img src="/Content/User/assets/images/demo/boxed_background/2_thumb.jpg" width="27" height="27" alt="" /></button>'
 				+ '		<button onclick="background_switch(\'/Content/User/assets/images/demo/boxed_background/3.jpg\');" class="pointer switcher_thumb"><img src="/Content/User/assets/images/demo/boxed_background/3_thumb.jpg" width="27" height="27" alt="" /></button>'
 				+ '		<button onclick="background_switch(\'/Content/User/assets/images/demo/boxed_background/4.jpg\');" class="pointer switcher_thumb"><img src="/Content/User/assets/images/demo/boxed_background/4_thumb.jpg" width="27" height="27" alt="" /></button>'
+				+ '		<button onclick="background_switch(\'/Content/User/assets/images/demo/boxed_background/5.jpg\');" class="pointer switcher_thumb"><img src="/Content/User/assets/images/demo/boxed_background/background.jpg" width="27" height="27" alt="" /></button>'
 
 				+ '		<hr />'
 

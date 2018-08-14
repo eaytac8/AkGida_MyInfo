@@ -75,7 +75,7 @@ $(document).ready(
 // -------------------------------
 
 $('.chatinput textarea').keypress(function (e) {
-  if (e.which == 13) {
+  if (e.which === 13) {
 
     var chatmsg = $(".chatinput textarea").val();
     var oo=$(".chathistory").html();
@@ -84,7 +84,7 @@ $('.chatinput textarea').keypress(function (e) {
     var n=d.toLocaleTimeString();
 
 
-    if (!!$(".chatinput textarea").val())
+    if (!$(".chatinput textarea").val())
         $(".chathistory").html(oo+ "<div class='chatmsg'><p>"+chatmsg+"</p><span class='timestamp'>"+n+"</span></div>");
 
 
@@ -156,13 +156,13 @@ $('#fixedheader').on('toggle', function (e, active) {
 // Read the CSS files from data attributes
 
 $("#demo-color-variations a").click(function(){
-    $("head link#styleswitcher").attr("href", 'assets/demo/variations/' + $(this).data("theme"));
+    $("head link#styleswitcher").attr("href", '/Content/User/assets/demo/variations/' + $(this).data("theme"));
     $.cookie('theme',$(this).data("theme"));
     return false;
 });
 
 $("#demo-header-variations a").click(function(){
-    $("head link#headerswitcher").attr("href", 'assets/demo/variations/' + $(this).data("headertheme"));
+    $("head link#headerswitcher").attr("href", '/Content/User/assets/demo/variations/' + $(this).data("headertheme"));
     $.cookie('headertheme',$(this).data("headertheme"));
     return false;
 });

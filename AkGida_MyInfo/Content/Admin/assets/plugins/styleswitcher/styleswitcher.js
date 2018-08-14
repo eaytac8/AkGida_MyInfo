@@ -25,7 +25,7 @@ jQuery(document).ready(function() {
 		var _sw = '<!-- STYLESWITCHER - REMOVE ON PRODUCTION/DEVELOPMENT -->'
 				+ '<div id="switcher" class="hide hidden-xs">'
 				+ '	<div class="content-switcher">'
-				+ '		<h4>STYLE SWITCHER</h4>'
+				+ '		<h4>STYLE</h4>'
 /**
 				+ '		<ul class="list-unstyled">'
 				+ '			<li><a href="#" onclick="setActiveStyleSheet(\'green\'); return false;" title="green" class="color"><img src="/Content/User/assets/plugins/styleswitcher/color_schemes/6.png" alt="" width="30" height="30" /></a></li>'
@@ -76,7 +76,7 @@ jQuery(document).ready(function() {
 				+ '		<hr />'
 
 				+ '		<div class="text-center">'
-				+ '			<button onclick="resetSwitcher();" class="btn btn-primary btn-sm">Reset Styles</button>'
+				+ '			<button onclick="resetSwitcher();" class="btn btn-primary btn-sm">Görünümü Sýfýrla</button>'
 				+ '		</div>'
 
 				+ '		<div id="hideSwitcher">&times;</div>'
