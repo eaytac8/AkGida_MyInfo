@@ -79,7 +79,7 @@ namespace AkGida_MyInfo.Controllers
             switch (result)
             {
                 case SignInStatus.Success:
-                    //return View("/Views/Admin/Index");
+                    //return RedirectToAction("HomePage", "Admin");
                     return RedirectToLocal(returnUrl);
                 case SignInStatus.LockedOut:
                     return View("Lockout");

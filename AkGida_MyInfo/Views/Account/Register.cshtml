@@ -1,11 +1,11 @@
 ﻿@model AkGida_MyInfo.Models.RegisterViewModel
 @{
     ViewBag.Title = "Kaydol";
-    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+    Layout = "~/Views/Shared/_BlankAdmin.cshtml";
 }
 
-<h2>@ViewBag.Title.</h2>
-
+<h2 style="padding-top:50px" align="center">@ViewBag.Title</h2>
+<div align="center">
 @using (Html.BeginForm("Register", "Account", FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
 {
     @Html.AntiForgeryToken()
@@ -36,7 +36,7 @@
         </div>
     </div>
 }
-
+    </div>
 @section Scripts {
     @Scripts.Render("~/bundles/jqueryval")
 }

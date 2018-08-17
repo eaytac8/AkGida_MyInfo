@@ -9,12 +9,23 @@ using System.Web.Mvc;
 
 namespace AkGida_MyInfo.Controllers
 {
+    [Authorize]
     public class AdminController : Controller
     {
         // GET: Admin
+        //public ActionResult Index()
+        //{
+        //    return RedirectToAction("Login", "Account");
+        //    //return View();
+        //}
+
+        
         public ActionResult Index()
         {
+            //if(SignInStatus.Success)
+            //{
 
+            //}
             return View();
         }
 
