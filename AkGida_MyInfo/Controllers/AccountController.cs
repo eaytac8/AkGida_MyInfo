@@ -389,6 +389,7 @@ namespace AkGida_MyInfo.Controllers
         //
         // POST: /Account/LogOff
         [HttpPost]
+        [Authorize]
         [ValidateAntiForgeryToken]
         public ActionResult LogOff()
         {

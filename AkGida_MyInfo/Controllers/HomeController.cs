@@ -127,6 +127,20 @@ namespace AkGida_MyInfo.Controllers
             return View(yeniurun);
         }
 
+        public ActionResult Hakkimizda()
+        {
+            List<Hakkimizda> hakkimizda = new List<Hakkimizda>();
+            hakkimizda = db.Hakkimizda.OrderBy(h => h.HakkimizdaID).ToList();
+            return View(hakkimizda);
+        }
+
+        public ActionResult Iletisim()
+        {
+            List<Companies> iletisim = new List<Companies>();
+            iletisim = db.Companies.OrderBy(i => i.CompanyID).ToList();
+            return View(iletisim);
+        }
+
         public ActionResult Search(string searchString)
         {
             var personel = from p in db.Personels
@@ -142,17 +156,6 @@ namespace AkGida_MyInfo.Controllers
             }
 
             return View(personel);
-        }
-
-
-        public ActionResult About()
-        {
-            return View();
-        }
-
-        public ActionResult Contact()
-        {
-            return View();
         }
 
         public ActionResult Deneme()

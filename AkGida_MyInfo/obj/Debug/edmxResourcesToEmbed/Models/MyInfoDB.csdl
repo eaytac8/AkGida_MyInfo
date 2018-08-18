@@ -92,6 +92,7 @@
       <End Role="Companies" EntitySet="Companies" />
       <End Role="Servis" EntitySet="Servis" />
     </AssociationSet>
+    <EntitySet Name="Hakkimizda" EntityType="AkGida_MyInfoModel.Hakkimizda" />
   </EntityContainer>
   <EntityType Name="Role">
     <Key>
@@ -310,4 +311,12 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
+  <EntityType Name="Hakkimizda">
+    <Key>
+      <PropertyRef Name="HakkimizdaID" />
+    </Key>
+    <Property Name="HakkimizdaID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Icerik" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="ResimYolu" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+  </EntityType>
 </Schema>

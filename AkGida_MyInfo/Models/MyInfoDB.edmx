@@ -68,6 +68,14 @@
           <Property Name="BitisTarihi" Type="datetime" />
           <Property Name="ResimYolu" Type="nvarchar" MaxLength="250" />
         </EntityType>
+        <EntityType Name="Hakkimizda">
+          <Key>
+            <PropertyRef Name="HakkimizdaID" />
+          </Key>
+          <Property Name="HakkimizdaID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Icerik" Type="nvarchar(max)" />
+          <Property Name="ResimYolu" Type="nvarchar" MaxLength="250" />
+        </EntityType>
         <EntityType Name="Menu">
           <Key>
             <PropertyRef Name="MenuID" />
@@ -321,6 +329,7 @@ warning 6002: The table/view 'AkGida_MyInfo.dbo.UserRole' does not have a primar
           <EntitySet Name="Death" EntityType="Self.Death" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Departments" EntityType="Self.Departments" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Duyurular" EntityType="Self.Duyurular" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Hakkimizda" EntityType="Self.Hakkimizda" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Menu" EntityType="Self.Menu" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Personels" EntityType="Self.Personels" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Role" EntityType="Self.Role" Schema="dbo" store:Type="Tables" />
@@ -477,6 +486,7 @@ warning 6002: The table/view 'AkGida_MyInfo.dbo.UserRole' does not have a primar
             <End Role="Companies" EntitySet="Companies" />
             <End Role="Servis" EntitySet="Servis" />
           </AssociationSet>
+          <EntitySet Name="Hakkimizda" EntityType="AkGida_MyInfoModel.Hakkimizda" />
           </EntityContainer>
         <EntityType Name="Role">
           <Key>
@@ -695,6 +705,14 @@ warning 6002: The table/view 'AkGida_MyInfo.dbo.UserRole' does not have a primar
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <EntityType Name="Hakkimizda">
+          <Key>
+            <PropertyRef Name="HakkimizdaID" />
+          </Key>
+          <Property Name="HakkimizdaID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Icerik" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="ResimYolu" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+        </EntityType>
         </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -912,6 +930,15 @@ warning 6002: The table/view 'AkGida_MyInfo.dbo.UserRole' does not have a primar
                 <ScalarProperty Name="SoforAdi" ColumnName="SoforAdi" />
                 <ScalarProperty Name="CompanyID" ColumnName="CompanyID" />
                 <ScalarProperty Name="ServisID" ColumnName="ServisID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Hakkimizda">
+            <EntityTypeMapping TypeName="AkGida_MyInfoModel.Hakkimizda">
+              <MappingFragment StoreEntitySet="Hakkimizda">
+                <ScalarProperty Name="ResimYolu" ColumnName="ResimYolu" />
+                <ScalarProperty Name="Icerik" ColumnName="Icerik" />
+                <ScalarProperty Name="HakkimizdaID" ColumnName="HakkimizdaID" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

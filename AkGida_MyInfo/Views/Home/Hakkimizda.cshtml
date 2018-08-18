@@ -1,0 +1,26 @@
+﻿@using AkGida_MyInfo.Models
+@model IEnumerable<Hakkimizda>
+
+@{
+    ViewBag.Title = "Hakkimizda";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+@foreach (var item in Model)
+{
+    //var urunImageURL = item.ResimYolu.ToString();
+    for (int i = 0; i < 1; i++)
+    {
+        @*<img src = "@urunImageURL" alt = "Smiley face" height = "240" width = "320">*@
+        <div align="center" style="margin-bottom:15px;">
+            <img src="@item.ResimYolu.ToString()" alt="" />
+        </div>
+        <div style="text-align:justify; margin-left:60px; margin-right:60px">
+            <p>@item.Icerik</p>
+        </div>
+        
+    }
+}
+
+

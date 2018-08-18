@@ -97,13 +97,11 @@
                     <div class="thumbnail">
                         <div class="box-icon box-icon-center box-icon-transparent box-icon-large">
                             <a class="box-icon-title" href="@Url.Action("Departments", "Home", new { companyid = c_item.CompanyID })">
-                                @*<i class="fa fa-puzzle-piece"></i>*@
                                 <h2>@c_item.CompanyName</h2>
                             </a>
-                            <p class="text-muted">
-                                @*<b>@c_item.CompanyType</b> <br />*@
+                            <p @*class="text-muted"*@>
                                 @c_item.CompanyAddress<br />
-                                <b>Telefon:</b> @c_item.CompanyTel
+                                @c_item.CompanyTel
                             </p>
                         </div>
                     </div>

@@ -215,5 +215,14 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
+    <EntitySetMapping Name="Hakkimizda">
+      <EntityTypeMapping TypeName="AkGida_MyInfoModel.Hakkimizda">
+        <MappingFragment StoreEntitySet="Hakkimizda">
+          <ScalarProperty Name="ResimYolu" ColumnName="ResimYolu" />
+          <ScalarProperty Name="Icerik" ColumnName="Icerik" />
+          <ScalarProperty Name="HakkimizdaID" ColumnName="HakkimizdaID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
   </EntityContainerMapping>
 </Mapping>

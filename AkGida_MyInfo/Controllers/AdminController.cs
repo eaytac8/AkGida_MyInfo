@@ -9,7 +9,7 @@ using System.Web.Mvc;
 
 namespace AkGida_MyInfo.Controllers
 {
-    [Authorize]
+    
     public class AdminController : Controller
     {
         // GET: Admin
@@ -19,7 +19,7 @@ namespace AkGida_MyInfo.Controllers
         //    //return View();
         //}
 
-        
+        [Authorize]
         public ActionResult Index()
         {
             //if(SignInStatus.Success)

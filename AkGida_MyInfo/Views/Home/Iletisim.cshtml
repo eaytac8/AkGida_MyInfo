@@ -1,0 +1,22 @@
+﻿@using AkGida_MyInfo.Models
+@model IEnumerable<Companies>
+
+@{
+    ViewBag.Title = "İletisim";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<h3 align="center">İletişim</h3>
+<table class="ui-table" style="border:1px solid black" align="center">
+    <tbody>
+        @foreach (var item in Model)
+        {
+
+            <tr style="border:1px solid black;">
+                <td align="left" style="border:1px solid black; padding:10px 10px 10px 10px;">@item.CompanyName</td>
+                <td align="left" style="border:1px solid black; padding:10px 10px 10px 10px;">@item.CompanyAddress</td>
+                <td align="left" style="border:1px solid black; padding:10px 10px 10px 10px;">@item.CompanyTel</td>
+            </tr>
+
+        }
+    </tbody>
+</table>

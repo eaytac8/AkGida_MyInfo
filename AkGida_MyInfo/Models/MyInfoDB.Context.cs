@@ -12,14 +12,13 @@
 
 namespace AkGida_MyInfo.Models
 {
-    using AkGida_MyInfo.Admin;
-    using Microsoft.AspNet.Identity.EntityFramework;
-    using System;
+
+using System;
 using System.Data.Entity;
 using System.Data.Entity.Infrastructure;
 
 
-public partial class AkGida_MyInfoEntities : IdentityDbContext<AppUser>
+public partial class AkGida_MyInfoEntities : DbContext
 {
     public AkGida_MyInfoEntities()
         : base("name=AkGida_MyInfoEntities")
@@ -66,6 +65,8 @@ public partial class AkGida_MyInfoEntities : IdentityDbContext<AppUser>
     public virtual DbSet<Weddings> Weddings { get; set; }
 
     public virtual DbSet<Servis> Servis { get; set; }
+
+    public virtual DbSet<Hakkimizda> Hakkimizda { get; set; }
 
 }
 

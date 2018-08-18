@@ -1,5 +1,3 @@
-C:\Users\elif.aytac\Downloads\AkGida_MyInfo-master (2)\AkGida_MyInfo-master\AkGida_MyInfo\obj\Debug\AkGida_MyInfo.csprojAssemblyReference.cache
-C:\Users\elif.aytac\Downloads\AkGida_MyInfo-master (2)\AkGida_MyInfo-master\AkGida_MyInfo\obj\Debug\AkGida_MyInfo.csproj.CoreCompileInputs.cache
 C:\Users\elif.aytac\Downloads\AkGida_MyInfo-master (2)\AkGida_MyInfo-master\AkGida_MyInfo\bin\ApplicationInsights.config
 C:\Users\elif.aytac\Downloads\AkGida_MyInfo-master (2)\AkGida_MyInfo-master\AkGida_MyInfo\bin\roslyn\csc.exe
 C:\Users\elif.aytac\Downloads\AkGida_MyInfo-master (2)\AkGida_MyInfo-master\AkGida_MyInfo\bin\roslyn\csc.exe.config
@@ -49,6 +47,7 @@ C:\Users\elif.aytac\Downloads\AkGida_MyInfo-master (2)\AkGida_MyInfo-master\AkGi
 C:\Users\elif.aytac\Downloads\AkGida_MyInfo-master (2)\AkGida_MyInfo-master\AkGida_MyInfo\bin\Microsoft.Owin.Host.SystemWeb.dll
 C:\Users\elif.aytac\Downloads\AkGida_MyInfo-master (2)\AkGida_MyInfo-master\AkGida_MyInfo\bin\Microsoft.Owin.Security.Cookies.dll
 C:\Users\elif.aytac\Downloads\AkGida_MyInfo-master (2)\AkGida_MyInfo-master\AkGida_MyInfo\bin\Microsoft.Owin.Security.dll
+C:\Users\elif.aytac\Downloads\AkGida_MyInfo-master (2)\AkGida_MyInfo-master\AkGida_MyInfo\bin\Microsoft.Owin.Security.Google.dll
 C:\Users\elif.aytac\Downloads\AkGida_MyInfo-master (2)\AkGida_MyInfo-master\AkGida_MyInfo\bin\Microsoft.Owin.Security.OAuth.dll
 C:\Users\elif.aytac\Downloads\AkGida_MyInfo-master (2)\AkGida_MyInfo-master\AkGida_MyInfo\bin\Microsoft.Web.Helpers.dll
 C:\Users\elif.aytac\Downloads\AkGida_MyInfo-master (2)\AkGida_MyInfo-master\AkGida_MyInfo\bin\Microsoft.Web.Infrastructure.dll
@@ -77,9 +76,11 @@ C:\Users\elif.aytac\Downloads\AkGida_MyInfo-master (2)\AkGida_MyInfo-master\AkGi
 C:\Users\elif.aytac\Downloads\AkGida_MyInfo-master (2)\AkGida_MyInfo-master\AkGida_MyInfo\bin\Microsoft.Owin.Host.SystemWeb.xml
 C:\Users\elif.aytac\Downloads\AkGida_MyInfo-master (2)\AkGida_MyInfo-master\AkGida_MyInfo\bin\Microsoft.Owin.Security.xml
 C:\Users\elif.aytac\Downloads\AkGida_MyInfo-master (2)\AkGida_MyInfo-master\AkGida_MyInfo\bin\Microsoft.Owin.Security.Cookies.xml
+C:\Users\elif.aytac\Downloads\AkGida_MyInfo-master (2)\AkGida_MyInfo-master\AkGida_MyInfo\bin\Microsoft.Owin.Security.Google.xml
 C:\Users\elif.aytac\Downloads\AkGida_MyInfo-master (2)\AkGida_MyInfo-master\AkGida_MyInfo\bin\Microsoft.Owin.Security.OAuth.xml
 C:\Users\elif.aytac\Downloads\AkGida_MyInfo-master (2)\AkGida_MyInfo-master\AkGida_MyInfo\bin\MySql.Data.xml
 C:\Users\elif.aytac\Downloads\AkGida_MyInfo-master (2)\AkGida_MyInfo-master\AkGida_MyInfo\bin\MySql.Data.Entity.EF6.xml
+C:\Users\elif.aytac\Downloads\AkGida_MyInfo-master (2)\AkGida_MyInfo-master\AkGida_MyInfo\bin\Newtonsoft.Json.xml
 C:\Users\elif.aytac\Downloads\AkGida_MyInfo-master (2)\AkGida_MyInfo-master\AkGida_MyInfo\bin\System.Web.Helpers.xml
 C:\Users\elif.aytac\Downloads\AkGida_MyInfo-master (2)\AkGida_MyInfo-master\AkGida_MyInfo\bin\System.Web.Mvc.xml
 C:\Users\elif.aytac\Downloads\AkGida_MyInfo-master (2)\AkGida_MyInfo-master\AkGida_MyInfo\bin\System.Web.Razor.xml
@@ -90,7 +91,6 @@ C:\Users\elif.aytac\Downloads\AkGida_MyInfo-master (2)\AkGida_MyInfo-master\AkGi
 C:\Users\elif.aytac\Downloads\AkGida_MyInfo-master (2)\AkGida_MyInfo-master\AkGida_MyInfo\bin\Antlr3.Runtime.pdb
 C:\Users\elif.aytac\Downloads\AkGida_MyInfo-master (2)\AkGida_MyInfo-master\AkGida_MyInfo\bin\WebMatrix.Data.xml
 C:\Users\elif.aytac\Downloads\AkGida_MyInfo-master (2)\AkGida_MyInfo-master\AkGida_MyInfo\bin\WebMatrix.WebData.xml
-C:\Users\elif.aytac\Downloads\AkGida_MyInfo-master (2)\AkGida_MyInfo-master\AkGida_MyInfo\bin\Newtonsoft.Json.xml
 C:\Users\elif.aytac\Downloads\AkGida_MyInfo-master (2)\AkGida_MyInfo-master\AkGida_MyInfo\bin\Microsoft.ApplicationInsights.xml
 C:\Users\elif.aytac\Downloads\AkGida_MyInfo-master (2)\AkGida_MyInfo-master\AkGida_MyInfo\bin\Microsoft.AI.DependencyCollector.xml
 C:\Users\elif.aytac\Downloads\AkGida_MyInfo-master (2)\AkGida_MyInfo-master\AkGida_MyInfo\bin\Microsoft.AI.ServerTelemetryChannel.xml
@@ -103,8 +103,8 @@ C:\Users\elif.aytac\Downloads\AkGida_MyInfo-master (2)\AkGida_MyInfo-master\AkGi
 C:\Users\elif.aytac\Downloads\AkGida_MyInfo-master (2)\AkGida_MyInfo-master\AkGida_MyInfo\bin\tr\System.Web.WebPages.Deployment.resources.dll
 C:\Users\elif.aytac\Downloads\AkGida_MyInfo-master (2)\AkGida_MyInfo-master\AkGida_MyInfo\bin\tr\System.Web.WebPages.Razor.resources.dll
 C:\Users\elif.aytac\Downloads\AkGida_MyInfo-master (2)\AkGida_MyInfo-master\AkGida_MyInfo\bin\tr\System.Web.Optimization.resources.dll
+C:\Users\elif.aytac\Downloads\AkGida_MyInfo-master (2)\AkGida_MyInfo-master\AkGida_MyInfo\obj\Debug\AkGida_MyInfo.csproj.CoreCompileInputs.cache
 C:\Users\elif.aytac\Downloads\AkGida_MyInfo-master (2)\AkGida_MyInfo-master\AkGida_MyInfo\obj\Debug\AkGida_MyInfo.csproj.CopyComplete
 C:\Users\elif.aytac\Downloads\AkGida_MyInfo-master (2)\AkGida_MyInfo-master\AkGida_MyInfo\obj\Debug\AkGida_MyInfo.dll
 C:\Users\elif.aytac\Downloads\AkGida_MyInfo-master (2)\AkGida_MyInfo-master\AkGida_MyInfo\obj\Debug\AkGida_MyInfo.pdb
-C:\Users\elif.aytac\Downloads\AkGida_MyInfo-master (2)\AkGida_MyInfo-master\AkGida_MyInfo\bin\Microsoft.Owin.Security.Google.dll
-C:\Users\elif.aytac\Downloads\AkGida_MyInfo-master (2)\AkGida_MyInfo-master\AkGida_MyInfo\bin\Microsoft.Owin.Security.Google.xml
+C:\Users\elif.aytac\Downloads\AkGida_MyInfo-master (2)\AkGida_MyInfo-master\AkGida_MyInfo\obj\Debug\AkGida_MyInfo.csprojAssemblyReference.cache

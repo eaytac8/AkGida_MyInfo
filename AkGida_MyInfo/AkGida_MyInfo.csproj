@@ -217,6 +217,7 @@
     <Compile Include="Controllers\DepartmentYonetimController.cs" />
     <Compile Include="Controllers\DuyuruYonetimController.cs" />
     <Compile Include="Controllers\GenelDuyuruYonetimController.cs" />
+    <Compile Include="Controllers\HakkimizdaYonetimController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Controllers\MenuYonetimController.cs" />
@@ -245,6 +246,9 @@
       <DependentUpon>MyInfoDB.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\Duyurular.cs">
+      <DependentUpon>MyInfoDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Hakkimizda.cs">
       <DependentUpon>MyInfoDB.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\IdentityModels.cs" />
@@ -6919,7 +6923,6 @@
     <Content Include="Views\_ViewStart.cshtml" />
     <Content Include="Views\Shared\Error.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
-    <Content Include="Views\Home\Contact.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Home\Departments.cshtml" />
     <Content Include="Views\Shared\PersonelPartialView.cshtml" />
@@ -7028,7 +7031,6 @@
     <Content Include="Views\YeniUrunYonetim\Delete.cshtml" />
     <Content Include="Views\YeniUrunYonetim\Edit.cshtml" />
     <Content Include="Views\YeniUrunYonetim\Index.cshtml" />
-    <Content Include="Views\Home\About.cshtml" />
     <Content Include="Views\Home\Search.cshtml" />
     <Content Include="Views\Home\YeniUrun.cshtml" />
     <Content Include="Views\Account\ConfirmEmail.cshtml" />
@@ -7053,6 +7055,12 @@
     <Content Include="Views\Shared\_BlankAdmin.cshtml" />
     <Content Include="Views\Admin\Login.cshtml" />
     <Content Include="Views\Shared\Lockout.cshtml" />
+    <Content Include="Views\HakkimizdaYonetim\Create.cshtml" />
+    <Content Include="Views\HakkimizdaYonetim\Delete.cshtml" />
+    <Content Include="Views\HakkimizdaYonetim\Edit.cshtml" />
+    <Content Include="Views\HakkimizdaYonetim\Index.cshtml" />
+    <Content Include="Views\Home\Hakkimizda.cshtml" />
+    <Content Include="Views\Home\Iletisim.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

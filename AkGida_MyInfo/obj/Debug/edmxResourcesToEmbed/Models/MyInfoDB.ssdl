@@ -63,6 +63,14 @@
     <Property Name="BitisTarihi" Type="datetime" />
     <Property Name="ResimYolu" Type="nvarchar" MaxLength="250" />
   </EntityType>
+  <EntityType Name="Hakkimizda">
+    <Key>
+      <PropertyRef Name="HakkimizdaID" />
+    </Key>
+    <Property Name="HakkimizdaID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Icerik" Type="nvarchar(max)" />
+    <Property Name="ResimYolu" Type="nvarchar" MaxLength="250" />
+  </EntityType>
   <EntityType Name="Menu">
     <Key>
       <PropertyRef Name="MenuID" />
@@ -316,6 +324,7 @@ warning 6002: The table/view 'AkGida_MyInfo.dbo.UserRole' does not have a primar
     <EntitySet Name="Death" EntityType="Self.Death" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Departments" EntityType="Self.Departments" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Duyurular" EntityType="Self.Duyurular" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Hakkimizda" EntityType="Self.Hakkimizda" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Menu" EntityType="Self.Menu" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Personels" EntityType="Self.Personels" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Role" EntityType="Self.Role" Schema="dbo" store:Type="Tables" />
