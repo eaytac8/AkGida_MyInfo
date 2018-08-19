@@ -224,5 +224,14 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
+    <EntitySetMapping Name="Yayinlar">
+      <EntityTypeMapping TypeName="AkGida_MyInfoModel.Yayinlar">
+        <MappingFragment StoreEntitySet="Yayinlar">
+          <ScalarProperty Name="YayinURL" ColumnName="YayinURL" />
+          <ScalarProperty Name="YayinBaslik" ColumnName="YayinBaslik" />
+          <ScalarProperty Name="YayinID" ColumnName="YayinID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
   </EntityContainerMapping>
 </Mapping>

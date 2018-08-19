@@ -127,6 +127,13 @@ namespace AkGida_MyInfo.Controllers
             return View(yeniurun);
         }
 
+        public PartialViewResult YayinlarPartial()
+        {
+            List<Yayinlar> yayinlar = new List<Yayinlar>();
+            yayinlar = db.Yayinlar.OrderBy(i => i.YayinID).ToList();
+            return PartialView(yayinlar);
+        }
+
         public ActionResult Hakkimizda()
         {
             List<Hakkimizda> hakkimizda = new List<Hakkimizda>();

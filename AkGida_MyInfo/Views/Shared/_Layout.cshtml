@@ -171,7 +171,7 @@
                                 </li> <!-- İLETİŞİM -->
 
                                 <li class="nav-item">
-                                    <a class="nav-link" href="https://www.kariyer.net/firma-profil/ak-gida-lactalis-turkiye-99863-45823" target="_blank">KARİYER FIRSATLARI<span class="sr-only">(current)</span></a>
+                                    <a class="nav-link" href="https://www.kariyer.net/firma-profil/ak-gida-lactalis-turkiye-99863-45823" target="_blank">KARİYER<span class="sr-only">(current)</span></a>
                                 </li> <!-- KARİYER FIRSATLARI -->
 
 
@@ -235,11 +235,19 @@
                                 </li>
 
                                 <li class="nav-item">
-                                    <a class="nav-link" href="/Home/YeniUrun" @*data-plugin-options='{"type":"iframe"}'*@>YENİ ÜRÜNLERİMİZ<span class="sr-only">(current)</span></a>
-                                    @*<a class="nav-link" href="/Home/YeniUrunPartial" target="_blank" data-plugin-options='{"type":"iframe"}'>YENİ ÜRÜNLERİMİZ<span class="sr-only">(current)</span></a>*@
-                                    @*@{ Html.RenderAction("BabyPartial", "Home");}*@
+                                    <a class="nav-link" href="/Home/YeniUrun">YENİ ÜRÜNLERİMİZ<span class="sr-only">(current)</span></a>
                                 </li> <!-- Yeni Ürünlerimiz -->
 
+                                <li class="dropdown active"><!-- Yayınlarımız -->
+                                    <a class="dropdown-toggle" href="#">
+                                        YAYINLARIMIZ
+                                    </a>
+										<ul class="dropdown-menu has-topBar">
+											<li>
+                                                @{ Html.RenderAction("YayinlarPartial", "Home");}
+											</li>
+										</ul>
+                                </li>
                             </ul>
                         </nav>
                     </div>

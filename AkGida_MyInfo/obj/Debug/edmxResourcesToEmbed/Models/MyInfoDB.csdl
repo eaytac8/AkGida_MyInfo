@@ -93,6 +93,7 @@
       <End Role="Servis" EntitySet="Servis" />
     </AssociationSet>
     <EntitySet Name="Hakkimizda" EntityType="AkGida_MyInfoModel.Hakkimizda" />
+    <EntitySet Name="Yayinlar" EntityType="AkGida_MyInfoModel.Yayinlar" />
   </EntityContainer>
   <EntityType Name="Role">
     <Key>
@@ -318,5 +319,13 @@
     <Property Name="HakkimizdaID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
     <Property Name="Icerik" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
     <Property Name="ResimYolu" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="Yayinlar">
+    <Key>
+      <PropertyRef Name="YayinID" />
+    </Key>
+    <Property Name="YayinID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="YayinBaslik" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+    <Property Name="YayinURL" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
   </EntityType>
 </Schema>

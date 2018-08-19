@@ -29,6 +29,7 @@ namespace AkGida_MyInfo.Controllers
         public DbSet<Weddings> Weddings { get; set; }
         public DbSet<YeniUrun> YeniUrun { get; set; }
         public DbSet<Hakkimizda> Hakkimizda { get; set; }
+        public DbSet<Yayinlar> Yayinlar { get; set; }
         
 
     }

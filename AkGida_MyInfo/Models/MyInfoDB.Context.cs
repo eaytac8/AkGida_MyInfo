@@ -68,6 +68,8 @@ public partial class AkGida_MyInfoEntities : DbContext
 
     public virtual DbSet<Hakkimizda> Hakkimizda { get; set; }
 
+    public virtual DbSet<Yayinlar> Yayinlar { get; set; }
+
 }
 
 }

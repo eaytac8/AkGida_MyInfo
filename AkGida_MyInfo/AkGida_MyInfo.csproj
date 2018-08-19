@@ -225,6 +225,7 @@
     <Compile Include="Controllers\ServisYonetimController.cs" />
     <Compile Include="Controllers\ThanksYonetimController.cs" />
     <Compile Include="Controllers\WeddingsYonetimController.cs" />
+    <Compile Include="Controllers\YayinlarYonetimController.cs" />
     <Compile Include="Controllers\YeniUrunYonetimController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -293,6 +294,9 @@
       <DependentUpon>MyInfoDB.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\Weddings.cs">
+      <DependentUpon>MyInfoDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Yayinlar.cs">
       <DependentUpon>MyInfoDB.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\YeniUrun.cs">
@@ -7061,6 +7065,11 @@
     <Content Include="Views\HakkimizdaYonetim\Index.cshtml" />
     <Content Include="Views\Home\Hakkimizda.cshtml" />
     <Content Include="Views\Home\Iletisim.cshtml" />
+    <Content Include="Views\YayinlarYonetim\Create.cshtml" />
+    <Content Include="Views\YayinlarYonetim\Delete.cshtml" />
+    <Content Include="Views\YayinlarYonetim\Edit.cshtml" />
+    <Content Include="Views\YayinlarYonetim\Index.cshtml" />
+    <Content Include="Views\Home\YayinlarPartial.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -7074,6 +7083,7 @@
     <Folder Include="Content\User\assets\images\plugins\jquery-file-upload\server\node\tmp\" />
     <Folder Include="Content\User\assets\images\plugins\jquery-file-upload\server\php\files\thumbnail\" />
     <Folder Include="Content\User\php\_upload\" />
+    <Folder Include="Documents\" />
     <Folder Include="Images\" />
     <Folder Include="Video\" />
   </ItemGroup>

@@ -191,6 +191,14 @@ warning 6002: The table/view 'AkGida_MyInfo.dbo.UserRole' does not have a primar
     <Property Name="StartDate" Type="date" />
     <Property Name="EndDate" Type="date" />
   </EntityType>
+  <EntityType Name="Yayinlar">
+    <Key>
+      <PropertyRef Name="YayinID" />
+    </Key>
+    <Property Name="YayinID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="YayinBaslik" Type="nvarchar" MaxLength="150" />
+    <Property Name="YayinURL" Type="nvarchar" MaxLength="250" />
+  </EntityType>
   <EntityType Name="YeniUrun">
     <Key>
       <PropertyRef Name="UrunID" />
@@ -334,6 +342,7 @@ warning 6002: The table/view 'AkGida_MyInfo.dbo.UserRole' does not have a primar
     <EntitySet Name="Thanks" EntityType="Self.Thanks" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Users" EntityType="Self.Users" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Weddings" EntityType="Self.Weddings" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Yayinlar" EntityType="Self.Yayinlar" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="YeniUrun" EntityType="Self.YeniUrun" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Yetkiler" EntityType="Self.Yetkiler" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="RoleYetki" EntityType="Self.RoleYetki" store:Type="Tables" store:Schema="dbo">
