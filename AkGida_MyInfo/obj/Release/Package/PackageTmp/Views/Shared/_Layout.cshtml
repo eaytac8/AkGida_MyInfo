@@ -1,0 +1,352 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Ak Gıda - My Info</title>
+    <link rel="shortcut icon" href="\Assets\favicon.ico" />
+    <meta name="keywords" content="HTML5,CSS3,Template" />
+    <meta name="description" content="" />
+    <meta name="Author" content="Dorin Grigoras [www.stepofweb.com]" />
+
+    <!-- mobile settings -->
+    <meta name="viewport" content="width=device-width, maximum-scale=1, initial-scale=1, user-scalable=0" />
+    <!--[if IE]><meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'><![endif]-->
+    <!-- WEB FONTS : use %7C instead of | (pipe) -->
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400%7CRaleway:300,400,500,600,700%7CLato:300,400,400italic,600,700" rel="stylesheet" type="text/css" />
+
+    <!-- CORE CSS -->
+    <link href="~/Content/User/assets/plugins/bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+
+
+    <!-- THEME CSS -->
+    <link href="~/Content/User/assets/css/essentials.css" rel="stylesheet" type="text/css" />
+    <link href="~/Content/User/assets/css/layout.css" rel="stylesheet" type="text/css" />
+    <link href="~/Content/User/assets/css/color_scheme/blue.css" rel="stylesheet" type="text/css" id="color_scheme" />
+
+    <!-- PAGE LEVEL SCRIPTS -->
+    <link href="~/Content/User/assets/css/header-1.css" rel="stylesheet" type="text/css" />
+    <link href="~/Content/User/assets/css/color_scheme/blue.css" rel="stylesheet" type="text/css" id="color_scheme" />
+
+    <!-- REVOLUTION SLIDER -->
+    <link href="~/Content/User/assets/plugins/slider.revolution/css/extralayers.css" rel="stylesheet" type="text/css" />
+    <link href="~/Content/User/assets/plugins/slider.revolution/css/settings.css" rel="stylesheet" type="text/css" />
+
+    @*<style>
+            .bodyBackground {
+                background-image: url("/Content/User/assets/images/background.jpg");
+                background-size: cover;
+            }
+        </style>*@
+
+
+</head>
+<!--
+    AVAILABLE BODY CLASSES:
+
+    smoothscroll 			= create a browser smooth scroll
+    enable-animation		= enable WOW animations
+
+    bg-grey					= grey background
+    grain-grey				= grey grain background
+    grain-blue				= blue grain background
+    grain-green				= green grain background
+    grain-blue				= blue grain background
+    grain-orange			= orange grain background
+    grain-yellow			= yellow grain background
+
+    boxed 					= boxed layout
+    pattern1 ... patern11	= pattern background
+    menu-vertical-hide		= hidden, open on click
+
+    BACKGROUND IMAGE [together with .boxed class]
+    data-background="~/Content/User/assets/images/boxed_background/1.jpg"
+-->
+<body class="smoothscroll enable-animation">
+
+@*<body class="bodyBackground">*@
+
+    <!-- wrapper -->
+    <div id="wrapper">
+
+        <!--
+            AVAILABLE HEADER CLASSES
+
+            Default nav height: 96px
+            .header-md 		= 70px nav height
+            .header-sm 		= 60px nav height
+
+            .noborder 		= remove bottom border (only with transparent use)
+            .transparent	= transparent header
+            .translucent	= translucent header
+            .sticky			= sticky header
+            .static			= static header
+            .dark			= dark header
+            .bottom			= header on bottom
+
+            shadow-before-1 = shadow 1 header top
+            shadow-after-1 	= shadow 1 header bottom
+            shadow-before-2 = shadow 2 header top
+            shadow-after-2 	= shadow 2 header bottom
+            shadow-before-3 = shadow 3 header top
+            shadow-after-3 	= shadow 3 header bottom
+
+            .clearfix		= required for mobile menu, do not remove!
+
+            Example Usage:  class="clearfix sticky header-sm transparent noborder"
+        -->
+        <div id="header" class="sticky clearfix">
+
+            <!-- TOP NAV -->
+            <header id="topNav">
+                <div class="container">
+
+                    <!-- Mobile Menu Button -->
+                    <button class="btn btn-mobile" data-toggle="collapse" data-target=".nav-main-collapse">
+                        <i class="fa fa-bars"></i>
+                    </button>
+
+                    <!-- BUTTONS -->
+                    <ul class="pull-right nav nav-pills nav-second-main">
+
+                        <!-- SEARCH -->
+                        <li class="search">
+                            <a href="javascript:;">
+                                <i class="fa fa-search"></i>
+                            </a>
+                            <div class="search-box">
+                                <form action="/Home/Search" method="get">
+                                    <div class="input-group">
+                                        <input type="text" name="searchString" placeholder="Personel Ara" class="form-control" />
+                                        <span class="input-group-btn">
+                                            <button class="btn btn-primary" type="submit">Ara</button>
+                                        </span>
+                                    </div>
+                                </form>
+                            </div>
+                        </li>
+                        <!-- /SEARCH -->
+
+
+                        <!-- /Social Icons -->
+                        <li>
+                            <div class="pull-right social-icon-sm">
+                                <a target="_blank" href="https://www.facebook.com/akgidakariyer/" rel="nofollow"><i class="fa fa-facebook-square" style="color:#3B5998"></i></a>
+                                <a target="_blank" href="https://www.instagram.com/akgidakariyer/?hl=tr" rel="nofollow"><i class="fa fa-instagram" style="color:#855443"></i></a>
+                                <a target="_blank" href="https://tr.linkedin.com/company/akgida" rel="nofollow"><i class="fa fa-linkedin-square" style="color:#1884BB"></i></a>
+                                <a target="_blank" href="https://twitter.com/AkGidaKariyer" rel="nofollow"><i class="fa fa-twitter-square" style="color:#1DA1F2"></i></a>
+                            </div>
+                        </li>
+                    </ul>
+                     <!-- /Social Icons -->
+
+                    <!-- /BUTTONS -->
+
+
+                    <!-- Logo -->
+                    <a class="logo pull-left" href="/Home/Index">
+                        <img src="~/Content/User/assets/images/ak_gida_logo.png" alt="" width="165" height="80" />
+                    </a>
+
+                    <!--
+                        Top Nav
+
+                        AVAILABLE CLASSES:
+                        submenu-dark = dark sub menu
+                    -->
+                    <div class="navbar-collapse pull-right nav-main-collapse collapse">
+                        <nav class="nav-main">
+                            <ul id="topMain" class="nav nav-pills nav-main">
+
+                                <li class="nav-item ">
+                                    <a class="nav-link" href="/Home/Index">ANA SAYFA<span class="sr-only">(current)</span></a>
+                                </li>  <!-- ANA SAYFA -->
+
+                                <li class="nav-item">
+                                    <a class="nav-link" href="/Home/Hakkimizda">HAKKIMIZDA<span class="sr-only">(current)</span></a>
+                                </li> <!-- HAKKIMIZDA -->
+
+                                <li class="nav-item">
+                                    <a class="nav-link" href="/Home/Iletisim">İLETİŞİM<span class="sr-only">(current)</span></a>
+                                </li> <!-- İLETİŞİM -->
+
+                                <li class="nav-item">
+                                    <a class="nav-link" href="https://www.kariyer.net/firma-profil/ak-gida-lactalis-turkiye-99863-45823" target="_blank">KARİYER<span class="sr-only">(current)</span></a>
+                                </li> <!-- KARİYER FIRSATLARI -->
+
+
+                                <li class="dropdown mega-menu">
+                                    <!-- DİLEKLER -->
+                                    <a class="dropdown-toggle" href="#">
+                                        DİLEKLER
+                                    </a>
+                                    <ul class="dropdown-menu">
+                                        <li>
+                                            <div class="row">
+
+                                                <div class="col-md-4th">
+                                                    <ul class="list-unstyled">
+                                                        <li><span>MUTLU YILLAR</span></li>
+                                                        @{ Html.RenderAction("Birthday", "Home");}
+                                                    </ul>
+                                                </div>
+
+                                                <div class="col-md-4th">
+                                                    <ul class="list-unstyled">
+                                                        <li><span>HOŞGELDİN BEBEK</span></li>
+                                                        @{ Html.RenderAction("BabyPartial", "Home");}
+
+                                                    </ul>
+                                                </div>
+
+                                                <div class="col-md-4th">
+                                                    <ul class="list-unstyled">
+                                                        <li><span>BAŞINIZ SAĞOLSUN</span></li>
+                                                        @{ Html.RenderAction("DeathPartial", "Home");}
+                                                    </ul>
+                                                </div>
+
+                                                <div class="col-md-4th">
+                                                    <ul class="list-unstyled">
+                                                        <li><span>HAYIRLI OLSUN</span></li>
+                                                        @{ Html.RenderAction("CongratsPartial", "Home");}
+
+                                                    </ul>
+                                                </div>
+
+                                                <div class="col-md-4th">
+                                                    <ul class="list-unstyled">
+                                                        <li><span>TEŞEKKÜRLER</span></li>
+                                                        @{ Html.RenderAction("ThanksPartial", "Home");}
+
+                                                    </ul>
+                                                </div>
+
+                                                <div class="col-md-4th">
+                                                    <ul class="list-unstyled">
+                                                        <li><span>DÜĞÜN DAVETİYESİ</span></li>
+                                                        @{ Html.RenderAction("WeddingsPartial", "Home");}
+                                                    </ul>
+                                                </div>
+
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </li>
+
+                                <li class="nav-item">
+                                    <a class="nav-link" href="/Home/YeniUrun">YENİ ÜRÜNLERİMİZ<span class="sr-only">(current)</span></a>
+                                </li> <!-- Yeni Ürünlerimiz -->
+
+                                <li class="dropdown active"><!-- Yayınlarımız -->
+                                    <a class="dropdown-toggle" href="#">
+                                        YAYINLARIMIZ
+                                    </a>
+										<ul class="dropdown-menu has-topBar">
+											<li>
+                                                @{ Html.RenderAction("YayinlarPartial", "Home");}
+											</li>
+										</ul>
+                                </li>
+                            </ul>
+                        </nav>
+                    </div>
+
+                </div>
+            </header>
+            <!-- /Top Nav -->
+        </div>
+
+
+        @RenderBody()
+
+
+        <!-- FOOTER -->
+        <footer id="footer">
+            <div class="container">
+
+                @*<div class="row">*@
+
+                    <!-- Footer Logo -->
+                    <div class="col-md-4">
+                        <img class="footer-logo" src="~/Content/User/assets/images/footer_logo.png" alt="" width="150" height="60" />
+                    </div>
+
+                    <!-- Links -->
+                    <div class="col-md-4" align="center">
+                        <ul class=" list-unstyled" style="list-style:none outside none; position:relative; margin:0px;">
+                            <br />
+                            <li style="display:inline"><a href="/Home/Index">Ana Sayfa</a></li>
+                            <li style="display:inline">&bull;</li>
+                            <li style="display:inline"><a href="/Home/About">Hakkımızda</a></li>
+                            <li style="display:inline">&bull;</li>
+                            <li style="display:inline"><a href="/Home/Contact">İletişim</a></li>
+                        </ul>
+                    </div><!-- /Links -->
+
+                    <!-- Social Icons -->
+                    <div class="col-md-4">
+                        <div class="pull-right">
+                            <a target="_blank" href="https://www.facebook.com/akgidakariyer/" class="social-icon social-icon-border social-facebook pull-left" data-toggle="tooltip" data-placement="top" title="Facebook">
+                                <i class="icon-facebook"></i>
+                            </a>
+
+                            <a target="_blank" href="https://www.instagram.com/akgidakariyer/?hl=tr" class="social-icon social-icon-border social-instagram pull-left" data-toggle="tooltip" data-placement="top" title="Google plus">
+                                <i class="icon-instagram2"></i>
+                            </a>
+
+                            <a target="_blank" href="https://tr.linkedin.com/company/akgida" class="social-icon social-icon-border social-linkedin pull-left" data-toggle="tooltip" data-placement="top" title="Linkedin">
+                                <i class="icon-linkedin"></i>
+                            </a>
+
+                            <a target="_blank" href="https://twitter.com/AkGidaKariyer" class="social-icon social-icon-border social-twitter pull-left" data-toggle="tooltip" data-placement="top" title="Twitter">
+                                <i class="icon-twitter"></i>
+                            </a>
+
+                        </div>
+                    </div> <!-- /Social Icons -->
+
+                @*</div>*@
+            </div>
+
+            <div class="copyright">
+                <div class="container">
+                    <ul class="pull-right nomargin list-inline mobile-block">
+                        <li><a href="#">Terms &amp; Conditions</a></li>
+                        <li>&bull;</li>
+                        <li><a href="#">Privacy</a></li>
+                    </ul>
+                    &copy; Her Hakkı Saklıdır, AK GIDA SAN. TİC. A.Ş.
+                </div>
+            </div>
+        </footer>
+        <!-- /FOOTER -->
+
+    </div>
+    <!-- /wrapper -->
+    <!-- SCROLL TO TOP -->
+    <a href="#" id="toTop"></a>
+
+
+    <!-- PRELOADER -->
+    <div id="preloader">
+        <div class="inner">
+            <span class="loader"></span>
+        </div>
+    </div><!-- /PRELOADER -->
+    <!-- JAVASCRIPT FILES -->
+    <script type="text/javascript">var plugin_path = '/Content/User/assets/plugins/';</script>
+    <script type="text/javascript" src="~/Content/User/assets/plugins/jquery/jquery-2.1.4.min.js"></script>
+
+    <script type="text/javascript" src="~/Content/User/assets/js/scripts.js"></script>
+
+    <!-- STYLESWITCHER - REMOVE -->
+    <script async type="text/javascript" src="~/Content/User/assets/plugins/styleswitcher/styleswitcher.js"></script>
+
+
+    <!-- REVOLUTION SLIDER -->
+    <script type="text/javascript" src="~/Content/User/assets/plugins/slider.revolution/js/jquery.themepunch.tools.min.js"></script>
+    <script type="text/javascript" src="~/Content/User/assets/plugins/slider.revolution/js/jquery.themepunch.revolution.min.js"></script>
+    <script type="text/javascript" src="~/Content/User/assets/js/view/demo.revolution_slider.js"></script>
+</body>
+</html>

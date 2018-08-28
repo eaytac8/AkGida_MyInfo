@@ -1,0 +1,45 @@
+﻿@model IEnumerable<AkGida_MyInfo.Models.Slider>
+
+@{
+    ViewBag.Title = "Genel Duyuru Listesi";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<p>
+    @*@Html.ActionLink("Create New", "Create")*@
+    <a href="/GenelDuyuruYonetim/Create" button type="button" class="btn btn-primary">Duyuru Ekle</a>
+</p>
+
+<div class="table-responsive">
+    <table class="table table-bordered nomargin">
+        <thead>
+            <tr>
+                @*<th>Resim</th>*@
+                <th>Başlık</th>
+                <th>İçerik</th>
+                <th>Başlangıç Tarihi</th>
+                <th>Bitiş Tarihi</th>
+                <th>Resim Yolu</th>
+                <th>İşlemler</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    @*<td>@item.SliderFoto</td>*@
+                    <td>@item.SliderBaslik</td>
+                    <td>@item.SliderText</td>
+                    <td>@item.BaslangicTarihi</td>
+                    <td>@item.BitisTarihi</td>
+                    <td>@item.ResimYolu</td>
+                    <td>
+                        <a href="/GenelDuyuruYonetim/Edit/@item.SliderID" class="btn btn-info btn-xs"><i class="fa fa-edit white"></i> Düzenle </a>
+                        <a href="/GenelDuyuruYonetim/Delete/@item.SliderID" class="btn btn-danger btn-xs"><i class="fa fa-times white"></i> Sil </a>
+                    </td>
+                </tr>
+            }
+
+        </tbody>
+    </table>
+</div>

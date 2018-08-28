@@ -1,0 +1,96 @@
+﻿@model AkGida_MyInfo.Models.Menu
+
+@{
+    ViewBag.Title = "Menüyü Sil";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+
+<h3>Bu menüyü silmek istediğinize emin misiniz?</h3>
+<div>
+    
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Tarih)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Tarih)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Corba)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Corba)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.AnaYemek)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.AnaYemek)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Diyet)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Diyet)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PilavMakarna)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PilavMakarna)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Tatli)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Tatli)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Meyve)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Meyve)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Salata)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Salata)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Companies.CompanyName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Companies.CompanyName)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Sil" class="btn btn-success" /> |
+            @Html.ActionLink("Listeye Geri Dön", "Index")
+        </div>
+    }
+</div>

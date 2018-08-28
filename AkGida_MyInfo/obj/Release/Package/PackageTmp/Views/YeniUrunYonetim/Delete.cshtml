@@ -1,0 +1,47 @@
+﻿@model AkGida_MyInfo.Models.YeniUrun
+
+@{
+    ViewBag.Title = "Yeni Ürünü Sil";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h3>Bu kaydı silmek istediğinize emin misiniz?</h3>
+<div>
+   
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.UrunAdi)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.UrunAdi)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Tanitim)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Tanitim)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ResimYolu)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ResimYolu)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Sil" class="btn btn-danger" /> |
+            @Html.ActionLink("Listeye Geri Dön", "Index")
+        </div>
+    }
+</div>

@@ -1,0 +1,73 @@
+﻿@model AkGida_MyInfo.Models.Servis
+
+@{
+    ViewBag.Title = "Servis Bilgisi Sil";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+
+<h3>Bu servis bilgisini silmek istediğinize emin misiniz?</h3>
+<div>
+
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.SoforAdi)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SoforAdi)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.SoforSoyadi)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SoforSoyadi)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Telefon)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Telefon)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Plaka)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Plaka)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Guzergah)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Guzergah)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Companies.CompanyName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Companies.CompanyName)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Sil" class="btn btn-danger" /> |
+            @Html.ActionLink("Listeye Geri Dön", "Index")
+        </div>
+    }
+</div>

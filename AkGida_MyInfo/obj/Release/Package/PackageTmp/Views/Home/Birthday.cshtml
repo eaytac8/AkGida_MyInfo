@@ -1,0 +1,10 @@
+﻿@using AkGida_MyInfo.Models
+@model IEnumerable<Personels>
+
+
+@foreach (var item in Model)
+{
+    var personel = item.PersonelName + " " + item.PersonelSurname;
+    <li><a href="#">@personel</a></li>
+}
+

@@ -1,0 +1,9 @@
+﻿@using AkGida_MyInfo.Models
+@model IEnumerable<Yayinlar>
+
+
+@foreach (var item in Model)
+{
+    <li><a href=@item.YayinURL data-plugin-options='{"type":"iframe"}' target="_blank">@item.YayinBaslik</a></li>
+}
+

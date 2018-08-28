@@ -1,0 +1,38 @@
+﻿@using AkGida_MyInfo.Models
+@model List<Personels>
+
+<style>
+    .grid-item {
+        /*background-color: rgba(255, 255, 255, 0.8);*/
+        background-color: rgb(255, 255, 255);
+        border: 1px solid rgb(24, 193, 182);
+        padding: 20px;
+        font-size: 16px;
+        text-align: center;
+    }
+</style>
+
+
+
+<div class="grid-container">
+
+    @foreach (var item in Model)
+    {
+        <div class="grid-item">
+
+            <h2>@(item.PersonelName + " " + item.PersonelSurname )</h2>
+
+            <p>
+                <b>@item.PersonelDahiliNo</b> <br />
+                @item.PersonelEposta
+                <br />
+                <b>Telefon:</b> @item.PersonelTel
+            </p>
+
+            <p><a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301865">Learn more &raquo;</a></p>
+
+        </div>
+
+    }
+
+</div>

@@ -1,0 +1,42 @@
+﻿@using AkGida_MyInfo.Models
+@model IEnumerable<YeniUrun>
+
+@{
+    ViewBag.Title = "YeniUrun";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<section>
+    <div class="container">
+
+            @foreach (var item in Model)
+            {
+                var urunImageURL = item.ResimYolu.ToString();
+                var urunVideoURL = item.VideoYolu.ToString();
+                <div class="row">
+                <div class="col-md-4">
+                    <img src="@urunImageURL" alt="Smiley face" height="240" width="320">
+                </div>
+
+                <div class="col-md-4">
+                    <h4 align="center">@item.UrunAdi</h4>
+                    @*<p class="lead font-lato">The most complete template, ever!</p>*@
+                    <p class="lead font-lato" align="center">@item.Tanitim</p>
+                </div>
+
+                <div class="col-md-4">
+                    <video width="320" height="240" controls>
+                        <source src="@urunVideoURL" type="video/mp4">
+                        <source src="@urunVideoURL" type="video/ogg">
+                    </video>
+                    @*<iframe id="ytplayer" type="text/html" width="640" height="360"
+                            src=@urunVideoURL
+                            frameborder="0"/>*@
+                </div>
+                     </div>
+                <hr />
+            }
+
+    </div>
+</section>
+

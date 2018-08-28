@@ -1,0 +1,97 @@
+﻿@model AkGida_MyInfo.Models.Personels
+
+@{
+    ViewBag.Title = "Personel Sil";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+
+<h3>Personeli silmek istediğinizden emin misiniz?</h3>
+<div>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.PersonelName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PersonelName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PersonelSurname)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PersonelSurname)
+        </dd>
+
+         <dt>
+            @Html.DisplayNameFor(model => model.PersonelDahiliNo)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PersonelDahiliNo)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Corbus)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Corbus)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PersonelTel)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PersonelTel)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PersonelEposta)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PersonelEposta)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Departments.DepartmentName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Departments.DepartmentName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Departments.Companies.CompanyName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Departments.Companies.CompanyName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Birthday)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Birthday)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+    <div class="form-actions no-color">
+        @Html.ActionLink("Listeye Geri Dön", "Index")
+        @*<a href="/PersonelYonetim/Index" class="btn btn-default">Listeye Geri Dön</a>*@ |
+        <input type="submit" value="Sil" class="btn btn-danger" />
+
+    </div>
+    }
+</div>

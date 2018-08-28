@@ -1,0 +1,9 @@
+﻿@using AkGida_MyInfo.Models
+@model IEnumerable<Weddings>
+
+@foreach (var item in Model)
+{
+    var personel = item.Name + " " + item.Surname;
+    <li><a href=@item.ImagePath data-plugin-options='{"type":"iframe"}' target="_blank">@personel</a></li>
+}
+

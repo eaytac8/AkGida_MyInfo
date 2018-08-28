@@ -1,0 +1,9 @@
+﻿
+@using AkGida_MyInfo.Models
+@model IEnumerable<Baby>
+
+@foreach (var item in Model)
+{
+    var bebek = item.Name + " " + item.Surname;
+    <li><a href=@item.ImagePath data-plugin-options='{"type":"iframe"}' target="_blank">@bebek</a></li>
+}

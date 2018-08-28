@@ -1,0 +1,39 @@
+﻿@model AkGida_MyInfo.Models.Yayinlar
+
+@{
+    ViewBag.Title = "Yayın Sil";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+
+<h3>Bu kaydı silmek istediğinize emin misiniz?</h3>
+<div>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.YayinBaslik)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.YayinBaslik)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.YayinURL)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.YayinURL)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Sil" class="btn btn-danger" /> |
+            @Html.ActionLink("Listeye Geri Dön", "Index")
+        </div>
+    }
+</div>
