@@ -11,6 +11,7 @@ using AkGida_MyInfo.ViewModel;
 
 namespace AkGida_MyInfo.Controllers
 {
+    [Authorize(Roles ="MasterAdmin,ElifAdmin")]
     public class PersonelYonetimController : Controller
     {
         private AkGida_MyInfoEntities db = new AkGida_MyInfoEntities();
@@ -48,7 +49,6 @@ namespace AkGida_MyInfo.Controllers
         {
             if (ModelState.IsValid)
             {
-                personels.personel.PersonelEposta = personels.personel.PersonelEposta + "@akgida.com.tr";
                 db.Personels.Add(personels.personel);
                 db.SaveChanges();
                 return RedirectToAction("Index");
@@ -128,7 +128,6 @@ namespace AkGida_MyInfo.Controllers
         {
             if (ModelState.IsValid)
             {
-                personels.PersonelEposta = personels.PersonelEposta + "@akgida.com.tr";
                 db.Entry(personels).State = EntityState.Modified;
                 db.SaveChanges();
                 return RedirectToAction("Index");

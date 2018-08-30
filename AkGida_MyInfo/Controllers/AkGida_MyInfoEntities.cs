@@ -19,9 +19,6 @@ namespace AkGida_MyInfo.Controllers
         public DbSet<Slider> Slider { get; set; }
         public DbSet<sysdiagrams> sysdiagrams { get; set; }
         public DbSet<Servis> Servis { get; set; }
-        public DbSet<Role> Role { get; set;}
-        public DbSet<Users> Users { get; set; }
-        public DbSet<Yetkiler> Yetkiler { get; set; }
         public DbSet<Baby> Baby { get; set; }
         public DbSet<Death> Death { get; set; }
         public DbSet<Congrats> Congrats { get; set; }
@@ -30,7 +27,7 @@ namespace AkGida_MyInfo.Controllers
         public DbSet<YeniUrun> YeniUrun { get; set; }
         public DbSet<Hakkimizda> Hakkimizda { get; set; }
         public DbSet<Yayinlar> Yayinlar { get; set; }
-        
+
 
     }
 }

@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-    <Schema Namespace="AkGida_MyInfoModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+      <Schema Namespace="AkGida_MyInfoModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="Baby">
           <Key>
             <PropertyRef Name="BabyID" />
@@ -20,7 +20,7 @@
           <Key>
             <PropertyRef Name="CompanyID" />
           </Key>
-          <Property Name="CompanyID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="CompanyID" Type="int" Nullable="false" />
           <Property Name="CompanyName" Type="nvarchar" MaxLength="150" />
           <Property Name="CompanyAddress" Type="nvarchar" MaxLength="300" />
           <Property Name="CompanyType" Type="nvarchar" MaxLength="150" />
@@ -105,23 +105,6 @@
           <Property Name="DepartmentID" Type="int" />
           <Property Name="Birthday" Type="date" />
         </EntityType>
-        <EntityType Name="Role">
-          <Key>
-            <PropertyRef Name="RoleID" />
-          </Key>
-          <Property Name="RoleID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="RoleDescription" Type="nvarchar" MaxLength="100" Nullable="false" />
-        </EntityType>
-        <!--Errors Found During Generation:
-warning 6002: The table/view 'AkGida_MyInfo.dbo.RoleYetki' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
-        <EntityType Name="RoleYetki">
-          <Key>
-            <PropertyRef Name="RoleID" />
-            <PropertyRef Name="YetkiID" />
-          </Key>
-          <Property Name="RoleID" Type="int" Nullable="false" />
-          <Property Name="YetkiID" Type="int" Nullable="false" />
-        </EntityType>
         <EntityType Name="Servis">
           <Key>
             <PropertyRef Name="ServisID" />
@@ -167,24 +150,6 @@ warning 6002: The table/view 'AkGida_MyInfo.dbo.RoleYetki' does not have a prima
           <Property Name="StartDate" Type="date" />
           <Property Name="EndDate" Type="date" />
         </EntityType>
-        <!--Errors Found During Generation:
-warning 6002: The table/view 'AkGida_MyInfo.dbo.UserRole' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
-        <EntityType Name="UserRole">
-          <Key>
-            <PropertyRef Name="UserID" />
-            <PropertyRef Name="RoleID" />
-          </Key>
-          <Property Name="UserID" Type="int" Nullable="false" />
-          <Property Name="RoleID" Type="int" Nullable="false" />
-        </EntityType>
-        <EntityType Name="Users">
-          <Key>
-            <PropertyRef Name="UserID" />
-          </Key>
-          <Property Name="UserID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="Email" Type="nvarchar" MaxLength="100" Nullable="false" />
-          <Property Name="Password" Type="nvarchar" MaxLength="50" Nullable="false" />
-        </EntityType>
         <EntityType Name="Weddings">
           <Key>
             <PropertyRef Name="WeddingID" />
@@ -213,14 +178,6 @@ warning 6002: The table/view 'AkGida_MyInfo.dbo.UserRole' does not have a primar
           <Property Name="Tanitim" Type="nvarchar" MaxLength="450" />
           <Property Name="ResimYolu" Type="nvarchar" MaxLength="150" />
           <Property Name="VideoYolu" Type="nvarchar" MaxLength="150" />
-        </EntityType>
-        <EntityType Name="Yetkiler">
-          <Key>
-            <PropertyRef Name="YetkiID" />
-          </Key>
-          <Property Name="YetkiID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="YetkiDescription" Type="nvarchar" MaxLength="100" Nullable="false" />
-          <Property Name="CompanyID" Type="int" Nullable="false" />
         </EntityType>
         <Association Name="FK_Departments_Companies">
           <End Role="Companies" Type="Self.Companies" Multiplicity="0..1" />
@@ -270,30 +227,6 @@ warning 6002: The table/view 'AkGida_MyInfo.dbo.UserRole' does not have a primar
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK_RoleYetki_Role">
-          <End Role="Role" Type="Self.Role" Multiplicity="1" />
-          <End Role="RoleYetki" Type="Self.RoleYetki" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Role">
-              <PropertyRef Name="RoleID" />
-            </Principal>
-            <Dependent Role="RoleYetki">
-              <PropertyRef Name="RoleID" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_RoleYetki_Yetkiler">
-          <End Role="Yetkiler" Type="Self.Yetkiler" Multiplicity="1" />
-          <End Role="RoleYetki" Type="Self.RoleYetki" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Yetkiler">
-              <PropertyRef Name="YetkiID" />
-            </Principal>
-            <Dependent Role="RoleYetki">
-              <PropertyRef Name="YetkiID" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
         <Association Name="FK_Servis_Companies">
           <End Role="Companies" Type="Self.Companies" Multiplicity="0..1" />
           <End Role="Servis" Type="Self.Servis" Multiplicity="*" />
@@ -303,30 +236,6 @@ warning 6002: The table/view 'AkGida_MyInfo.dbo.UserRole' does not have a primar
             </Principal>
             <Dependent Role="Servis">
               <PropertyRef Name="CompanyID" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_UserRole_Role">
-          <End Role="Role" Type="Self.Role" Multiplicity="1" />
-          <End Role="UserRole" Type="Self.UserRole" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Role">
-              <PropertyRef Name="RoleID" />
-            </Principal>
-            <Dependent Role="UserRole">
-              <PropertyRef Name="RoleID" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_UserRole_Users">
-          <End Role="Users" Type="Self.Users" Multiplicity="1" />
-          <End Role="UserRole" Type="Self.UserRole" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Users">
-              <PropertyRef Name="UserID" />
-            </Principal>
-            <Dependent Role="UserRole">
-              <PropertyRef Name="UserID" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -340,28 +249,13 @@ warning 6002: The table/view 'AkGida_MyInfo.dbo.UserRole' does not have a primar
           <EntitySet Name="Hakkimizda" EntityType="Self.Hakkimizda" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Menu" EntityType="Self.Menu" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Personels" EntityType="Self.Personels" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="Role" EntityType="Self.Role" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Servis" EntityType="Self.Servis" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Slider" EntityType="Self.Slider" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Thanks" EntityType="Self.Thanks" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="Users" EntityType="Self.Users" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Weddings" EntityType="Self.Weddings" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Yayinlar" EntityType="Self.Yayinlar" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="YeniUrun" EntityType="Self.YeniUrun" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="Yetkiler" EntityType="Self.Yetkiler" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="RoleYetki" EntityType="Self.RoleYetki" store:Type="Tables" store:Schema="dbo">
-            <DefiningQuery>SELECT 
-    [RoleYetki].[RoleID] AS [RoleID], 
-    [RoleYetki].[YetkiID] AS [YetkiID]
-    FROM [dbo].[RoleYetki] AS [RoleYetki]</DefiningQuery>
-          </EntitySet>
-          <EntitySet Name="UserRole" EntityType="Self.UserRole" store:Type="Tables" store:Schema="dbo">
-            <DefiningQuery>SELECT 
-    [UserRole].[UserID] AS [UserID], 
-    [UserRole].[RoleID] AS [RoleID]
-    FROM [dbo].[UserRole] AS [UserRole]</DefiningQuery>
-          </EntitySet>
           <AssociationSet Name="FK_Departments_Companies" Association="Self.FK_Departments_Companies">
             <End Role="Companies" EntitySet="Companies" />
             <End Role="Departments" EntitySet="Departments" />
@@ -378,263 +272,16 @@ warning 6002: The table/view 'AkGida_MyInfo.dbo.UserRole' does not have a primar
             <End Role="Departments" EntitySet="Departments" />
             <End Role="Personels" EntitySet="Personels" />
           </AssociationSet>
-          <AssociationSet Name="FK_RoleYetki_Role" Association="Self.FK_RoleYetki_Role">
-            <End Role="Role" EntitySet="Role" />
-            <End Role="RoleYetki" EntitySet="RoleYetki" />
-          </AssociationSet>
-          <AssociationSet Name="FK_RoleYetki_Yetkiler" Association="Self.FK_RoleYetki_Yetkiler">
-            <End Role="Yetkiler" EntitySet="Yetkiler" />
-            <End Role="RoleYetki" EntitySet="RoleYetki" />
-          </AssociationSet>
           <AssociationSet Name="FK_Servis_Companies" Association="Self.FK_Servis_Companies">
             <End Role="Companies" EntitySet="Companies" />
             <End Role="Servis" EntitySet="Servis" />
           </AssociationSet>
-          <AssociationSet Name="FK_UserRole_Role" Association="Self.FK_UserRole_Role">
-            <End Role="Role" EntitySet="Role" />
-            <End Role="UserRole" EntitySet="UserRole" />
-          </AssociationSet>
-          <AssociationSet Name="FK_UserRole_Users" Association="Self.FK_UserRole_Users">
-            <End Role="Users" EntitySet="Users" />
-            <End Role="UserRole" EntitySet="UserRole" />
-          </AssociationSet>
         </EntityContainer>
-      </Schema></edmx:StorageModels>
+      </Schema>
+    </edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="AkGida_MyInfoModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
-        <EntityType Name="Companies">
-          <Key>
-            <PropertyRef Name="CompanyID" />
-          </Key>
-          <Property Name="CompanyID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="CompanyName" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
-          <Property Name="CompanyAddress" Type="String" MaxLength="300" FixedLength="false" Unicode="true" />
-          <Property Name="CompanyType" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
-          <Property Name="CompanyTel" Type="String" MaxLength="16" FixedLength="false" Unicode="true" />
-          <NavigationProperty Name="Departments" Relationship="Self.FK_Departments_Companies" FromRole="Companies" ToRole="Departments" />
-          <NavigationProperty Name="Menu" Relationship="AkGida_MyInfoModel.FK_Menu_Companies" FromRole="Companies" ToRole="Menu" />
-          <NavigationProperty Name="Duyurular" Relationship="AkGida_MyInfoModel.FK_Duyurular_Companies" FromRole="Companies" ToRole="Duyurular" />
-          <NavigationProperty Name="Servis" Relationship="AkGida_MyInfoModel.FK_Servis_Companies" FromRole="Companies" ToRole="Servis" />
-        </EntityType>
-        <EntityType Name="Departments">
-          <Key>
-            <PropertyRef Name="DepartmentID" />
-          </Key>
-          <Property Name="DepartmentID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="DepartmentName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-          <Property Name="CompanyID" Type="Int32" />
-          <NavigationProperty Name="Companies" Relationship="Self.FK_Departments_Companies" FromRole="Departments" ToRole="Companies" />
-          <NavigationProperty Name="Personels" Relationship="AkGida_MyInfoModel.FK_Personels_Departments" FromRole="Departments" ToRole="Personels" />
-        </EntityType>
-        <EntityType Name="sysdiagrams">
-          <Key>
-            <PropertyRef Name="diagram_id" />
-          </Key>
-          <Property Name="name" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
-          <Property Name="principal_id" Type="Int32" Nullable="false" />
-          <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="version" Type="Int32" />
-          <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
-        </EntityType>
-        <Association Name="FK_Departments_Companies">
-          <End Role="Companies" Type="Self.Companies" Multiplicity="0..1" />
-          <End Role="Departments" Type="Self.Departments" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Companies">
-              <PropertyRef Name="CompanyID" />
-            </Principal>
-            <Dependent Role="Departments">
-              <PropertyRef Name="CompanyID" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <EntityContainer Name="AkGida_MyInfoEntities" annotation:LazyLoadingEnabled="true">
-          <EntitySet Name="Companies" EntityType="Self.Companies" />
-          <EntitySet Name="Departments" EntityType="Self.Departments" />
-          <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" />
-          <AssociationSet Name="FK_Departments_Companies" Association="Self.FK_Departments_Companies">
-            <End Role="Companies" EntitySet="Companies" />
-            <End Role="Departments" EntitySet="Departments" />
-          </AssociationSet>
-          <EntitySet Name="Role" EntityType="AkGida_MyInfoModel.Role" />
-          <EntitySet Name="Users" EntityType="AkGida_MyInfoModel.Users" />
-          <EntitySet Name="Yetkiler" EntityType="AkGida_MyInfoModel.Yetkiler" />
-          <AssociationSet Name="RoleYetki" Association="AkGida_MyInfoModel.RoleYetki">
-            <End Role="Role" EntitySet="Role" />
-            <End Role="Yetkiler" EntitySet="Yetkiler" />
-          </AssociationSet>
-          <AssociationSet Name="UserRole" Association="AkGida_MyInfoModel.UserRole">
-            <End Role="Role" EntitySet="Role" />
-            <End Role="Users" EntitySet="Users" />
-          </AssociationSet>
-          <EntitySet Name="YeniUrun" EntityType="AkGida_MyInfoModel.YeniUrun" />
-          <EntitySet Name="Menu" EntityType="AkGida_MyInfoModel.Menu" />
-          <AssociationSet Name="FK_Menu_Companies" Association="AkGida_MyInfoModel.FK_Menu_Companies">
-            <End Role="Companies" EntitySet="Companies" />
-            <End Role="Menu" EntitySet="Menu" />
-          </AssociationSet>
-          <EntitySet Name="Personels" EntityType="AkGida_MyInfoModel.Personels" />
-          <AssociationSet Name="FK_Personels_Departments" Association="AkGida_MyInfoModel.FK_Personels_Departments">
-            <End Role="Departments" EntitySet="Departments" />
-            <End Role="Personels" EntitySet="Personels" />
-          </AssociationSet>
-          <EntitySet Name="Slider" EntityType="AkGida_MyInfoModel.Slider" />
-          <EntitySet Name="Duyurular" EntityType="AkGida_MyInfoModel.Duyurular" />
-          <AssociationSet Name="FK_Duyurular_Companies" Association="AkGida_MyInfoModel.FK_Duyurular_Companies">
-            <End Role="Companies" EntitySet="Companies" />
-            <End Role="Duyurular" EntitySet="Duyurular" />
-          </AssociationSet>
-          <EntitySet Name="Baby" EntityType="AkGida_MyInfoModel.Baby" />
-          <EntitySet Name="Congrats" EntityType="AkGida_MyInfoModel.Congrats" />
-          <EntitySet Name="Death" EntityType="AkGida_MyInfoModel.Death" />
-          <EntitySet Name="Thanks" EntityType="AkGida_MyInfoModel.Thanks" />
-          <EntitySet Name="Weddings" EntityType="AkGida_MyInfoModel.Weddings" />
-          <EntitySet Name="Servis" EntityType="AkGida_MyInfoModel.Servis" />
-          <AssociationSet Name="FK_Servis_Companies" Association="AkGida_MyInfoModel.FK_Servis_Companies">
-            <End Role="Companies" EntitySet="Companies" />
-            <End Role="Servis" EntitySet="Servis" />
-          </AssociationSet>
-          <EntitySet Name="Hakkimizda" EntityType="AkGida_MyInfoModel.Hakkimizda" />
-          <EntitySet Name="Yayinlar" EntityType="AkGida_MyInfoModel.Yayinlar" />
-          </EntityContainer>
-        <EntityType Name="Role">
-          <Key>
-            <PropertyRef Name="RoleID" />
-          </Key>
-          <Property Name="RoleID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="RoleDescription" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
-          <NavigationProperty Name="Yetkiler" Relationship="AkGida_MyInfoModel.RoleYetki" FromRole="Role" ToRole="Yetkiler" />
-          <NavigationProperty Name="Users" Relationship="AkGida_MyInfoModel.UserRole" FromRole="Role" ToRole="Users" />
-        </EntityType>
-        <EntityType Name="Users">
-          <Key>
-            <PropertyRef Name="UserID" />
-          </Key>
-          <Property Name="UserID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="Email" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
-          <Property Name="Password" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
-          <NavigationProperty Name="Role" Relationship="AkGida_MyInfoModel.UserRole" FromRole="Users" ToRole="Role" />
-        </EntityType>
-        <EntityType Name="Yetkiler">
-          <Key>
-            <PropertyRef Name="YetkiID" />
-          </Key>
-          <Property Name="YetkiID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="YetkiDescription" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
-          <Property Name="CompanyID" Type="Int32" Nullable="false" />
-          <NavigationProperty Name="Role" Relationship="AkGida_MyInfoModel.RoleYetki" FromRole="Yetkiler" ToRole="Role" />
-        </EntityType>
-        <Association Name="RoleYetki">
-          <End Type="AkGida_MyInfoModel.Role" Role="Role" Multiplicity="*" />
-          <End Type="AkGida_MyInfoModel.Yetkiler" Role="Yetkiler" Multiplicity="*" />
-        </Association>
-        <Association Name="UserRole">
-          <End Type="AkGida_MyInfoModel.Role" Role="Role" Multiplicity="*" />
-          <End Type="AkGida_MyInfoModel.Users" Role="Users" Multiplicity="*" />
-        </Association>
-        <EntityType Name="YeniUrun">
-          <Key>
-            <PropertyRef Name="UrunID" />
-          </Key>
-          <Property Name="UrunID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="UrunAdi" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
-          <Property Name="Tanitim" Type="String" MaxLength="450" FixedLength="false" Unicode="true" />
-          <Property Name="ResimYolu" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
-          <Property Name="VideoYolu" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
-        </EntityType>
-        <EntityType Name="Menu">
-          <Key>
-            <PropertyRef Name="MenuID" />
-          </Key>
-          <Property Name="MenuID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="CompanyID" Type="Int32" />
-          <Property Name="Tarih" Type="DateTime" Precision="0" />
-          <Property Name="Corba" Type="String" MaxLength="300" FixedLength="false" Unicode="true" />
-          <Property Name="AnaYemek" Type="String" MaxLength="300" FixedLength="false" Unicode="true" />
-          <Property Name="Diyet" Type="String" MaxLength="300" FixedLength="false" Unicode="true" />
-          <Property Name="PilavMakarna" Type="String" MaxLength="300" FixedLength="false" Unicode="true" />
-          <Property Name="Tatli" Type="String" MaxLength="300" FixedLength="false" Unicode="true" />
-          <Property Name="Meyve" Type="String" MaxLength="300" FixedLength="false" Unicode="true" />
-          <Property Name="Salata" Type="String" MaxLength="300" FixedLength="false" Unicode="true" />
-          <NavigationProperty Name="Companies" Relationship="AkGida_MyInfoModel.FK_Menu_Companies" FromRole="Menu" ToRole="Companies" />
-        </EntityType>
-        <Association Name="FK_Menu_Companies">
-          <End Type="AkGida_MyInfoModel.Companies" Role="Companies" Multiplicity="0..1" />
-          <End Type="AkGida_MyInfoModel.Menu" Role="Menu" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Companies">
-              <PropertyRef Name="CompanyID" />
-            </Principal>
-            <Dependent Role="Menu">
-              <PropertyRef Name="CompanyID" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <EntityType Name="Personels">
-          <Key>
-            <PropertyRef Name="PersonelID" />
-          </Key>
-          <Property Name="PersonelID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="PersonelName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-          <Property Name="PersonelSurname" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-          <Property Name="Corbus" Type="String" MaxLength="5" FixedLength="false" Unicode="false" />
-          <Property Name="PersonelDahiliNo" Type="String" MaxLength="5" FixedLength="false" Unicode="false" />
-          <Property Name="PersonelTel" Type="String" MaxLength="13" FixedLength="false" Unicode="false" />
-          <Property Name="PersonelEposta" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-          <Property Name="DepartmentID" Type="Int32" />
-          <Property Name="Birthday" Type="DateTime" Precision="0" />
-          <NavigationProperty Name="Departments" Relationship="AkGida_MyInfoModel.FK_Personels_Departments" FromRole="Personels" ToRole="Departments" />
-        </EntityType>
-        <Association Name="FK_Personels_Departments">
-          <End Type="AkGida_MyInfoModel.Departments" Role="Departments" Multiplicity="0..1" />
-          <End Type="AkGida_MyInfoModel.Personels" Role="Personels" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Departments">
-              <PropertyRef Name="DepartmentID" />
-            </Principal>
-            <Dependent Role="Personels">
-              <PropertyRef Name="DepartmentID" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <EntityType Name="Slider">
-          <Key>
-            <PropertyRef Name="SliderID" />
-          </Key>
-          <Property Name="SliderID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="SliderFoto" Type="Binary" MaxLength="Max" FixedLength="false" />
-          <Property Name="SliderBaslik" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
-          <Property Name="SliderText" Type="String" MaxLength="350" FixedLength="false" Unicode="true" />
-          <Property Name="BaslangicTarihi" Type="DateTime" Precision="3" />
-          <Property Name="BitisTarihi" Type="DateTime" Precision="3" />
-          <Property Name="ResimYolu" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
-        </EntityType>
-        <EntityType Name="Duyurular">
-          <Key>
-            <PropertyRef Name="DuyuruID" />
-          </Key>
-          <Property Name="DuyuruID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="Baslik" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
-          <Property Name="Icerik" Type="String" MaxLength="350" FixedLength="false" Unicode="true" />
-          <Property Name="BaslangicTarihi" Type="DateTime" Precision="3" />
-          <Property Name="BitisTarihi" Type="DateTime" Precision="3" />
-          <Property Name="ResimYolu" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
-          <Property Name="CompanyID" Type="Int32" />
-          <NavigationProperty Name="Companies" Relationship="AkGida_MyInfoModel.FK_Duyurular_Companies" FromRole="Duyurular" ToRole="Companies" />
-        </EntityType>
-        <Association Name="FK_Duyurular_Companies">
-          <End Type="AkGida_MyInfoModel.Companies" Role="Companies" Multiplicity="0..1" />
-          <End Type="AkGida_MyInfoModel.Duyurular" Role="Duyurular" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Companies">
-              <PropertyRef Name="CompanyID" />
-            </Principal>
-            <Dependent Role="Duyurular">
-              <PropertyRef Name="CompanyID" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
         <EntityType Name="Baby">
           <Key>
             <PropertyRef Name="BabyID" />
@@ -645,6 +292,20 @@ warning 6002: The table/view 'AkGida_MyInfo.dbo.UserRole' does not have a primar
           <Property Name="ImagePath" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
           <Property Name="StartDate" Type="DateTime" Precision="0" />
           <Property Name="EndDate" Type="DateTime" Precision="0" />
+        </EntityType>
+        <EntityType Name="Companies">
+          <Key>
+            <PropertyRef Name="CompanyID" />
+          </Key>
+          <Property Name="CompanyID" Type="Int32" Nullable="false" />
+          <Property Name="CompanyName" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Name="CompanyAddress" Type="String" MaxLength="300" FixedLength="false" Unicode="true" />
+          <Property Name="CompanyType" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Name="CompanyTel" Type="String" MaxLength="16" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Departments" Relationship="Self.FK_Departments_Companies" FromRole="Companies" ToRole="Departments" />
+          <NavigationProperty Name="Duyurular" Relationship="Self.FK_Duyurular_Companies" FromRole="Companies" ToRole="Duyurular" />
+          <NavigationProperty Name="Menu" Relationship="Self.FK_Menu_Companies" FromRole="Companies" ToRole="Menu" />
+          <NavigationProperty Name="Servis" Relationship="Self.FK_Servis_Companies" FromRole="Companies" ToRole="Servis" />
         </EntityType>
         <EntityType Name="Congrats">
           <Key>
@@ -668,6 +329,103 @@ warning 6002: The table/view 'AkGida_MyInfo.dbo.UserRole' does not have a primar
           <Property Name="StartDate" Type="DateTime" Precision="0" />
           <Property Name="EndDate" Type="DateTime" Precision="0" />
         </EntityType>
+        <EntityType Name="Departments">
+          <Key>
+            <PropertyRef Name="DepartmentID" />
+          </Key>
+          <Property Name="DepartmentID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="DepartmentName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="CompanyID" Type="Int32" />
+          <NavigationProperty Name="Companies" Relationship="Self.FK_Departments_Companies" FromRole="Departments" ToRole="Companies" />
+          <NavigationProperty Name="Personels" Relationship="Self.FK_Personels_Departments" FromRole="Departments" ToRole="Personels" />
+        </EntityType>
+        <EntityType Name="Duyurular">
+          <Key>
+            <PropertyRef Name="DuyuruID" />
+          </Key>
+          <Property Name="DuyuruID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="CompanyID" Type="Int32" />
+          <Property Name="Baslik" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="Icerik" Type="String" MaxLength="350" FixedLength="false" Unicode="true" />
+          <Property Name="BaslangicTarihi" Type="DateTime" Precision="3" />
+          <Property Name="BitisTarihi" Type="DateTime" Precision="3" />
+          <Property Name="ResimYolu" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Companies" Relationship="Self.FK_Duyurular_Companies" FromRole="Duyurular" ToRole="Companies" />
+        </EntityType>
+        <EntityType Name="Hakkimizda">
+          <Key>
+            <PropertyRef Name="HakkimizdaID" />
+          </Key>
+          <Property Name="HakkimizdaID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Icerik" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="ResimYolu" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="Menu">
+          <Key>
+            <PropertyRef Name="MenuID" />
+          </Key>
+          <Property Name="MenuID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="CompanyID" Type="Int32" />
+          <Property Name="Tarih" Type="DateTime" Precision="0" />
+          <Property Name="Corba" Type="String" MaxLength="300" FixedLength="false" Unicode="true" />
+          <Property Name="AnaYemek" Type="String" MaxLength="300" FixedLength="false" Unicode="true" />
+          <Property Name="Diyet" Type="String" MaxLength="300" FixedLength="false" Unicode="true" />
+          <Property Name="PilavMakarna" Type="String" MaxLength="300" FixedLength="false" Unicode="true" />
+          <Property Name="Tatli" Type="String" MaxLength="300" FixedLength="false" Unicode="true" />
+          <Property Name="Meyve" Type="String" MaxLength="300" FixedLength="false" Unicode="true" />
+          <Property Name="Salata" Type="String" MaxLength="300" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Companies" Relationship="Self.FK_Menu_Companies" FromRole="Menu" ToRole="Companies" />
+        </EntityType>
+        <EntityType Name="Personels">
+          <Key>
+            <PropertyRef Name="PersonelID" />
+          </Key>
+          <Property Name="PersonelID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="PersonelName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="PersonelSurname" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Corbus" Type="String" MaxLength="5" FixedLength="false" Unicode="false" />
+          <Property Name="PersonelDahiliNo" Type="String" MaxLength="5" FixedLength="false" Unicode="false" />
+          <Property Name="PersonelTel" Type="String" MaxLength="13" FixedLength="false" Unicode="false" />
+          <Property Name="PersonelEposta" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="DepartmentID" Type="Int32" />
+          <Property Name="Birthday" Type="DateTime" Precision="0" />
+          <NavigationProperty Name="Departments" Relationship="Self.FK_Personels_Departments" FromRole="Personels" ToRole="Departments" />
+        </EntityType>
+        <EntityType Name="Servis">
+          <Key>
+            <PropertyRef Name="ServisID" />
+          </Key>
+          <Property Name="ServisID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="CompanyID" Type="Int32" />
+          <Property Name="SoforAdi" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="SoforSoyadi" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Telefon" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Plaka" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="Guzergah" Type="String" MaxLength="300" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Companies" Relationship="Self.FK_Servis_Companies" FromRole="Servis" ToRole="Companies" />
+        </EntityType>
+        <EntityType Name="Slider">
+          <Key>
+            <PropertyRef Name="SliderID" />
+          </Key>
+          <Property Name="SliderID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="SliderFoto" Type="Binary" MaxLength="Max" FixedLength="false" />
+          <Property Name="SliderBaslik" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="SliderText" Type="String" MaxLength="350" FixedLength="false" Unicode="true" />
+          <Property Name="BaslangicTarihi" Type="DateTime" Precision="3" />
+          <Property Name="BitisTarihi" Type="DateTime" Precision="3" />
+          <Property Name="ResimYolu" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="sysdiagrams">
+          <Key>
+            <PropertyRef Name="diagram_id" />
+          </Key>
+          <Property Name="name" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="principal_id" Type="Int32" Nullable="false" />
+          <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="version" Type="Int32" />
+          <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+        </EntityType>
         <EntityType Name="Thanks">
           <Key>
             <PropertyRef Name="ThanksID" />
@@ -690,22 +448,63 @@ warning 6002: The table/view 'AkGida_MyInfo.dbo.UserRole' does not have a primar
           <Property Name="StartDate" Type="DateTime" Precision="0" />
           <Property Name="EndDate" Type="DateTime" Precision="0" />
         </EntityType>
-        <EntityType Name="Servis">
+        <EntityType Name="Yayinlar">
           <Key>
-            <PropertyRef Name="ServisID" />
+            <PropertyRef Name="YayinID" />
           </Key>
-          <Property Name="ServisID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="CompanyID" Type="Int32" />
-          <Property Name="SoforAdi" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-          <Property Name="SoforSoyadi" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-          <Property Name="Telefon" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-          <Property Name="Plaka" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
-          <Property Name="Guzergah" Type="String" MaxLength="300" FixedLength="false" Unicode="true" />
-          <NavigationProperty Name="Companies" Relationship="AkGida_MyInfoModel.FK_Servis_Companies" FromRole="Servis" ToRole="Companies" />
+          <Property Name="YayinID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="YayinBaslik" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Name="YayinURL" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
         </EntityType>
+        <EntityType Name="YeniUrun">
+          <Key>
+            <PropertyRef Name="UrunID" />
+          </Key>
+          <Property Name="UrunID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="UrunAdi" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Name="Tanitim" Type="String" MaxLength="450" FixedLength="false" Unicode="true" />
+          <Property Name="ResimYolu" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Name="VideoYolu" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <Association Name="FK_Departments_Companies">
+          <End Role="Companies" Type="Self.Companies" Multiplicity="0..1" />
+          <End Role="Departments" Type="Self.Departments" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Companies">
+              <PropertyRef Name="CompanyID" />
+            </Principal>
+            <Dependent Role="Departments">
+              <PropertyRef Name="CompanyID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Duyurular_Companies">
+          <End Role="Companies" Type="Self.Companies" Multiplicity="0..1" />
+          <End Role="Duyurular" Type="Self.Duyurular" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Companies">
+              <PropertyRef Name="CompanyID" />
+            </Principal>
+            <Dependent Role="Duyurular">
+              <PropertyRef Name="CompanyID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Menu_Companies">
+          <End Role="Companies" Type="Self.Companies" Multiplicity="0..1" />
+          <End Role="Menu" Type="Self.Menu" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Companies">
+              <PropertyRef Name="CompanyID" />
+            </Principal>
+            <Dependent Role="Menu">
+              <PropertyRef Name="CompanyID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <Association Name="FK_Servis_Companies">
-          <End Type="AkGida_MyInfoModel.Companies" Role="Companies" Multiplicity="0..1" />
-          <End Type="AkGida_MyInfoModel.Servis" Role="Servis" Multiplicity="*" />
+          <End Role="Companies" Type="Self.Companies" Multiplicity="0..1" />
+          <End Role="Servis" Type="Self.Servis" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Companies">
               <PropertyRef Name="CompanyID" />
@@ -715,28 +514,74 @@ warning 6002: The table/view 'AkGida_MyInfo.dbo.UserRole' does not have a primar
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <EntityType Name="Hakkimizda">
-          <Key>
-            <PropertyRef Name="HakkimizdaID" />
-          </Key>
-          <Property Name="HakkimizdaID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="Icerik" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-          <Property Name="ResimYolu" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
-        </EntityType>
-        <EntityType Name="Yayinlar">
-          <Key>
-            <PropertyRef Name="YayinID" />
-          </Key>
-          <Property Name="YayinID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="YayinBaslik" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
-          <Property Name="YayinURL" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
-        </EntityType>
-        </Schema>
+        <Association Name="FK_Personels_Departments">
+          <End Role="Departments" Type="Self.Departments" Multiplicity="0..1" />
+          <End Role="Personels" Type="Self.Personels" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Departments">
+              <PropertyRef Name="DepartmentID" />
+            </Principal>
+            <Dependent Role="Personels">
+              <PropertyRef Name="DepartmentID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="AkGida_MyInfoEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Baby" EntityType="Self.Baby" />
+          <EntitySet Name="Companies" EntityType="Self.Companies" />
+          <EntitySet Name="Congrats" EntityType="Self.Congrats" />
+          <EntitySet Name="Death" EntityType="Self.Death" />
+          <EntitySet Name="Departments" EntityType="Self.Departments" />
+          <EntitySet Name="Duyurular" EntityType="Self.Duyurular" />
+          <EntitySet Name="Hakkimizda" EntityType="Self.Hakkimizda" />
+          <EntitySet Name="Menu" EntityType="Self.Menu" />
+          <EntitySet Name="Personels" EntityType="Self.Personels" />
+          <EntitySet Name="Servis" EntityType="Self.Servis" />
+          <EntitySet Name="Slider" EntityType="Self.Slider" />
+          <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" />
+          <EntitySet Name="Thanks" EntityType="Self.Thanks" />
+          <EntitySet Name="Weddings" EntityType="Self.Weddings" />
+          <EntitySet Name="Yayinlar" EntityType="Self.Yayinlar" />
+          <EntitySet Name="YeniUrun" EntityType="Self.YeniUrun" />
+          <AssociationSet Name="FK_Departments_Companies" Association="Self.FK_Departments_Companies">
+            <End Role="Companies" EntitySet="Companies" />
+            <End Role="Departments" EntitySet="Departments" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Duyurular_Companies" Association="Self.FK_Duyurular_Companies">
+            <End Role="Companies" EntitySet="Companies" />
+            <End Role="Duyurular" EntitySet="Duyurular" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Menu_Companies" Association="Self.FK_Menu_Companies">
+            <End Role="Companies" EntitySet="Companies" />
+            <End Role="Menu" EntitySet="Menu" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Servis_Companies" Association="Self.FK_Servis_Companies">
+            <End Role="Companies" EntitySet="Companies" />
+            <End Role="Servis" EntitySet="Servis" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Personels_Departments" Association="Self.FK_Personels_Departments">
+            <End Role="Departments" EntitySet="Departments" />
+            <End Role="Personels" EntitySet="Personels" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
         <EntityContainerMapping StorageEntityContainer="AkGida_MyInfoModelStoreContainer" CdmEntityContainer="AkGida_MyInfoEntities">
+          <EntitySetMapping Name="Baby">
+            <EntityTypeMapping TypeName="AkGida_MyInfoModel.Baby">
+              <MappingFragment StoreEntitySet="Baby">
+                <ScalarProperty Name="BabyID" ColumnName="BabyID" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Surname" ColumnName="Surname" />
+                <ScalarProperty Name="ImagePath" ColumnName="ImagePath" />
+                <ScalarProperty Name="StartDate" ColumnName="StartDate" />
+                <ScalarProperty Name="EndDate" ColumnName="EndDate" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
           <EntitySetMapping Name="Companies">
             <EntityTypeMapping TypeName="AkGida_MyInfoModel.Companies">
               <MappingFragment StoreEntitySet="Companies">
@@ -748,12 +593,115 @@ warning 6002: The table/view 'AkGida_MyInfo.dbo.UserRole' does not have a primar
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
+          <EntitySetMapping Name="Congrats">
+            <EntityTypeMapping TypeName="AkGida_MyInfoModel.Congrats">
+              <MappingFragment StoreEntitySet="Congrats">
+                <ScalarProperty Name="CongratsID" ColumnName="CongratsID" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Surname" ColumnName="Surname" />
+                <ScalarProperty Name="ImagePath" ColumnName="ImagePath" />
+                <ScalarProperty Name="StartDate" ColumnName="StartDate" />
+                <ScalarProperty Name="EndDate" ColumnName="EndDate" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Death">
+            <EntityTypeMapping TypeName="AkGida_MyInfoModel.Death">
+              <MappingFragment StoreEntitySet="Death">
+                <ScalarProperty Name="DeathID" ColumnName="DeathID" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Surname" ColumnName="Surname" />
+                <ScalarProperty Name="ImagePath" ColumnName="ImagePath" />
+                <ScalarProperty Name="StartDate" ColumnName="StartDate" />
+                <ScalarProperty Name="EndDate" ColumnName="EndDate" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
           <EntitySetMapping Name="Departments">
             <EntityTypeMapping TypeName="AkGida_MyInfoModel.Departments">
               <MappingFragment StoreEntitySet="Departments">
                 <ScalarProperty Name="DepartmentID" ColumnName="DepartmentID" />
                 <ScalarProperty Name="DepartmentName" ColumnName="DepartmentName" />
                 <ScalarProperty Name="CompanyID" ColumnName="CompanyID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Duyurular">
+            <EntityTypeMapping TypeName="AkGida_MyInfoModel.Duyurular">
+              <MappingFragment StoreEntitySet="Duyurular">
+                <ScalarProperty Name="DuyuruID" ColumnName="DuyuruID" />
+                <ScalarProperty Name="CompanyID" ColumnName="CompanyID" />
+                <ScalarProperty Name="Baslik" ColumnName="Baslik" />
+                <ScalarProperty Name="Icerik" ColumnName="Icerik" />
+                <ScalarProperty Name="BaslangicTarihi" ColumnName="BaslangicTarihi" />
+                <ScalarProperty Name="BitisTarihi" ColumnName="BitisTarihi" />
+                <ScalarProperty Name="ResimYolu" ColumnName="ResimYolu" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Hakkimizda">
+            <EntityTypeMapping TypeName="AkGida_MyInfoModel.Hakkimizda">
+              <MappingFragment StoreEntitySet="Hakkimizda">
+                <ScalarProperty Name="HakkimizdaID" ColumnName="HakkimizdaID" />
+                <ScalarProperty Name="Icerik" ColumnName="Icerik" />
+                <ScalarProperty Name="ResimYolu" ColumnName="ResimYolu" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Menu">
+            <EntityTypeMapping TypeName="AkGida_MyInfoModel.Menu">
+              <MappingFragment StoreEntitySet="Menu">
+                <ScalarProperty Name="MenuID" ColumnName="MenuID" />
+                <ScalarProperty Name="CompanyID" ColumnName="CompanyID" />
+                <ScalarProperty Name="Tarih" ColumnName="Tarih" />
+                <ScalarProperty Name="Corba" ColumnName="Corba" />
+                <ScalarProperty Name="AnaYemek" ColumnName="AnaYemek" />
+                <ScalarProperty Name="Diyet" ColumnName="Diyet" />
+                <ScalarProperty Name="PilavMakarna" ColumnName="PilavMakarna" />
+                <ScalarProperty Name="Tatli" ColumnName="Tatli" />
+                <ScalarProperty Name="Meyve" ColumnName="Meyve" />
+                <ScalarProperty Name="Salata" ColumnName="Salata" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Personels">
+            <EntityTypeMapping TypeName="AkGida_MyInfoModel.Personels">
+              <MappingFragment StoreEntitySet="Personels">
+                <ScalarProperty Name="PersonelID" ColumnName="PersonelID" />
+                <ScalarProperty Name="PersonelName" ColumnName="PersonelName" />
+                <ScalarProperty Name="PersonelSurname" ColumnName="PersonelSurname" />
+                <ScalarProperty Name="Corbus" ColumnName="Corbus" />
+                <ScalarProperty Name="PersonelDahiliNo" ColumnName="PersonelDahiliNo" />
+                <ScalarProperty Name="PersonelTel" ColumnName="PersonelTel" />
+                <ScalarProperty Name="PersonelEposta" ColumnName="PersonelEposta" />
+                <ScalarProperty Name="DepartmentID" ColumnName="DepartmentID" />
+                <ScalarProperty Name="Birthday" ColumnName="Birthday" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Servis">
+            <EntityTypeMapping TypeName="AkGida_MyInfoModel.Servis">
+              <MappingFragment StoreEntitySet="Servis">
+                <ScalarProperty Name="ServisID" ColumnName="ServisID" />
+                <ScalarProperty Name="CompanyID" ColumnName="CompanyID" />
+                <ScalarProperty Name="SoforAdi" ColumnName="SoforAdi" />
+                <ScalarProperty Name="SoforSoyadi" ColumnName="SoforSoyadi" />
+                <ScalarProperty Name="Telefon" ColumnName="Telefon" />
+                <ScalarProperty Name="Plaka" ColumnName="Plaka" />
+                <ScalarProperty Name="Guzergah" ColumnName="Guzergah" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Slider">
+            <EntityTypeMapping TypeName="AkGida_MyInfoModel.Slider">
+              <MappingFragment StoreEntitySet="Slider">
+                <ScalarProperty Name="SliderID" ColumnName="SliderID" />
+                <ScalarProperty Name="SliderFoto" ColumnName="SliderFoto" />
+                <ScalarProperty Name="SliderBaslik" ColumnName="SliderBaslik" />
+                <ScalarProperty Name="SliderText" ColumnName="SliderText" />
+                <ScalarProperty Name="BaslangicTarihi" ColumnName="BaslangicTarihi" />
+                <ScalarProperty Name="BitisTarihi" ColumnName="BitisTarihi" />
+                <ScalarProperty Name="ResimYolu" ColumnName="ResimYolu" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -768,208 +716,51 @@ warning 6002: The table/view 'AkGida_MyInfo.dbo.UserRole' does not have a primar
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="Role">
-            <EntityTypeMapping TypeName="AkGida_MyInfoModel.Role">
-              <MappingFragment StoreEntitySet="Role">
-                <ScalarProperty Name="RoleDescription" ColumnName="RoleDescription" />
-                <ScalarProperty Name="RoleID" ColumnName="RoleID" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="Users">
-            <EntityTypeMapping TypeName="AkGida_MyInfoModel.Users">
-              <MappingFragment StoreEntitySet="Users">
-                <ScalarProperty Name="Password" ColumnName="Password" />
-                <ScalarProperty Name="Email" ColumnName="Email" />
-                <ScalarProperty Name="UserID" ColumnName="UserID" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="Yetkiler">
-            <EntityTypeMapping TypeName="AkGida_MyInfoModel.Yetkiler">
-              <MappingFragment StoreEntitySet="Yetkiler">
-                <ScalarProperty Name="CompanyID" ColumnName="CompanyID" />
-                <ScalarProperty Name="YetkiDescription" ColumnName="YetkiDescription" />
-                <ScalarProperty Name="YetkiID" ColumnName="YetkiID" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <AssociationSetMapping Name="RoleYetki" TypeName="AkGida_MyInfoModel.RoleYetki" StoreEntitySet="RoleYetki">
-            <EndProperty Name="Yetkiler">
-              <ScalarProperty Name="YetkiID" ColumnName="YetkiID" />
-            </EndProperty>
-            <EndProperty Name="Role">
-              <ScalarProperty Name="RoleID" ColumnName="RoleID" />
-            </EndProperty>
-          </AssociationSetMapping>
-          <AssociationSetMapping Name="UserRole" TypeName="AkGida_MyInfoModel.UserRole" StoreEntitySet="UserRole">
-            <EndProperty Name="Users">
-              <ScalarProperty Name="UserID" ColumnName="UserID" />
-            </EndProperty>
-            <EndProperty Name="Role">
-              <ScalarProperty Name="RoleID" ColumnName="RoleID" />
-            </EndProperty>
-          </AssociationSetMapping>
-          <EntitySetMapping Name="YeniUrun">
-            <EntityTypeMapping TypeName="AkGida_MyInfoModel.YeniUrun">
-              <MappingFragment StoreEntitySet="YeniUrun">
-                <ScalarProperty Name="VideoYolu" ColumnName="VideoYolu" />
-                <ScalarProperty Name="ResimYolu" ColumnName="ResimYolu" />
-                <ScalarProperty Name="Tanitim" ColumnName="Tanitim" />
-                <ScalarProperty Name="UrunAdi" ColumnName="UrunAdi" />
-                <ScalarProperty Name="UrunID" ColumnName="UrunID" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="Menu">
-            <EntityTypeMapping TypeName="AkGida_MyInfoModel.Menu">
-              <MappingFragment StoreEntitySet="Menu">
-                <ScalarProperty Name="Salata" ColumnName="Salata" />
-                <ScalarProperty Name="Meyve" ColumnName="Meyve" />
-                <ScalarProperty Name="Tatli" ColumnName="Tatli" />
-                <ScalarProperty Name="PilavMakarna" ColumnName="PilavMakarna" />
-                <ScalarProperty Name="Diyet" ColumnName="Diyet" />
-                <ScalarProperty Name="AnaYemek" ColumnName="AnaYemek" />
-                <ScalarProperty Name="Corba" ColumnName="Corba" />
-                <ScalarProperty Name="Tarih" ColumnName="Tarih" />
-                <ScalarProperty Name="CompanyID" ColumnName="CompanyID" />
-                <ScalarProperty Name="MenuID" ColumnName="MenuID" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="Personels">
-            <EntityTypeMapping TypeName="AkGida_MyInfoModel.Personels">
-              <MappingFragment StoreEntitySet="Personels">
-                <ScalarProperty Name="Birthday" ColumnName="Birthday" />
-                <ScalarProperty Name="DepartmentID" ColumnName="DepartmentID" />
-                <ScalarProperty Name="PersonelEposta" ColumnName="PersonelEposta" />
-                <ScalarProperty Name="PersonelTel" ColumnName="PersonelTel" />
-                <ScalarProperty Name="PersonelDahiliNo" ColumnName="PersonelDahiliNo" />
-                <ScalarProperty Name="Corbus" ColumnName="Corbus" />
-                <ScalarProperty Name="PersonelSurname" ColumnName="PersonelSurname" />
-                <ScalarProperty Name="PersonelName" ColumnName="PersonelName" />
-                <ScalarProperty Name="PersonelID" ColumnName="PersonelID" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="Slider">
-            <EntityTypeMapping TypeName="AkGida_MyInfoModel.Slider">
-              <MappingFragment StoreEntitySet="Slider">
-                <ScalarProperty Name="ResimYolu" ColumnName="ResimYolu" />
-                <ScalarProperty Name="BitisTarihi" ColumnName="BitisTarihi" />
-                <ScalarProperty Name="BaslangicTarihi" ColumnName="BaslangicTarihi" />
-                <ScalarProperty Name="SliderText" ColumnName="SliderText" />
-                <ScalarProperty Name="SliderBaslik" ColumnName="SliderBaslik" />
-                <ScalarProperty Name="SliderFoto" ColumnName="SliderFoto" />
-                <ScalarProperty Name="SliderID" ColumnName="SliderID" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="Duyurular">
-            <EntityTypeMapping TypeName="AkGida_MyInfoModel.Duyurular">
-              <MappingFragment StoreEntitySet="Duyurular">
-                <ScalarProperty Name="CompanyID" ColumnName="CompanyID" />
-                <ScalarProperty Name="ResimYolu" ColumnName="ResimYolu" />
-                <ScalarProperty Name="BitisTarihi" ColumnName="BitisTarihi" />
-                <ScalarProperty Name="BaslangicTarihi" ColumnName="BaslangicTarihi" />
-                <ScalarProperty Name="Icerik" ColumnName="Icerik" />
-                <ScalarProperty Name="Baslik" ColumnName="Baslik" />
-                <ScalarProperty Name="DuyuruID" ColumnName="DuyuruID" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="Baby">
-            <EntityTypeMapping TypeName="AkGida_MyInfoModel.Baby">
-              <MappingFragment StoreEntitySet="Baby">
-                <ScalarProperty Name="EndDate" ColumnName="EndDate" />
-                <ScalarProperty Name="StartDate" ColumnName="StartDate" />
-                <ScalarProperty Name="ImagePath" ColumnName="ImagePath" />
-                <ScalarProperty Name="Surname" ColumnName="Surname" />
-                <ScalarProperty Name="Name" ColumnName="Name" />
-                <ScalarProperty Name="BabyID" ColumnName="BabyID" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="Congrats">
-            <EntityTypeMapping TypeName="AkGida_MyInfoModel.Congrats">
-              <MappingFragment StoreEntitySet="Congrats">
-                <ScalarProperty Name="EndDate" ColumnName="EndDate" />
-                <ScalarProperty Name="StartDate" ColumnName="StartDate" />
-                <ScalarProperty Name="ImagePath" ColumnName="ImagePath" />
-                <ScalarProperty Name="Surname" ColumnName="Surname" />
-                <ScalarProperty Name="Name" ColumnName="Name" />
-                <ScalarProperty Name="CongratsID" ColumnName="CongratsID" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="Death">
-            <EntityTypeMapping TypeName="AkGida_MyInfoModel.Death">
-              <MappingFragment StoreEntitySet="Death">
-                <ScalarProperty Name="EndDate" ColumnName="EndDate" />
-                <ScalarProperty Name="StartDate" ColumnName="StartDate" />
-                <ScalarProperty Name="ImagePath" ColumnName="ImagePath" />
-                <ScalarProperty Name="Surname" ColumnName="Surname" />
-                <ScalarProperty Name="Name" ColumnName="Name" />
-                <ScalarProperty Name="DeathID" ColumnName="DeathID" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
           <EntitySetMapping Name="Thanks">
             <EntityTypeMapping TypeName="AkGida_MyInfoModel.Thanks">
               <MappingFragment StoreEntitySet="Thanks">
-                <ScalarProperty Name="EndDate" ColumnName="EndDate" />
-                <ScalarProperty Name="StartDate" ColumnName="StartDate" />
-                <ScalarProperty Name="ImagePath" ColumnName="ImagePath" />
-                <ScalarProperty Name="Surname" ColumnName="Surname" />
-                <ScalarProperty Name="Name" ColumnName="Name" />
                 <ScalarProperty Name="ThanksID" ColumnName="ThanksID" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Surname" ColumnName="Surname" />
+                <ScalarProperty Name="ImagePath" ColumnName="ImagePath" />
+                <ScalarProperty Name="StartDate" ColumnName="StartDate" />
+                <ScalarProperty Name="EndDate" ColumnName="EndDate" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Weddings">
             <EntityTypeMapping TypeName="AkGida_MyInfoModel.Weddings">
               <MappingFragment StoreEntitySet="Weddings">
-                <ScalarProperty Name="EndDate" ColumnName="EndDate" />
-                <ScalarProperty Name="StartDate" ColumnName="StartDate" />
-                <ScalarProperty Name="ImagePath" ColumnName="ImagePath" />
-                <ScalarProperty Name="Surname" ColumnName="Surname" />
-                <ScalarProperty Name="Name" ColumnName="Name" />
                 <ScalarProperty Name="WeddingID" ColumnName="WeddingID" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="Servis">
-            <EntityTypeMapping TypeName="AkGida_MyInfoModel.Servis">
-              <MappingFragment StoreEntitySet="Servis">
-                <ScalarProperty Name="Guzergah" ColumnName="Guzergah" />
-                <ScalarProperty Name="Plaka" ColumnName="Plaka" />
-                <ScalarProperty Name="Telefon" ColumnName="Telefon" />
-                <ScalarProperty Name="SoforSoyadi" ColumnName="SoforSoyadi" />
-                <ScalarProperty Name="SoforAdi" ColumnName="SoforAdi" />
-                <ScalarProperty Name="CompanyID" ColumnName="CompanyID" />
-                <ScalarProperty Name="ServisID" ColumnName="ServisID" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="Hakkimizda">
-            <EntityTypeMapping TypeName="AkGida_MyInfoModel.Hakkimizda">
-              <MappingFragment StoreEntitySet="Hakkimizda">
-                <ScalarProperty Name="ResimYolu" ColumnName="ResimYolu" />
-                <ScalarProperty Name="Icerik" ColumnName="Icerik" />
-                <ScalarProperty Name="HakkimizdaID" ColumnName="HakkimizdaID" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Surname" ColumnName="Surname" />
+                <ScalarProperty Name="ImagePath" ColumnName="ImagePath" />
+                <ScalarProperty Name="StartDate" ColumnName="StartDate" />
+                <ScalarProperty Name="EndDate" ColumnName="EndDate" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Yayinlar">
             <EntityTypeMapping TypeName="AkGida_MyInfoModel.Yayinlar">
               <MappingFragment StoreEntitySet="Yayinlar">
-                <ScalarProperty Name="YayinURL" ColumnName="YayinURL" />
-                <ScalarProperty Name="YayinBaslik" ColumnName="YayinBaslik" />
                 <ScalarProperty Name="YayinID" ColumnName="YayinID" />
+                <ScalarProperty Name="YayinBaslik" ColumnName="YayinBaslik" />
+                <ScalarProperty Name="YayinURL" ColumnName="YayinURL" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          </EntityContainerMapping>
+          <EntitySetMapping Name="YeniUrun">
+            <EntityTypeMapping TypeName="AkGida_MyInfoModel.YeniUrun">
+              <MappingFragment StoreEntitySet="YeniUrun">
+                <ScalarProperty Name="UrunID" ColumnName="UrunID" />
+                <ScalarProperty Name="UrunAdi" ColumnName="UrunAdi" />
+                <ScalarProperty Name="Tanitim" ColumnName="Tanitim" />
+                <ScalarProperty Name="ResimYolu" ColumnName="ResimYolu" />
+                <ScalarProperty Name="VideoYolu" ColumnName="VideoYolu" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
       </Mapping>
     </edmx:Mappings>
   </edmx:Runtime>

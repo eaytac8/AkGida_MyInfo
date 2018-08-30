@@ -79,7 +79,6 @@ namespace AkGida_MyInfo.Controllers
             switch (result)
             {
                 case SignInStatus.Success:
-                    //return RedirectToAction("HomePage", "Admin");
                     return RedirectToLocal(returnUrl);
                 case SignInStatus.LockedOut:
                     return View("Lockout");
@@ -164,7 +163,7 @@ namespace AkGida_MyInfo.Controllers
                     // var callbackUrl = Url.Action("ConfirmEmail", "Account", new { userId = user.Id, code = code }, protocol: Request.Url.Scheme);
                     // await UserManager.SendEmailAsync(user.Id, "Hesabınızı onaylayın", "Lütfen hesabınızı onaylamak için <a href=\"" + callbackUrl + "\">buraya tıklayın</a>");
 
-                    return RedirectToAction("Index", "Admin");
+                    return RedirectToAction("Index", "Home");
                 }
                 AddErrors(result);
             }
@@ -389,12 +388,11 @@ namespace AkGida_MyInfo.Controllers
         //
         // POST: /Account/LogOff
         [HttpPost]
-        [Authorize]
         [ValidateAntiForgeryToken]
         public ActionResult LogOff()
         {
             AuthenticationManager.SignOut(DefaultAuthenticationTypes.ApplicationCookie);
-            return RedirectToAction("Index", "Admin");
+            return RedirectToAction("Index", "Home");
         }
 
         //
@@ -451,7 +449,7 @@ namespace AkGida_MyInfo.Controllers
             {
                 return Redirect(returnUrl);
             }
-            return RedirectToAction("Index", "Admin");
+            return RedirectToAction("Index", "Home");
         }
 
         internal class ChallengeResult : HttpUnauthorizedResult

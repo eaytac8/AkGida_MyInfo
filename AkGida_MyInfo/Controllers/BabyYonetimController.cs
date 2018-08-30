@@ -11,6 +11,7 @@ using AkGida_MyInfo.Models;
 
 namespace AkGida_MyInfo.Controllers
 {
+    [Authorize(Roles ="InsanKaynaklariAdmin")]
     public class BabyYonetimController : Controller
     {
         private AkGida_MyInfoEntities db = new AkGida_MyInfoEntities();

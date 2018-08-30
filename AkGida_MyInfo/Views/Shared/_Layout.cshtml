@@ -157,23 +157,18 @@
                     <div class="navbar-collapse pull-right nav-main-collapse collapse">
                         <nav class="nav-main">
                             <ul id="topMain" class="nav nav-pills nav-main">
-
                                 <li class="nav-item ">
                                     <a class="nav-link" href="/Home/Index">ANA SAYFA<span class="sr-only">(current)</span></a>
                                 </li>  <!-- ANA SAYFA -->
-
                                 <li class="nav-item">
-                                    <a class="nav-link" href="/Home/Hakkimizda">HAKKIMIZDA<span class="sr-only">(current)</span></a>
+                                    <a class="nav-link" href="/Home/About">HAKKIMIZDA<span class="sr-only">(current)</span></a>
                                 </li> <!-- HAKKIMIZDA -->
-
                                 <li class="nav-item">
-                                    <a class="nav-link" href="/Home/Iletisim">İLETİŞİM<span class="sr-only">(current)</span></a>
+                                    <a class="nav-link" href="/Home/Contact">İLETİŞİM<span class="sr-only">(current)</span></a>
                                 </li> <!-- İLETİŞİM -->
-
                                 <li class="nav-item">
                                     <a class="nav-link" href="https://www.kariyer.net/firma-profil/ak-gida-lactalis-turkiye-99863-45823" target="_blank">KARİYER<span class="sr-only">(current)</span></a>
                                 </li> <!-- KARİYER FIRSATLARI -->
-
 
                                 <li class="dropdown mega-menu">
                                     <!-- DİLEKLER -->
@@ -183,52 +178,42 @@
                                     <ul class="dropdown-menu">
                                         <li>
                                             <div class="row">
-
                                                 <div class="col-md-4th">
                                                     <ul class="list-unstyled">
                                                         <li><span>MUTLU YILLAR</span></li>
                                                         @{ Html.RenderAction("Birthday", "Home");}
                                                     </ul>
                                                 </div>
-
                                                 <div class="col-md-4th">
                                                     <ul class="list-unstyled">
                                                         <li><span>HOŞGELDİN BEBEK</span></li>
                                                         @{ Html.RenderAction("BabyPartial", "Home");}
-
                                                     </ul>
                                                 </div>
-
                                                 <div class="col-md-4th">
                                                     <ul class="list-unstyled">
                                                         <li><span>BAŞINIZ SAĞOLSUN</span></li>
                                                         @{ Html.RenderAction("DeathPartial", "Home");}
                                                     </ul>
                                                 </div>
-
                                                 <div class="col-md-4th">
                                                     <ul class="list-unstyled">
                                                         <li><span>HAYIRLI OLSUN</span></li>
                                                         @{ Html.RenderAction("CongratsPartial", "Home");}
-
                                                     </ul>
                                                 </div>
-
                                                 <div class="col-md-4th">
                                                     <ul class="list-unstyled">
                                                         <li><span>TEŞEKKÜRLER</span></li>
                                                         @{ Html.RenderAction("ThanksPartial", "Home");}
-
                                                     </ul>
                                                 </div>
-
                                                 <div class="col-md-4th">
                                                     <ul class="list-unstyled">
                                                         <li><span>DÜĞÜN DAVETİYESİ</span></li>
                                                         @{ Html.RenderAction("WeddingsPartial", "Home");}
                                                     </ul>
                                                 </div>
-
                                             </div>
                                         </li>
                                     </ul>
@@ -238,15 +223,16 @@
                                     <a class="nav-link" href="/Home/YeniUrun">YENİ ÜRÜNLERİMİZ<span class="sr-only">(current)</span></a>
                                 </li> <!-- Yeni Ürünlerimiz -->
 
-                                <li class="dropdown active"><!-- Yayınlarımız -->
+                                <li class="dropdown active">
+                                    <!-- Yayınlarımız -->
                                     <a class="dropdown-toggle" href="#">
                                         YAYINLARIMIZ
                                     </a>
-										<ul class="dropdown-menu has-topBar">
-											<li>
-                                                @{ Html.RenderAction("YayinlarPartial", "Home");}
-											</li>
-										</ul>
+                                    <ul class="dropdown-menu has-topBar">
+                                        <li>
+                                            @{ Html.RenderAction("YayinlarPartial", "Home");}
+                                        </li>
+                                    </ul>
                                 </li>
                             </ul>
                         </nav>

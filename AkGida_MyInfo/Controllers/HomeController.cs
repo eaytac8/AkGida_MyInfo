@@ -28,7 +28,7 @@ namespace AkGida_MyInfo.Controllers
 
             List<YeniUrun> yeniurun = new List<YeniUrun>();
             yeniurun = db.YeniUrun.OrderBy(y => y.UrunID).ToList();
-          
+
             companySlider.Companylerim = company;
             companySlider.Sliderlerim = slider;
             companySlider.YeniUrunlerim = yeniurun;
@@ -151,12 +151,12 @@ namespace AkGida_MyInfo.Controllers
         public ActionResult Search(string searchString)
         {
             var personel = from p in db.Personels
-                         select p;
-            if(!String.IsNullOrEmpty(searchString))
-                {
+                           select p;
+            if (!String.IsNullOrEmpty(searchString))
+            {
                 personel = personel.Where(x => x.PersonelName.Contains(searchString) || x.PersonelSurname.Contains(searchString));
 
-                }
+            }
             else
             {
                 ViewBag.personelYok = "Personel bulunamadı.";

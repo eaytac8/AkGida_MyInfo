@@ -7,17 +7,23 @@
     <link rel="shortcut icon" href="\Assets\favicon.ico" />
     <meta name="description" content="" />
     <meta name="Author" content="Dorin Grigoras [www.stepofweb.com]" />
+
     <!-- mobile settings -->
     <meta name="viewport" content="width=device-width, maximum-scale=1, initial-scale=1, user-scalable=0" />
+
     <!-- WEB FONTS -->
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700,800&amp;subset=latin,latin-ext,cyrillic,cyrillic-ext" rel="stylesheet" type="text/css" />
+
     <!-- CORE CSS -->
     <link href="~/Content/Admin/assets/plugins/bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+
     <!-- THEME CSS -->
     <link href="~/Content/Admin/assets/css/essentials.css" rel="stylesheet" type="text/css" />
     <link href="~/Content/Admin/assets/css/layout.css" rel="stylesheet" type="text/css" />
     <link href="~/Content/Admin/assets/css/color_scheme/green.css" rel="stylesheet" type="text/css" id="color_scheme" />
+
     <script src="~/Content/Admin/assets/plugins/bootstrap/js/bootstrap.min.js"></script>
+
     <script type="text/javascript" src="~/Content/Admin/assets/plugins/jquery/jquery-2.1.4.min.js"></script>
     @RenderSection("scripts", required: false)
 </head>
@@ -26,8 +32,10 @@
 -->
 <body>
 
+
     <!-- WRAPPER -->
     <div id="wrapper">
+
         <!--
             ASIDE
             Keep it outside of #wrapper (responsive purpose)
@@ -54,6 +62,7 @@
                             <i class="main-icon fa fa-dashboard"></i> <span>Yönetim Paneli</span>
                         </a>
                     </li>
+
                     <!-- Personeller -->
                     <li>
                         <a href="#">
@@ -66,6 +75,7 @@
                             <li><a href="/PersonelYonetim/Create">Personel Ekle</a></li>
                         </ul>
                     </li>
+
                     <!-- Departmanlar -->
                     <li>
                         <a href="#">
@@ -78,11 +88,12 @@
                             <li><a href="/DepartmentYonetim/Create">Departman Ekle</a></li>
                         </ul>
                     </li>
+
                     <!-- Şubeler / Company -->
                     <li>
                         <a href="#">
                             <i class="fa fa-menu-arrow pull-right"></i>
-                            <i class="main-icon fa fa-location-arrow"></i> <span>Lokasyon</span>
+                            <i class="main-icon fa fa-pencil-square-o"></i> <span>Şube</span>
                         </a>
                         <ul style="display: block;">
                             <!-- submenus -->
@@ -90,11 +101,12 @@
                             <li><a href="/CompanyYonetim/Create">Şube Ekle</a></li>
                         </ul>
                     </li>
+
                     <!-- Yemek Menüleri-->
                     <li>
                         <a href="#">
                             <i class="fa fa-menu-arrow pull-right"></i>
-                            <i class="main-icon fa fa-spoon"></i> <span>Yemek Menüsü</span>
+                            <i class="main-icon fa fa-pencil-square-o"></i> <span>Yemek Menüsü</span>
                         </a>
                         <ul style="display: block;">
                             <!-- submenus -->
@@ -102,11 +114,13 @@
                             <li><a href="/MenuYonetim/Create">Menü Ekle</a></li>
                         </ul>
                     </li>
+
+
                     <!--Genel Duyurular (Anasayfa Slider)-->
                     <li>
                         <a href="#">
                             <i class="fa fa-menu-arrow pull-right"></i>
-                            <i class="main-icon fa fa-bell"></i> <span>Genel Duyuru</span>
+                            <i class="main-icon fa fa-pencil-square-o"></i> <span>Genel Duyuru</span>
                         </a>
                         <ul style="display: block;">
                             <!-- submenus -->
@@ -114,11 +128,12 @@
                             <li><a href="/GenelDuyuruYonetim/Create">Duyuru Ekle</a></li>
                         </ul>
                     </li>
+
                     <!-- Şube Duyuru -->
                     <li>
                         <a href="#">
                             <i class="fa fa-menu-arrow pull-right"></i>
-                            <i class="main-icon fa fa-bell-o"></i> <span>Şube Duyuru</span>
+                            <i class="main-icon fa fa-pencil-square-o"></i> <span>Şube Duyuru</span>
                         </a>
                         <ul style="display: block;">
                             <!-- submenus -->
@@ -126,11 +141,12 @@
                             <li><a href="/DuyuruYonetim/Create">Duyuru Ekle</a></li>
                         </ul>
                     </li>
+
                     <!-- Hoşgeldin Bebek -->
                     <li>
                         <a href="#">
                             <i class="fa fa-menu-arrow pull-right"></i>
-                            <i class="main-icon fa fa-birthday-cake"></i> <span>Hoşgeldin Bebek</span>
+                            <i class="main-icon fa fa-pencil-square-o"></i> <span>Hoşgeldin Bebek</span>
                         </a>
                         <ul style="display: block;">
                             <!-- submenus -->
@@ -138,11 +154,12 @@
                             <li><a href="/BabyYonetim/Create">Bebek Ekle</a></li>
                         </ul>
                     </li>
+
                     <!-- Başınız Sağolsun -->
                     <li>
                         <a href="#">
                             <i class="fa fa-menu-arrow pull-right"></i>
-                            <i class="main-icon fa fa-moon-o"></i> <span>Başınız Sağolsun</span>
+                            <i class="main-icon fa fa-pencil-square-o"></i> <span>Başınız Sağolsun</span>
                         </a>
                         <ul style="display: block;">
                             <!-- submenus -->
@@ -150,11 +167,12 @@
                             <li><a href="/DeathYonetim/Create">Vefat Bilgisi Ekle</a></li>
                         </ul>
                     </li>
+
                     <!-- Hayırlı Olsun -->
                     <li>
                         <a href="#">
                             <i class="fa fa-menu-arrow pull-right"></i>
-                            <i class="main-icon fa fa-smile-o"></i> <span>Hayırlı Olsun</span>
+                            <i class="main-icon fa fa-pencil-square-o"></i> <span>Hayırlı Olsun</span>
                         </a>
                         <ul style="display: block;">
                             <!-- submenus -->
@@ -162,6 +180,7 @@
                             <li><a href="/CongratsYonetim/Create">Tebrik Ekle</a></li>
                         </ul>
                     </li>
+
                     <!-- Teşekkürler -->
                     <li>
                         <a href="#">
@@ -174,11 +193,13 @@
                             <li><a href="/ThanksYonetim/Create">Teşekkür Ekle</a></li>
                         </ul>
                     </li>
+
+
                     <!-- Düğün Davetiyesi -->
                     <li>
                         <a href="#">
                             <i class="fa fa-menu-arrow pull-right"></i>
-                            <i class="main-icon fa fa-envelope-o"></i> <span>Düğün Davetiyesi</span>
+                            <i class="main-icon fa fa-pencil-square-o"></i> <span>Düğün Davetiyesi</span>
                         </a>
                         <ul style="display: block;">
                             <!-- submenus -->
@@ -186,11 +207,12 @@
                             <li><a href="/WeddingsYonetim/Create">Davetiye Ekle</a></li>
                         </ul>
                     </li>
+
                     <!-- Servis -->
                     <li>
                         <a href="#">
                             <i class="fa fa-menu-arrow pull-right"></i>
-                            <i class="main-icon fa fa-bus"></i> <span>Servis</span>
+                            <i class="main-icon fa fa-pencil-square-o"></i> <span>Servis</span>
                         </a>
                         <ul style="display: block;">
                             <!-- submenus -->
@@ -198,11 +220,12 @@
                             <li><a href="/ServisYonetim/Create">Servis Ekle</a></li>
                         </ul>
                     </li>
+
                     <!-- Yeni Ürün -->
                     <li>
                         <a href="#">
                             <i class="fa fa-menu-arrow pull-right"></i>
-                            <i class="main-icon fa fa-barcode"></i> <span>Yeni Ürün</span>
+                            <i class="main-icon fa fa-pencil-square-o"></i> <span>Yeni Ürün</span>
                         </a>
                         <ul style="display: block;">
                             <!-- submenus -->
@@ -210,37 +233,15 @@
                             <li><a href="/YeniUrunYonetim/Create">Yeni Ürün Ekle</a></li>
                         </ul>
                     </li>
-                    <li>
-                        <!-- Yayınlarımız -->
-                        <a href="#">
-                            <i class="fa fa-menu-arrow pull-right"></i>
-                            <i class="main-icon fa fa-book"></i> <span>Yayınlarımız</span>
-                        </a>
-                        <ul style="display: block;">
-                            <!-- submenus -->
-                            <li><a href="/YayinlarYonetim/Index">Yayın Listesi</a></li>
-                            <li><a href="/YayinlarYonetim/Create">Yayın Ekle</a></li>
-                        </ul>
-                    </li>
-                    <!-- Hakkımızda -->
-                    <li>
-                        <a href="#">
-                            <i class="fa fa-menu-arrow pull-right"></i>
-                            <i class="main-icon fa fa-file-text"></i> <span>Hakkımızda</span>
-                        </a>
-                        <ul style="display: block;">
-                            <!-- submenus -->
-                            <li><a href="/HakkimizdaYonetim/Index">Görüntüle</a></li>
-                            <li><a href="/HakkimizdaYonetim/Create">Hakkımızda Ekle</a></li>
-                        </ul>
-                    </li>
-                    <li>
+
+                    @*<li>
                         <a href="calendar.html">
-                            <i class="main-icon fa fa-home"></i>
+                            <i class="main-icon fa fa-calendar"></i>
                             <span class="label label-warning pull-right">2</span> <span>Calendar</span>
                         </a>
-                    </li>
+                    </li>*@
                 </ul>
+
                 <!-- SECOND MAIN LIST -->
                 @*<h3>MORE</h3>
                 <ul class="nav nav-list">
@@ -257,22 +258,29 @@
                         </a>
                     </li>
                 </ul>*@
+
             </nav>
+
             <span id="asidebg"><!-- aside fixed background --></span>
         </aside>
         <!-- /ASIDE -->
         <!-- HEADER -->
         <header id="header">
+
             <!-- Mobile Button -->
             <button id="mobileMenuBtn"></button>
+
             <!-- Logo -->
             <span class="logo pull-left">
-                <img src="~/Content/Admin/assets/images/logo_light.png" alt="admin panel" height="35" />
+                <img src="~/Content/Admin/assets/images/logo_light.png" alt="admin panel" height="35"/>
             </span>
+
             <form method="get" action="page-search.html" class="search pull-left hidden-xs">
                 <input type="text" class="form-control" name="k" placeholder="Search for something..." />
             </form>
+
             <nav>
+
                 <!-- OPTIONS LIST -->
                 <ul class="nav pull-right">
                     <!-- USER OPTIONS -->
@@ -288,37 +296,39 @@
                         <ul class="dropdown-menu hold-on-click">
                             @Html.Partial("_LoginPartial")
                             @*<li>
-                                    <!-- my calendar -->
-                                    <a href="calendar.html"><i class="fa fa-calendar"></i> Calendar</a>
-                                </li>
-                                <li>
-                                    <!-- my inbox -->
-                                    <a href="#">
-                                        <i class="fa fa-envelope"></i> Inbox
-                                        <span class="pull-right label label-default">0</span>
-                                    </a>
-                                </li>
-                                <li>
-                                    <!-- settings -->
-                                    <a href="page-user-profile.html"><i class="fa fa-cogs"></i> Settings</a>
-                                </li>
+                    <!-- my calendar -->
+                    <a href="calendar.html"><i class="fa fa-calendar"></i> Calendar</a>
+                </li>
+                <li>
+                    <!-- my inbox -->
+                    <a href="#">
+                        <i class="fa fa-envelope"></i> Inbox
+                        <span class="pull-right label label-default">0</span>
+                    </a>
+                </li>
+                <li>
+                    <!-- settings -->
+                    <a href="page-user-profile.html"><i class="fa fa-cogs"></i> Settings</a>
+                </li>
 
-                                <li class="divider"></li>
+                <li class="divider"></li>
 
-                                <li>
-                                    <!-- lockscreen -->
-                                    <a href="page-lock.html"><i class="fa fa-lock"></i> Lock Screen</a>
-                                </li>
-                                <li>
-                                    <!-- logout -->
-                                    <a href="page-login.html"><i class="fa fa-power-off"></i> Log Out</a>
-                                </li>*@
+                <li>
+                    <!-- lockscreen -->
+                    <a href="page-lock.html"><i class="fa fa-lock"></i> Lock Screen</a>
+                </li>
+                <li>
+                    <!-- logout -->
+                    <a href="page-login.html"><i class="fa fa-power-off"></i> Log Out</a>
+                </li>*@
                         </ul>
                     </li>
                     <!-- /USER OPTIONS -->
                 </ul>
                 <!-- /OPTIONS LIST -->
+
             </nav>
+
         </header>
         <!-- /HEADER -->
         <!--
@@ -326,22 +336,30 @@
         -->
         <section id="middle">
 
+
             <!-- page title -->
             <header id="page-header">
                 <h1>@ViewBag.Title</h1>
-
+                
             </header>
             <!-- /page title -->
 
+
             <div id="content" class="padding-20">
+
                 @RenderBody()
+
             </div>
         </section>
         <!-- /MIDDLE -->
+
     </div>
+
+
 
     <!-- JAVASCRIPT FILES -->
     <script type="text/javascript">var plugin_path = '/Content/Admin/assets/plugins/';</script>
     <script type="text/javascript" src="~/Content/Admin/assets/js/app.js"></script>
+
 </body>
 </html>
