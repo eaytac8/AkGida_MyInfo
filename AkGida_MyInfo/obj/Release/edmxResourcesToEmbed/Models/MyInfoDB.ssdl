@@ -15,7 +15,7 @@
     <Key>
       <PropertyRef Name="CompanyID" />
     </Key>
-    <Property Name="CompanyID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="CompanyID" Type="int" Nullable="false" />
     <Property Name="CompanyName" Type="nvarchar" MaxLength="150" />
     <Property Name="CompanyAddress" Type="nvarchar" MaxLength="300" />
     <Property Name="CompanyType" Type="nvarchar" MaxLength="150" />
@@ -100,23 +100,6 @@
     <Property Name="DepartmentID" Type="int" />
     <Property Name="Birthday" Type="date" />
   </EntityType>
-  <EntityType Name="Role">
-    <Key>
-      <PropertyRef Name="RoleID" />
-    </Key>
-    <Property Name="RoleID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="RoleDescription" Type="nvarchar" MaxLength="100" Nullable="false" />
-  </EntityType>
-  <!--Errors Found During Generation:
-warning 6002: The table/view 'AkGida_MyInfo.dbo.RoleYetki' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
-  <EntityType Name="RoleYetki">
-    <Key>
-      <PropertyRef Name="RoleID" />
-      <PropertyRef Name="YetkiID" />
-    </Key>
-    <Property Name="RoleID" Type="int" Nullable="false" />
-    <Property Name="YetkiID" Type="int" Nullable="false" />
-  </EntityType>
   <EntityType Name="Servis">
     <Key>
       <PropertyRef Name="ServisID" />
@@ -162,24 +145,6 @@ warning 6002: The table/view 'AkGida_MyInfo.dbo.RoleYetki' does not have a prima
     <Property Name="StartDate" Type="date" />
     <Property Name="EndDate" Type="date" />
   </EntityType>
-  <!--Errors Found During Generation:
-warning 6002: The table/view 'AkGida_MyInfo.dbo.UserRole' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
-  <EntityType Name="UserRole">
-    <Key>
-      <PropertyRef Name="UserID" />
-      <PropertyRef Name="RoleID" />
-    </Key>
-    <Property Name="UserID" Type="int" Nullable="false" />
-    <Property Name="RoleID" Type="int" Nullable="false" />
-  </EntityType>
-  <EntityType Name="Users">
-    <Key>
-      <PropertyRef Name="UserID" />
-    </Key>
-    <Property Name="UserID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="Email" Type="nvarchar" MaxLength="100" Nullable="false" />
-    <Property Name="Password" Type="nvarchar" MaxLength="50" Nullable="false" />
-  </EntityType>
   <EntityType Name="Weddings">
     <Key>
       <PropertyRef Name="WeddingID" />
@@ -208,14 +173,6 @@ warning 6002: The table/view 'AkGida_MyInfo.dbo.UserRole' does not have a primar
     <Property Name="Tanitim" Type="nvarchar" MaxLength="450" />
     <Property Name="ResimYolu" Type="nvarchar" MaxLength="150" />
     <Property Name="VideoYolu" Type="nvarchar" MaxLength="150" />
-  </EntityType>
-  <EntityType Name="Yetkiler">
-    <Key>
-      <PropertyRef Name="YetkiID" />
-    </Key>
-    <Property Name="YetkiID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="YetkiDescription" Type="nvarchar" MaxLength="100" Nullable="false" />
-    <Property Name="CompanyID" Type="int" Nullable="false" />
   </EntityType>
   <Association Name="FK_Departments_Companies">
     <End Role="Companies" Type="Self.Companies" Multiplicity="0..1" />
@@ -265,30 +222,6 @@ warning 6002: The table/view 'AkGida_MyInfo.dbo.UserRole' does not have a primar
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK_RoleYetki_Role">
-    <End Role="Role" Type="Self.Role" Multiplicity="1" />
-    <End Role="RoleYetki" Type="Self.RoleYetki" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="Role">
-        <PropertyRef Name="RoleID" />
-      </Principal>
-      <Dependent Role="RoleYetki">
-        <PropertyRef Name="RoleID" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="FK_RoleYetki_Yetkiler">
-    <End Role="Yetkiler" Type="Self.Yetkiler" Multiplicity="1" />
-    <End Role="RoleYetki" Type="Self.RoleYetki" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="Yetkiler">
-        <PropertyRef Name="YetkiID" />
-      </Principal>
-      <Dependent Role="RoleYetki">
-        <PropertyRef Name="YetkiID" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
   <Association Name="FK_Servis_Companies">
     <End Role="Companies" Type="Self.Companies" Multiplicity="0..1" />
     <End Role="Servis" Type="Self.Servis" Multiplicity="*" />
@@ -298,30 +231,6 @@ warning 6002: The table/view 'AkGida_MyInfo.dbo.UserRole' does not have a primar
       </Principal>
       <Dependent Role="Servis">
         <PropertyRef Name="CompanyID" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="FK_UserRole_Role">
-    <End Role="Role" Type="Self.Role" Multiplicity="1" />
-    <End Role="UserRole" Type="Self.UserRole" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="Role">
-        <PropertyRef Name="RoleID" />
-      </Principal>
-      <Dependent Role="UserRole">
-        <PropertyRef Name="RoleID" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="FK_UserRole_Users">
-    <End Role="Users" Type="Self.Users" Multiplicity="1" />
-    <End Role="UserRole" Type="Self.UserRole" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="Users">
-        <PropertyRef Name="UserID" />
-      </Principal>
-      <Dependent Role="UserRole">
-        <PropertyRef Name="UserID" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
@@ -335,28 +244,13 @@ warning 6002: The table/view 'AkGida_MyInfo.dbo.UserRole' does not have a primar
     <EntitySet Name="Hakkimizda" EntityType="Self.Hakkimizda" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Menu" EntityType="Self.Menu" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Personels" EntityType="Self.Personels" Schema="dbo" store:Type="Tables" />
-    <EntitySet Name="Role" EntityType="Self.Role" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Servis" EntityType="Self.Servis" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Slider" EntityType="Self.Slider" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Thanks" EntityType="Self.Thanks" Schema="dbo" store:Type="Tables" />
-    <EntitySet Name="Users" EntityType="Self.Users" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Weddings" EntityType="Self.Weddings" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Yayinlar" EntityType="Self.Yayinlar" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="YeniUrun" EntityType="Self.YeniUrun" Schema="dbo" store:Type="Tables" />
-    <EntitySet Name="Yetkiler" EntityType="Self.Yetkiler" Schema="dbo" store:Type="Tables" />
-    <EntitySet Name="RoleYetki" EntityType="Self.RoleYetki" store:Type="Tables" store:Schema="dbo">
-      <DefiningQuery>SELECT 
-    [RoleYetki].[RoleID] AS [RoleID], 
-    [RoleYetki].[YetkiID] AS [YetkiID]
-    FROM [dbo].[RoleYetki] AS [RoleYetki]</DefiningQuery>
-    </EntitySet>
-    <EntitySet Name="UserRole" EntityType="Self.UserRole" store:Type="Tables" store:Schema="dbo">
-      <DefiningQuery>SELECT 
-    [UserRole].[UserID] AS [UserID], 
-    [UserRole].[RoleID] AS [RoleID]
-    FROM [dbo].[UserRole] AS [UserRole]</DefiningQuery>
-    </EntitySet>
     <AssociationSet Name="FK_Departments_Companies" Association="Self.FK_Departments_Companies">
       <End Role="Companies" EntitySet="Companies" />
       <End Role="Departments" EntitySet="Departments" />
@@ -373,25 +267,9 @@ warning 6002: The table/view 'AkGida_MyInfo.dbo.UserRole' does not have a primar
       <End Role="Departments" EntitySet="Departments" />
       <End Role="Personels" EntitySet="Personels" />
     </AssociationSet>
-    <AssociationSet Name="FK_RoleYetki_Role" Association="Self.FK_RoleYetki_Role">
-      <End Role="Role" EntitySet="Role" />
-      <End Role="RoleYetki" EntitySet="RoleYetki" />
-    </AssociationSet>
-    <AssociationSet Name="FK_RoleYetki_Yetkiler" Association="Self.FK_RoleYetki_Yetkiler">
-      <End Role="Yetkiler" EntitySet="Yetkiler" />
-      <End Role="RoleYetki" EntitySet="RoleYetki" />
-    </AssociationSet>
     <AssociationSet Name="FK_Servis_Companies" Association="Self.FK_Servis_Companies">
       <End Role="Companies" EntitySet="Companies" />
       <End Role="Servis" EntitySet="Servis" />
-    </AssociationSet>
-    <AssociationSet Name="FK_UserRole_Role" Association="Self.FK_UserRole_Role">
-      <End Role="Role" EntitySet="Role" />
-      <End Role="UserRole" EntitySet="UserRole" />
-    </AssociationSet>
-    <AssociationSet Name="FK_UserRole_Users" Association="Self.FK_UserRole_Users">
-      <End Role="Users" EntitySet="Users" />
-      <End Role="UserRole" EntitySet="UserRole" />
     </AssociationSet>
   </EntityContainer>
 </Schema>

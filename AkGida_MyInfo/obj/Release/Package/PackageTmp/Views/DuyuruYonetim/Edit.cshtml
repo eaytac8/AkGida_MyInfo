@@ -1,7 +1,7 @@
 ﻿@model AkGida_MyInfo.Models.Duyurular
 
 @{
-    ViewBag.Title = "Lokasyon Duyurusunu Düzenle";
+    ViewBag.Title = "Şube Duyurusu Düzenle";
     Layout = "~/Views/Shared/_AdminLayout.cshtml";
 }
 
@@ -25,7 +25,7 @@
                 <label for="file">@Model.ResimYolu</label>
                 <input type="file" name="file" id="file" />
             </div>
-          </div>
+        </div>
 
         <div class="form-group">
             @Html.LabelFor(model => model.Baslik, htmlAttributes: new { @class = "control-label col-md-2" })

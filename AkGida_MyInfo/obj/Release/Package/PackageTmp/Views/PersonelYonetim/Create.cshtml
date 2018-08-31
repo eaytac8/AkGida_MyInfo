@@ -61,11 +61,11 @@
         <div class="form-group">
             @Html.LabelFor(model => model.personel.PersonelEposta, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-3">
-                @Html.EditorFor(model => model.personel.PersonelEposta, new { htmlAttributes = new { placeholder = "Mail uzantısını yazmayınız." ,@class = "form-control" } })
+                @Html.EditorFor(model => model.personel.PersonelEposta, new { htmlAttributes = new { placeholder = "Mail uzantısını yazmayınız.", @class = "form-control" } })
                 @Html.ValidationMessageFor(model => model.personel.PersonelEposta, "", new { @class = "text-danger" })
-            </div>
-            <div class="col-md-4">
-                <label style="margin-top:9px"><strong>@@akgida.com.tr</strong></label>
+                <div class="col-md-4">
+                    <label style="margin-top:9px"><strong>@@akgida.com.tr</strong></label>
+                </div>
             </div>
         </div>
 

@@ -1,0 +1,60 @@
+﻿@using AkGida_MyInfo.Models
+@model IEnumerable<YeniUrun>
+    @using Microsoft.Web.Helpers
+
+
+<section>
+    <div class="container">
+
+        <div class="row" align="center">
+
+            @foreach (var item in Model)
+            {
+                <div class="col-md-4" style="align-content:center">
+                    @{
+                        var urunImageURL = item.ResimYolu.ToString();
+                        var urunVideoURL = item.VideoYolu.ToString();
+                     }
+                    <a class="image-hover lightbox thumbnail" href=@urunImageURL data-plugin-options='{"type":"iframe"}'>
+                        <span class="image-hover-icon image-hover-dark">
+                            <!-- image-hover-light | image-hover-dark -->
+                            <i class="fa fa-vimeo-square"><!-- video icon --></i>
+                        </span>
+                        <img class="img-responsive" src=@item.ResimYolu alt="...">
+                    </a>
+                </div>
+
+                <div class="col-md-8">
+
+                    <header class="margin-bottom-60">
+                        <h2>@item.UrunAdi</h2>
+                        <p class="lead font-lato">The most complete template, ever!</p>
+                    </header>
+
+                    <p>@item.Tanitim</p>
+                    @*<a class="btn btn-default btn-lg size-15 margin-top-30 lightbox" href=@urunVideoURL data-plugin-options='{"type":"iframe"}'>TANITIM VİDEOSU</a>*@
+                    @*<a>
+        <iframe width="560"
+                height="315"
+                src="@urunVideoURL"
+                frameborder="0"
+                allowfullscreen></iframe>TANITIM VİDEOSU</a>*@
+
+                    @Video.Flash(path:urunVideoURL,
+                width: "400",
+                height: "600",
+                play: true,
+                loop: true,
+                menu:  false,
+                bgColor: "red",
+                quality: "medium",
+                scale: "exactfit",
+                windowMode: "transparent")
+                </div>
+                <hr />
+            }
+
+        </div>
+
+    </div>
+</section>

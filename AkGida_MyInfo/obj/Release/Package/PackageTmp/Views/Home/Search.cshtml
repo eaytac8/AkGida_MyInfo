@@ -15,8 +15,7 @@
             <th>Telefon</th>
             <th>E-Posta</th>
             <th>Departman</th>
-            <th>Lokasyon</th>
-            <th>Doğum Tarihi</th>
+            <th>Şube</th>
         </tr>
 
         @foreach (var item in Model)
@@ -30,7 +29,6 @@
                 <td>@item.PersonelEposta</td>
                 <td>@item.Departments.DepartmentName</td>
                 <td>@item.Departments.Companies.CompanyName</td>
-                <td>@item.Birthday</td>
             </tr>
         }
     </table>

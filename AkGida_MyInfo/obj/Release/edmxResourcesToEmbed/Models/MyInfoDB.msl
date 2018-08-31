@@ -1,6 +1,18 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
   <EntityContainerMapping StorageEntityContainer="AkGida_MyInfoModelStoreContainer" CdmEntityContainer="AkGida_MyInfoEntities">
+    <EntitySetMapping Name="Baby">
+      <EntityTypeMapping TypeName="AkGida_MyInfoModel.Baby">
+        <MappingFragment StoreEntitySet="Baby">
+          <ScalarProperty Name="BabyID" ColumnName="BabyID" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Surname" ColumnName="Surname" />
+          <ScalarProperty Name="ImagePath" ColumnName="ImagePath" />
+          <ScalarProperty Name="StartDate" ColumnName="StartDate" />
+          <ScalarProperty Name="EndDate" ColumnName="EndDate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
     <EntitySetMapping Name="Companies">
       <EntityTypeMapping TypeName="AkGida_MyInfoModel.Companies">
         <MappingFragment StoreEntitySet="Companies">
@@ -12,12 +24,115 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
+    <EntitySetMapping Name="Congrats">
+      <EntityTypeMapping TypeName="AkGida_MyInfoModel.Congrats">
+        <MappingFragment StoreEntitySet="Congrats">
+          <ScalarProperty Name="CongratsID" ColumnName="CongratsID" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Surname" ColumnName="Surname" />
+          <ScalarProperty Name="ImagePath" ColumnName="ImagePath" />
+          <ScalarProperty Name="StartDate" ColumnName="StartDate" />
+          <ScalarProperty Name="EndDate" ColumnName="EndDate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Death">
+      <EntityTypeMapping TypeName="AkGida_MyInfoModel.Death">
+        <MappingFragment StoreEntitySet="Death">
+          <ScalarProperty Name="DeathID" ColumnName="DeathID" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Surname" ColumnName="Surname" />
+          <ScalarProperty Name="ImagePath" ColumnName="ImagePath" />
+          <ScalarProperty Name="StartDate" ColumnName="StartDate" />
+          <ScalarProperty Name="EndDate" ColumnName="EndDate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
     <EntitySetMapping Name="Departments">
       <EntityTypeMapping TypeName="AkGida_MyInfoModel.Departments">
         <MappingFragment StoreEntitySet="Departments">
           <ScalarProperty Name="DepartmentID" ColumnName="DepartmentID" />
           <ScalarProperty Name="DepartmentName" ColumnName="DepartmentName" />
           <ScalarProperty Name="CompanyID" ColumnName="CompanyID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Duyurular">
+      <EntityTypeMapping TypeName="AkGida_MyInfoModel.Duyurular">
+        <MappingFragment StoreEntitySet="Duyurular">
+          <ScalarProperty Name="DuyuruID" ColumnName="DuyuruID" />
+          <ScalarProperty Name="CompanyID" ColumnName="CompanyID" />
+          <ScalarProperty Name="Baslik" ColumnName="Baslik" />
+          <ScalarProperty Name="Icerik" ColumnName="Icerik" />
+          <ScalarProperty Name="BaslangicTarihi" ColumnName="BaslangicTarihi" />
+          <ScalarProperty Name="BitisTarihi" ColumnName="BitisTarihi" />
+          <ScalarProperty Name="ResimYolu" ColumnName="ResimYolu" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Hakkimizda">
+      <EntityTypeMapping TypeName="AkGida_MyInfoModel.Hakkimizda">
+        <MappingFragment StoreEntitySet="Hakkimizda">
+          <ScalarProperty Name="HakkimizdaID" ColumnName="HakkimizdaID" />
+          <ScalarProperty Name="Icerik" ColumnName="Icerik" />
+          <ScalarProperty Name="ResimYolu" ColumnName="ResimYolu" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Menu">
+      <EntityTypeMapping TypeName="AkGida_MyInfoModel.Menu">
+        <MappingFragment StoreEntitySet="Menu">
+          <ScalarProperty Name="MenuID" ColumnName="MenuID" />
+          <ScalarProperty Name="CompanyID" ColumnName="CompanyID" />
+          <ScalarProperty Name="Tarih" ColumnName="Tarih" />
+          <ScalarProperty Name="Corba" ColumnName="Corba" />
+          <ScalarProperty Name="AnaYemek" ColumnName="AnaYemek" />
+          <ScalarProperty Name="Diyet" ColumnName="Diyet" />
+          <ScalarProperty Name="PilavMakarna" ColumnName="PilavMakarna" />
+          <ScalarProperty Name="Tatli" ColumnName="Tatli" />
+          <ScalarProperty Name="Meyve" ColumnName="Meyve" />
+          <ScalarProperty Name="Salata" ColumnName="Salata" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Personels">
+      <EntityTypeMapping TypeName="AkGida_MyInfoModel.Personels">
+        <MappingFragment StoreEntitySet="Personels">
+          <ScalarProperty Name="PersonelID" ColumnName="PersonelID" />
+          <ScalarProperty Name="PersonelName" ColumnName="PersonelName" />
+          <ScalarProperty Name="PersonelSurname" ColumnName="PersonelSurname" />
+          <ScalarProperty Name="Corbus" ColumnName="Corbus" />
+          <ScalarProperty Name="PersonelDahiliNo" ColumnName="PersonelDahiliNo" />
+          <ScalarProperty Name="PersonelTel" ColumnName="PersonelTel" />
+          <ScalarProperty Name="PersonelEposta" ColumnName="PersonelEposta" />
+          <ScalarProperty Name="DepartmentID" ColumnName="DepartmentID" />
+          <ScalarProperty Name="Birthday" ColumnName="Birthday" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Servis">
+      <EntityTypeMapping TypeName="AkGida_MyInfoModel.Servis">
+        <MappingFragment StoreEntitySet="Servis">
+          <ScalarProperty Name="ServisID" ColumnName="ServisID" />
+          <ScalarProperty Name="CompanyID" ColumnName="CompanyID" />
+          <ScalarProperty Name="SoforAdi" ColumnName="SoforAdi" />
+          <ScalarProperty Name="SoforSoyadi" ColumnName="SoforSoyadi" />
+          <ScalarProperty Name="Telefon" ColumnName="Telefon" />
+          <ScalarProperty Name="Plaka" ColumnName="Plaka" />
+          <ScalarProperty Name="Guzergah" ColumnName="Guzergah" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Slider">
+      <EntityTypeMapping TypeName="AkGida_MyInfoModel.Slider">
+        <MappingFragment StoreEntitySet="Slider">
+          <ScalarProperty Name="SliderID" ColumnName="SliderID" />
+          <ScalarProperty Name="SliderFoto" ColumnName="SliderFoto" />
+          <ScalarProperty Name="SliderBaslik" ColumnName="SliderBaslik" />
+          <ScalarProperty Name="SliderText" ColumnName="SliderText" />
+          <ScalarProperty Name="BaslangicTarihi" ColumnName="BaslangicTarihi" />
+          <ScalarProperty Name="BitisTarihi" ColumnName="BitisTarihi" />
+          <ScalarProperty Name="ResimYolu" ColumnName="ResimYolu" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
@@ -32,204 +147,47 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <EntitySetMapping Name="Role">
-      <EntityTypeMapping TypeName="AkGida_MyInfoModel.Role">
-        <MappingFragment StoreEntitySet="Role">
-          <ScalarProperty Name="RoleDescription" ColumnName="RoleDescription" />
-          <ScalarProperty Name="RoleID" ColumnName="RoleID" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
-    <EntitySetMapping Name="Users">
-      <EntityTypeMapping TypeName="AkGida_MyInfoModel.Users">
-        <MappingFragment StoreEntitySet="Users">
-          <ScalarProperty Name="Password" ColumnName="Password" />
-          <ScalarProperty Name="Email" ColumnName="Email" />
-          <ScalarProperty Name="UserID" ColumnName="UserID" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
-    <EntitySetMapping Name="Yetkiler">
-      <EntityTypeMapping TypeName="AkGida_MyInfoModel.Yetkiler">
-        <MappingFragment StoreEntitySet="Yetkiler">
-          <ScalarProperty Name="CompanyID" ColumnName="CompanyID" />
-          <ScalarProperty Name="YetkiDescription" ColumnName="YetkiDescription" />
-          <ScalarProperty Name="YetkiID" ColumnName="YetkiID" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
-    <AssociationSetMapping Name="RoleYetki" TypeName="AkGida_MyInfoModel.RoleYetki" StoreEntitySet="RoleYetki">
-      <EndProperty Name="Yetkiler">
-        <ScalarProperty Name="YetkiID" ColumnName="YetkiID" />
-      </EndProperty>
-      <EndProperty Name="Role">
-        <ScalarProperty Name="RoleID" ColumnName="RoleID" />
-      </EndProperty>
-    </AssociationSetMapping>
-    <AssociationSetMapping Name="UserRole" TypeName="AkGida_MyInfoModel.UserRole" StoreEntitySet="UserRole">
-      <EndProperty Name="Users">
-        <ScalarProperty Name="UserID" ColumnName="UserID" />
-      </EndProperty>
-      <EndProperty Name="Role">
-        <ScalarProperty Name="RoleID" ColumnName="RoleID" />
-      </EndProperty>
-    </AssociationSetMapping>
-    <EntitySetMapping Name="YeniUrun">
-      <EntityTypeMapping TypeName="AkGida_MyInfoModel.YeniUrun">
-        <MappingFragment StoreEntitySet="YeniUrun">
-          <ScalarProperty Name="VideoYolu" ColumnName="VideoYolu" />
-          <ScalarProperty Name="ResimYolu" ColumnName="ResimYolu" />
-          <ScalarProperty Name="Tanitim" ColumnName="Tanitim" />
-          <ScalarProperty Name="UrunAdi" ColumnName="UrunAdi" />
-          <ScalarProperty Name="UrunID" ColumnName="UrunID" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
-    <EntitySetMapping Name="Menu">
-      <EntityTypeMapping TypeName="AkGida_MyInfoModel.Menu">
-        <MappingFragment StoreEntitySet="Menu">
-          <ScalarProperty Name="Salata" ColumnName="Salata" />
-          <ScalarProperty Name="Meyve" ColumnName="Meyve" />
-          <ScalarProperty Name="Tatli" ColumnName="Tatli" />
-          <ScalarProperty Name="PilavMakarna" ColumnName="PilavMakarna" />
-          <ScalarProperty Name="Diyet" ColumnName="Diyet" />
-          <ScalarProperty Name="AnaYemek" ColumnName="AnaYemek" />
-          <ScalarProperty Name="Corba" ColumnName="Corba" />
-          <ScalarProperty Name="Tarih" ColumnName="Tarih" />
-          <ScalarProperty Name="CompanyID" ColumnName="CompanyID" />
-          <ScalarProperty Name="MenuID" ColumnName="MenuID" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
-    <EntitySetMapping Name="Personels">
-      <EntityTypeMapping TypeName="AkGida_MyInfoModel.Personels">
-        <MappingFragment StoreEntitySet="Personels">
-          <ScalarProperty Name="Birthday" ColumnName="Birthday" />
-          <ScalarProperty Name="DepartmentID" ColumnName="DepartmentID" />
-          <ScalarProperty Name="PersonelEposta" ColumnName="PersonelEposta" />
-          <ScalarProperty Name="PersonelTel" ColumnName="PersonelTel" />
-          <ScalarProperty Name="PersonelDahiliNo" ColumnName="PersonelDahiliNo" />
-          <ScalarProperty Name="Corbus" ColumnName="Corbus" />
-          <ScalarProperty Name="PersonelSurname" ColumnName="PersonelSurname" />
-          <ScalarProperty Name="PersonelName" ColumnName="PersonelName" />
-          <ScalarProperty Name="PersonelID" ColumnName="PersonelID" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
-    <EntitySetMapping Name="Slider">
-      <EntityTypeMapping TypeName="AkGida_MyInfoModel.Slider">
-        <MappingFragment StoreEntitySet="Slider">
-          <ScalarProperty Name="ResimYolu" ColumnName="ResimYolu" />
-          <ScalarProperty Name="BitisTarihi" ColumnName="BitisTarihi" />
-          <ScalarProperty Name="BaslangicTarihi" ColumnName="BaslangicTarihi" />
-          <ScalarProperty Name="SliderText" ColumnName="SliderText" />
-          <ScalarProperty Name="SliderBaslik" ColumnName="SliderBaslik" />
-          <ScalarProperty Name="SliderFoto" ColumnName="SliderFoto" />
-          <ScalarProperty Name="SliderID" ColumnName="SliderID" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
-    <EntitySetMapping Name="Duyurular">
-      <EntityTypeMapping TypeName="AkGida_MyInfoModel.Duyurular">
-        <MappingFragment StoreEntitySet="Duyurular">
-          <ScalarProperty Name="CompanyID" ColumnName="CompanyID" />
-          <ScalarProperty Name="ResimYolu" ColumnName="ResimYolu" />
-          <ScalarProperty Name="BitisTarihi" ColumnName="BitisTarihi" />
-          <ScalarProperty Name="BaslangicTarihi" ColumnName="BaslangicTarihi" />
-          <ScalarProperty Name="Icerik" ColumnName="Icerik" />
-          <ScalarProperty Name="Baslik" ColumnName="Baslik" />
-          <ScalarProperty Name="DuyuruID" ColumnName="DuyuruID" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
-    <EntitySetMapping Name="Baby">
-      <EntityTypeMapping TypeName="AkGida_MyInfoModel.Baby">
-        <MappingFragment StoreEntitySet="Baby">
-          <ScalarProperty Name="EndDate" ColumnName="EndDate" />
-          <ScalarProperty Name="StartDate" ColumnName="StartDate" />
-          <ScalarProperty Name="ImagePath" ColumnName="ImagePath" />
-          <ScalarProperty Name="Surname" ColumnName="Surname" />
-          <ScalarProperty Name="Name" ColumnName="Name" />
-          <ScalarProperty Name="BabyID" ColumnName="BabyID" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
-    <EntitySetMapping Name="Congrats">
-      <EntityTypeMapping TypeName="AkGida_MyInfoModel.Congrats">
-        <MappingFragment StoreEntitySet="Congrats">
-          <ScalarProperty Name="EndDate" ColumnName="EndDate" />
-          <ScalarProperty Name="StartDate" ColumnName="StartDate" />
-          <ScalarProperty Name="ImagePath" ColumnName="ImagePath" />
-          <ScalarProperty Name="Surname" ColumnName="Surname" />
-          <ScalarProperty Name="Name" ColumnName="Name" />
-          <ScalarProperty Name="CongratsID" ColumnName="CongratsID" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
-    <EntitySetMapping Name="Death">
-      <EntityTypeMapping TypeName="AkGida_MyInfoModel.Death">
-        <MappingFragment StoreEntitySet="Death">
-          <ScalarProperty Name="EndDate" ColumnName="EndDate" />
-          <ScalarProperty Name="StartDate" ColumnName="StartDate" />
-          <ScalarProperty Name="ImagePath" ColumnName="ImagePath" />
-          <ScalarProperty Name="Surname" ColumnName="Surname" />
-          <ScalarProperty Name="Name" ColumnName="Name" />
-          <ScalarProperty Name="DeathID" ColumnName="DeathID" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
     <EntitySetMapping Name="Thanks">
       <EntityTypeMapping TypeName="AkGida_MyInfoModel.Thanks">
         <MappingFragment StoreEntitySet="Thanks">
-          <ScalarProperty Name="EndDate" ColumnName="EndDate" />
-          <ScalarProperty Name="StartDate" ColumnName="StartDate" />
-          <ScalarProperty Name="ImagePath" ColumnName="ImagePath" />
-          <ScalarProperty Name="Surname" ColumnName="Surname" />
-          <ScalarProperty Name="Name" ColumnName="Name" />
           <ScalarProperty Name="ThanksID" ColumnName="ThanksID" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Surname" ColumnName="Surname" />
+          <ScalarProperty Name="ImagePath" ColumnName="ImagePath" />
+          <ScalarProperty Name="StartDate" ColumnName="StartDate" />
+          <ScalarProperty Name="EndDate" ColumnName="EndDate" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="Weddings">
       <EntityTypeMapping TypeName="AkGida_MyInfoModel.Weddings">
         <MappingFragment StoreEntitySet="Weddings">
-          <ScalarProperty Name="EndDate" ColumnName="EndDate" />
-          <ScalarProperty Name="StartDate" ColumnName="StartDate" />
-          <ScalarProperty Name="ImagePath" ColumnName="ImagePath" />
-          <ScalarProperty Name="Surname" ColumnName="Surname" />
-          <ScalarProperty Name="Name" ColumnName="Name" />
           <ScalarProperty Name="WeddingID" ColumnName="WeddingID" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
-    <EntitySetMapping Name="Servis">
-      <EntityTypeMapping TypeName="AkGida_MyInfoModel.Servis">
-        <MappingFragment StoreEntitySet="Servis">
-          <ScalarProperty Name="Guzergah" ColumnName="Guzergah" />
-          <ScalarProperty Name="Plaka" ColumnName="Plaka" />
-          <ScalarProperty Name="Telefon" ColumnName="Telefon" />
-          <ScalarProperty Name="SoforSoyadi" ColumnName="SoforSoyadi" />
-          <ScalarProperty Name="SoforAdi" ColumnName="SoforAdi" />
-          <ScalarProperty Name="CompanyID" ColumnName="CompanyID" />
-          <ScalarProperty Name="ServisID" ColumnName="ServisID" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
-    <EntitySetMapping Name="Hakkimizda">
-      <EntityTypeMapping TypeName="AkGida_MyInfoModel.Hakkimizda">
-        <MappingFragment StoreEntitySet="Hakkimizda">
-          <ScalarProperty Name="ResimYolu" ColumnName="ResimYolu" />
-          <ScalarProperty Name="Icerik" ColumnName="Icerik" />
-          <ScalarProperty Name="HakkimizdaID" ColumnName="HakkimizdaID" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Surname" ColumnName="Surname" />
+          <ScalarProperty Name="ImagePath" ColumnName="ImagePath" />
+          <ScalarProperty Name="StartDate" ColumnName="StartDate" />
+          <ScalarProperty Name="EndDate" ColumnName="EndDate" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="Yayinlar">
       <EntityTypeMapping TypeName="AkGida_MyInfoModel.Yayinlar">
         <MappingFragment StoreEntitySet="Yayinlar">
-          <ScalarProperty Name="YayinURL" ColumnName="YayinURL" />
-          <ScalarProperty Name="YayinBaslik" ColumnName="YayinBaslik" />
           <ScalarProperty Name="YayinID" ColumnName="YayinID" />
+          <ScalarProperty Name="YayinBaslik" ColumnName="YayinBaslik" />
+          <ScalarProperty Name="YayinURL" ColumnName="YayinURL" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="YeniUrun">
+      <EntityTypeMapping TypeName="AkGida_MyInfoModel.YeniUrun">
+        <MappingFragment StoreEntitySet="YeniUrun">
+          <ScalarProperty Name="UrunID" ColumnName="UrunID" />
+          <ScalarProperty Name="UrunAdi" ColumnName="UrunAdi" />
+          <ScalarProperty Name="Tanitim" ColumnName="Tanitim" />
+          <ScalarProperty Name="ResimYolu" ColumnName="ResimYolu" />
+          <ScalarProperty Name="VideoYolu" ColumnName="VideoYolu" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>

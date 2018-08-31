@@ -49,6 +49,7 @@ namespace AkGida_MyInfo.Controllers
         {
             if (ModelState.IsValid)
             {
+                personels.personel.PersonelEposta = personels.personel.PersonelEposta + "@akgida.com.tr";
                 db.Personels.Add(personels.personel);
                 db.SaveChanges();
                 return RedirectToAction("Index");
