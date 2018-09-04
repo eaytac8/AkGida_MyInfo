@@ -11,6 +11,7 @@ using AkGida_MyInfo.Models;
 
 namespace AkGida_MyInfo.Controllers
 {
+    [Authorize(Roles = "Master Admin, Genel Merkez Admin, Pamukova Admin, Karaman Admin, Lüleburgaz Admin, Kahramanmaraş Admin, Aydın Admin")]
     public class CongratsYonetimController : Controller
     {
         private AkGida_MyInfoEntities db = new AkGida_MyInfoEntities();

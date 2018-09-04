@@ -11,7 +11,7 @@ using AkGida_MyInfo.Models;
 
 namespace AkGida_MyInfo.Controllers
 {
-    [Authorize(Roles ="InsanKaynaklariAdmin")]
+    [Authorize(Roles = "Master Admin, Genel Merkez Admin, Pamukova Admin, Karaman Admin, Lüleburgaz Admin, Kahramanmaraş Admin, Aydın Admin")]
     public class BabyYonetimController : Controller
     {
         private AkGida_MyInfoEntities db = new AkGida_MyInfoEntities();

@@ -11,7 +11,7 @@ using AkGida_MyInfo.ViewModel;
 
 namespace AkGida_MyInfo.Controllers
 {
-    [Authorize(Roles ="MasterAdmin,ElifAdmin")]
+    [Authorize(Roles = "Master Admin, Genel Merkez Admin, Pamukova Admin, Karaman Admin, Lüleburgaz Admin, Kahramanmaraş Admin, Aydın Admin")]
     public class PersonelYonetimController : Controller
     {
         private AkGida_MyInfoEntities db = new AkGida_MyInfoEntities();
@@ -43,6 +43,9 @@ namespace AkGida_MyInfo.Controllers
 
 
 
+        // POST: PersonelYonetim/Create
+        // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
+        // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult Create(/*[Bind(Include = "PersonelID,PersonelName,PersonelSurname,PersonelTel,PersonelDahiliNo,PersonelEposta,DepartmentID,Yetki")]*/ PersonelCreate personels)
@@ -71,11 +74,6 @@ namespace AkGida_MyInfo.Controllers
             
         }
 
-
-
-
-
-
         [HttpPost]
         public JsonResult DepartmentList(int id)
         {
@@ -89,20 +87,7 @@ namespace AkGida_MyInfo.Controllers
                                              }).ToList();
 
             return Json(itemList, JsonRequestBehavior.AllowGet);
-        }
-
-
-
-        // POST: PersonelYonetim/Create
-        // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
-        // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
-
-       
-
-
-
-
-
+        } 
 
         // GET: PersonelYonetim/Edit/5
         public ActionResult Edit(int? id)

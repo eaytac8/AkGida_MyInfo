@@ -11,6 +11,7 @@ using AkGida_MyInfo.ViewModel;
 
 namespace AkGida_MyInfo.Controllers
 {
+    [Authorize(Roles = "Master Admin, Genel Merkez Admin, Pamukova Admin, Karaman Admin, Lüleburgaz Admin, Kahramanmaraş Admin, Aydın Admin")]
     public class MenuYonetimController : Controller
     {
         private AkGida_MyInfoEntities db = new AkGida_MyInfoEntities();

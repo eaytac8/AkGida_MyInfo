@@ -9,6 +9,8 @@ using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin.Security;
 using AkGida_MyInfo.Models;
+using System.Net;
+using System.Data.Entity;
 
 namespace AkGida_MyInfo.Controllers
 {
@@ -137,7 +139,7 @@ namespace AkGida_MyInfo.Controllers
 
         //
         // GET: /Account/Register
-        [AllowAnonymous]
+        [Authorize(Roles ="Master Admin")]
         public ActionResult Register()
         {
             ViewBag.Roles = new SelectList(context.Roles.ToList(), "Name", "Name");
@@ -149,7 +151,7 @@ namespace AkGida_MyInfo.Controllers
         [HttpPost]
         [AllowAnonymous]
         [ValidateAntiForgeryToken]
-        public async Task<ActionResult> Register(RegisterViewModel model)
+        public async Task<ActionResult> Register(RegisterViewModel model, string returnUrl)
         {
             if (ModelState.IsValid)
             {
@@ -157,7 +159,7 @@ namespace AkGida_MyInfo.Controllers
                 var result = await UserManager.CreateAsync(user, model.Password);
                 if (result.Succeeded)
                 {
-                    await SignInManager.SignInAsync(user, isPersistent:false, rememberBrowser:false);
+                    //await SignInManager.SignInAsync(user, isPersistent:false, rememberBrowser:false);
 
                     // Hesap onayını ve parola sıfırlamayı etkinleştirme hakkında daha fazla bilgi için lütfen https://go.microsoft.com/fwlink/?LinkID=320771 adresini ziyaret edin.
                     // Bu bağlantı ile bir e-posta yollayın
@@ -166,7 +168,7 @@ namespace AkGida_MyInfo.Controllers
                     // await UserManager.SendEmailAsync(user.Id, "Hesabınızı onaylayın", "Lütfen hesabınızı onaylamak için <a href=\"" + callbackUrl + "\">buraya tıklayın</a>");
                     
                     await this.UserManager.AddToRoleAsync(user.Id, model.UserRoles);
-                    return RedirectToAction("Index", "Home");
+                    return RedirectToAction(/*"Index", "Home"*/returnUrl);
                 }
                 AddErrors(result);
             }
@@ -174,6 +176,54 @@ namespace AkGida_MyInfo.Controllers
             // İşlemde bu kadar ilerlendiyse, hata oluşmuş demektir, formu yeniden görüntüleyin
             return View(model);
         }
+
+        [Authorize(Roles ="Master Admin")]
+        //Admin listesi
+        public ActionResult AdminListesi()
+        {
+            var usersWithRoles = (from user in context.Users
+                                  from userRole in user.Roles
+                                  join role in context.Roles on userRole.RoleId equals
+                                  role.Id
+                                  select new UserViewModel()
+                                  {
+                                      Username = user.UserName,
+                                      Email = user.Email,
+                                      Role = role.Name
+                                  }).ToList();
+            return View(usersWithRoles);
+        }
+
+        // GET: CompanyYonetim/Edit/5
+        //public ActionResult AdminEdit(int? Username)
+        //{
+        //    if (Username == null)
+        //    {
+        //        return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+        //    }
+        //    User user = context.Users.Find(Username);
+        //    if (user == null)
+        //    {
+        //        return HttpNotFound();
+        //    }
+        //    return View(user);
+        //}
+
+        // POST: CompanyYonetim/Edit/5
+        // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
+        // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
+        //[HttpPost]
+        //[ValidateAntiForgeryToken]
+        //public ActionResult AdminEdit(IUser user)
+        //{
+        //    if (ModelState.IsValid)
+        //    {
+        //        context.Entry(user).State = EntityState.Modified;
+        //        context.SaveChanges();
+        //        return RedirectToAction("AdminListesi");
+        //    }
+        //    return View(user);
+        //}
 
         //
         // GET: /Account/ConfirmEmail

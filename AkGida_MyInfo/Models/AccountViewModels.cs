@@ -117,4 +117,23 @@ namespace AkGida_MyInfo.Models
         [Display(Name = "E-posta")]
         public string Email { get; set; }
     }
+
+    public class GroupedUserViewModel
+    {
+        public List<UserViewModel> Users { get; set; }
+        public List<UserViewModel> Admins { get; set; }
+    }
+    //public class UserViewModel
+    //{
+    //    public string Username { get; set; }
+    //    public string Email { get; set; }
+    //    public string RoleName { get; set; }
+    //}
+
+    public class UserViewModel
+    {
+        public string Username { get; set; }
+        public string Email { get; set; }
+        public string Role { get; set; }
+    }
 }

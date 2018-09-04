@@ -6096,7 +6096,6 @@
     <Content Include="Views\MenuYonetim\Index.cshtml" />
     <Content Include="Views\PersonelYonetim\Create.cshtml" />
     <Content Include="Views\PersonelYonetim\Delete.cshtml" />
-    <Content Include="Views\PersonelYonetim\Details.cshtml" />
     <Content Include="Views\PersonelYonetim\Edit.cshtml" />
     <Content Include="Views\PersonelYonetim\Index.cshtml" />
     <Content Include="Views\ServisYonetim\Create.cshtml" />
@@ -6139,6 +6138,8 @@
     <Content Include="Views\Home\Hakkimizda.cshtml" />
     <Content Include="Views\Home\Iletisim.cshtml" />
     <Content Include="Views\Home\YayinlarPartial.cshtml" />
+    <Content Include="Views\Account\AdminListesi.cshtml" />
+    <Content Include="Views\Account\AdminEdit.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

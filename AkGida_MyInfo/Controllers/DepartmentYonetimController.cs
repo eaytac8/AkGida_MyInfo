@@ -10,6 +10,7 @@ using AkGida_MyInfo.Models;
 
 namespace AkGida_MyInfo.Controllers
 {
+    [Authorize(Roles = "Master Admin")]
     public class DepartmentYonetimController : Controller
     {
         private AkGida_MyInfoEntities db = new AkGida_MyInfoEntities();
