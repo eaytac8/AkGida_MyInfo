@@ -11,7 +11,8 @@ namespace AkGida_MyInfo.Models
 {
     using System;
     using System.Collections.Generic;
-    
+    using System.ComponentModel.DataAnnotations;
+
     public partial class Departments
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
@@ -21,6 +22,7 @@ namespace AkGida_MyInfo.Models
         }
     
         public int DepartmentID { get; set; }
+        [Display(Name = "Departman")]
         public string DepartmentName { get; set; }
         public Nullable<int> CompanyID { get; set; }
     

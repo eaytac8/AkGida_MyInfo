@@ -1,13 +1,12 @@
 ﻿@model IEnumerable<AkGida_MyInfo.Models.Companies>
 
 @{
-    ViewBag.Title = "Şube Listesi";
+    ViewBag.Title = "Lokasyon Listesi";
     Layout = "~/Views/Shared/_AdminLayout.cshtml";
 }
 
 <p>
-    @*@Html.ActionLink("Yeni Şube Oluştur", "Create")*@
-    <a href="/CompanyYonetim/Create" button type="button" class="btn btn-primary">Şube Ekle</a>
+    <a href="/CompanyYonetim/Create" button type="button" class="btn btn-primary">Lokasyon Ekle</a>
 </p>
 
 
@@ -15,7 +14,7 @@
     <table class="table table-bordered nomargin">
         <thead>
             <tr>
-                <th>Şube Adı</th>
+                <th>Lokasyon</th>
                 <th>Adres</th>
                 <th>Tür</th>
                 <th>Telefon</th>

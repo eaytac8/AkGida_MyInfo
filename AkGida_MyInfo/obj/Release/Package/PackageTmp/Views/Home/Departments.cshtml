@@ -83,7 +83,7 @@
                         <th>Telefon</th>
                         <th>E-Posta</th>
                         <th>Departman</th>
-                        <th>Şube</th>
+                        <th>Lokasyon</th>
                     </tr>
 
                     @foreach (Personels item1 in Model.Personellerim)
@@ -152,7 +152,8 @@
 
             <div class="blog-post-item">
                 <!-- OWL SLIDER -->
-                <div class="owl-carousel buttons-autohide controlls-over" data-plugin-options='{"items": 1, "autoPlay": 3000, "autoHeight": false, "navigation": true, "pagination": true, "transitionStyle":"fadeUp", "progressBar":"false"}'>
+                <div class="owl-carousel buttons-autohide controlls-over" data-plugin-options='{
+       "items": 1, "autoPlay": 3000, "autoHeight": false, "navigation": true, "pagination": true, "transitionStyle":"fadeUp", "progressBar":"false"}'>
 
                     @foreach (Duyurular d_item in Model.Duyurularim)
                     {
@@ -164,9 +165,7 @@
                     }
                 </div>
                 <!-- /OWL SLIDER -->
-
             </div>
-
         </div>
 
     </div>

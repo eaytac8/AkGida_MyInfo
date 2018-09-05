@@ -65,7 +65,7 @@ namespace AkGida_MyInfo.Models
     public class RegisterViewModel
     {
         [Required]
-        [Display(Name = "UserRoles")]
+        [Display(Name = "Admin Rolü")]
         public string UserRoles { get; set; }
 
         [Required]
@@ -74,7 +74,7 @@ namespace AkGida_MyInfo.Models
         public string Email { get; set; }
 
         [Required]
-        [Display(Name = "UserName")]
+        [Display(Name = "Kullanıcı Adı")]
         public string UserName { get; set; }
 
         [Required]
@@ -84,7 +84,7 @@ namespace AkGida_MyInfo.Models
         public string Password { get; set; }
 
         [DataType(DataType.Password)]
-        [Display(Name = "Parolayı onaylayın")]
+        [Display(Name = "Parolayı Onaylayın")]
         [Compare("Password", ErrorMessage = "Parola ve onay parolası aynı değil.")]
         public string ConfirmPassword { get; set; }
     }

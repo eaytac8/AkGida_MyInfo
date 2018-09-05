@@ -36,22 +36,7 @@
     <!-- WRAPPER -->
     <div id="wrapper">
 
-        <!--
-            ASIDE
-            Keep it outside of #wrapper (responsive purpose)
-        -->
         <aside id="aside">
-            <!--
-                Always open:
-                <li class="active alays-open">
-
-                LABELS:
-                    <span class="label label-danger pull-right">1</span>
-                    <span class="label label-default pull-right">1</span>
-                    <span class="label label-warning pull-right">1</span>
-                    <span class="label label-success pull-right">1</span>
-                    <span class="label label-info pull-right">1</span>
-            -->
             <nav id="sideNav">
                 <!-- MAIN MENU -->
                 <ul class="nav nav-list">
@@ -62,12 +47,11 @@
                             <i class="main-icon fa fa-dashboard"></i> <span>Yönetim Paneli</span>
                         </a>
                     </li>
-
                     <!-- Personeller -->
                     <li>
                         <a href="#">
                             <i class="fa fa-menu-arrow pull-right"></i>
-                            <i class="main-icon fa fa-user"></i> <span>Personel</span>
+                            <i class="main-icon fa fa-users"></i> <span>Personel</span>
                         </a>
                         <ul style="display: block;">
                             <!-- submenus -->
@@ -75,7 +59,138 @@
                             <li><a href="/PersonelYonetim/Create">Personel Ekle</a></li>
                         </ul>
                     </li>
-
+                    <!-- Yeni Ürün -->
+                    <li>
+                        <a href="#">
+                            <i class="fa fa-menu-arrow pull-right"></i>
+                            <i class="main-icon fa fa-barcode"></i> <span>Yeni Ürün</span>
+                        </a>
+                        <ul style="display: block;">
+                            <!-- submenus -->
+                            <li><a href="/YeniUrunYonetim/Index">Yeni Ürün Listesi</a></li>
+                            <li><a href="/YeniUrunYonetim/Create">Yeni Ürün Ekle</a></li>
+                        </ul>
+                    </li>
+                    <!--Genel Duyurular (Anasayfa Slider)-->
+                    <li>
+                        <a href="#">
+                            <i class="fa fa-menu-arrow pull-right"></i>
+                            <i class="main-icon fa fa-bell"></i> <span>Genel Duyuru</span>
+                        </a>
+                        <ul style="display: block;">
+                            <!-- submenus -->
+                            <li><a href="/GenelDuyuruYonetim/Index">Duyuru Listesi</a></li>
+                            <li><a href="/GenelDuyuruYonetim/Create">Duyuru Ekle</a></li>
+                        </ul>
+                    </li>
+                    <!-- Lokasyon Duyuru -->
+                    <li>
+                        <a href="#">
+                            <i class="fa fa-menu-arrow pull-right"></i>
+                            <i class="main-icon fa fa-bell-o"></i> <span>Lokasyon Duyuru</span>
+                        </a>
+                        <ul style="display: block;">
+                            <!-- submenus -->
+                            <li><a href="/DuyuruYonetim/Index">Duyuru Listesi</a></li>
+                            <li><a href="/DuyuruYonetim/Create">Duyuru Ekle</a></li>
+                        </ul>
+                    </li>
+                    <!-- Hoşgeldin Bebek -->
+                    <li>
+                        <a href="#">
+                            <i class="fa fa-menu-arrow pull-right"></i>
+                            <i class="main-icon fa fa-birthday-cake"></i> <span>Hoşgeldin Bebek</span>
+                        </a>
+                        <ul style="display: block;">
+                            <!-- submenus -->
+                            <li><a href="/BabyYonetim/Index">Bebek Listesi</a></li>
+                            <li><a href="/BabyYonetim/Create">Bebek Ekle</a></li>
+                        </ul>
+                    </li>
+                    <!-- Başınız Sağolsun -->
+                    <li>
+                        <a href="#">
+                            <i class="fa fa-menu-arrow pull-right"></i>
+                            <i class="main-icon fa fa-moon-o"></i> <span>Başınız Sağolsun</span>
+                        </a>
+                        <ul style="display: block;">
+                            <!-- submenus -->
+                            <li><a href="/DeathYonetim/Index">Vefat Listesi</a></li>
+                            <li><a href="/DeathYonetim/Create">Vefat Bilgisi Ekle</a></li>
+                        </ul>
+                    </li>
+                    <!-- Hayırlı Olsun -->
+                    <li>
+                        <a href="#">
+                            <i class="fa fa-menu-arrow pull-right"></i>
+                            <i class="main-icon fa fa-star-o"></i> <span>Hayırlı Olsun</span>
+                        </a>
+                        <ul style="display: block;">
+                            <!-- submenus -->
+                            <li><a href="/CongratsYonetim/Index">Tebrik Listesi</a></li>
+                            <li><a href="/CongratsYonetim/Create">Tebrik Ekle</a></li>
+                        </ul>
+                    </li>
+                    <!-- Teşekkürler -->
+                    <li>
+                        <a href="#">
+                            <i class="fa fa-menu-arrow pull-right"></i>
+                            <i class="main-icon fa fa-smile-o"></i> <span>Teşekkürler</span>
+                        </a>
+                        <ul style="display: block;">
+                            <!-- submenus -->
+                            <li><a href="/ThanksYonetim/Index">Teşekkür Listesi</a></li>
+                            <li><a href="/ThanksYonetim/Create">Teşekkür Ekle</a></li>
+                        </ul>
+                    </li>
+                    <!-- Düğün Davetiyesi -->
+                    <li>
+                        <a href="#">
+                            <i class="fa fa-menu-arrow pull-right"></i>
+                            <i class="main-icon fa fa-envelope-o"></i> <span>Düğün Davetiyesi</span>
+                        </a>
+                        <ul style="display: block;">
+                            <!-- submenus -->
+                            <li><a href="/WeddingsYonetim/Index">Davetiye Listesi</a></li>
+                            <li><a href="/WeddingsYonetim/Create">Davetiye Ekle</a></li>
+                        </ul>
+                    </li>
+                    <!-- Yemek Menüleri-->
+                    <li>
+                        <a href="#">
+                            <i class="fa fa-menu-arrow pull-right"></i>
+                            <i class="main-icon fa fa-spoon"></i> <span>Yemek Menüsü</span>
+                        </a>
+                        <ul style="display: block;">
+                            <!-- submenus -->
+                            <li><a href="/MenuYonetim/Index">Menü Listesi</a></li>
+                            <li><a href="/MenuYonetim/Create">Menü Ekle</a></li>
+                        </ul>
+                    </li>
+                    <!-- Servis -->
+                    <li>
+                        <a href="#">
+                            <i class="fa fa-menu-arrow pull-right"></i>
+                            <i class="main-icon fa fa-bus"></i> <span>Servis</span>
+                        </a>
+                        <ul style="display: block;">
+                            <!-- submenus -->
+                            <li><a href="/ServisYonetim/Index">Servis Listesi</a></li>
+                            <li><a href="/ServisYonetim/Create">Servis Ekle</a></li>
+                        </ul>
+                    </li>
+                    <!-- Yayınlarımız -->
+                    <li>
+                        <a href="#">
+                            <i class="fa fa-menu-arrow pull-right"></i>
+                            <i class="main-icon fa fa-book"></i> <span>Yayınlarımız</span>
+                        </a>
+                        <ul style="display: block;">
+                            <!-- submenus -->
+                            <li><a href="/YayinlarYonetim/Index">Yayın Listesi</a></li>
+                            <li><a href="/YayinlarYonetim/Create">Yayın Ekle</a></li>
+                        </ul>
+                    </li>
                     <!-- Departmanlar -->
                     <li>
                         <a href="#">
@@ -88,158 +203,48 @@
                             <li><a href="/DepartmentYonetim/Create">Departman Ekle</a></li>
                         </ul>
                     </li>
-
-                    <!-- Şubeler / Company -->
+                    <!-- Lokasyonlar / Company -->
                     <li>
                         <a href="#">
                             <i class="fa fa-menu-arrow pull-right"></i>
-                            <i class="main-icon fa fa-pencil-square-o"></i> <span>Şube</span>
+                            <i class="main-icon fa fa-location-arrow"></i> <span>Lokasyonlar</span>
                         </a>
                         <ul style="display: block;">
                             <!-- submenus -->
-                            <li><a href="/CompanyYonetim/Index">Şube Listesi</a></li>
-                            <li><a href="/CompanyYonetim/Create">Şube Ekle</a></li>
+                            <li><a href="/CompanyYonetim/Index">Lokasyon Listesi</a></li>
+                            <li><a href="/CompanyYonetim/Create">Lokasyon Ekle</a></li>
                         </ul>
                     </li>
-
-                    <!-- Yemek Menüleri-->
+                    <!-- Hakkımızda -->
                     <li>
                         <a href="#">
                             <i class="fa fa-menu-arrow pull-right"></i>
-                            <i class="main-icon fa fa-pencil-square-o"></i> <span>Yemek Menüsü</span>
+                            <i class="main-icon fa fa-industry"></i> <span>Hakkımızda</span>
                         </a>
                         <ul style="display: block;">
                             <!-- submenus -->
-                            <li><a href="/MenuYonetim/Index">Menü Listesi</a></li>
-                            <li><a href="/MenuYonetim/Create">Menü Ekle</a></li>
+                            <li><a href="/HakkimizdaYonetim/Index">Görüntüle</a></li>
+                            <li><a href="/HakkimizdaYonetim/Create">Ekle</a></li>
                         </ul>
                     </li>
-
-
-                    <!--Genel Duyurular (Anasayfa Slider)-->
                     <li>
+                        <!-- Admin  -->
                         <a href="#">
                             <i class="fa fa-menu-arrow pull-right"></i>
-                            <i class="main-icon fa fa-pencil-square-o"></i> <span>Genel Duyuru</span>
+                            <i class="main-icon fa fa-user"></i> <span>Admin</span>
                         </a>
                         <ul style="display: block;">
                             <!-- submenus -->
-                            <li><a href="/GenelDuyuruYonetim/Index">Duyuru Listesi</a></li>
-                            <li><a href="/GenelDuyuruYonetim/Create">Duyuru Ekle</a></li>
+                            <li><a href="/Account/AdminListesi">Admin Listesi</a></li>
+                            <li><a href="/Account/Register">Admin Ekle</a></li>
                         </ul>
                     </li>
-
-                    <!-- Şube Duyuru -->
-                    <li>
-                        <a href="#">
-                            <i class="fa fa-menu-arrow pull-right"></i>
-                            <i class="main-icon fa fa-pencil-square-o"></i> <span>Şube Duyuru</span>
-                        </a>
-                        <ul style="display: block;">
-                            <!-- submenus -->
-                            <li><a href="/DuyuruYonetim/Index">Duyuru Listesi</a></li>
-                            <li><a href="/DuyuruYonetim/Create">Duyuru Ekle</a></li>
-                        </ul>
-                    </li>
-
-                    <!-- Hoşgeldin Bebek -->
-                    <li>
-                        <a href="#">
-                            <i class="fa fa-menu-arrow pull-right"></i>
-                            <i class="main-icon fa fa-pencil-square-o"></i> <span>Hoşgeldin Bebek</span>
-                        </a>
-                        <ul style="display: block;">
-                            <!-- submenus -->
-                            <li><a href="/BabyYonetim/Index">Bebek Listesi</a></li>
-                            <li><a href="/BabyYonetim/Create">Bebek Ekle</a></li>
-                        </ul>
-                    </li>
-
-                    <!-- Başınız Sağolsun -->
-                    <li>
-                        <a href="#">
-                            <i class="fa fa-menu-arrow pull-right"></i>
-                            <i class="main-icon fa fa-pencil-square-o"></i> <span>Başınız Sağolsun</span>
-                        </a>
-                        <ul style="display: block;">
-                            <!-- submenus -->
-                            <li><a href="/DeathYonetim/Index">Vefat Listesi</a></li>
-                            <li><a href="/DeathYonetim/Create">Vefat Bilgisi Ekle</a></li>
-                        </ul>
-                    </li>
-
-                    <!-- Hayırlı Olsun -->
-                    <li>
-                        <a href="#">
-                            <i class="fa fa-menu-arrow pull-right"></i>
-                            <i class="main-icon fa fa-pencil-square-o"></i> <span>Hayırlı Olsun</span>
-                        </a>
-                        <ul style="display: block;">
-                            <!-- submenus -->
-                            <li><a href="/CongratsYonetim/Index">Tebrik Listesi</a></li>
-                            <li><a href="/CongratsYonetim/Create">Tebrik Ekle</a></li>
-                        </ul>
-                    </li>
-
-                    <!-- Teşekkürler -->
-                    <li>
-                        <a href="#">
-                            <i class="fa fa-menu-arrow pull-right"></i>
-                            <i class="main-icon fa fa-pencil-square-o"></i> <span>Teşekkürler</span>
-                        </a>
-                        <ul style="display: block;">
-                            <!-- submenus -->
-                            <li><a href="/ThanksYonetim/Index">Teşekkür Listesi</a></li>
-                            <li><a href="/ThanksYonetim/Create">Teşekkür Ekle</a></li>
-                        </ul>
-                    </li>
-
-
-                    <!-- Düğün Davetiyesi -->
-                    <li>
-                        <a href="#">
-                            <i class="fa fa-menu-arrow pull-right"></i>
-                            <i class="main-icon fa fa-pencil-square-o"></i> <span>Düğün Davetiyesi</span>
-                        </a>
-                        <ul style="display: block;">
-                            <!-- submenus -->
-                            <li><a href="/WeddingsYonetim/Index">Davetiye Listesi</a></li>
-                            <li><a href="/WeddingsYonetim/Create">Davetiye Ekle</a></li>
-                        </ul>
-                    </li>
-
-                    <!-- Servis -->
-                    <li>
-                        <a href="#">
-                            <i class="fa fa-menu-arrow pull-right"></i>
-                            <i class="main-icon fa fa-pencil-square-o"></i> <span>Servis</span>
-                        </a>
-                        <ul style="display: block;">
-                            <!-- submenus -->
-                            <li><a href="/ServisYonetim/Index">Servis Listesi</a></li>
-                            <li><a href="/ServisYonetim/Create">Servis Ekle</a></li>
-                        </ul>
-                    </li>
-
-                    <!-- Yeni Ürün -->
-                    <li>
-                        <a href="#">
-                            <i class="fa fa-menu-arrow pull-right"></i>
-                            <i class="main-icon fa fa-pencil-square-o"></i> <span>Yeni Ürün</span>
-                        </a>
-                        <ul style="display: block;">
-                            <!-- submenus -->
-                            <li><a href="/YeniUrunYonetim/Index">Yeni Ürün Listesi</a></li>
-                            <li><a href="/YeniUrunYonetim/Create">Yeni Ürün Ekle</a></li>
-                        </ul>
-                    </li>
-
                     @*<li>
-                        <a href="calendar.html">
-                            <i class="main-icon fa fa-calendar"></i>
-                            <span class="label label-warning pull-right">2</span> <span>Calendar</span>
-                        </a>
-                    </li>*@
+            <a href="calendar.html">
+                <i class="main-icon fa fa-calendar"></i>
+                <span class="label label-warning pull-right">2</span> <span>Calendar</span>
+            </a>
+        </li>*@
                 </ul>
 
                 <!-- SECOND MAIN LIST -->
@@ -275,9 +280,9 @@
                 <img src="~/Content/Admin/assets/images/logo_light.png" alt="admin panel" height="35"/>
             </span>
 
-            <form method="get" action="page-search.html" class="search pull-left hidden-xs">
-                <input type="text" class="form-control" name="k" placeholder="Search for something..." />
-            </form>
+            @*<form method="get" action="/Admin/Search" class="search pull-left hidden-xs">
+                <input type="text" class="form-control" name="searchString" placeholder="Search for something..." />
+            </form>*@
 
             <nav>
 
