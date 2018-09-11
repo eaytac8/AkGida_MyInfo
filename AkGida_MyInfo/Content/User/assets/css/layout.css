@@ -1138,7 +1138,7 @@ section.dark.page-header ul.page-options a {
 			transition: all .800s;
 }
 #header a.logo>img {
-	height:80px;
+	/*height:80px;*/
 	-webkit-transition: all .300s;
 	   -moz-transition: all .300s;
 		 -o-transition: all .300s;
@@ -2136,7 +2136,7 @@ section.dark.page-header ul.page-options a {
 			display: none;
 			padding:6px 10px;
 			float:right;
-			margin-top:13px;
+			margin-top:10px;
 			margin-right:0;
 
 			-webkit-border-radius: 0;
@@ -2601,7 +2601,7 @@ section.dark.page-header ul.page-options a {
 	}
 	#header.fixed #topNav #topMain>li>a {
 		height:60px;
-		line-height:40px;
+		line-height:60px;
 	}
 
 
@@ -2824,7 +2824,7 @@ section.dark.page-header ul.page-options a {
 	#header ul.nav-second-main {
 		border-left:rgba(0,0,0,0.1) 1px solid;
 		padding-left:15px;
-		margin-top: 39px;
+		margin-top: 30px;
 
 		-webkit-transition: all .300s;
 		   -moz-transition: all .300s;

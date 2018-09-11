@@ -63,7 +63,6 @@ namespace AkGida_MyInfo.Controllers
             ViewBag.ReturnUrl = returnUrl;
             return View();
         }
-
         //
         // POST: /Account/Login
         [HttpPost]
@@ -75,7 +74,6 @@ namespace AkGida_MyInfo.Controllers
             {
                 return View(model);
             }
-
             // Hesap kilitlenirken oturum açma hataları hesaplanmaz
             // Parola hatalarının hesap kilitlenmesini tetiklemesini sağlmak için değeri shouldLockout: true olarak değiştirin
             var result = await SignInManager.PasswordSignInAsync(model.Email, model.Password, model.RememberMe, shouldLockout: false);

@@ -15,12 +15,12 @@ namespace AkGida_MyInfo.Controllers
     public class PersonelYonetimController : Controller
     {
         private AkGida_MyInfoEntities db = new AkGida_MyInfoEntities();
-
         // GET: PersonelYonetim
         public ActionResult Index()
         {
-            var personel1 = db.Personels.Include(p => p.Departments).OrderBy(x => x.Departments.CompanyID).ThenBy(x => x.DepartmentID).ThenBy(x => x.PersonelName);
-            return View(personel1.ToList());
+            var personel = db.Personels.Include(p => p.Departments).OrderBy(
+                x => x.Departments.CompanyID).ThenBy(x => x.DepartmentID).ThenBy(x => x.PersonelName);
+            return View(personel.ToList());
         }
         
         // GET: PersonelYonetim/Create
@@ -96,13 +96,24 @@ namespace AkGida_MyInfo.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Personels personels = db.Personels.Find(id);
-            if (personels == null)
+            PersonelCreate model = new PersonelCreate();
+            List<Companies> companyList = db.Companies.OrderBy(x => x.CompanyID).ToList();
+            model.CompanyList = (from c in companyList
+                                 select new SelectListItem
+                                 {
+                                     Text = c.CompanyName,
+                                     Value = c.CompanyID.ToString()
+
+                                 }).ToList();
+
+            model.CompanyList.Insert(0, new SelectListItem { Text = "Seçiniz..", Value = "", Selected = true });
+            model.personel = db.Personels.Find(id);
+
+            if (model.personel == null)
             {
                 return HttpNotFound();
             }
-            ViewBag.DepartmentID = new SelectList(db.Departments, "DepartmentID", "DepartmentName", personels.DepartmentID);
-            return View(personels);
+            return View(model);
         }
 
         // POST: PersonelYonetim/Edit/5
@@ -110,15 +121,19 @@ namespace AkGida_MyInfo.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit( /*[Bind(Include = "PersonelID,PersonelName,PersonelSurname,PersonelTel,PersonelDahiliNo,PersonelEposta,DepartmentID,Yetki")]*/ Personels personels)
+        public ActionResult Edit(PersonelCreate personels)
         {
             if (ModelState.IsValid)
             {
-                db.Entry(personels).State = EntityState.Modified;
-                db.SaveChanges();
-                return RedirectToAction("Index");
+                if (ModelState.IsValid)
+                {
+                    db.Entry(personels.personel).State = EntityState.Modified;
+                    db.SaveChanges();
+                    return RedirectToAction("Index");
+                }
+                ViewBag.DepartmentID = new SelectList(db.Departments, "DepartmentID", "DepartmentName", personels.personel.DepartmentID);
+                return View(personels);
             }
-            ViewBag.DepartmentID = new SelectList(db.Departments, "DepartmentID", "DepartmentName", personels.DepartmentID);
             return View(personels);
         }
 

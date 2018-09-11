@@ -489,8 +489,8 @@ C:\Users\admelif\Downloads\AkGida_MyInfo\AkGida_MyInfo\bin\tr\System.Web.Optimiz
 C:\Users\admelif\Downloads\AkGida_MyInfo\AkGida_MyInfo\bin\tr\Microsoft.AspNet.Identity.Core.resources.dll
 C:\Users\admelif\Downloads\AkGida_MyInfo\AkGida_MyInfo\bin\tr\Microsoft.AspNet.Identity.Owin.resources.dll
 C:\Users\admelif\Downloads\AkGida_MyInfo\AkGida_MyInfo\bin\tr\Microsoft.AspNet.Identity.EntityFramework.resources.dll
-C:\Users\admelif\Downloads\AkGida_MyInfo\AkGida_MyInfo\obj\Debug\AkGida_MyInfo.csprojAssemblyReference.cache
 C:\Users\admelif\Downloads\AkGida_MyInfo\AkGida_MyInfo\obj\Debug\AkGida_MyInfo.csproj.CoreCompileInputs.cache
 C:\Users\admelif\Downloads\AkGida_MyInfo\AkGida_MyInfo\obj\Debug\AkGida_MyInfo.csproj.CopyComplete
 C:\Users\admelif\Downloads\AkGida_MyInfo\AkGida_MyInfo\obj\Debug\AkGida_MyInfo.dll
 C:\Users\admelif\Downloads\AkGida_MyInfo\AkGida_MyInfo\obj\Debug\AkGida_MyInfo.pdb
+C:\Users\admelif\Downloads\AkGida_MyInfo\AkGida_MyInfo\obj\Debug\AkGida_MyInfo.csprojAssemblyReference.cache

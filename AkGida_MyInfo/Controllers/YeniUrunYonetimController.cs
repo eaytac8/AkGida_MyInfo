@@ -50,7 +50,6 @@ namespace AkGida_MyInfo.Controllers
                     yeniUrun.ResimYolu = $"/Images/{Path.GetFileName(file.FileName)}";
                     yeniUrun.VideoYolu = $"/Video/{ Path.GetFileName(video.FileName)}";
                     String dosyaadi = file.FileName;
-
                     if (ModelState.IsValid)
                     {
                         db.YeniUrun.Add(yeniUrun);
@@ -66,14 +65,12 @@ namespace AkGida_MyInfo.Controllers
             {
                 ViewBag.Message = "You have not specified a file.";
             }
-
             if (ModelState.IsValid)
             {
                 db.YeniUrun.Add(yeniUrun);
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-
             return View(yeniUrun);
         }
 

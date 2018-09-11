@@ -2782,10 +2782,10 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>08/19/2018 20:07:47</publishTime>
     </File>
     <File Include="bin/AkGida_MyInfo.dll">
-      <publishTime>09/05/2018 10:38:01</publishTime>
+      <publishTime>09/11/2018 13:37:18</publishTime>
     </File>
     <File Include="bin/AkGida_MyInfo.pdb">
-      <publishTime>09/05/2018 10:38:01</publishTime>
+      <publishTime>09/11/2018 13:37:18</publishTime>
     </File>
     <File Include="bin/Antlr3.Runtime.dll">
       <publishTime>09/04/2018 15:23:29</publishTime>
@@ -8044,16 +8044,16 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>09/04/2018 15:22:36</publishTime>
     </File>
     <File Include="Content/User/assets/css/essentials.css">
-      <publishTime>09/04/2018 15:22:36</publishTime>
+      <publishTime>09/10/2018 08:34:45</publishTime>
     </File>
     <File Include="Content/User/assets/css/header-0.css">
       <publishTime>09/04/2018 15:22:36</publishTime>
     </File>
     <File Include="Content/User/assets/css/header-1.css">
-      <publishTime>09/04/2018 15:22:36</publishTime>
+      <publishTime>09/07/2018 17:20:25</publishTime>
     </File>
     <File Include="Content/User/assets/css/header-2.css">
-      <publishTime>09/04/2018 15:22:36</publishTime>
+      <publishTime>09/07/2018 17:17:17</publishTime>
     </File>
     <File Include="Content/User/assets/css/header-3.css">
       <publishTime>09/04/2018 15:22:36</publishTime>
@@ -8083,7 +8083,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>09/04/2018 15:22:36</publishTime>
     </File>
     <File Include="Content/User/assets/css/layout.css">
-      <publishTime>09/04/2018 15:22:36</publishTime>
+      <publishTime>09/07/2018 17:14:45</publishTime>
     </File>
     <File Include="Content/User/assets/css/plugin-hover-buttons.css">
       <publishTime>09/04/2018 15:22:36</publishTime>
@@ -8188,16 +8188,16 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>09/04/2018 15:22:36</publishTime>
     </File>
     <File Include="Content/User/assets/images/buttons/btn-appstore-dark.png">
-      <publishTime>09/04/2018 15:22:36</publishTime>
+      <publishTime>09/11/2018 11:30:46</publishTime>
     </File>
     <File Include="Content/User/assets/images/buttons/btn-appstore.png">
-      <publishTime>09/04/2018 15:22:36</publishTime>
+      <publishTime>09/11/2018 11:30:46</publishTime>
     </File>
     <File Include="Content/User/assets/images/buttons/btn-googleplay-dark.png">
-      <publishTime>09/04/2018 15:22:36</publishTime>
+      <publishTime>09/11/2018 11:30:46</publishTime>
     </File>
     <File Include="Content/User/assets/images/buttons/btn-googleplay.png">
-      <publishTime>09/04/2018 15:22:36</publishTime>
+      <publishTime>09/11/2018 11:30:46</publishTime>
     </File>
     <File Include="Content/User/assets/images/caption_bg.png">
       <publishTime>09/04/2018 15:22:36</publishTime>
@@ -16528,7 +16528,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>09/04/2018 15:22:50</publishTime>
     </File>
     <File Include="Content/User/assets/plugins/bootstrap/css/bootstrap.min.css">
-      <publishTime>09/04/2018 15:22:50</publishTime>
+      <publishTime>09/10/2018 08:46:15</publishTime>
     </File>
     <File Include="Content/User/assets/plugins/bootstrap/fonts/glyphicons-halflings-regular.eot">
       <publishTime>09/04/2018 15:22:50</publishTime>
@@ -19678,10 +19678,10 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>09/04/2018 15:22:54</publishTime>
     </File>
     <File Include="Content/User/assets/plugins/styleswitcher/styleswitcher.css">
-      <publishTime>09/04/2018 15:22:54</publishTime>
+      <publishTime>09/07/2018 15:40:27</publishTime>
     </File>
     <File Include="Content/User/assets/plugins/styleswitcher/styleswitcher.js">
-      <publishTime>09/04/2018 15:22:54</publishTime>
+      <publishTime>09/07/2018 12:12:16</publishTime>
     </File>
     <File Include="Content/User/assets/plugins/text-rotator/demo.html">
       <publishTime>09/04/2018 15:22:54</publishTime>
@@ -19921,7 +19921,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>09/04/2018 15:22:55</publishTime>
     </File>
     <File Include="Images/hakkimizda_header.jpg">
-      <publishTime>09/04/2018 15:22:55</publishTime>
+      <publishTime>09/10/2018 10:17:21</publishTime>
     </File>
     <File Include="Images/videoplayback.3gp">
       <publishTime>09/04/2018 15:22:55</publishTime>
@@ -20257,13 +20257,13 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>09/05/2018 09:33:00</publishTime>
     </File>
     <File Include="Views/Home/Hakkimizda.cshtml">
-      <publishTime>09/04/2018 15:22:56</publishTime>
+      <publishTime>09/10/2018 10:19:22</publishTime>
     </File>
     <File Include="Views/Home/Iletisim.cshtml">
       <publishTime>09/04/2018 15:22:56</publishTime>
     </File>
     <File Include="Views/Home/Index.cshtml">
-      <publishTime>09/04/2018 15:22:56</publishTime>
+      <publishTime>09/10/2018 09:00:23</publishTime>
     </File>
     <File Include="Views/Home/Search.cshtml">
       <publishTime>09/05/2018 09:33:08</publishTime>
@@ -20290,7 +20290,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>09/04/2018 15:22:56</publishTime>
     </File>
     <File Include="Views/Manage/Index.cshtml">
-      <publishTime>09/04/2018 15:22:56</publishTime>
+      <publishTime>09/11/2018 11:24:41</publishTime>
     </File>
     <File Include="Views/Manage/ManageLogins.cshtml">
       <publishTime>09/04/2018 15:22:56</publishTime>
@@ -20323,7 +20323,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>08/30/2018 23:38:12</publishTime>
     </File>
     <File Include="Views/PersonelYonetim/Edit.cshtml">
-      <publishTime>09/05/2018 10:01:33</publishTime>
+      <publishTime>09/07/2018 09:35:55</publishTime>
     </File>
     <File Include="Views/PersonelYonetim/Index.cshtml">
       <publishTime>09/05/2018 09:29:11</publishTime>
@@ -20356,13 +20356,13 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>09/04/2018 15:22:56</publishTime>
     </File>
     <File Include="Views/Shared/_AdminLayout.cshtml">
-      <publishTime>09/05/2018 09:34:05</publishTime>
+      <publishTime>09/11/2018 11:08:46</publishTime>
     </File>
     <File Include="Views/Shared/_BlankAdmin.cshtml">
       <publishTime>09/04/2018 15:22:56</publishTime>
     </File>
     <File Include="Views/Shared/_Layout.cshtml">
-      <publishTime>09/05/2018 00:15:43</publishTime>
+      <publishTime>09/11/2018 11:08:33</publishTime>
     </File>
     <File Include="Views/Shared/_LoginPartial.cshtml">
       <publishTime>09/04/2018 15:22:56</publishTime>
@@ -20422,7 +20422,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>09/04/2018 15:22:56</publishTime>
     </File>
     <File Include="Views/YeniUrunYonetim/Create.cshtml">
-      <publishTime>09/04/2018 17:53:36</publishTime>
+      <publishTime>09/10/2018 11:59:02</publishTime>
     </File>
     <File Include="Views/YeniUrunYonetim/Delete.cshtml">
       <publishTime>09/04/2018 15:22:56</publishTime>
@@ -20437,7 +20437,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>09/04/2018 15:22:55</publishTime>
     </File>
     <File Include="Web.config">
-      <publishTime>09/04/2018 15:26:00</publishTime>
+      <publishTime>09/11/2018 13:27:07</publishTime>
     </File>
   </ItemGroup>
 </Project>

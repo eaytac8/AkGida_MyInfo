@@ -17,13 +17,14 @@ namespace AkGida_MyInfo.ViewModel
             this.DepartmanList = new List<SelectListItem>();
             DepartmanList.Add(new SelectListItem { Text = "Seçiniz..", Value = "" });
         }
-        
+       
         public Companies company { get; set; }
         public Departments departman { get; set; }
+        public Personels personel { get; set; }
 
         public List<SelectListItem> CompanyList { get; set; }
         public List<SelectListItem> DepartmanList { get; set; }
-        public Personels personel { get; set; }
-   
+        public List<SelectListItem> PersonelList { get; set; }
+
     }
 }

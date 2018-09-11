@@ -78,10 +78,7 @@ namespace AkGida_MyInfo.Controllers
         public PartialViewResult Birthday()
         {
             List<Personels> personel = new List<Personels>();
-
             personel = db.Personels.Where(B => B.Birthday.Value.Day == DateTime.Now.Day && B.Birthday.Value.Month == DateTime.Now.Month).ToList();
-
-
             return PartialView("Birthday", personel);
         }
 

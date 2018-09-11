@@ -24,11 +24,11 @@
             }
             ]
         </dd>
-        <dt>Dışarıdan Oturum Açma:</dt>
+        @*<dt>Dışarıdan Oturum Açma:</dt>
         <dd>
             @Model.Logins.Count [
             @Html.ActionLink("Yönet", "ManageLogins") ]
-        </dd>
+        </dd>*@
         @*
             Telefon Numaraları, iki öğeli kimlik doğrulama sisteminde ikinci öğe olarak kullanılabilir.
              
@@ -57,12 +57,12 @@
                 }
             </dd>
         *@
-        <dt>İki Öğeli Kimlik Doğrulama:</dt>
+        @*<dt>İki Öğeli Kimlik Doğrulama:</dt>
         <dd>
             <p>
                 Yapılandırılmış iki öğeli kimlik doğrulama sağlayıcısı yok. Bu ASP.NET uygulamasını iki öğeli kimlik doğrulamayı destekleyecek şekilde ayarlama
                 konusunda ayrıntılı bilgi için <a href="https://go.microsoft.com/fwlink/?LinkId=403804">bu makaleye</a>bakın.
-            </p>
+            </p>*@
             @*@if (Model.TwoFactor)
                 {
                     using (Html.BeginForm("DisableTwoFactorAuthentication", "Manage", FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
@@ -83,6 +83,6 @@
                         </text>
                     }
                 }*@
-        </dd>
+        @*</dd>*@
     </dl>
 </div>
