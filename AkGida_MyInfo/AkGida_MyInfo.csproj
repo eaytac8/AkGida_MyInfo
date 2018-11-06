@@ -1823,6 +1823,7 @@
     <Content Include="Content\User\assets\fonts\font-icons.svg" />
     <Content Include="Content\User\assets\fonts\fontawesome-webfont.svg" />
     <Content Include="Content\User\assets\images\1x1.png" />
+    <Content Include="Content\User\assets\images\ak-gida-footer-logo.png" />
     <Content Include="Content\User\assets\images\ak_gida_logo.png" />
     <Content Include="Content\User\assets\images\ak_gıda logo.png" />
     <Content Include="Content\User\assets\images\avatar.png" />
@@ -2193,6 +2194,7 @@
     <Content Include="Content\User\assets\images\patterns\pattern7.png" />
     <Content Include="Content\User\assets\images\patterns\pattern8.png" />
     <Content Include="Content\User\assets\images\patterns\pattern9.png" />
+    <Content Include="Content\User\assets\images\pazarlamalogo.jpg" />
     <Content Include="Content\User\assets\images\playing-dark.gif" />
     <Content Include="Content\User\assets\images\playing.gif" />
     <Content Include="Content\User\assets\images\plugins\bootstrap.datepicker\css\bootstrap-datepicker.css" />

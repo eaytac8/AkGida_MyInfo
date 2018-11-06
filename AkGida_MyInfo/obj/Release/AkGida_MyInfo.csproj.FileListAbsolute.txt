@@ -121,3 +121,4 @@ C:\Users\admelif\Downloads\AkGida_MyInfo\AkGida_MyInfo\obj\Release\AkGida_MyInfo
 C:\Users\admelif\Downloads\AkGida_MyInfo\AkGida_MyInfo\obj\Release\AkGida_MyInfo.csproj.CopyComplete
 C:\Users\admelif\Downloads\AkGida_MyInfo\AkGida_MyInfo\obj\Release\AkGida_MyInfo.dll
 C:\Users\admelif\Downloads\AkGida_MyInfo\AkGida_MyInfo\obj\Release\AkGida_MyInfo.pdb
+C:\Users\admelif\Downloads\AkGida_MyInfo\AkGida_MyInfo\obj\Release\AkGida_MyInfo.csprojAssemblyReference.cache

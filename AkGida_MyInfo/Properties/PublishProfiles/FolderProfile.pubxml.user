@@ -2782,10 +2782,10 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>08/19/2018 20:07:47</publishTime>
     </File>
     <File Include="bin/AkGida_MyInfo.dll">
-      <publishTime>09/11/2018 13:37:18</publishTime>
+      <publishTime>09/21/2018 17:49:44</publishTime>
     </File>
     <File Include="bin/AkGida_MyInfo.pdb">
-      <publishTime>09/11/2018 13:37:18</publishTime>
+      <publishTime>09/21/2018 17:49:44</publishTime>
     </File>
     <File Include="bin/Antlr3.Runtime.dll">
       <publishTime>09/04/2018 15:23:29</publishTime>
@@ -19921,7 +19921,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>09/04/2018 15:22:55</publishTime>
     </File>
     <File Include="Images/hakkimizda_header.jpg">
-      <publishTime>09/10/2018 10:17:21</publishTime>
+      <publishTime>09/21/2018 16:45:18</publishTime>
     </File>
     <File Include="Images/videoplayback.3gp">
       <publishTime>09/04/2018 15:22:55</publishTime>
@@ -19930,7 +19930,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>09/04/2018 15:22:55</publishTime>
     </File>
     <File Include="Models/MyInfoDB.edmx.diagram">
-      <publishTime>09/04/2018 15:22:55</publishTime>
+      <publishTime>09/20/2018 17:25:29</publishTime>
     </File>
     <File Include="packages.config">
       <publishTime>08/19/2018 20:07:47</publishTime>
@@ -20257,13 +20257,13 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>09/05/2018 09:33:00</publishTime>
     </File>
     <File Include="Views/Home/Hakkimizda.cshtml">
-      <publishTime>09/10/2018 10:19:22</publishTime>
+      <publishTime>09/21/2018 16:50:46</publishTime>
     </File>
     <File Include="Views/Home/Iletisim.cshtml">
       <publishTime>09/04/2018 15:22:56</publishTime>
     </File>
     <File Include="Views/Home/Index.cshtml">
-      <publishTime>09/10/2018 09:00:23</publishTime>
+      <publishTime>09/14/2018 14:15:20</publishTime>
     </File>
     <File Include="Views/Home/Search.cshtml">
       <publishTime>09/05/2018 09:33:08</publishTime>
@@ -20278,7 +20278,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>09/04/2018 15:22:56</publishTime>
     </File>
     <File Include="Views/Home/YeniUrun.cshtml">
-      <publishTime>09/04/2018 15:22:56</publishTime>
+      <publishTime>09/21/2018 17:46:07</publishTime>
     </File>
     <File Include="Views/Home/YeniUrunPartial.cshtml">
       <publishTime>09/04/2018 15:22:56</publishTime>
@@ -20362,7 +20362,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>09/04/2018 15:22:56</publishTime>
     </File>
     <File Include="Views/Shared/_Layout.cshtml">
-      <publishTime>09/11/2018 11:08:33</publishTime>
+      <publishTime>09/21/2018 17:17:30</publishTime>
     </File>
     <File Include="Views/Shared/_LoginPartial.cshtml">
       <publishTime>09/04/2018 15:22:56</publishTime>
